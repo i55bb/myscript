@@ -1,11 +1,16 @@
 <?php
-/*********************/
-/*                   */
-/*  Version : 5.1.0  */
-/*  Author  : RM     */
-/*  Comment : 071223 */
-/*                   */
-/*********************/
+#################################################################################
+##                                                                             ##
+##                                                                             ##
+## --------------------------------------------------------------------------- ##
+##                                                                             ##
+##  Project:       TATAR WARS                                                  ##
+##  Version:       2012.3.15                                                   ##
+##  License:       Creative Commons BY-NC-SA 3.0                               ##
+##  Copyright:     Bazaid (c) 2012 - All rights reserved                       ##
+##  Source code:   https://github.com/Bazaid/tatar-wars                        ##
+##                                                                             ##
+#################################################################################
 
 require( ".".DIRECTORY_SEPARATOR."app".DIRECTORY_SEPARATOR."boot.php" );
 require_once( MODEL_PATH."alliance.php" );
