@@ -1,51 +1,61 @@
-<?php //003ab
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');@dl($__ln);if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}@dl($__ln);}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the site administrator.');exit(199);
+﻿<?php
+#################################################################################
+##                                                                             ##
+##                                                                             ##
+## --------------------------------------------------------------------------- ##
+##                                                                             ##
+##  Project:       TATAR WARS                                                  ##
+##  Version:       2012.3.15                                                   ##
+##  License:       Creative Commons BY-NC-SA 3.0                               ##
+##  Copyright:     Bazaid (c) 2012 - All rights reserved                       ##
+##  Source code:   https://github.com/Bazaid/tatar-wars                        ##
+##                 http://sourceforge.net/projects/tatarwars/                  ##
+#################################################################################
+
+define( "LANGUI_PLUS_T1", "Tatar" );
+define( "LANGUI_PLUS_T2", "Gold" );
+define( "LANGUI_PLUS_T3", "Packages" );
+define( "LANGUI_PLUS_T4", "Advantages" );
+define( "LANGUI_PLUS_T5", "Gold" );
+define( "LANGUI_PLUS_T6", "Gold" );
+define( "LANGUI_PLUS_T7", "» next" );
+define( "LANGUI_PLUS_T8", "Features<b><font color=\"#71D000\">  P</font><font color=\"#FF6F0F\">l</font>u<font color=\"#71D000\">s </font></b>" );
+define( "LANGUI_PLUS_T9", "Waiting loop for constructions" );
+define( "LANGUI_PLUS_T10", "The waiting loop enables you to give your builders another order to raise or extend a second building. After completing their first task and a short break (60s), they will start to take care of this second job." );
+define( "LANGUI_PLUS_T11", "Large map" );
+define( "LANGUI_PLUS_T12", "You can enlarge the map to get a better overview. Instead of 7x7 fields you can have a map of 13x13 fields. Other alliances which are allied or have a non-aggression pact (NAP) with you are shown in special colors." );
+define( "LANGUI_PLUS_T13", "Freely definable direct links" );
+define( "LANGUI_PLUS_T14", "Thanks to these links, you can reach every page you want with just one click. Just create a link to every destination you want and get directly to your alliances overview, to your barracks or to the tempting 1:1 biddings at the marketplace." );
+define( "LANGUI_PLUS_T15", "Notepad" );
+define( "LANGUI_PLUS_T16", "Paper and pencil aren t always at hand. In order to make sure not to forget important things or if you simply want to take a few notes, just use your notebook." );
+define( "LANGUI_PLUS_T17", "Features of Tatar Gold" );
+define( "LANGUI_PLUS_T18", "Production bonus for lumber" );
+define( "LANGUI_PLUS_T19", "With this Gold advantage all your villages wood production will be increased by 25%.The bonus will not be added to the single resource fields but to the sum of the production. This feature is NOT included in the gold club!" );
+define( "LANGUI_PLUS_T20", "Production bonus for clay" );
+define( "LANGUI_PLUS_T21", "With this Gold advantage all your villages clay production will be increased by 25%. The bonus will not be added to the single resource fields but to the sum of the production. This feature is NOT included in the gold club!" );
+define( "LANGUI_PLUS_T22", "Production bonus for iron" );
+define( "LANGUI_PLUS_T23", "With this Gold advantage all your villages iron production will be increased by 25%. The bonus will not be added to the single resource fields but to the sum of the production. This feature is NOT included in the gold club!" );
+define( "LANGUI_PLUS_T24", "Production bonus for wheat" );
+define( "LANGUI_PLUS_T25", "With this Gold advantage all your villages wheat production will be increased by 25%. The bonus will not be added to the single resource fields but to the sum of the production. This feature is NOT included in the gold club!" );
+define( "LANGUI_PLUS_T26", "Complete construction orders & research immediately." );
+define( "LANGUI_PLUS_T27", "In the current village all construction orders and research in the academy as well as the blacksmith and armory will be completed immediately. However, the buildings Residence and Palace and villages with a wonder of the world inside them are excluded. This feature is NOT included in the gold club!" );
+define( "LANGUI_PLUS_T28", "NPC Merchant" );
+define( "LANGUI_PLUS_T29", "The NPC Merchant will exchange any desired amount of resources in a village with other resources at a ratio of 1:1.This feature is NOT included in the gold club!" );
+define( "LANGUI_PLUS_T30", "You now have" );
+define( "LANGUI_PLUS_T31", "Gold" );
+define( "LANGUI_PLUS_T32", "You currently dont own gold" );
+define( "LANGUI_PLUS_T33", "Plus function" );
+define( "LANGUI_PLUS_T34", "Description" );
+define( "LANGUI_PLUS_T35", "Action" );
+define( "LANGUI_PLUS_T36", " account P</font><font color=\"#FF6F0F\">l</font>u<font color=\"#71D000\">s</font></b>" );
+define( "LANGUI_PLUS_T37", "Immediately" );
+define( "LANGUI_PLUS_T38", "Days" );
+define( "LANGUI_PLUS_T39", "Production: Lumber" );
+define( "LANGUI_PLUS_T40", "Production: Clay" );
+define( "LANGUI_PLUS_T41", "Production: Iron" );
+define( "LANGUI_PLUS_T42", "Production: Wheat" );
+define( "LANGUI_PLUS_T43", "Complete construction orders and research in this village immediately. (Does not work for Palace and Residence)" );
+define( "LANGUI_PLUS_T44", "1:1 Trade with the NPC merchant" );
+define( "LANGUI_PLUS_T45", "complete the troops training" );
+define( "LANGUI_PLUS_T46", "in the current village all troops training orders are completed immediately, this feature not exists in the wonder land village" );
 ?>
-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

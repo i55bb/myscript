@@ -1,145 +1,382 @@
-<?php //003ab
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');@dl($__ln);if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}@dl($__ln);}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the site administrator.');exit(199);
+﻿<?php
+#################################################################################
+##                                                                             ##
+##                                                                             ##
+## --------------------------------------------------------------------------- ##
+##                                                                             ##
+##  Project:       TATAR WARS                                                  ##
+##  Version:       2012.3.15                                                   ##
+##  License:       Creative Commons BY-NC-SA 3.0                               ##
+##  Copyright:     Bazaid (c) 2012 - All rights reserved                       ##
+##  Source code:   https://github.com/Bazaid/tatar-wars                        ##
+##                 http://sourceforge.net/projects/tatarwars/                  ##
+#################################################################################
+
+require_once( LANG_UI_PATH."village1.php" );
+echo "<h1>";
+echo $this->data['village_name'];
+echo "<br>";
+if ( $this->data['allegiance_percent'] < 100 )
+{
+    echo "<div id=\"loyality\" class=\"";
+    echo $this->data['allegiance_percent'] <= 60 ? "re" : "gr";
+    echo "\">";
+    echo LANGUI_VIL1_T1;
+    echo " ";
+    echo $this->data['allegiance_percent'];
+    echo "%</div>";
+}
+echo "</h1>\r\r<map name=\"rx\" id=\"rx\">\r<area href=\"build.php?id=1\" coords=\"101,33,28\" shape=\"circle\" ";
+echo $this->getBuildingTitle( 1 );
+echo ">\r<area href=\"build.php?id=2\" coords=\"165,32,28\" shape=\"circle\" ";
+echo $this->getBuildingTitle( 2 );
+echo ">\r<area href=\"build.php?id=3\" coords=\"224,46,28\" shape=\"circle\" ";
+echo $this->getBuildingTitle( 3 );
+echo ">\r<area href=\"build.php?id=4\" coords=\"46,63,28\" shape=\"circle\" ";
+echo $this->getBuildingTitle( 4 );
+echo ">\r<area href=\"build.php?id=5\" coords=\"138,74,28\" shape=\"circle\" ";
+echo $this->getBuildingTitle( 5 );
+echo ">\r<area href=\"build.php?id=6\" coords=\"203,94,28\" shape=\"circle\" ";
+echo $this->getBuildingTitle( 6 );
+echo ">\r<area href=\"build.php?id=7\" coords=\"262,86,28\" shape=\"circle\" ";
+echo $this->getBuildingTitle( 7 );
+echo ">\r<area href=\"build.php?id=8\" coords=\"31,117,28\" shape=\"circle\" ";
+echo $this->getBuildingTitle( 8 );
+echo ">\r<area href=\"build.php?id=9\" coords=\"83,110,28\" shape=\"circle\" ";
+echo $this->getBuildingTitle( 9 );
+echo ">\r<area href=\"build.php?id=10\" coords=\"214,142,28\" shape=\"circle\" ";
+echo $this->getBuildingTitle( 10 );
+echo ">\r<area href=\"build.php?id=11\" coords=\"269,146,28\" shape=\"circle\" ";
+echo $this->getBuildingTitle( 11 );
+echo ">\r<area href=\"build.php?id=12\" coords=\"42,171,28\" shape=\"circle\" ";
+echo $this->getBuildingTitle( 12 );
+echo ">\r<area href=\"build.php?id=13\" coords=\"93,164,28\" shape=\"circle\" ";
+echo $this->getBuildingTitle( 13 );
+echo ">\r<area href=\"build.php?id=14\" coords=\"160,184,28\" shape=\"circle\" ";
+echo $this->getBuildingTitle( 14 );
+echo ">\r<area href=\"build.php?id=15\" coords=\"239,199,28\" shape=\"circle\" ";
+echo $this->getBuildingTitle( 15 );
+echo ">\r<area href=\"build.php?id=16\" coords=\"87,217,28\" shape=\"circle\" ";
+echo $this->getBuildingTitle( 16 );
+echo ">\r<area href=\"build.php?id=17\" coords=\"140,231,28\" shape=\"circle\" ";
+echo $this->getBuildingTitle( 17 );
+echo ">\r<area href=\"build.php?id=18\" coords=\"190,232,28\" shape=\"circle\" ";
+echo $this->getBuildingTitle( 18 );
+echo ">\r<area href=\"village2.php\" coords=\"144,131,36\" shape=\"circle\" title=\"";
+echo LANGUI_VIL1_T2;
+echo "\" alt=\"";
+echo LANGUI_VIL1_T2;
+echo "\">\r</map>\r\r<div id=\"village_map\" class=\"f";
+echo $this->data['field_maps_id'];
+echo "\">\r";
+foreach ( $this->buildings as $id => $build )
+{
+    if ( 19 <= $id )
+    {
+        break;
+    }
+    if ( 0 < $build['level'] )
+    {
+        echo "<img src=\"assets/x.gif\" class=\"reslevel rf".$id." level".$build['level']."\" alt=\"".$this->getBuildingName( $id )."\">";
+    }
+}
+echo "<img id=\"resfeld\" usemap=\"#rx\" src=\"assets/x.gif\" alt=\"\">\r</div>\r\r<div id=\"map_details\">\r\t";
+if ( 0 < $this->queueModel->tasksInQueue['war_troops_summary']['total_number'] )
+{
+    echo "\t<table id=\"movements\" cellpadding=\"1\" cellspacing=\"1\">\r\t\t<thead><tr><th colspan=\"3\">";
+    echo LANGUI_VIL1_T3;
+    echo ":</th></tr></thead>\r\t\t<tbody>\r\t\t\t";
+    $war = $this->queueModel->tasksInQueue['war_troops_summary']['to_me']['attacks'];
+    if ( 0 < $war['number'] )
+    {
+        echo "\t\t\t<tr>\r\t\t\t\t<td class=\"typ\"><a href=\"build.php?id=39\"><img src=\"assets/x.gif\" class=\"att1\" alt=\"";
+        echo LANGUI_VIL1_T4;
+        echo "\" title=\"";
+        echo LANGUI_VIL1_T4;
+        echo "\"></a>";
+        echo "<s";
+        echo "pan class=\"a1\">»</span></td>\r\t\t\t\t<td><div class=\"mov\">";
+        echo "<s";
+        echo "pan class=\"a1\">";
+        echo $war['number'];
+        echo "&nbsp;";
+        echo LANGUI_VIL1_T5;
+        echo "</span></div><div class=\"dur_r\">";
+        echo text_in_lang;
+        echo "&nbsp;";
+        echo "<s";
+        echo "pan id=\"timer1\">";
+        echo WebHelper::secondstostring( $war['min_time'] );
+        echo "</span>&nbsp;";
+        echo time_hour_lang;
+        echo "</div></td>\r\t\t\t</tr>\r\t\t\t";
+    }
+    echo "\t\t\t";
+    $war = $this->queueModel->tasksInQueue['war_troops_summary']['to_me']['reinforce'];
+    if ( 0 < $war['number'] )
+    {
+        echo "\t\t\t<tr>\r\t\t\t\t<td class=\"typ\"><a href=\"build.php?id=39\"><img src=\"assets/x.gif\" class=\"def1\" alt=\"";
+        echo LANGUI_VIL1_T6;
+        echo "\" title=\"";
+        echo LANGUI_VIL1_T6;
+        echo "\"></a>";
+        echo "<s";
+        echo "pan class=\"d1\">»</span></td>\r\t\t\t\t<td><div class=\"mov\">";
+        echo "<s";
+        echo "pan class=\"d1\">";
+        echo $war['number'];
+        echo "&nbsp;";
+        echo LANGUI_VIL1_T7;
+        echo "</span></div><div class=\"dur_r\">";
+        echo text_in_lang;
+        echo "&nbsp;";
+        echo "<s";
+        echo "pan id=\"timer1\">";
+        echo WebHelper::secondstostring( $war['min_time'] );
+        echo "</span>&nbsp;";
+        echo time_hour_lang;
+        echo "</div></td>\r\t\t\t</tr>\r\t\t\t";
+    }
+    echo "\r\t\t\t";
+    $war = $this->queueModel->tasksInQueue['war_troops_summary']['from_me']['attacks'];
+    if ( 0 < $war['number'] )
+    {
+        echo "\t\t\t<tr>\r\t\t\t\t<td class=\"typ\"><a href=\"build.php?id=39\"><img src=\"assets/x.gif\" class=\"att2\" alt=\"";
+        echo LANGUI_VIL1_T8;
+        echo "\" title=\"";
+        echo LANGUI_VIL1_T8;
+        echo "\"></a>";
+        echo "<s";
+        echo "pan class=\"a2\">«</span></td>\r\t\t\t\t<td><div class=\"mov\">";
+        echo "<s";
+        echo "pan class=\"a2\">";
+        echo $war['number'];
+        echo "&nbsp;";
+        echo LANGUI_VIL1_T5;
+        echo "</span></div><div class=\"dur_r\">";
+        echo text_in_lang;
+        echo "&nbsp;";
+        echo "<s";
+        echo "pan id=\"timer1\">";
+        echo WebHelper::secondstostring( $war['min_time'] );
+        echo "</span>&nbsp;";
+        echo time_hour_lang;
+        echo "</div></td>\r\t\t\t</tr>\r\t\t\t";
+    }
+    echo "\t\t\t";
+    $war = $this->queueModel->tasksInQueue['war_troops_summary']['from_me']['reinforce'];
+    if ( 0 < $war['number'] )
+    {
+        echo "\t\t\t<tr>\r\t\t\t\t<td class=\"typ\"><a href=\"build.php?id=39\"><img src=\"assets/x.gif\" class=\"def2\" alt=\"";
+        echo LANGUI_VIL1_T9;
+        echo "\" title=\"";
+        echo LANGUI_VIL1_T9;
+        echo "\"></a>";
+        echo "<s";
+        echo "pan class=\"d2\">«</span></td>\r\t\t\t\t<td><div class=\"mov\">";
+        echo "<s";
+        echo "pan class=\"d2\">";
+        echo $war['number'];
+        echo "&nbsp;";
+        echo LANGUI_VIL1_T7;
+        echo "</span></div><div class=\"dur_r\">";
+        echo text_in_lang;
+        echo "&nbsp;";
+        echo "<s";
+        echo "pan id=\"timer1\">";
+        echo WebHelper::secondstostring( $war['min_time'] );
+        echo "</span>&nbsp;";
+        echo time_hour_lang;
+        echo "</div></td>\r\t\t\t</tr>\r\t\t\t";
+    }
+    echo "\t\t\t\r\t\t\t";
+    $war = $this->queueModel->tasksInQueue['war_troops_summary']['to_my_oasis']['attacks'];
+    if ( 0 < $war['number'] )
+    {
+        echo "\t\t\t<tr>\r\t\t\t\t<td class=\"typ\"><a href=\"build.php?id=39\"><img src=\"assets/x.gif\" class=\"att3\" alt=\"";
+        echo LANGUI_VIL1_T10;
+        echo "\" title=\"";
+        echo LANGUI_VIL1_T10;
+        echo "\"></a>";
+        echo "<s";
+        echo "pan class=\"a3\">»</span></td>\r\t\t\t\t<td><div class=\"mov\">";
+        echo "<s";
+        echo "pan class=\"a3\">";
+        echo $war['number'];
+        echo "&nbsp;";
+        echo LANGUI_VIL1_T5;
+        echo "</span></div><div class=\"dur_r\">";
+        echo text_in_lang;
+        echo "&nbsp;";
+        echo "<s";
+        echo "pan id=\"timer1\">";
+        echo WebHelper::secondstostring( $war['min_time'] );
+        echo "</span>&nbsp;";
+        echo time_hour_lang;
+        echo "</div></td>\r\t\t\t</tr>\r\t\t\t";
+    }
+    echo "\t\t\t";
+    $war = $this->queueModel->tasksInQueue['war_troops_summary']['to_my_oasis']['reinforce'];
+    if ( 0 < $war['number'] )
+    {
+        echo "\t\t\t<tr>\r\t\t\t\t<td class=\"typ\"><a href=\"build.php?id=39\"><img src=\"assets/x.gif\" class=\"def3\" alt=\"";
+        echo LANGUI_VIL1_T11;
+        echo "\" title=\"";
+        echo LANGUI_VIL1_T11;
+        echo "\"></a>";
+        echo "<s";
+        echo "pan class=\"d3\">»</span></td>\r\t\t\t\t<td><div class=\"mov\">";
+        echo "<s";
+        echo "pan class=\"d3\">";
+        echo $war['number'];
+        echo "&nbsp;";
+        echo LANGUI_VIL1_T7;
+        echo "</span></div><div class=\"dur_r\">";
+        echo text_in_lang;
+        echo "&nbsp;";
+        echo "<s";
+        echo "pan id=\"timer1\">";
+        echo WebHelper::secondstostring( $war['min_time'] );
+        echo "</span>&nbsp;";
+        echo time_hour_lang;
+        echo "</div></td>\r\t\t\t</tr>\r\t\t\t";
+    }
+    echo "\t\t</tbody>\r\t</table>\r\t";
+}
+echo "\r\t<table id=\"production\" cellpadding=\"1\" cellspacing=\"1\">\r\t\t<thead>\r\t\t\t<tr><th colspan=\"4\">";
+echo LANGUI_VIL1_T12;
+echo ":</th></tr>\r\t\t</thead>\r\t\t<tbody>\t\r\t\t\t<tr>\r\t\t\t\t<td class=\"ico\"><img class=\"r1\" src=\"assets/x.gif\" alt=\"";
+echo item_title_1;
+echo "\" title=\"";
+echo item_title_1;
+echo "\"></td>\r\t\t\t\t<td class=\"res\">";
+echo item_title_1;
+echo ":</td>\r\t\t\t\t<td class=\"num\">";
+echo $this->resources[1]['calc_prod_rate'];
+echo "</td>\r\t\t\t\t<td class=\"per\">";
+echo LANGUI_VIL1_T13;
+echo "</td>\r\t\t\t</tr>\r\t\t\t<tr>\r\t\t\t\t<td class=\"ico\"><img class=\"r2\" src=\"assets/x.gif\" alt=\"";
+echo item_title_2;
+echo "\" title=\"";
+echo item_title_2;
+echo "\"></td>\r\t\t\t\t<td class=\"res\">";
+echo item_title_2;
+echo ":</td>\r\t\t\t\t<td class=\"num\">";
+echo $this->resources[2]['calc_prod_rate'];
+echo "</td>\r\t\t\t\t<td class=\"per\">";
+echo LANGUI_VIL1_T13;
+echo "</td>\r\t\t\t</tr>\t\t\t\t\r\t\t\t<tr>\r\t\t\t\t<td class=\"ico\"><img class=\"r3\" src=\"assets/x.gif\" alt=\"";
+echo item_title_3;
+echo "\" title=\"";
+echo item_title_3;
+echo "\"></td>\r\t\t\t\t<td class=\"res\">";
+echo item_title_3;
+echo ":</td>\r\t\t\t\t<td class=\"num\">";
+echo $this->resources[3]['calc_prod_rate'];
+echo "</td>\r\t\t\t\t<td class=\"per\">";
+echo LANGUI_VIL1_T13;
+echo "</td>\r\t\t\t</tr>\t\r\t\t\t<tr>\r\t\t\t\t<td class=\"ico\"><img class=\"r4\" src=\"assets/x.gif\" alt=\"";
+echo item_title_4;
+echo "\" title=\"";
+echo item_title_4;
+echo "\"></td>\r\t\t\t\t<td class=\"res\">";
+echo item_title_4;
+echo ":</td>\r\t\t\t\t<td class=\"num\">";
+echo $this->resources[4]['calc_prod_rate'];
+echo "</td>\r\t\t\t\t<td class=\"per\">";
+echo LANGUI_VIL1_T13;
+echo "</td>\r\t\t\t</tr>\r\t\t</tbody>\t\r\t</table>\r\r\t<table id=\"troops\" cellpadding=\"1\" cellspacing=\"1\">\r\t\t<thead>\r\t\t\t<tr><th colspan=\"3\">";
+echo LANGUI_VIL1_T14;
+echo ":</th></tr>\r\t\t</thead>\r\t\t<tbody>\r";
+if ( $this->heroCount == 0 && sizeof( $this->troops ) == 0 )
+{
+    echo "\t\t\t<tr><td>";
+    echo LANGUI_VIL1_T15;
+    echo "</td></tr>\r";
+}
+else
+{
+    if ( 0 < $this->heroCount )
+    {
+        echo "\t\t\t<tr>\r\t\t\t\t<td class=\"ico\"><a href=\"build.php?id=39\"><img class=\"unit uhero\" src=\"assets/x.gif\" alt=\"";
+        echo troop_hero;
+        echo "\" title=\"";
+        echo troop_hero;
+        echo "\"></a></td>\r\t\t\t\t<td class=\"num\">";
+        echo $this->heroCount;
+        echo "</td>\r\t\t\t\t<td class=\"un\">";
+        echo troop_hero;
+        echo "</td>\r\t\t\t</tr>\r";
+    }
+    foreach ( $this->troops as $k => $v )
+    {
+        $troopName = htmlspecialchars( constant( "troop_".$k ) );
+        echo "\t\t\t<tr>\r\t\t\t\t<td class=\"ico\"><a href=\"build.php?id=39\"><img class=\"unit u";
+        echo $k;
+        echo "\" src=\"assets/x.gif\" alt=\"";
+        echo $troopName;
+        echo "\" title=\"";
+        echo $troopName;
+        echo "\"></a></td>\r\t\t\t\t<td class=\"num\">";
+        echo $v;
+        echo "</td>\r\t\t\t\t<td class=\"un\">";
+        echo $troopName;
+        echo "</td>\r\t\t\t</tr>\r";
+    }
+}
+echo "\t\t</tbody>\r\t</table>\r</div>\r";
+if ( isset( $this->queueModel->tasksInQueue[QS_BUILD_CREATEUPGRADE] ) )
+{
+    echo "<table cellpadding=\"1\" cellspacing=\"1\" id=\"building_contract\">\r\t<thead>\r\t\t<tr>\r\t\t\t<th colspan=\"3\">\r\t\t\t\t";
+    echo LANGUI_VIL1_T16;
+    echo ": \r\t\t\t\t";
+    if ( !$this->data['is_special_village'] && $this->gameMetadata['plusTable'][5]['cost'] <= $this->data['gold_num'] )
+    {
+        echo "\t\t\t\t<a href=\"village1.php?bfs&k=";
+        echo $this->data['update_key'];
+        echo "\" title=\"";
+        echo LANGUI_VIL1_T18;
+        echo "\">\r\t\t\t\t<img class=\"clock\" alt=\"";
+        echo LANGUI_VIL1_T18;
+        echo "\" src=\"assets/x.gif\"></a>\r\t\t\t\t";
+    }
+    echo "\t\t\t</th>\r\t\t</tr>\r\t</thead>\r\t<tbody>\r\t\t";
+    $tmpBuilding = array( );
+    foreach ( $this->queueModel->tasksInQueue[QS_BUILD_CREATEUPGRADE] as $qtask )
+    {
+        $index = $qtask['proc_params'];
+        $itemId = $qtask['building_id'];
+        if ( !isset( $tmpBuilding[$index] ) )
+        {
+            $tmpBuilding[$index] = 0;
+        }
+        ++$tmpBuilding[$index];
+        $level = $this->buildings[$index]['level'] + $tmpBuilding[$index];
+        echo "\t\t<tr>\r\t\t\t<td class=\"ico\"><a href=\"?id=";
+        echo $qtask['id'];
+        echo "&d&k=";
+        echo $this->data['update_key'];
+        echo "\"><img src=\"assets/x.gif\" class=\"del\" title=\"";
+        echo LANGUI_VIL1_T17;
+        echo "\" alt=\"";
+        echo LANGUI_VIL1_T17;
+        echo "\"></a></td>\r\t\t\t<td>";
+        echo constant( "item_".$itemId );
+        echo " (";
+        echo level_lang;
+        echo " ";
+        echo $level;
+        echo ")</td>\r\t\t\t<td>";
+        echo time_remain_lang;
+        echo " ";
+        echo "<s";
+        echo "pan id=\"timer1\">";
+        echo WebHelper::secondstostring( $qtask['remainingSeconds'] );
+        echo "</span> ";
+        echo time_hour_lang;
+        echo "</td>\r\t\t</tr>\r\t\t";
+    }
+    unset( $tmpBuilding );
+    echo "\t</tbody>\r</table>\r";
+}
 ?>
-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
-SOq=

@@ -1,51 +1,56 @@
-<?php //003ab
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');@dl($__ln);if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}@dl($__ln);}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the site administrator.');exit(199);
+<?php
+/*********************/
+/*                   */
+/*  Version : 5.1.0  */
+/*  Author  : RM     */
+/*  Comment : 071223 */
+/*                   */
+/*********************/
+
+define( "LANGUI_PLUS_T1", "شراء" );
+define( "LANGUI_PLUS_T2", "الذهب" );
+define( "LANGUI_PLUS_T3", "التكاليف" );
+define( "LANGUI_PLUS_T4", "المميزات" );
+define( "LANGUI_PLUS_T5", "رصيد" );
+define( "LANGUI_PLUS_T6", "ذهب" );
+define( "LANGUI_PLUS_T7", "» الى الامام" );
+define( "LANGUI_PLUS_T8", "مميزات<b><font color=\"#71D000\">  ب</font><font color=\"#FF6F0F\">ل</font>ا<font color=\"#71D000\">س </font></b>" );
+define( "LANGUI_PLUS_T9", "انتظار الدور للبناء" );
+define( "LANGUI_PLUS_T10", "تفعيل خاصية الانتظار تمكنك من إعطاء العاملين الأمر لبناء مبنى آخر. بعد الأنتهاء من  عملهم الأول ." );
+define( "LANGUI_PLUS_T11", "خريطة أكبر" );
+define( "LANGUI_PLUS_T12", "تستطيع تكبير الخريطة لرؤيه أفضل . فبدلا من  7*7 من  مركز القرية ، ستكون 13*13 من  مركز القرية.وكل التحالفات التي تملك معكم مواثيق تحالف او عدم اعتداء ستظهر ملونه على الخريطه." );
+define( "LANGUI_PLUS_T13", "صلات مباشرة مختارة" );
+define( "LANGUI_PLUS_T14", "بفضل هذه الوصلات , يمكنك سرعة الوصول الى أي صفحة تريدها بنقرة واحده فقط. كل ما عليك هو إضافة رابط لأي محطة تريدها. يمكنك أضافة صفحة تحالفك, او الثكنة" );
+define( "LANGUI_PLUS_T15", "دفترالملاحظات" );
+define( "LANGUI_PLUS_T16", "ورقة وقلم الرصاص ليست دائما معك. تستطيع تدوين كل شئ تريد عمله في دفتر الملاحظات مما يسهل عليك تذكر الاشياء التي تريد عملها." );
+define( "LANGUI_PLUS_T17", "مميزات الذهب" );
+define( "LANGUI_PLUS_T18", "سرعه انتاج الخشب" );
+define( "LANGUI_PLUS_T19", "مع هذه الخاصية تستطيع زيادة انتاج جميع حقول الخشب الى 25 %. المكافاة لا تضاف على حقول المواد الخام بشكل فردي، أنما تضاف على مجموع كامل الأنتاج." );
+define( "LANGUI_PLUS_T20", "سرعه انتاج الطين" );
+define( "LANGUI_PLUS_T21", "مع هذه الخاصية تستطيع زيادة انتاج جميع حقول الطين الى 25 %. المكافاة لا تضاف على حقول المواد الخام بشكل فردي، أنما تضاف على مجموع كامل الأنتاج." );
+define( "LANGUI_PLUS_T22", "سرعه انتاج الحديد" );
+define( "LANGUI_PLUS_T23", "مع هذه الخاصية تستطيع زيادة انتاج جميع حقول الحديدالى 25 %. المكافاة لا تضاف على حقول المواد الخام بشكل فردي، أنما تضاف على مجموع كامل الأنتاج." );
+define( "LANGUI_PLUS_T24", "سرعه انتاج القمح" );
+define( "LANGUI_PLUS_T25", "مع هذه الخاصية تستطيع زيادة انتاج جميع حقول القمح الى 25 %. المكافاة لا تضاف على حقول المواد الخام بشكل فردي، أنما تضاف على مجموع كامل الأنتاج." );
+define( "LANGUI_PLUS_T26", "انهاء بناء المباني والبحث حالا" );
+define( "LANGUI_PLUS_T27", "في القريةِ الحاليةِ كل أوامر البناء و البحث في الأكاديميةِ و الحداد و مستودع الاسلحة تنتهي فورا. أما السكن أو القصر بالاضافة الى القرية التي تبنى فيها معجزة العالم فهي مستثناة من خاصية التفعيل السريع." );
+define( "LANGUI_PLUS_T28", "تاجر مبادلة" );
+define( "LANGUI_PLUS_T29", "تستطيع مبادلة أي مواد خام مع مواد خام أخرى في اي قرية تختارها." );
+define( "LANGUI_PLUS_T30", "أنت حاليا تملك" );
+define( "LANGUI_PLUS_T31", "من الذهب" );
+define( "LANGUI_PLUS_T32", "أنت حاليا لا تملك الذهب" );
+define( "LANGUI_PLUS_T33", "وظائف بلاس" );
+define( "LANGUI_PLUS_T34", "الوصف" );
+define( "LANGUI_PLUS_T35", "فعل" );
+define( "LANGUI_PLUS_T36", "حساب ب</font><font color=\"#FF6F0F\">ل</font>ا<font color=\"#71D000\">س</font></b>" );
+define( "LANGUI_PLUS_T37", "فورا" );
+define( "LANGUI_PLUS_T38", "أيام" );
+define( "LANGUI_PLUS_T39", "إنتاج الأخشاب" );
+define( "LANGUI_PLUS_T40", "إنتاج الطين" );
+define( "LANGUI_PLUS_T41", "إنتاج الحديد" );
+define( "LANGUI_PLUS_T42", "إنتاج القمح" );
+define( "LANGUI_PLUS_T43", "إستكمال أوامر البناء والبحث في هذه القرية فورا" );
+define( "LANGUI_PLUS_T44", "التجارة مع تاجر المبادلة" );
+define( "LANGUI_PLUS_T45", "إنهاء تدريب الجنود فورا" );
+define( "LANGUI_PLUS_T46", "في القرية الحالية كل أوامر تدريب الجنود في الثكنه والإسطبل والمصانع الحربية والسكن والقصر تنتهي فورا , أما  القرية التي تبنى فيها معجزة العالم فهي مستثناة من هذه الخاصية" );
 ?>
-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

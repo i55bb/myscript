@@ -1,41 +1,63 @@
-<?php //003ab
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');@dl($__ln);if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}@dl($__ln);}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the site administrator.');exit(199);
+<?php
+#################################################################################
+##                                                                             ##
+##                                                                             ##
+## --------------------------------------------------------------------------- ##
+##                                                                             ##
+##  Project:       TATAR WARS                                                  ##
+##  Version:       2012.3.15                                                   ##
+##  License:       Creative Commons BY-NC-SA 3.0                               ##
+##  Copyright:     Bazaid (c) 2012 - All rights reserved                       ##
+##  Source code:   https://github.com/Bazaid/tatar-wars                        ##
+##                 http://sourceforge.net/projects/tatarwars/                  ##
+#################################################################################
+
+require( ".".DIRECTORY_SEPARATOR."app".DIRECTORY_SEPARATOR."boot.php" );
+class GPage extends PopupPage
+{
+
+    public $requestPaymentProvider = FALSE;
+    public $providerType = "";
+    public $package = NULL;
+    public $payment = NULL;
+    public $secureId = NULL;
+    public $Domain = NULL;
+
+    public function GPage( )
+    {
+        parent::popuppage( );
+        $this->viewFile = "payment.phtml";
+    }
+
+    public function load( )
+    {
+        parent::load( );
+        $this->Domain = webhelper::getbaseurl( );
+        if ( isset( $_GET['p'], $_GET['pg'] ) )
+        {
+            $this->providerType = trim( $_GET['p'] );
+            $this->packageIndex = trim( $_GET['pg'] );
+            if ( isset( $this->appConfig['plus']['payments'][$this->providerType], $this->appConfig['plus']['packages'][$this->packageIndex] ) )
+            {
+                $this->title = sprintf( payment_loading." %s ...", $this->appConfig['plus']['payments'][$this->providerType]['name'] );
+                $this->package = $this->appConfig['plus']['packages'][$this->packageIndex];
+                $this->payment = $this->appConfig['plus']['payments'][$this->providerType];
+                $this->requestPaymentProvider = isset( $_GET['c'] );
+                if ( $this->requestPaymentProvider )
+                {
+                    $this->layoutViewFile = NULL;
+                    $this->secureId = base64_encode( $this->player->playerId );
+                }
+            }
+            else
+            {
+                echo "<script type=\"text/javascript\">self.close();</script>";
+            }
+        }
+    }
+
+}
+
+$p = new GPage( );
+$p->run( );
 ?>
-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
-PTpN6Kg25StwKZ9GXCwa5gw0uW==

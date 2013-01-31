@@ -1,172 +1,173 @@
-<?php //003ab
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');@dl($__ln);if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}@dl($__ln);}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the site administrator.');exit(199);
+<?php
+/*********************/
+/*                   */
+/*  Version : 5.1.0  */
+/*  Author  : RM     */
+/*  Comment : 071223 */
+/*                   */
+/*********************/
+
+echo "﻿";
+define( "LANGUI_GUIDE_T1", "أهلاً بك في حرب التتار" );
+define( "LANGUI_GUIDE_T2", "كما ترى لقد أصبحت أنت حكيم هذه القرية، سأكون مستشارك لعدة أيام في بداية اللعبة ولن أترك الجهة اليسرى من الشاشة أبداً" );
+define( "LANGUI_GUIDE_T3", "إلى المهمة الأولى" );
+define( "LANGUI_GUIDE_T4", "إكتشف اللعبة بنفسك" );
+define( "LANGUI_GUIDE_T5", "عدم لعب المهمات" );
+define( "LANGUI_GUIDE_T6", "المهمة 1: الحطاب" );
+define( "LANGUI_GUIDE_T7", "بالقرب من قريتك هنالك أربع غابات خضراء، قم ببناء الحطاب في إحدى هذه الغابات. يعتبر الخشب من أحد الموارد المهمة لتأسيس هذه القرية الجديدة" );
+define( "LANGUI_GUIDE_T8", "قم ببناء الحطاب" );
+define( "LANGUI_GUIDE_T9", "نعم، بهذه الطريقة أنت تنتج خشباً أكثر" );
+define( "LANGUI_GUIDE_T10", "المتابعة للمهمة التالية" );
+define( "LANGUI_GUIDE_T11", "المهمة 2: القمح" );
+define( "LANGUI_GUIDE_T12", "عمالك يحسون بالجوع الآن لأنهم عملوا طوال اليوم، قم بتطوير حقل قمح لتحسين تغذية عمالك. قم بالعودة إلى مدير المهمات فور الإنتهاء من البناء" );
+define( "LANGUI_GUIDE_T13", "الأمر" );
+define( "LANGUI_GUIDE_T14", "قم بتطوير حقل قمح واحد" );
+define( "LANGUI_GUIDE_T15", "ممتاز جداً، الآن لديك في القرية مايكفي من الغذاء لسكانك" );
+define( "LANGUI_GUIDE_T16", "<b><font color=\"#71D000\">ب</font><font color=\"#FF6F0F\">لا</font><font color=\"#FF6F0F\">س</font></b>" );
+define( "LANGUI_GUIDE_T17", "المهمة 3: اسم قريتك" );
+define( "LANGUI_GUIDE_T18", "بما أنك شخص مبدع فأنك تستطيع أن تجعل لقريتك إسم رائع<br><br>أضغط على \"بطاقة العضوية\" في الجهة اليمنى ثم إضغط على \"تعديل معلوماتك الشخصية\" لتعديل إسم قريتك" );
+define( "LANGUI_GUIDE_T19", "قم بتغير اسم قريتك إلى إسم آخر جميل" );
+define( "LANGUI_GUIDE_T20", "ممتاز، لقد قمت بإختيار إسم رائع لقريتك، كنت على وشك أن أختار لك نفس الإسم أيضاً" );
+define( "LANGUI_GUIDE_T21", "جائزتك" );
+define( "LANGUI_GUIDE_T22", "المهمة 4: اللاعبون" );
+define( "LANGUI_GUIDE_T23", "في حرب التتار أنت تلعب مع ملايين اللاعبين الآخرين، إضغط على أيقونة \"إحصائيات\" في القائمة العليا ثم قم بإدخال رقم ترتيبك هنا" );
+define( "LANGUI_GUIDE_T24", "قم بإيجاد ترتيبك في الإحصائيات ثم ادخله هنا" );
+define( "LANGUI_GUIDE_T25", "لا،لا. يجب عليك إدخال<i> ترتيبك </i>هنا. الترتيب عبارة عن رقم فقط" );
+define( "LANGUI_GUIDE_T26", "حسناً، اذا لعبت بشكل جيد قد تصل لتلك المرتبة في يوم من الأيام. سأقوم بإعطائك بعض الموارد" );
+define( "LANGUI_GUIDE_T27", "حسناً، انت أفضل من ذلك بكثير. سأقوم بإعطائك بعض الموارد" );
+define( "LANGUI_GUIDE_T28", "ممتاز! هذا هو ترتيبك الصحيح" );
+define( "LANGUI_GUIDE_T29", "المهمة 5: طلبين للبناء" );
+define( "LANGUI_GUIDE_T30", "قم ببناء منجم حديد وحفرة طين، حيث أن الحديد والطين مطلوبين بكثرة للقرية<br><br>كل الشكر لحساب <b><font color=\"#71D000\">ب</font><font color=\"#FF6F0F\">ل</font><font color=\"#71D000\">ا</font><font color=\"#FF6F0F\">س</font></b> الذي قمت بإهداءه لك قبل قليل حيث يمكنك أن تقوم بإعطاء الأوامر لتطوير الإثنين سوياً" );
+define( "LANGUI_GUIDE_T31", "قم بتطوير منجم حديد واحد" );
+define( "LANGUI_GUIDE_T32", "قم بتطوير حفرة طين واحدة" );
+define( "LANGUI_GUIDE_T33", "كما لاحظت، أوامر البناء تأخذ وقتاً طويلا للتنفيذ. عالم حرب التتار يعمل حتى وانت غير متواجد على الانترنت، حتى بعد عدة شهور من اللعب ستجد هنالك أشياء جديدة لإكتشافها<br><br>أفضل مايمكن عمله هو الدخول على قريتك من وقت لآخر وتنفيذ أوامر بناء ومهمات جديدة لقريتك" );
+define( "LANGUI_GUIDE_T34", "المهمة 6: الرسائل" );
+define( "LANGUI_GUIDE_T35", "يمكنك التواصل مع اللاعبين الآخرين عن طريق الرسائل، لقد قمت بإرسال رسالة تجريبية لك. قم بقرائتها ثم عد إلى هنا<br><br>ملاحظة: لاتنسى، أيقونة الرسائل تحتوى على قسمين، القسم الأيمن للتقارير والقسم الأيسر للرسائل" );
+define( "LANGUI_GUIDE_T36", "اقرأ الرسالة الجديدة" );
+define( "LANGUI_GUIDE_T37", "لقد إستلمت الرسالة؟ ممتاز جداً" );
+define( "LANGUI_GUIDE_T38", "سأعطيك بعض الذهب كهدية، بواسطة الذهب يمكنك أن تقوم بعدة أشياء، مثلاً تمديد فترة حساب <b><font color=\"#71D000\">ب</font><font color=\"#FF6F0F\">ل</font><font color=\"#71D000\">ا</font><font color=\"#FF6F0F\">س</font></b> أو زيادة إنتاج مواردك. لعمل ذلك إضغط على" );
+define( "LANGUI_GUIDE_T39", "حرب التتار" );
+define( "LANGUI_GUIDE_T40", "<font color=\"#71D000\">ب</font><font color=\"#FF6F0F\">ل</font><font color=\"#71D000\">ا</font><font color=\"#FF6F0F\">س</font>" );
+define( "LANGUI_GUIDE_T41", "..في القائمة على يمين الشاشة" );
+define( "LANGUI_GUIDE_T42", "الذهب" );
+define( "LANGUI_GUIDE_T43", "المهمة 7: الجيران" );
+define( "LANGUI_GUIDE_T44", "حولك يوجد العديد من القرى، واحدة من تلك القرى اسمها" );
+define( "LANGUI_GUIDE_T45", "إضغط على أيقونة \"الخريطة\" في القائمة العليا وإبحث عن تلك القرية. يمكنك رؤية أسماء القرى في الخريطة بتمرير الفأرة فوق القرى" );
+define( "LANGUI_GUIDE_T46", "قم بإيجاد إحداثيات القرية" );
+define( "LANGUI_GUIDE_T47", "ثم أدخلها هنا" );
+define( "LANGUI_GUIDE_T48", "تنفيذ المهمة" );
+define( "LANGUI_GUIDE_T49", "خطأ، هذه ليست الإحداثيات الصحيحة للقرية" );
+define( "LANGUI_GUIDE_T50", "حاول مرة أخرى" );
+define( "LANGUI_GUIDE_T51", "صحيح، هذه هي الإحداثيات الصحيحة للقرية" );
+define( "LANGUI_GUIDE_T52", "الآن سأقوم بتزويدك بموارد مجانية تساوي هذه القرية" );
+define( "LANGUI_GUIDE_T53", "المهمة 8: الجيش" );
+define( "LANGUI_GUIDE_T54", "الآن لدي مهمة خاصة لك. أنا جائع! أعطني 200 من القمح<br><br>في المقابل سأحاول أن أرتب لك تعزيز بجيش ضخم لحماية قريتك" );
+define( "LANGUI_GUIDE_T55", "أرسل 200 من القمح الى مدير المهمات" );
+define( "LANGUI_GUIDE_T56", "إرسال القمح" );
+define( "LANGUI_GUIDE_T57", "الموارد غير كافية" );
+define( "LANGUI_GUIDE_T58", "امممم، لذيذ! شكرا لك على وجبة القمح اللذيذة. الآن سأحقق وعدي لك بالجيش الضخم لحماية قريتك. ربما سيستغرق وصول الجيش عدة ساعات" );
+define( "LANGUI_GUIDE_T59", "جيش ضخم" );
+define( "LANGUI_GUIDE_T60", "المهمة 9: واحد من كل نوع" );
+define( "LANGUI_GUIDE_T61", "لابد من وجود شئ ما للقيام به في حرب التتار! أثناء إنتظارك لوصول الجيش قم بتطوير حطاب، حفرة طين، منجم حديد وحقل قمح لمستوى 1" );
+define( "LANGUI_GUIDE_T62", "قم بتطوير حقل إضافي من كل مورد للمستوى 1" );
+define( "LANGUI_GUIDE_T63", "ممتاز جداً. إنتاجك من الموارد بدأ بالإزدهار<br><br>قريباً جداً سنتمكن من البدء في بناء المباني في قريتك" );
+define( "LANGUI_GUIDE_T64", "المهمة 10: ستتوفر قريباً" );
+define( "LANGUI_GUIDE_T65", "الآن يوجد لديك وقت لبعض الراحة لحين وصول الجيش الضخم الذي أرسلته لك.<br><br>من الآن الى وقت وصول الجيش يمكنك إستكشاف الخريطة أو تطوير عدة حقول للموارد" );
+define( "LANGUI_GUIDE_T66", "إنتظر وصول جيش مدير المهمات" );
+define( "LANGUI_GUIDE_T67", "إحم،،، غريب جداً! هذا هو أرخص جيش متوفر. ربما كان يتوجب علي أن انتبه أكثر إلى ذلك <br><br>كيف يمكنني إصلاح ذلك الخطأ" );
+define( "LANGUI_GUIDE_T68", "يوم حساب<b> <font color=\"#71D000\">ب</font><font color=\"#FF6F0F\">لا</font><font color=\"#FF6F0F\">س</font></b>" );
+define( "LANGUI_GUIDE_T69", "المهمة 11: التقارير" );
+define( "LANGUI_GUIDE_T70", "في كل مرة يحدث فيها شئ مهم في قريتك يتم إرسال تقرير لك. يمكنك مشاهدة التقارير بالضغط على الجزء <i>الأيمن</i> من الأيقونة الخاصة بالرسائل والتقارير (الأيقونة الخامسة من اليمين إلى اليسار). أقرأ التقرير الجديد ثم إرجع إلى هنا" );
+define( "LANGUI_GUIDE_T71", "أقرأ أحدث التقارير" );
+define( "LANGUI_GUIDE_T72", "نعم، تماماً. لقد فتحت التقرير الصحيح" );
+define( "LANGUI_GUIDE_T73", "المهمة 12: الكل للمستوى 1" );
+define( "LANGUI_GUIDE_T74", "الآن يجب عليك تطوير إنتاج مواردك قليلاً. قم بتطوير كل حقول الموارد للمستوى 1" );
+define( "LANGUI_GUIDE_T75", "قم بتطوير كل حقول الموارد للمستوى 1" );
+define( "LANGUI_GUIDE_T76", "ممتاز جداً، إنتاجك من الموارد أصبح مزدهراً.<br><br>قريباً جداً سنتمكن من بدء بناء المباني في قريتك" );
+define( "LANGUI_GUIDE_T77", "المهمة 13: حمامة السلام" );
+define( "LANGUI_GUIDE_T78", "في الأيام الأولى من تسجيلك في اللعبة أنت تحت الحماية من الهجوم عليك من قبل اللاعبين الآخرين. لمعرفة مدة حمايتك من الهجمات قم بإضافة الكود <b> [0#] </b> في الوصف الخاص بك. أضغط على بطاقة العضوية ثم إضغط على تعديل معلوماتك الشخصية" );
+define( "LANGUI_GUIDE_T79", "قم بكتابة الكود" );
+define( "LANGUI_GUIDE_T80", "في الوصف الخاص بك في بطاقة العضوية" );
+define( "LANGUI_GUIDE_T81", "أحسنت! الآن الكل يستطيع أن يرى أنك محارب عظيم" );
+define( "LANGUI_GUIDE_T82", "المهمة 14: المخبأ" );
+define( "LANGUI_GUIDE_T83", "لقد حان الوقت لبناء المخبأ حيث أن عالم حرب التتار عالم خطير.<br><br>الكثير من اللاعبين يعيشوا على النهب من الآخرين، قم ببناء المخبأ لتقم بإخفاء على الأقل جزء من مواردك من نهب الأعداء" );
+define( "LANGUI_GUIDE_T84", "قم ببناء مخبأ" );
+define( "LANGUI_GUIDE_T85", "عمل رائع، الآن سيكون من الصعب على اللاعبين اللئيمين نهب قريتك<br><br>إذا تعرضت للنهب سيقوم سكان القرية بإخفاء الموارد في المخبأ بنفسهم" );
+define( "LANGUI_GUIDE_T86", "المهمة 15: إلى المستوى الثاني" );
+define( "LANGUI_GUIDE_T87", "دائماً يوجد شئ لابد من عمله في حرب التتار! قم بتطوير حطاب ، وحفرة طين ومنجم حديد وحقل قمح واحد من كل نوع إلى المستوى 2" );
+define( "LANGUI_GUIDE_T88", "قم بتطوير حقل واحد من كل مورد إلى المستوى 2" );
+define( "LANGUI_GUIDE_T89", "رائع، بدأت قريتك بالنمو والإزدهار" );
+define( "LANGUI_GUIDE_T90", "المهمة 16: الدليل السريع" );
+define( "LANGUI_GUIDE_T91", "في الدليل السريع يمكنك قراءة معلومات مختصرة حول أنواع المباني المختلفة وأيضاً أنواع القوات المتوفرة<br><br>إضفط على \"الدليل السريع\" في القائمة علي يمين الصفحة وحاول أن تعرف كم وحدة من الخشب يكلف بناء الثكنة" );
+define( "LANGUI_GUIDE_T92", "أدخل في المربع التالي كم وحدة من الخشب تكفي لبناء الثكنة" );
+define( "LANGUI_GUIDE_T93", "لا، الثكة تكلف أقل من ذلك" );
+define( "LANGUI_GUIDE_T94", "لا، الثكنة أغلى من ذلك" );
+define( "LANGUI_GUIDE_T95", "ممتاز! بناء الثكنة يكلف" );
+define( "LANGUI_GUIDE_T96", "وحدة من الخشب" );
+define( "LANGUI_GUIDE_T97", "المهمة 17: المبنى الرئيسي" );
+define( "LANGUI_GUIDE_T98", "بعض المباني المهمة في قريتك تتطلب أن يكون المبنى الرئيسي في المستوى 3 حتى تتمكن من بناءها مثل الثكنة والسوق" );
+define( "LANGUI_GUIDE_T99", "قم بتطوير المبنى الرئيسي للمستوى 3" );
+define( "LANGUI_GUIDE_T100", "ممتاز. تم الإنتهاء من تطوير المبنى الرئيسي للمستوى 3<br><br>بهذا التطوير لايمكنك بناء أنواع جديدة من المباني وفقط بل ويمكنك أيضاً البناء في قريتك بشكل أسرع" );
+define( "LANGUI_GUIDE_T101", "المهمة 18: مرتبتك" );
+define( "LANGUI_GUIDE_T102", "قم بإيجاد مرتبتك في الإحصائيات مرة أخرى وإستمتع بتقدمك" );
+define( "LANGUI_GUIDE_T103", "لا،لا. يجب عليك إدخال ترتيبك هنا. الترتيب عبارة عن رقم فقط" );
+define( "LANGUI_GUIDE_T104", "أذا قمت بالتدريب بشكل جيد ستكون في يوم من الأيام بذلك المستوى. حاول مرة أخرى" );
+define( "LANGUI_GUIDE_T105", "أنت أفضل من ذلك بكثر. حاول مرة أخرى" );
+define( "LANGUI_GUIDE_T106", "ممتاز! هذا هو ترتيبك الحالي" );
+define( "LANGUI_GUIDE_T107", "المهمة 19: أسلحة أم نقود" );
+define( "LANGUI_GUIDE_T108", "الآن يجب أن تتخذ قراراً: إما أن تتاجر بسلام أو تصبح محارباً مخيفاً<br><br>لبناء السوق تحتاج إلى مخزن الحبوب، ولبناء الثكنة أنت بحاجة إلى نقطة التجمع" );
+define( "LANGUI_GUIDE_T109", "التجارة" );
+define( "LANGUI_GUIDE_T110", "الجيش" );
+define( "LANGUI_GUIDE_T111", "قرار شجاع، لتتمكن من إرسال الجنود أنت بحاجة إلى نقطة تجمع.<br><br>لايمكن بناء نقطة التجمع إلا في مكان واحد فقط" );
+define( "LANGUI_GUIDE_T112", "مكان بناء" );
+define( "LANGUI_GUIDE_T113", "نقطة التجمع موجود في الجهة اليمنى من المبنى الرئيسي وقليلا إلى الأسفل منه وهو مقوس الشكل" );
+define( "LANGUI_GUIDE_T114", "قم ببناء نقطة التجمع" );
+define( "LANGUI_GUIDE_T115", "التجارة هي خيارك، أنت في إنتظار أوقات ذهبية بالتأكيد" );
+define( "LANGUI_GUIDE_T116", "قم ببناء مخزن الحبوب" );
+define( "LANGUI_GUIDE_T117", "أحسنت! ببناءك لنقطة التجمع أصبحت لديك الإمكانية في القريب العاجل لشن الحروب" );
+define( "LANGUI_GUIDE_T118", "أحسنت! ببناءك لمخزن الحبوب أصبحت لديك الإمكانية لتخزين قمح أكثر" );
+define( "LANGUI_GUIDE_T119", "المهمة 20: المخزن" );
+define( "LANGUI_GUIDE_T120", "المهمة 20: الثكنة" );
+define( "LANGUI_GUIDE_T121", "بالإضافة إلى تخزين القمح أنت بحاجة إلى تخزين باقي الموارد حتى لايتم رمي الفائض منها. قم ببناء المخزن الآن" );
+define( "LANGUI_GUIDE_T122", "قم ببناء المخزن" );
+define( "LANGUI_GUIDE_T123", "ممتاز! لقد تم تشييد المخزن....<br><br>الآن لقد إكتملت كل المتطلبات لبناء السوق" );
+define( "LANGUI_GUIDE_T124", "أنت تملك الآن مبنى رئيسي في المستوى 3 و نقطة تجمع. وهذا يعني أن متطلبات بناء الثكنة قد تم إستيفاءها<br><br>في الثكنة يمكنك بناء قوات للمحاربة" );
+define( "LANGUI_GUIDE_T125", "قم ببناء الثكنة" );
+define( "LANGUI_GUIDE_T126", "أحسنت! لقد تم تجميع أفضل المدربين من مملكتك ليقوموا بتدريب رجالك بأفضل شكل" );
+define( "LANGUI_GUIDE_T127", "المهمة 21: السوق" );
+define( "LANGUI_GUIDE_T128", "المهمة 21: !التدريب" );
+define( "LANGUI_GUIDE_T129", "قم ببناء السوق لتتمكن من المتاجرة مع اللاعبين الآخرين" );
+define( "LANGUI_GUIDE_T130", "فضلاً قم ببناء سوق" );
+define( "LANGUI_GUIDE_T131", "تم إكتمال بناء السوق، الآن يمكنك المتاجرة أو شراء الموارد من الخارج! إذا كنت ترغب بالمتاجرة حاول أن تنتج الموارد المطلوبة بكثرة في السوق حتى تتمكن من الربح بشكل أفضل" );
+define( "LANGUI_GUIDE_T132", "الآن أنت تملك الثكنة وتستطيع البدء بتدريب القوات. قم بتدريب 2" );
+define( "LANGUI_GUIDE_T133", "فضلاَ قم بتدريب 2" );
+define( "LANGUI_GUIDE_T134", "وأخيراً تم الإنتهاء من بناء مؤسستك العسكرية العظيمة.<br><br>قبل أن تقوم ببناء الجيش للنهب يفضل أن تقوم بتجربة" );
+define( "LANGUI_GUIDE_T135", "محاكي المعركة" );
+define( "LANGUI_GUIDE_T136", "لمعرفة كم هو عدد الوحدات المطلوبة لمحاربة فأر واحد بدون أي خسائر من طرف جيشك" );
+define( "LANGUI_GUIDE_T137", "المهمة 22: الكل للمستوى 2" );
+define( "LANGUI_GUIDE_T138", "الآن حان الوقت لوضع حجر الأساس لقوتك وثراءك! حالياً المستوى 1 لا يكفي... أعلم أن ذلك سيأخذ وقتاً طويلاً ولكن في النهاية ستجد أن الموضوع يستحق ذلك. قم بتطوير كل حقول الموارد للمستوى 2" );
+define( "LANGUI_GUIDE_T139", "قم بتطوير كل حقول الموارد للمستوى 2" );
+define( "LANGUI_GUIDE_T140", "مبروك، قريتك تنمو وتزدهر بشكل كبير" );
+define( "LANGUI_GUIDE_T141", "المهمة 23: السفارة" );
+define( "LANGUI_GUIDE_T142", "إن عالم حرب التتار هو خطير. كنت قد قمت بالفعل ببناء مخبأ بالنسبة لك لتوفير حماية أفضل ضد اللصوص. لكنه يفضل ان تنظم لتحالف . <br> إنشىء سفارة لتكون قادرة على قبول الدعوات من التحالفات" );
+define( "LANGUI_GUIDE_T143", "جيد جدا، لقد تم بناء السفارة" );
+define( "LANGUI_GUIDE_T144", "المهمة 24: تحالف" );
+define( "LANGUI_GUIDE_T145", "التعاون مهم في حرب التتار. اللاعبون يعملون معا على تنظيم أنفسهم في التحالفات. <br>حاول الحصول لنفسك على دعوة من قبل تحالف من محيطك وانضمام الى هذا التحالف. <br> بدلا من ذلك ، يمكنك أيضا انشاء تحالفك الخاص. ولكن لهذا تحتاج أولا إلى سفارة مستوى  3" );
+define( "LANGUI_GUIDE_T146", "انضم الى تحالف او أنشئ تحالف" );
+define( "LANGUI_GUIDE_T147", "رائع،  لكن دون الانظمام الى تحالف، سيكون صعب عليك ان تكون أمبراطورية ضخمة لذالك يفضل ان تنضم الى تحالف<br><br>لقد قمت بالإنتهاء من أخر مهمة لك. ويقوم سكان القرية الآن بالإحتفال لتهنئتك بذلك. من الآن وصاعداً لن أكون موجود لمساعدتك وستكمل المشوار الطويل لوحدك" );
+define( "LANGUI_GUIDE_T148", "لا توجد مهمات" );
+define( "LANGUI_GUIDE_T149", "اذا لم تكن ترغب ان تقم في هذه المهمات فبامكانك ان تلغي تفعيل المهمات\r\nلكن انتبه,  بعد الغاء المهمات, لن يكون لك المجال في تفعيلهم مرة أخرة\r\nلذالك فكر جيدا واتخذ القرار الصحيح, ربما لديك الرغبة في أكمال المهمات في وقت لاحق\r\n\r\nومهما كان القرار الذي ستتخذه تاكد اني أريد ان أزيدك موارد وان أقف جانبك, فقط اذا كنت ترغب في ذالك. انت تعلم أين تجدني" );
+define( "LANGUI_GUIDE_T150", "لعب المهمات" );
+define( "LANGUI_GUIDE_T151", "إلغاء المهمات" );
+define( "LANGUI_GUIDE_T152", "ملخص مواد الخام" );
+define( "LANGUI_GUIDE_T153", "توريد موارد الخام الخاصة بك" );
+define( "LANGUI_GUIDE_T154", "توريد" );
+define( "LANGUI_GUIDE_T155", "وقت التوريد" );
+define( "LANGUI_GUIDE_T156", "حالة" );
+define( "LANGUI_GUIDE_T157", "يوم واحد حساب" );
+define( "LANGUI_GUIDE_T158", "اِسْتَحْضَرَ" );
+define( "LANGUI_GUIDE_T159", "تمت" );
+define( "LANGUI_GUIDE_T160", "في الانتظار" );
+define( "LANGUI_GUIDE_T161", "يوم حساب" );
+define( "LANGUI_GUIDE_T162", "قم ببناء السفارة" );
 ?>
-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

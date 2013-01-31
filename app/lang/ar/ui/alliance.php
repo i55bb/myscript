@@ -1,45 +1,70 @@
-<?php //003ab
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');@dl($__ln);if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}@dl($__ln);}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the site administrator.');exit(199);
+﻿<?php
+#################################################################################
+##                                                                             ##
+##                                                                             ##
+## --------------------------------------------------------------------------- ##
+##                                                                             ##
+##  Project:       TATAR WARS                                                  ##
+##  Version:       2012.3.15                                                   ##
+##  License:       Creative Commons BY-NC-SA 3.0                               ##
+##  Copyright:     Bazaid (c) 2012 - All rights reserved                       ##
+##  Source code:   https://github.com/Bazaid/tatar-wars                        ##
+##                 http://sourceforge.net/projects/tatarwars/                  ##
+#################################################################################
+echo "﻿";
+define( "LANGUI_ALLIANCE_T1", "لا يوجد تحالف" );
+define( "LANGUI_ALLIANCE_T2", "أنت لم تنضم حالياً الى أي تحالف. من أجل الانضمام إلى تحالف تحتاج إلى سفارة من المستوى 1 وكذلك دعوة من أحد التحالفات." );
+define( "LANGUI_ALLIANCE_T3", "نَظْرَة  عَامَّة" );
+define( "LANGUI_ALLIANCE_T4", "من نحن" );
+define( "LANGUI_ALLIANCE_T5", "الهجمات" );
+define( "LANGUI_ALLIANCE_T6", "خيارات" );
+define( "LANGUI_ALLIANCE_T7", "التحالف" );
+define( "LANGUI_ALLIANCE_T8", "التفاصيل" );
+define( "LANGUI_ALLIANCE_T9", "الوصف" );
+define( "LANGUI_ALLIANCE_T10", "بطاقه" );
+define( "LANGUI_ALLIANCE_T11", "الاسم" );
+define( "LANGUI_ALLIANCE_T12", "الرتبه" );
+define( "LANGUI_ALLIANCE_T13", "النقاط" );
+define( "LANGUI_ALLIANCE_T14", "الاعضاء" );
+define( "LANGUI_ALLIANCE_T15", "هل أنت متأكد من إزالة اللاعب من التحالف ?" );
+define( "LANGUI_ALLIANCE_T16", "اللاعبون" );
+define( "LANGUI_ALLIANCE_T17", "السكان" );
+define( "LANGUI_ALLIANCE_T18", "القرى" );
+define( "LANGUI_ALLIANCE_T19", "إزالة اللاعب من التحالف" );
+define( "LANGUI_ALLIANCE_T20", "توزيع المناصب" );
+define( "LANGUI_ALLIANCE_T21", "الميداليات" );
+define( "LANGUI_ALLIANCE_T22", "الفئة" );
+define( "LANGUI_ALLIANCE_T23", "الرتبة" );
+define( "LANGUI_ALLIANCE_T24", "أسبوع" );
+define( "LANGUI_ALLIANCE_T25", "BB-كود" );
+define( "LANGUI_ALLIANCE_T26", "الأحداث العسكرية" );
+define( "LANGUI_ALLIANCE_T27", "مدافع" );
+define( "LANGUI_ALLIANCE_T28", "مهاجم" );
+define( "LANGUI_ALLIANCE_T29", "التاريخ" );
+define( "LANGUI_ALLIANCE_T30", "لا يوجد تقارير" );
+define( "LANGUI_ALLIANCE_T31", "دعوة لاعب إلى التحالف" );
+define( "LANGUI_ALLIANCE_T32", "دبلوماسية التحالف" );
+define( "LANGUI_ALLIANCE_T33", "ترك التحالف" );
+define( "LANGUI_ALLIANCE_T34", "لأسباب أمنية، يرجى إدخال كلمة السر مرة اخرى لترك التحالف" );
+define( "LANGUI_ALLIANCE_T35", "كلمة السر" );
+define( "LANGUI_ALLIANCE_T36", "كلمة السر غير صحيحة" );
+define( "LANGUI_ALLIANCE_T37", "عرض ميثاق عدم الاعتداء" );
+define( "LANGUI_ALLIANCE_T38", "إشارة" );
+define( "LANGUI_ALLIANCE_T39", "السلوك الدبلوماسي يحتم التخاطب مع التحالف الاخر قبل ارسال عرض عدم إعتداء." );
+define( "LANGUI_ALLIANCE_T40", "تم تقديم ميثاق عدم اعتداء مع" );
+define( "LANGUI_ALLIANCE_T41", "عروض خاصة" );
+define( "LANGUI_ALLIANCE_T42", "حذف" );
+define( "LANGUI_ALLIANCE_T43", "ميثاق عدم اعتداء مع" );
+define( "LANGUI_ALLIANCE_T44", "غير مؤكد" );
+define( "LANGUI_ALLIANCE_T45", "لا شيء" );
+define( "LANGUI_ALLIANCE_T46", "تلميح" );
+define( "LANGUI_ALLIANCE_T47", "لعرض مواثيق عدم الإعتداء أكتب" );
+define( "LANGUI_ALLIANCE_T48", "في وصف التحالف" );
+define( "LANGUI_ALLIANCE_T49", "عروض اجنبية" );
+define( "LANGUI_ALLIANCE_T50", "قبول" );
+define( "LANGUI_ALLIANCE_T51", "العلاقات الحالية" );
+define( "LANGUI_ALLIANCE_T52", "لا يوجد لاعب بهذا الأسم" );
+define( "LANGUI_ALLIANCE_T53", "الدعوة ارسلت إلى" );
+define( "LANGUI_ALLIANCE_T54", "الدعوات" );
+define( "LANGUI_ALLIANCE_T55", "دعوة لـ" );
 ?>
-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
-dG==

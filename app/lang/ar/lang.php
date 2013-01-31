@@ -1,420 +1,571 @@
-<?php //003ab
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');@dl($__ln);if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}@dl($__ln);}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the site administrator.');exit(199);
+﻿<?php
+#################################################################################
+##                                                                             ##
+##                                                                             ##
+## --------------------------------------------------------------------------- ##
+##                                                                             ##
+##  Project:       TATAR WARS                                                  ##
+##  Version:       2012.3.15                                                   ##
+##  License:       Creative Commons BY-NC-SA 3.0                               ##
+##  Copyright:     Bazaid (c) 2012 - All rights reserved                       ##
+##  Source code:   https://github.com/Bazaid/tatar-wars                        ##
+##                 http://sourceforge.net/projects/tatarwars/                  ##
+#################################################################################
+
+echo "﻿";
+define( "tribe_1", "الرومان" );
+define( "tribe_2", "الجرمان" );
+define( "tribe_3", "الإغريق" );
+define( "tribe_4", "الوحوش" );
+define( "tribe_5", "التتار" );
+define( "tribe_6", "دبور" );
+define( "tribe_7", "العرب" );
+define( "item_1", "الحطاب" );
+define( "item_title_1", "الخشب" );
+define( "item_curprod_1", "الإنتاج الحالي" );
+define( "item_nextprod_1", "الإنتاج في مستوي" );
+define( "item_unit_1", "في الساعة" );
+define( "item_desc_1", "الحطاب يقوم بقطع الأشجار لإنتاج الخشب. كلما تم تطوير الحطاب كلما ازداد إنتاجه من الخشب." );
+define( "item_2", "حفرة الطين" );
+define( "item_title_2", "الطين" );
+define( "item_curprod_2", item_curprod_1 );
+define( "item_nextprod_2", item_nextprod_1 );
+define( "item_unit_2", "في الساعة" );
+define( "item_desc_2", "الطين يستخرج من حفرة الطين. كلما تم تطوير حفرة الطين كلما إزداد إنتاج الطين." );
+define( "item_3", "منجم الحديد" );
+define( "item_title_3", "الحديد" );
+define( "item_curprod_3", item_curprod_1 );
+define( "item_nextprod_3", item_nextprod_1 );
+define( "item_unit_3", "في الساعة" );
+define( "item_desc_3", "عمال المناجم يقوموا بإستخراج الحديد الثمين من المنجم. كلما إرتفع مستوى منجم الحديد كلما ازداد إنتاج الحديد." );
+define( "item_4", "حقل القمح" );
+define( "item_title_4", "القمح" );
+define( "item_curprod_4", item_curprod_1 );
+define( "item_nextprod_4", item_nextprod_1 );
+define( "item_unit_4", "في الساعة" );
+define( "item_desc_4", "في حقول القمح يتم إنتاج الغذاء لسكان القرية، كلما تم تطوير حقول القمح كلما ازداد إنتاج القمح." );
+define( "item_5", "معمل النجاره" );
+define( "item_title_5", item_5 );
+define( "item_curprod_5", "الزيادة في الإنتاج الحالي" );
+define( "item_nextprod_5", "الزيادة في مستوى" );
+define( "item_unit_5", "%" );
+define( "item_desc_5", "في معمل النجارة يتم معالجة الخشب. كلما إرتفع مستوى المعمل كلما إزداد إنتاج الخشب ليصل إلى 25 في المائة." );
+define( "item_6", "مصنع الطوب" );
+define( "item_title_6", item_6 );
+define( "item_curprod_6", item_curprod_5 );
+define( "item_nextprod_6", item_nextprod_5 );
+define( "item_unit_6", item_unit_5 );
+define( "item_desc_6", "في مصنع الطوب  يتم تحويل الطين إلى طوب وتبعا لتطور المبنى يزداد إنتاج الطين حتى  يصل إلى 25 في المائة" );
+define( "item_7", "مصنع الحديد" );
+define( "item_title_7", item_7 );
+define( "item_curprod_7", item_curprod_5 );
+define( "item_nextprod_7", item_nextprod_5 );
+define( "item_unit_7", item_unit_5 );
+define( "item_desc_7", "في مصنع الحديد  يتم تصنيع الحديد وتبعا لتطور المبنى يزداد إنتاج الحديد حتى  يصل إلى 25 في المائة" );
+define( "item_8", "المطاحن" );
+define( "item_title_8", item_8 );
+define( "item_curprod_8", item_curprod_5 );
+define( "item_nextprod_8", item_nextprod_5 );
+define( "item_unit_8", item_unit_5 );
+define( "item_desc_8", "في المطاحن يتم تحويل القمح إلى دقيق وكلما إزداد بناء المطحنة كلما إزداد إنتاج القمح ما يصل إلى 25 في المائة" );
+define( "item_9", "المخابز" );
+define( "item_title_9", item_9 );
+define( "item_curprod_9", item_curprod_5 );
+define( "item_nextprod_9", item_nextprod_5 );
+define( "item_unit_9", item_unit_5 );
+define( "item_desc_9", "في المخابز يتم تحويل الدقيق إلى خبز كلما إرتفع مستوى المخابز كلما إزداد إنتاج الخبر مما يرفع إنتاجية القمح حتى 50 في المائة" );
+define( "item_10", "المخزن" );
+define( "item_title_10", item_10 );
+define( "item_curprod_10", "السعه التخزينيه الحالية" );
+define( "item_nextprod_10", "السعه التخزينيه في المستوى" );
+define( "item_unit_10", "من الموارد" );
+define( "item_desc_10", "في المخزن يتم تخزين موارد الخشب والطين والحديد. كلماإرتفع مستوى بناء المخزن كلما إزدادت طاقته التخزينية وعندما يمتلئ المخزن يتوقف الإنتاج إلى حين توسعته" );
+define( "item_11", "مخزن الحبوب" );
+define( "item_title_11", item_11 );
+define( "item_curprod_11", "السعه التخزينيه الحالية" );
+define( "item_nextprod_11", "السعه التخزينيه في المستوى" );
+define( "item_unit_11", "من القمح" );
+define( "item_desc_11", "في مخزن الحبوب يتم تخزين القمح. كلما إرتفع مستوى بناء المخزن كلما إزدادت طاقته التخزينية من القمح وعندما يمتلئ المخزن فسوف يتوقف الإنتاج إلى حين توسعته" );
+define( "item_12", "الحداد" );
+define( "item_title_12", item_12 );
+define( "item_curprod_12", "قوة الأسلحة الحالي" );
+define( "item_nextprod_12", "قوة الأسلحة في المستوي" );
+define( "item_unit_12", "%" );
+define( "item_desc_12", "في أفران الحداد يتم تحسين أسلحة المحاربين. كلما إزداد مستوى الحداد كلما ازدادت قوة الهجوم لدي الجنود" );
+define( "item_13", "مستودع الاسلحة" );
+define( "item_title_13", item_13 );
+define( "item_curprod_13", "قوة الدروع الحالي" );
+define( "item_nextprod_13", "قوة الدروع في المستوي" );
+define( "item_unit_13", "%" );
+define( "item_desc_13", "في افران الصهر بمستودع الاسلحة يتم تطوير دروع المدافعين. كلما تم تطوير مستودع الاسلحة كلما ازدادت قوة الدفاع لدي الجنود" );
+define( "item_14", "ساحة البطولة" );
+define( "item_title_14", item_14 );
+define( "item_curprod_14", "سرعة تحرك القوات الحالي" );
+define( "item_nextprod_14", "سرعة تحرك القوات في المستوي" );
+define( "item_unit_14", "%" );
+define( "item_desc_14", "في ساحة البطولة يمكن لقواتك تحسين طاقاتها. كلما إرتفع مستوى الساحة كلما إزدادت سرعة تحرك قواتك" );
+define( "item_15", "البيت الرئيسي" );
+define( "item_title_15", item_15 );
+define( "item_curprod_15", "الوقت الحالي للبناء" );
+define( "item_nextprod_15", "وقت التشييد فى المستوى" );
+define( "item_unit_15", "%" );
+define( "item_desc_15", "بناؤوا القرية يعيشون في المبنى الرئيسي. كلما ازداد مستوى بناء المبنى الرئيسي كلما إزدادت سرعة بناء المباني الجديدة" );
+define( "item_16", "نقطة التجمع" );
+define( "item_title_16", item_16 );
+define( "item_curprod_16", "" );
+define( "item_nextprod_16", "" );
+define( "item_unit_16", "" );
+define( "item_desc_16", "في نقطة التجمع تلتقي قوات القرية. من هنا يمكن إرسال القوات للهجوم او النهب أو لتعزيز القرى الأخرى" );
+define( "item_17", "السوق" );
+define( "item_title_17", item_17 );
+define( "item_curprod_17", "" );
+define( "item_nextprod_17", "" );
+define( "item_unit_17", "" );
+define( "item_desc_17", "يمكنك تبادل الموارد التجارية مع اللاعبين الآخرين عن طريق السوق. كلما ازداد بناؤه كلما ازداد عدد التجار ." );
+define( "item_18", "السفارة" );
+define( "item_title_18", item_18 );
+define( "item_curprod_18", "" );
+define( "item_nextprod_18", "" );
+define( "item_unit_18", "" );
+define( "item_desc_18", "السفارة هي مكان الدبلوماسيين. وكلما تطور بناء السفارة كلما ازدادت الخيارات الدبلوماسية المتاحة للملك." );
+define( "item_19", "الثكنه" );
+define( "item_title_19", item_19 );
+define( "item_curprod_19", "" );
+define( "item_nextprod_19", "" );
+define( "item_unit_19", "" );
+define( "item_desc_19", "في الثكنة يتم تدريب الجنود، كلما تم تطوير الثكنة كلما إزدادت سرعه تدريب الجنود." );
+define( "item_20", "الإسطبل" );
+define( "item_title_20", item_20 );
+define( "item_curprod_20", "" );
+define( "item_nextprod_20", "" );
+define( "item_unit_20", "" );
+define( "item_desc_20", "في الاسطبل يتم تدريب الفرسان. كلما تم تطوير مستوى الإسطبل كلماإزدادت سرعة تدريب القوات" );
+define( "item_21", "المصانع الحربية" );
+define( "item_title_21", item_21 );
+define( "item_curprod_21", "" );
+define( "item_nextprod_21", "" );
+define( "item_unit_21", "" );
+define( "item_desc_21", "في المصانع الحربية يتم بناء معدات الحصار مثل المقاليع والكبش ومحطمات الأبواب. كلما ارتفع مستوى المصانع الحربية كلما إزدادت سرعة تصنيع المعدات." );
+define( "item_22", "الاكاديميه الحربية" );
+define( "item_title_22", item_22 );
+define( "item_curprod_22", "" );
+define( "item_nextprod_22", "" );
+define( "item_unit_22", "" );
+define( "item_desc_22", "أنواع جديدة من القوات يمكن تطويرها في الأكاديمية الحربية. كلما ارتفع المستوى كلما تنوعت القوات التي يمكن تطويرها." );
+define( "item_23", "المخبأ" );
+define( "item_title_23", item_23 );
+define( "item_curprod_23", "حجم المخبا الحالي" );
+define( "item_nextprod_23", "حجم المخبا في المستوي" );
+define( "item_unit_23", "وحدة" );
+define( "item_desc_23", "يستخدم المخبأ في حفظ جزء من الموارد بعيد عن عمليات النهب التي يقوم بها أعدائك وكلما كبر المخبا فسيتم حفظ كمية أكبر بعيدا عن عمليات النهب ." );
+define( "item_24", "البلدية" );
+define( "item_title_24", item_24 );
+define( "item_curprod_24", "" );
+define( "item_nextprod_24", "" );
+define( "item_unit_24", "" );
+define( "item_desc_24", "يمكنك تنظيم احتفالات لمواطنيكم في قاعة المدينة. مثل هذه الإحتفالات تزيد عدد نقاطك الحضارية." );
+define( "item_25", "السكن" );
+define( "item_title_25", item_25 );
+define( "item_curprod_25", "أكبر عدد حاليا" );
+define( "item_nextprod_25", "أكبر عدد في المستوى" );
+define( "item_unit_25", "قرية" );
+define( "item_desc_25", "السكن هو قصر للملك أو الملكة يعيشون فيه حين القيام بزيارة للقرية. السكن يحمي القرية من إحتلال الأعداء لها, يمكنك من إستعمار القري إعتباراً من المستوى 10 و 20 كلما أزداد المستوي كلما أزداد عدد القري الممكن إستعمارها" );
+define( "item_26", "القصر" );
+define( "item_title_26", item_26 );
+define( "item_curprod_26", "" );
+define( "item_nextprod_26", "" );
+define( "item_unit_26", "" );
+define( "item_desc_26", "ملك أو ملكة الإمبراطورية يعيشوا في القصر. يمكن بناء قصر واحد فقط في مملكتك. فقط القرية التي تحتوى على القصر يمكن جعلها عاصمة لمملكتك." );
+define( "item_28", "المكتب التجاري" );
+define( "item_title_28", item_28 );
+define( "item_curprod_28", "القدرة الإستيعابيه الحالية" );
+define( "item_nextprod_28", "القدرة الإستيعابيه في المستوى" );
+define( "item_unit_28", "من الموارد" );
+define( "item_desc_28", "في المكتب التجاري يتم تحسين عربات التجار وتجهيزها بخيول قوية. كلما ارتفع مستوى المكتب التجاري كلما إزدادت قدرة التجار على الحمل" );
+define( "item_29", "ثكنة كبيرة" );
+define( "item_title_29", item_29 );
+define( "item_curprod_29", "" );
+define( "item_nextprod_29", "" );
+define( "item_unit_29", "" );
+define( "item_desc_29", "الثكنة الكبرى تسمح بتدريب قوات اضافية. تكلفتها ثلاثة اضعاف ذلك. بالتزامن مع الثكنة العادية يمكن تكوين ضعف القوات الثكنه الكبيرة لا يمكن أن تبنى في القرية الرئيسية ." );
+define( "item_30", "إسطبل كبير" );
+define( "item_title_30", item_30 );
+define( "item_curprod_30", "" );
+define( "item_nextprod_30", "" );
+define( "item_unit_30", "" );
+define( "item_desc_30", "الاسطبل الكبير يسمح بتدريب مزيد من الفرسان. تكلفة هذه القوات ثلاثة اضعاف ذلك. الاسطبل الكبير لا يمكن أن يبنى في القرية الرئيسية ." );
+define( "item_31", "الحاجز الخارجي" );
+define( "item_title_31", "الحائط الأرضي" );
+define( "item_curprod_31", "مكافئة الدفاع الآن" );
+define( "item_nextprod_31", "مكافئة الدفاع في المستوى" );
+define( "item_unit_31", "%" );
+define( "item_desc_31", "الحائط الأرضي يساعد على حماية قريتك من الحشود المهاجمة للأعداء. كلما إزداد بناء مستوى الحائط كلما إزدادت نسبة مكافئة قواتك الدفاعية." );
+define( "item_32", item_31 );
+define( "item_title_32", item_31 );
+define( "item_curprod_32", item_curprod_31 );
+define( "item_nextprod_32", item_nextprod_31 );
+define( "item_unit_32", item_unit_31 );
+define( "item_desc_32", item_desc_31 );
+define( "item_33", item_31 );
+define( "item_title_33", item_31 );
+define( "item_curprod_33", item_curprod_31 );
+define( "item_nextprod_33", item_nextprod_31 );
+define( "item_unit_33", item_unit_31 );
+define( "item_desc_33", item_desc_31 );
+define( "item_34", "الحجار" );
+define( "item_title_34", item_34 );
+define( "item_curprod_34", "الإستقرار الحالي" );
+define( "item_nextprod_34", "الإستقرار في المستوي" );
+define( "item_unit_34", "%" );
+define( "item_desc_34", "الحجار خبير في تصنيع الحجارة. كلما ازداد مستوى الحجار كلما إزداد إستقرار مباني قريتك." );
+define( "item_35", "المعصرة " );
+define( "item_title_35", item_34 );
+define( "item_curprod_35", "الإستقرار الحالي" );
+define( "item_nextprod_35", "الإستقرار في المستوي" );
+define( "item_unit_35", "%" );
+define( "item_desc_35", "يتم في المعصرة تصنيع العصائر السحرية للشعب، مما يقوي من عزيمة جنودك ويشدُّ بأسهم في القتال. إن هذه العصائر تقلل من مقدرة الرئيس على الكلام وتصعّب مهمة مقاليعك في ضرب أهدافها بدقة. لا يمكنك بناء المعاصر إلا في العاصمة لايمكن بنائها الا عند الجرمان " );
+define( "item_36", "الصياد" );
+define( "item_title_36", item_36 );
+define( "item_curprod_36", "أكبر عدد حاليا" );
+define( "item_nextprod_36", "أكبر عدد في المستوى" );
+define( "item_unit_36", "فخ" );
+define( "item_desc_36", "الصياد يحمي  قريتك جيدا بالأفخاخ الخفية التي صممت لصيد  المهاجمين وأسرهم بحيث لن يؤذوا قريتك مرة أخرى." );
+define( "item_36_t1", "حالياً لديك <b>%s</b> من الأفخاخ و <b>%s</b> فيها أسرى." );
+define( "item_36_t2", "" );
+define( "item_36_t3", "" );
+define( "item_37", "قصر الأبطال" );
+define( "item_title_37", item_37 );
+define( "item_curprod_37", "أكبر عدد حاليا" );
+define( "item_nextprod_37", "أكبر عدد في المستوى" );
+define( "item_unit_37", "واحه" );
+define( "item_desc_37", "في قصر الأبطال يمكنك إستعمار الواحات القريبة منك إعتباراً من المستوى 10 و 15 و 20 كلما أزداد المستوي كلما أزداد عدد الواحات الممكن إحتلالها" );
+define( "item_38", "مخزن كبير" );
+define( "item_title_38", item_38 );
+define( "item_curprod_38", "السعه التخزينيه الحالية" );
+define( "item_nextprod_38", "السعه التخزينيه في مستوى" );
+define( "item_unit_38", "من الموارد" );
+define( "item_desc_38", "في المستودع يتم تخزين الموارد ( الخشب والطين والحديد) . المخازن الكبرى توفر لك مساحة اكبر وتحافظ على مواردك على النحو المعتاد" );
+define( "item_39", "مخزن حبوب كبير" );
+define( "item_title_39", item_39 );
+define( "item_curprod_39", "السعه التخزينيه الحالية" );
+define( "item_nextprod_39", "السعه التخزينيه في مستوى" );
+define( "item_unit_39", "من القمح" );
+define( "item_desc_39", "في مخازن القمح يتم تخزين القمح المنتج من الحقول . المستودع الكبير يوفر لك مساحة اكبر ويحافظ على القمح على النحو المعتاد" );
+define( "item_40", "معجزه العالم" );
+define( "item_title_40", item_40 );
+define( "item_curprod_40", "المستوي الحالي" );
+define( "item_nextprod_40", "المستوي التالي" );
+define( "item_unit_40", "" );
+define( "item_desc_40", "معجزة العالم تمثل قمة المفاخر الإنشائية وعروس العجائب .اللاعبون الأقوى والأغنى بالموارد هم فقط الذين يتمكنون من إنشاء مثل هذا العمل الجبار. ويتمكنون من المدافعة عنه ضد الأعداء الحاسدين" );
+define( "item_41", "ساقية الخيول" );
+define( "item_title_41", item_41 );
+define( "item_curprod_41", "نسبة سرعة تدريب الفرسان الحالية" );
+define( "item_nextprod_41", "نسبة سرعة تدريب الفرسان في مستوي" );
+define( "item_unit_41", "%" );
+define( "item_desc_41", "بئر سقي الخيول يضمن تسريع فترة تدريب الفرسان بنسبة 1 في المائة لكل مستوي ,لا يستطيع احد بناء هذا المبني الا الرومان" );
+define( "item_42", "سوق المحاربين" );
+define( "item_title_42", item_42 );
+define( "item_curprod_42", "زمن الوصول الحالي" );
+define( "item_nextprod_42", "زمن الوصول في مستوي" );
+define( "item_unit_42", "ساعة" );
+define( "item_desc_42", "يتم من خلال هذا المبني شراء جنود مرتزقة من خلال الذهب, كلما تم تطوير المبني يتم تقليل الزمن اللازم لوصول الجنود للقرية" );
+define( "troop_hero", "البطل" );
+define( "troop_1", "جندي أول" );
+define( "troop_2", "حراس الأمبراطور" );
+define( "troop_3", "جندي مهاجم" );
+define( "troop_4", "فرقة تجسس" );
+define( "troop_5", "سلاح الفرسان" );
+define( "troop_6", "فرسان قيصر" );
+define( "troop_7", "كبش" );
+define( "troop_8", "المقلاع الناري" );
+define( "troop_9", "حكيم" );
+define( "troop_10", "مستوطن" );
+define( "troop_11", "مقاتل بهراوة" );
+define( "troop_12", "مقاتل برمح" );
+define( "troop_13", "مقاتل بفأس" );
+define( "troop_14", "الكشاف" );
+define( "troop_15", "مقاتل القيصر" );
+define( "troop_16", "فرسان الجرمان" );
+define( "troop_17", "محطمة الابواب" );
+define( "troop_18", "المقلاع" );
+define( "troop_19", "الزعيم" );
+define( "troop_20", "مستوطن" );
+define( "troop_21", "الكتيبه" );
+define( "troop_22", "مبارز" );
+define( "troop_23", "المستكشف" );
+define( "troop_24", "رعد الإغريق" );
+define( "troop_25", "فرسان السلت" );
+define( "troop_26", "فرسان الهيدوانر" );
+define( "troop_27", "محطمة الابواب الخشبية" );
+define( "troop_28", "المقلاع الحربي" );
+define( "troop_29", "رئيس" );
+define( "troop_30", "مستوطن" );
+define( "troop_31", "الجرذ" );
+define( "troop_32", "العنكبوت" );
+define( "troop_33", "الأفعى" );
+define( "troop_34", "خفاش" );
+define( "troop_35", "الخنزير البري" );
+define( "troop_36", "الذئب" );
+define( "troop_37", "دب" );
+define( "troop_38", "التمساح" );
+define( "troop_39", "النمر" );
+define( "troop_40", "الفيل" );
+define( "troop_41", "" );
+define( "troop_42", "" );
+define( "troop_43", "" );
+define( "troop_44", "" );
+define( "troop_45", "" );
+define( "troop_46", "" );
+define( "troop_47", "" );
+define( "troop_48", "" );
+define( "troop_49", "" );
+define( "troop_50", "" );
+define( "troop_51", "مقاتل النينجا" );
+define( "troop_52", "مقاتل السيف" );
+define( "troop_53", "المهاجم الشرس" );
+define( "troop_54", "الساحرة" );
+define( "troop_55", "الفارس الخناق" );
+define( "troop_56", "فارس السهام" );
+define( "troop_57", "محطمة الأسوار" );
+define( "troop_58", "المدفع الناري" );
+define( "troop_59", "الملك" );
+define( "troop_60", "المستوطن" );
+define( "troop_99", "الأفخاخ" );
+define( "troop_100", "رامي السهام" );
+define( "troop_101", "محارب بشوكه" );
+define( "troop_102", "الحارس" );
+define( "troop_103", "طائر التجسس" );
+define( "troop_104", "فارس العرب" );
+define( "troop_105", "فارس الفؤوس" );
+define( "troop_106", "الكبش" );
+define( "troop_107", "المنجنيق الناري" );
+define( "troop_108", "الملك" );
+define( "troop_109", "المستوطن" );
+define( "troop_desc_1", "الجندي الأول هو نوع من مشاة الامبراطوريه الرومانيه. حصل على التدريب في مجالات عديدة، وهو مفيد في الهجوم والدفاع أيضاً ولكنه في أحسن الحالات لن يصل لقوة الواحدات المتخصصة." );
+define( "troop_desc_2", "حراس الإمبراطور كما هو من إسمهم حراس متخصصين في حماية الإمبراطور والإمبراطورية ومستعدين لدفع حياتهم ثمناً لذلك. وبما أن حراس الإمبراطور مدربين على الدفاع فإن قوتهم الهجومية ضعيفة." );
+define( "troop_desc_3", "الجندي المهاجم هو المهاجم الأقوى في فيلق المشاة الروماني. سريع وقوي فهو يبث الرعب في قلب كل مدافع. هذه القوة لها ثمنها وهو التدريب الطويل و المكلف." );
+define( "troop_desc_4", "الجواسيس هم الكشافه في الجيوش الرومانيه. ,وهي استثناءيه السرعة وقادرة على التجسس على وحدات العدو سرا وكذلك الموارد او الدفاعات . إذا لم يكن هناك كشافه في قرية العدو، فسوف لن يعلم العدو بزيارتها لهم.. لا أن قدرته الهجومية معدومة" );
+define( "troop_desc_5", "هذه هي الوحدة العادية لفرسان الرومان. وهي سريعة ولكنها مسلحه جيدا و مدرعة جيدا ، فهو إرهاب لجميع الأعداء الغير مستعدين. بيد انه ينبغي ملاحظه أن أكل الحصان والفارس ليس رخيصا على الإطلاق!" );
+define( "troop_desc_6", "هذا هو سلاح الفرسان المدرع. فهو مدرع ومسلح تسليحا جيدا ، لكنها أبطأ من سلاح الفرسان العادي ويمكنها حمل موارد أقل. صيانتها أيضا اكثر تكلفة الطاقة لها ثمن ضخم. أما قدراته الهجومية أو الدفاعية فهي جبارة" );
+define( "troop_desc_7", "محطمة الابواب هي سلاح يستخدم لدعم المشاة والفرسان. دورها هو تدمير جدار العدو وجعل المعركه اسهل للمهاجمين." );
+define( "troop_desc_8", "المقلاع الناري هو سلاح ممتازا للاستخدام عن بعد لتدمير المباني وحقول المواد الخام . ويكاد يكون دون دفاع ، فإنها تحتاج إلى مرافقة فعالة . كلما ازداد مستوى بناء نقطة التجمع ، و طاقم المقلاع افضل تدريبا - كلما ازداد التصويب.وعند المستوى 10 من نقطة التجمع ، يمكن استهداف كل بقعة في قرية العدو باستثناء المخبأ ." );
+define( "troop_desc_9", "الحكيم. وهو خطيب ماهر ويعرف كيف يقنع الناس على اتباعه. وهو بذلك في يستطيع اقناع حتى سكان القرى المعاديه للانضمام إلى بلدكم . في كل مرة يتكلم لسكان القرية امام اسوار المدينة ،كلما تقل موالات حاكم معادي حتى انضمام القرية إلى مملكتكم . .." );
+define( "troop_desc_10", "المستوطنون هم مواطنون شجعان من قريتك ومدربون على انشاء قرية جديدة . لأن تأسيس قرية صعبة بصفة خاصة ،فانك تحتاج الى ثلاثة مستوطنين. وبالاضافة الى ذلك ، فانك تحتاج الى 750 وحدة من كل المواد الخام .." );
+define( "troop_desc_11", "مقاتل بهراوة هو هو ارخص وحده في جميع القبائل . يتم تدريبها بسرعة ، لذا فهو متواضع في الهجوم ، ودرعه ليس الاقوى. وهو لايتمكن من الصمود امام الفرسان ." );
+define( "troop_desc_12", "مقاتل برمح هو سلاح ممتاز كمدافع نظرا لطول رمحه ، خصوصا انه يجيد الدفاع ضد الفرسان . هو متواضع في الهجوم ،لأنه ليس قويا بصورة كافيه " );
+define( "troop_desc_13", "هو أقوى المشاة الجرمان. قوي في الهجوم متواضع في الدفاع ، وهو أبطأ وأكثر كلفة من الوحدات الأخرى." );
+define( "troop_desc_14", "ألكشافه هي إحدى الوحدات الجرمان وعملها التجسس على العدو . تذهب مشيا على الأقدام ولكن ذلك ليس بسرعة فائقة. وبهدوء يستطلع التجسس على العدو ويتعرف على وحداته وكذلك المواد الخام و دفاعاته . إذا لم يكن هناك كشافه في قرية العدو ، فان زيارته ستكون بهدوء ." );
+define( "troop_desc_15", "لأن صاحب الدرع الثقيل ، مقاتل القيصر مدافع ممتاز.ففي معارك المشاة بالكاد يمكن لهم الاختراق . ضعيف في الهجوم و سرعته متواضعة نسبيا .وضعيف بالنسبة لسلاح الفرسان نظرا لثقل لدرعه. تدريبه طويل ومكلف." );
+define( "troop_desc_16", "الفارس الجرماني هو الفارس المحارب الذي يجعل قوى اعدائه تنكمش في خوف. وهو ايضا مدافع ممتاز ضد فرسان العدو. ولكن التدريب وتكاليف الصيانة مرتفعة." );
+define( "troop_desc_17", "محطمة الأبواب هي سلاح يستخدم لدعم المشاة والفرسان. دورها هو تدمير جدار العدو وجعل المعركة أسهل للمهاجمين." );
+define( "troop_desc_18", "المقلاع هو سلاح ممتازا للاستخدام عن بعد لتدمير المباني وحقول المواد الخام . ويكاد يكون دون دفاع ، فإنها تحتاج إلى مرافقة فعالة ..كلما ازداد بناء نقطة التجمع مستوى، و طاقم المقلاع افضل تدريبا - كلما ازداد التصويب.عند المستوى 10 من نقطة التجمع ، يمكن استهداف كل بقعة باستثناء المخبأ ." );
+define( "troop_desc_19", "الجرمان يختارون زعيم منهم. الزعيم لا يملك فقط استراتيجية وشجاعة ، وانما ايضا مهارات كخطيب. هذه المهارات تمكنه من اقناع سكان القرى الاخرى الى التخلي عن الولاءات السابقة . في كل مرة يتكلم لسكان القرية امام اسوار المدينة ،كلما تقل موالات حاكم معادي حتى انضمام القرية إلى مملكتكم ." );
+define( "troop_desc_20", "المستوطنون هم مواطنون شجعان من قريتك ومدربون على انشاء قرية جديدة . لأن تأسيس قرية صعبة بصفة خاصة ،فانك تحتاج الى ثلاثة مستوطنين. وبالاضافة الى ذلك ، فانك تحتاج الى 750 وحدة من كل المواد الخام ." );
+define( "troop_desc_21", "الكتيبة هي مجرد وحدة مشاة نسبيا رخيصة وسريعه لانتاج . هجومه ضئيل ، لكنه في الدفاع يثبت قيمته ، كونه فعالا ضد المشاة وكذلك الفرسان ." );
+define( "troop_desc_22", "المبارز اغلي من الكتيبه ، وله قدرات هجومية جيدة . لكنه في الدفاع ضعيف نسبيا ، ولا سيما ضد الفرسان ." );
+define( "troop_desc_23", "الكشاف هي الجواسيس للجيوش الإغريقية. فهي استثناءيه سريعة وقادرة على تحديد وحدات العدو سرا وكذلك الموارد او دفاعاته. إذا لم يكن هناك ألكشافه في قرية العدو .فسيمر تجسسها بسلام وهدوء" );
+define( "troop_desc_24", "الرعد هي وحدة هجوم قوي وسريعة وممتاز لتحمل المواد الخام . لكنه في الدفاع متوسط في أحسن الأحوال." );
+define( "troop_desc_25", "وحدة الفرسان السلت مجهزة للدفاع. والغرض الرئيسي من فرسان السلت بالتأكيد الدفاع ضد المشاة. لكن تكاليف الصيانة باهظة الثمن نسبيا بالإضافة للبناء المكلف." );
+define( "troop_desc_26", "فرسان الهيدوانر هي الأسلحة النهائية في الهجوم والدفاع ضد الفرسان. لا ينافسها احد في هذه المجالات . فرسان الهيدوانر تدريبها ومعداتها مكلفه ، وخصوصا في وحدات من القمح 3 / ساعة ، اللاعب يجب دائما أن يسأل نفسه ما إذا كان مستعدا لقبول هذه التكاليف ." );
+define( "troop_desc_27", "محطمة الأبواب الخشبية هي سلاح يستخدم لدعم المشاة والفرسان. دورها هو تدمير جدار العدو وجعل المعركة أسهل للمهاجمين." );
+define( "troop_desc_28", "المقلاع هو سلاح ممتازا للاستخدام عن بعد لتدمير المباني وحقول المواد الخام . ويكاد يكون دون دفاع ، فإنها تحتاج إلى مرافقة فعالة . كلما ازداد بناء نقطة التجمع مستوى، و طاقم المقلاع افضل تدريبا - كلما ازداد التصويب.عند المستوى 10 من نقطة التجمع ، يمكن استهداف كل بقعة باستثناء المخبأ ." );
+define( "troop_desc_29", "كل قبيلة بها مقاتلين مسنين وذوي خبرة تستخدمهم لإقناع سكان القرى الأخرى بالانضمام إلى قبيلتها . في كل مرة يتكلم لسكان قرية من إمام أسوارها ،كلما تقل موالاة الحاكم حتى انضمام القرية إلى مملكتكم " );
+define( "troop_desc_30", "المستوطنون هم مواطنون شجعان من قريتك ومدربون على إنشاء قرية جديدة . لأن تأسيس قرية صعبة بصفة خاصة ،فانك تحتاج إلى ثلاثة مستوطنين. وبالإضافة إلى ذلك ، فانك تحتاج إلى 750 وحدة من كل المواد الخام ." );
+define( "troop_desc_51", "مقاتل النينجا  هو نوع من مشاة قبيلة دبور. حصل على التدريب في مجالات عديدة، وهو مفيد في الهجوم والدفاع أيضاً ولكنه في أحسن الحالات لن يصل لقوة الواحدات المتخصصة." );
+define( "troop_desc_52", "هو أقوى المشاة لقبيلة دبور. قوي في الدفاع متواضع في الهجوم ، وهو أبطأ وأكثر كلفة من الوحدات الأخرى." );
+define( "troop_desc_53", "المهاجم الشرس هو المهاجم الأقوى في فيلق المشاة لقبيلة دبور. سريع وقوي فهو يبث الرعب في قلب كل مدافع. هذه القوة لها ثمنها وهو التدريب الطويل و المكلف." );
+define( "troop_desc_54", "الساحرة هو الجاسوس فى الوحدات التابعه لقبيلة دبور و هو استثناءى بالسرعة و قادر على التجسس على قوات العدو سرا و كذلك الموارد او الدفاعات اذا لم يكن هناك جواسيس فى قرية العدو فسوف لن يعلم بزيارتهم لهم الا ان قدرتة الهجومية معدومة " );
+define( "troop_desc_55", "الفارس الخناق هو الفارس المحارب الذي يجعل قوى اعدائه تنكمش في خوف. وهو ايضا مدافع ممتاز ضد فرسان العدو. ولكن التدريب وتكاليف الصيانة مرتفعة." );
+define( "troop_desc_56", "فارس السهام هو المحارب الذي يجعل قوي أعدائه تنكمش في خوف . وهو أيضا مدافع ممتاز ضد فرسان العدو والمشاة أيضا . ولكن التدريب وتكاليف الصيانة مرتفعة" );
+define( "troop_desc_57", "محطمة الأسوار هي سلاح يستخدم لدعم المشاة والفرسان. دورها هو تدمير جدار العدو وجعل المعركه اسهل للمهاجمين." );
+define( "troop_desc_58", "المدفع الناري هو سلاح ممتازا للاستخدام عن بعد لتدمير المباني وحقول المواد الخام . ويكاد يكون دون دفاع ، فإنها تحتاج إلى مرافقة فعالة ..كلما ازداد بناء نقطة التجمع مستوى، و طاقم المدفع الناري افضل تدريبا - كلما ازداد التصويب.عند المستوى 10 من نقطة التجمع ، يمكن استهداف كل بقعة باستثناء المخبأ ." );
+define( "troop_desc_59", "الملك وهو خطيب ماهر , يعرف كيف يقنع الناس في اتباعه . وهو بذلك يستطيع أقناع حتي سكان القري المعادية للانضمام إلي بلدكم . في كل مرة يتكلم فيها الحاكم أمام سور قرية العدو, ينخفض فيها ولاء سكان القرية حتي يقرروا في النهاية الانضمام لمملكتكم ." );
+define( "troop_desc_60", "المستوطنون هم مواطنون شجعان من قريتك . ومدربون علي انشاء قري جديدة لأن تأسيس قرية جديدة مهمة صعبة بصفة خاصة ,فانك تحتاج الي ثلاثة مستوطينين. بالاضافة الي ذلك , فانك تحتاج الي 750 وحدة من كل الموارد الخام" );
+define( "troop_desc_99", "الصياد يحمي قريتك جيدا بالفخاخ الخفية ، صممت لامساك المهاجمين ولابعاد الخطر عن قريتك . كل مستوى يزيد الحد الأقصى لعدد الفخاخ عند 10 ." );
+define( "troop_desc_100", "رامي السهام هو نوع من مشاة الامبراطورية العربية . حصل علي تدريب في مجالات عديدة , وهو مفيد في الهجوم والدفاع ايضا ولكنه في احسن الحالات لن يصل لقوة الوحدات المتخصصة ." );
+define( "troop_desc_101", "محارب بشوكة اغلى من رامى السهام و له قدرات هجومية جيدة لكنه فى الدفاع ضعيف نسبيا ولاسيما ضد الفرسان ." );
+define( "troop_desc_102", "هو اقوى المشاه العرب قوى فى الهجوم و ايضا فى الدفاع و هو أبطأ و اكثر كلفة من الوحدات الأخرى ثمن بسيط للحصول على دفاع و هجوم جبار " );
+define( "troop_desc_103", "طائر التجسس هو الجاسوس فى الوحدات العربية و هو استثناءى بالسرعة و قادر على التجسس على قوات العدو سرا و كذلك الموارد او الدفاعات اذا لم يكن هناك جواسيس فى قرية العدو فسوف لن يعلم بزيارتهم لهم الا ان قدرتة الهجومية معدومة " );
+define( "troop_desc_104", "هذه هي الوحدة العادية لفرسان العرب . وهي سريعة ولكنها مسلحه جيدا ومدرعة جيدا , فهو إرهاب لجميع غير المستعدين .كذالك ينبغي ملاحظة أن أكل الحصان والفارس ليس رخيصا علي الإطلاق !" );
+define( "troop_desc_105", "فارس الفؤوس هو المحارب الذي يجعل قوي أعدائه تنكمش في خوف . وهو أيضا مدافع ممتاز ضد فرسان العدو والمشاة أيضا . ولكن التدريب وتكاليف الصيانة مرتفعة" );
+define( "troop_desc_106", "محطمة الأبواب هى سلاح يستخدم لدعم المشاه و الفرسان دورها هو تدمير جدار العدو و جعل المعركة اسهل للمهاجمين" );
+define( "troop_desc_107", "المنجنيق النارى هو سلاح. ممتازا للاستخدام عن بعد لتدمير المباني وحقول المواد الخام . ويكاد يكون دون دفاع , فإنها تحتاج إلي مرافقة فعالة . كلما ازداد مستوي بناء نقطة التجمع , وطاقم المقلاع افضل تدريبا - كلما ازداد التصويب . وعند المستوي 10 من نقطة التجمع , يمكن استهداف كل بقعة في قرية العدو باستثناء المخبأ ." );
+define( "troop_desc_108", "الحاكم . وهو خطيب ماهر , يعرف كيف يقنع الناس في اتباعه . وهو بذلك يستطيع أقناع حتي سكان القري المعادية للانضمام إلي بلدكم . في كل مرة يتكلم فيها الحاكم أمام سور قرية العدو, ينخفض فيها ولاء سكان القرية حتي يقرروا في النهاية الانضمام لمملكتكم ." );
+define( "troop_desc_109", "المستوطنون هم مواطنون شجعان من قريتك . ومدربون علي انشاء قري جديدة لأن تأسيس قرية جديدة مهمة صعبة بصفة خاصة ,فانك تحتاج الي ثلاثة مستوطينين. بالاضافة الي ذلك , فانك تحتاج الي 750 وحدة من كل الموارد الخام ." );
+define( "medal_0", "اللاعب لديه حماية مبتدئ<br/>لمدة %s ساعة" );
+define( "medal_0d", "اللاعب سجل في السيرفر في<br/> %s" );
+define( "medal_row_0", "فترة الحماية" );
+define( "medal_1", "مطوروا الأسبوع" );
+define( "medal_row_1", "مطوروا الأسبوع" );
+define( "medal_2", "مهاجموا الأسبوع" );
+define( "medal_row_2", "مهاجموا الأسبوع" );
+define( "medal_3", "مدافعوا الأسبوع" );
+define( "medal_row_3", "مدافعوا الأسبوع" );
+define( "medal_4", "سارقوا الأسبوع" );
+define( "medal_row_4", "سارقوا الأسبوع" );
+define( "report_result_text1", "لقد فزت كمهاجم بدون خسائر" );
+define( "report_result_text2", "لقد فزت كمهاجم، لكن مع خسائر" );
+define( "report_result_text3", "لقد خسرت كمهاجم" );
+define( "report_result_text4", "لقد نجحت معركة دفاعك بدون خسائر" );
+define( "report_result_text5", "لقد نجحت معركة دفاعك مع تقديم بعض من الضحايا" );
+define( "report_result_text6", "لقد خسرت معركة دفاعك مع تقديم الكثير من الضحايا" );
+define( "report_result_text7", "لقد خسرت معركة دفاعك بدون تقديم ضحايا" );
+define( "report_result_text8", "وصلت التعزيزات" );
+define( "report_result_text9", "فشلت عملية التجسس" );
+define( "report_result_text10", "نجحت عملية التجسس مع وجود خسائر" );
+define( "report_result_text100", "نجحت عملية التجسس" );
+define( "report_result_text11", "لقد قام التجار بنقل الخشب بشكل رئيسي" );
+define( "report_result_text12", "لقد قام التجار بنقل الطين بشكل رئيسي" );
+define( "report_result_text13", "لقد قام التجار بنقل الحديد بشكل رئيسي" );
+define( "report_result_text14", "لقد قام التجار بنقل القمح بشكل رئيسي" );
+define( "report_action_text1", "يمون" );
+define( "report_action_text2", "يعزز" );
+define( "report_action_text3", "يهجم علي" );
+define( "report_action_text4", "يتجسس علي" );
+define( "report_p_allkilled", "لم ينجُ أحد من جنودك" );
+define( "report_p_fromlevel", "من المستوي" );
+define( "report_p_to", "إلي" );
+define( "report_p_waslowered", "تم خفض" );
+define( "report_p_wasdestr", "تم تدمير" );
+define( "report_p_notdestr", "لم يتم إصابة" );
+define( "report_p_totallydestr", "تم تدمير القرية بالكامل" );
+define( "report_p_walllowered", "تم خفض السور من المستوي" );
+define( "report_p_walldestr", "تم تدمير السور" );
+define( "report_p_nowall", "لا يوجد سور للقرية" );
+define( "report_p_wallnotdestr", "لم يتم إصابة السور" );
+define( "report_p_allegiancelowered", "إنخفض الولاء من" );
+define( "report_p_oasiscaptured", "تم إحتلال الواحه" );
+define( "report_p_villagecaptured", "السكان قرروا الإنضمام إلى مملكتك" );
+define( "payments_cashu_period", "فورا" );
+define( "payments_cashu_description", "الدفع عبر CashU سهل و سريع" );
+define( "payments_paypal_period", "فورا" );
+define( "payments_paypal_description", "الدفع عبر Paypal سهل و سريع" );
+define( "payments_onecard_period", "فورا" );
+define( "payments_onecard_description", "قم بشراء القسيمة من شركة OneCard ثم أذهب الى الصفحة الرائسية لترافيان بلاس أنقر على مربع Voucher من ثم أدخل الكود واوفي الطلب" );
+define( "tatar_tribe_player", "التتار" );
+define( "tatar_tribe_villages", "القري التتارية" );
+define( "tatar_tribe_desc", "التتار<br>===============<br><img src=\"assets/default/img/ww_start.jpg\" border=\"0\" alt=\"معجزه العالم\"><br>===============" );
+define( "forget_password_subject", "نسيت كلمة السر؟" );
+define( "forget_password_body", "مرحباً <b>%s</b><br/>\r\n<br/>\r\nكلمة السر الجديدة:<br/>\r\nالرجاء أجعلها قوية<br/>\r\n<br/>\r\n----------------------------<br/>\r\nالإسم: %s<br/>\r\nكلمة السر: %s<br/>\r\n----------------------------<br/>\r\n<br/>\r\nانقر على هذا الرابط لتفعيل كلمة السر الجديدة:<br/>\r\n<br/>\r\n<a href=\"%s\">%s</a><br/>\r\n<br/>\r\nاذا كنت لم تطلب كلمة السر الجديدة، يمكنك ان<br/>\r\nتتجاهل هذا الرسالة." );
+define( "war_sim_noattack", "لم يتم تحديد نوع القوة المهاجمة" );
+define( "war_sim_nobattletype", "لم يتم تحديد نوع المعركه" );
+define( "war_sim_nodefense", "لم يتم تحديد نوع القوات المدافعة" );
+define( "war_sim_nodefense2", "لم يتم تحديد نوع القوات المدافعة بشكل صحيح" );
+define( "login_result_msg_noname", "إدخل الإسم" );
+define( "login_result_msg_nopwd", "أدخل كلمة السر" );
+define( "login_result_msg_notexists", "هذا الأسم غير موجود" );
+define( "login_result_msg_blocked", "هذا اللاعب تم إيقافه" );
+define( "login_result_msg_notactive", "لم يتم تفعيل العضوية الى الآن" );
+define( "login_result_msg_activesolve", "المشاكل الممكنة والحلول" );
+define( "login_result_msg_forgetpwd", "نسيت كلمة السر؟" );
+define( "login_result_msg_createpwd", "إنشاء كلمة سر جديدة!" );
+define( "login_result_msg_wrongpwd", "كلمة السر خاطئة" );
+define( "plus_text_activatefeature", "تفعيل" );
+define( "plus_text_extendfeature", "تمديد" );
+define( "plus_text_gotomarket", "إلى السوق" );
+define( "plus_text_lowgold", "الذهب قليل" );
+define( "profile_medal_txt_cat", "الفئة" );
+define( "profile_medal_txt_week", "أسبوع" );
+define( "profile_medal_txt_rank", "الرتبه" );
+define( "profile_setagent_err_msg", "هذا اللاعب وكيل على حسابين" );
+define( "guide_task_msg_subject", "رسائل داخليه" );
+define( "guide_task_msg_body", "نفيدك بأنه سيكون في إنتظارك جائزة رائعة لدى مدير المهمات \r\n\r\n\r\n\r\nملحوظة: هذه رسالة تلقائية ولايتطلب الرد عليها." );
+define( "register_player_txt_notless3", "(يجب ان لا يقل عن 3 حروف)" );
+define( "register_player_txt_invalidchar", "(حروف غير صحيحة)" );
+define( "register_player_txt_reserved", "(هذا الأسم محجوز)" );
+define( "register_player_txt_invalidemail", "(البريد ليس صحيحا)" );
+define( "register_player_txt_notless4", "(يجب أن لا يقل عن 4 حروف)" );
+define( "register_player_txt_choosetribe", "يرجى إختيار القبيلة" );
+define( "register_player_txt_choosestart", "يرجى إختيار موقع البداية" );
+define( "register_player_txt_usedname", "(هذا الأسم مستخدم)" );
+define( "register_player_txt_usedemail", "(البريد الالكتروني مستعمل)" );
+define( "register_player_txt_fullserver", "للأسف هذا السيرفر ممتلأ ولا يمكنك التسجيل" );
+define( "register_player_txt_regmail_sub", "مرحباً بكم في حرب التتار" );
+define( "register_player_txt_regmail_body", "مرحباً %s<br/>\r\nشكرا لك على التسجيل.<br/>\r\n<br/>\r\n----------------------------<br/>\r\nالإسم: %s<br/>\r\nكلمة السر: %s<br/>\r\n----------------------------<br/>\r\n<br/>\r\nانقر هذه الوصله لتنشيط العضوية:<br/>\r\n<a href=\"%s\">%s</a>" );
+define( "messages_p_noreceiver", "لم يتم تحديد إسم المستلم" );
+define( "messages_p_nobody", "لم يتم تحديد نص للرسالة" );
+define( "messages_p_emptysub", "بدون موضوع" );
+define( "messages_p_noloopback", "لا يمكنك إرسال رسالة لنفسك" );
+define( "messages_p_notexists", "لا يوجد هذا الأسم" );
+define( "alliance_p_status1", "متواجد الآن" );
+define( "alliance_p_status2", "كان موجوداً خلال 24 ساعة" );
+define( "alliance_p_status3", "كان موجوداً خلال 3 أيام" );
+define( "alliance_p_status4", "كان موجوداً خلال 7 أيام" );
+define( "alliance_p_status5", "خامل" );
+define( "statistics_p_playerstatusch", "تم تغير حالة الإيقاف للاعب" );
+define( "statistics_p_playerdeleted", "تم حذف اللاعب" );
+define( "statistics_p_goldwaschanged", "تم تعديل كمية الذهب لدي اللاعب" );
+define( "v2v_p_backtroops", "إرجاع القوات إلى قواعدها" );
+define( "v2v_p_troopsinvillagenow", "القوات المتمركزة في القرية الآن" );
+define( "v2v_p_backcaptivitytroops", "إرجاع الأسري إلى قواعدها" );
+define( "v2v_p_entervillagedata", "أدخل إحداثيات او اسم القرية" );
+define( "v2v_p_cannotbuildnewvill", "لا يمكنك التوسع في بناء قرية جديدة" );
+define( "v2v_p_cannotbuildnewvill1", "لا يمكنك بناء قرية جديدة , النقاط الحضارية قليلة" );
+define( "v2v_p_cannotbuildnewvill2", "لا يمكنك بناء قرية جديدة , تحتاج إلي %s من كل مورد" );
+define( "v2v_p_cannotbuildnewvill3", "يوجد لك  قوات علي الطريق لإحتلال قرية أخري يجب إنتظارهم أولا" );
+define( "v2v_p_cannotbuildnewvill4", "لا يمكنك بناء قرية جديدة , تحتاج إلي 3 مستوطنين" );
+define( "v2v_p_novillagehere", "لا توجد قرية في هذه الاحداثيات" );
+define( "v2v_p_playerwas_blocked", "هذا اللاعب موقوف من اللعب" );
+define( "v2v_p_playerwas_inprotectedperiod", "هذا اللاعب مازال تحت فترة الحماية" );
+define( "v2v_p_catapult_grp1", "الموارد" );
+define( "v2v_p_catapult_grp2", "البنية التحتية" );
+define( "v2v_p_catapult_grp3", "الجيش" );
+define( "v2v_p_thereisnoattacktroops", "لم تقم باختيار القوة المهاجمة" );
+define( "v2v_p_attacktyp1", "بناء قرية جديدة" );
+define( "v2v_p_attacktyp2", "مساندة" );
+define( "v2v_p_attacktyp3", "هجوم على" );
+define( "v2v_p_attacktyp4", "هجوم للنهب على" );
+define( "v2v_p_placetyp1", "واحة مملوكة" );
+define( "v2v_p_placetyp2", "واحة مهجورة" );
+define( "v2v_p_placetyp3", "وادي مهجور" );
+define( "v2v_p_monster", "وحوش" );
+define( "buildings_p_m2m", "تاجر المبادلة" );
+define( "buildings_p_thisvillage", "القرية" );
+define( "buildings_p_plwait", "يرجي الإنتظار" );
+define( "buildings_p_needmorecapacity", "يرجي التوسيع" );
+define( "buildings_p_notenoughres", "الموارد لا تكفي" );
+define( "buildings_p_upg0", "نقص الغذاء: يرجى تطوير حقل القمح أولاً" );
+define( "buildings_p_upg1", "يجب رفع مستوى المخزن أولاً" );
+define( "buildings_p_upg2", "يجب رفع مستوى مخزن الحبوب أولاً" );
+define( "buildings_p_upg3", "يجب رفع مستوى المخزن و مخزن الحبوب أولاً" );
+define( "buildings_p_notenoughres2", "الموارد غير كافية" );
+define( "buildings_p_willenoughresat", "الموارد كافية في خلال" );
+define( "buildings_p_upg_tolevel", "الارتقاء الى مستوى" );
+define( "buildings_p_create_newbuild", "تشييد مبنى" );
+define( "buildings_p_workersbusy", "العمال مشغولون الآن" );
+define( "buildings_p_wait_buildqueue", "الانتظار" );
+define( "new_village_name_prefix", "قرية" );
+define( "new_village_name", "قرية جديدة" );
+define( "alliance_creator", "مؤسس التحالف" );
+define( "payment_loading", "تحميل" );
+define( "data_saved", "تم حفظ البيانات" );
+define( "level_lang", "المستوى" );
+define( "level_lang2", "مستوى" );
+define( "buildin_place_railpoint", "موقع بناء نقطة التجمع" );
+define( "buildin_place_wall", "موقع البناء الخارجي" );
+define( "buildin_place_empty", "موقع البناء" );
+define( "buildin_place_topbuild", "موقع بناء المعجزة" );
+define( "oasis_place_empty", "واحة غير محتلة" );
+define( "oasis_place_owned", "واحة مملوكة" );
+define( "time_remain_lang", "باقي" );
+define( "time_hour_lang", "ساعة" );
+define( "time_hour_lang2", "الساعة" );
+define( "text_from_lang", "من" );
+define( "text_in_lang", "في" );
+define( "text_to_lang", "إلي" );
+define( "text_period_lang", "المدة" );
+define( "text_nextpage_lang", "الامام" );
+define( "text_prevpage_lang", "العودة" );
+define( "text_and_lang", "و" );
+define( "text_or_lang", "أو" );
+define( "text_gotonext_lang", "» الى الأمام" );
+define( "text_newssaved_lang", "تم الحفظ" );
+define( "text_gnews_lang", "إرسال خبر للأعضاء" );
+define( "text_snews_lang", "أخبار الموقع" );
+define( "text_pnotes_lang", "دفتر الملاحظات" );
+define( "text_save_lang", "حفظ" );
+define( "text_gold_lang", "ذهب" );
+define( "text_okdone_lang", "تمام" );
+define( "text_helptip_lang", "إِرْشاد" );
+define( "text_newvill_lang", "أحسنت لقد قمت ببناء قرية جديدة" );
 ?>
-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
-bjG3+79nalDol8LMxinZCR1749Ujeg2hqG==

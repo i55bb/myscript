@@ -1,157 +1,343 @@
-<?php //003ab
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');@dl($__ln);if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}@dl($__ln);}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the site administrator.');exit(199);
+﻿<?php
+#################################################################################
+##                                                                             ##
+##                                                                             ##
+## --------------------------------------------------------------------------- ##
+##                                                                             ##
+##  Project:       TATAR WARS                                                  ##
+##  Version:       2012.3.15                                                   ##
+##  License:       Creative Commons BY-NC-SA 3.0                               ##
+##  Copyright:     Bazaid (c) 2012 - All rights reserved                       ##
+##  Source code:   https://github.com/Bazaid/tatar-wars                        ##
+##                 http://sourceforge.net/projects/tatarwars/                  ##
+#################################################################################
+
+require_once( LANG_UI_PATH."game.php" );
+echo "<!DOCTYPE html PUBLIC \"-//W3C//DTD XHTML 1.0 Transitional//EN\" \"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd\">\r\n<html>\r\n<head>\r\n\t<title>";
+echo $this->appConfig['page'][$this->appConfig['system']['lang']."_title"];
+echo "</title>\r\n\t<meta http-equiv=\"cache-control\" content=\"max-age=0\" />\r\n\t<meta http-equiv=\"pragma\" content=\"no-cache\" />\r\n\t<meta http-equiv=\"expires\" content=\"0\" />\r\n\t<meta http-equiv=\"imagetoolbar\" content=\"no\" />\r\n\t<meta http-equiv=\"content-type\" content=\"text/html; charset=UTF-8\" />\r\n\t<meta content=\"";
+echo $this->appConfig['page']['meta-tag'];
+echo "\" name=\"description\"> \r\n\t<meta content=\"";
+echo $this->appConfig['page']['meta-tag'];
+echo "\" name=\"keywords\">\r\n\t<link href=\"assets/default/lang/";
+echo $this->appConfig['system']['lang'];
+echo "/lang.css";
+echo $this->getAssetVersion( );
+echo "\" rel=\"stylesheet\" type=\"text/css\" />\r\n\t<link href=\"assets/default/lang/";
+echo $this->appConfig['system']['lang'];
+echo "/compact.css";
+echo $this->getAssetVersion( );
+echo "\" rel=\"stylesheet\" type=\"text/css\" />\r\n\t<meta name=\"google-site-verification\" content=\"vTjsRxnpRzHRJvw5E3uOiAA-jcGayHNOw_SEAD93-fc\" />\r\n\t<link rel=\"shortcut icon\" href=\"assets/favicon.ico\" type=\"image/x-icon\" />\r\n\t";
+echo "<s";
+echo "cript type=\"text/javascript\">var d3l=";
+echo $this->appConfig['system']['lang'] == "ar" ? "180" : "-600";
+echo ";</script>\r\n\t";
+echo "<s";
+echo "cript src=\"assets/core.js";
+echo $this->getAssetVersion( );
+echo "\" type=\"text/javascript\"></script>\r\n</head>\r\n<body class=\"v35 webkit\">\r\n<div class=\"wrapper\">\r\n<img src=\"assets/x.gif\" id=\"msfilter\" alt=\"\" />\r\n<div id=\"dynamic_header\"></div>\r\n\r\n<div id=\"header\">\r\n\t<div id=\"mtop\">\r\n";
+if ( $this->player != NULL )
+{
+    echo "\t\t<a href=\"village1.php\" id=\"n1\" accesskey=\"1\"><img src=\"assets/x.gif\" title=\"";
+    echo LANGUI_GAME_ICO1;
+    echo "\" alt=\"";
+    echo LANGUI_GAME_ICO1;
+    echo "\" /></a>\r\n\t\t<a href=\"village2.php\" id=\"n2\" accesskey=\"2\"><img src=\"assets/x.gif\" title=\"";
+    echo LANGUI_GAME_ICO2;
+    echo "\" alt=\"";
+    echo LANGUI_GAME_ICO2;
+    echo "\" /></a>\r\n\t\t<a href=\"map.php\" id=\"n3\" accesskey=\"3\"><img src=\"assets/x.gif\" title=\"";
+    echo LANGUI_GAME_ICO3;
+    echo "\" alt=\"";
+    echo LANGUI_GAME_ICO3;
+    echo "\" /></a>\r\n\t\t<a href=\"statistics.php\" id=\"n4\" accesskey=\"4\"><img src=\"assets/x.gif\" title=\"";
+    echo LANGUI_GAME_ICO4;
+    echo "\" alt=\"";
+    echo LANGUI_GAME_ICO4;
+    echo "\" /></a>\r\n  \t\t<div id=\"n5\" class=\"i";
+    echo $this->reportMessageStatus;
+    echo "\">\r\n\t\t\t<a class=\"reports\" href=\"report.php\" accesskey=\"5\"><img src=\"assets/x.gif\" class=\"l\" title=\"";
+    echo LANGUI_GAME_ICO5;
+    echo "\" alt=\"";
+    echo LANGUI_GAME_ICO5;
+    echo "\"/></a>\r\n\t\t\t<a class=\"messages\" href=\"msg.php\" accesskey=\"6\"><img src=\"assets/x.gif\" class=\"r\" title=\"";
+    echo LANGUI_GAME_ICO6;
+    echo "\" alt=\"";
+    echo LANGUI_GAME_ICO6;
+    echo "\" /></a>\r\n\t\t</div>\r\n\t\t<a href=\"plus.php\" id=\"plus\"><img src=\"assets/x.gif\" id=\"btn_plus\" class=\"inactive\" title=\"";
+    echo LANGUI_GAME_ICO7;
+    echo "\" alt=\"";
+    echo LANGUI_GAME_ICO7;
+    echo "\" /><b><font color=\"#FF6F0F\">";
+    echo LANGUI_GAME_GOLD;
+    echo "</font></b></a>\r\n";
+}
+echo "\t\t<div class=\"clear\"></div>\r\n\t</div>\r\n</div>\r\n \r\n<div id=\"mid\">\r\n\t<div id=\"side_navi\">\r\n\t\t<a id=\"logo\" href=\"#\"><img  src=\"assets/x.gif\" alt=\"";
+echo LANGUI_GAME_GNAME;
+echo "\" /></a>\r\n";
+if ( $this->player != NULL )
+{
+    echo "\t\t";
+    $_d = intval( date( "G" ) );
+    if ( 6 <= $_d && $_d <= 19 )
+    {
+        echo "\t\t<img class=\"time_of_day day\" title=\"";
+        echo LANGUI_GAME_MORNING;
+        echo "\" alt=\"";
+        echo LANGUI_GAME_MORNING;
+        echo "\" src=\"assets/x.gif\" />\r\n\t\t";
+    }
+    else
+    {
+        echo "\t\t<img class=\"time_of_day night\" title=\"";
+        echo LANGUI_GAME_AFTERNOON;
+        echo "\" alt=\"";
+        echo LANGUI_GAME_AFTERNOON;
+        echo "\" src=\"assets/x.gif\" />\r\n\t\t";
+    }
+}
+echo "\t\t<p>\r\n\t\t\t<a href=\"index.php\">";
+echo LANGUI_GAME_MENU1;
+echo "</a>\r\n";
+if ( $this->player != NULL )
+{
+    echo "\t\t\t<a href=\"#\" onclick=\"return showManual(0,0);\">";
+    echo LANGUI_GAME_MENU2;
+    echo "</a>\r\n\t\t\t<a href=\"profile.php\">";
+    echo LANGUI_GAME_MENU3;
+    echo "</a>\r\n\t\t\t<a href=\"logout.php\">";
+    echo LANGUI_GAME_MENU4;
+    echo "</a>\r\n        </p>\r\n        <p>\r\n        \t<a href=\"";
+    echo $this->appConfig['system']['forum_url'];
+    echo "\" target=\"_blank\">";
+    echo LANGUI_GAME_T1;
+    echo "</a>\r\n\t\t\t<a href=\"";
+    echo $this->appConfig['system']['social_url'];
+    echo "\" target=\"_blank\">";
+    echo LANGUI_GAME_T2;
+    echo "</a>\r\n\t\t\t<a href=\"chat.php\">";
+    echo LANGUI_GAME_MENU12;
+    echo "</a>\r\n            <a href=\"snprofile.php?uid=";
+    echo $this->player->playerId;
+    echo "\">";
+    echo LANGUI_GAME_T3;
+    echo "</a>\r\n\t\t\t<a href=\"friends.php\">";
+    echo LANGUI_GAME_T4;
+    echo "</a>\r\n        </p>\r\n        <p>\r\n\r\n\t\t\t";
+    if ( $this->data['active_plus_account'] )
+    {
+        echo "<p><a href=\"notes.php\">";
+        echo LANGUI_GAME_MENU5;
+        echo "</a><a href=\"links.php\">";
+        echo LANGUI_GAME_MENU6;
+        echo "</a></p>";
+    }
+    echo "\t\t\t";
+    if ( $this->data['player_type'] == PLAYERTYPE_ADMIN )
+    {
+        echo "<p>\r\n            <a href=\"news.php\">";
+        echo LANGUI_GAME_MENU7;
+        echo "</a>\r\n            <a href=\"gnews.php\">";
+        echo LANGUI_GAME_MENU8;
+        echo "</a>\r\n            <a href=\"badwords.php\">";
+        echo LANGUI_GAME_MENU10;
+        echo "</a>\r\n            <a href=\"advertising.php\">";
+        echo LANGUI_GAME_MENU11;
+        echo "</a>\r\n            </p>";
+    }
+}
+echo "\t\t</p>\r\n";
+echo "\r\n\t\t<p>\r\n\t\t\t<a href=\"plus.php?t=2 \"><b><font color=\"#FF6F0F\">";
+echo LANGUI_GAME_MENU9;
+echo "</font></b></a>\r\n\t\t</p>\r\n\t\t";
+if ( $this->player != NULL && $this->isPlayerInDeletionProgress( ) )
+{
+    echo "<p class=\"deltimer\"><a href=\"profile.php?t=4\">";
+    echo LANGUI_GAME_PLAYERDEL;
+    echo " ";
+    echo "<s";
+    echo "pan id=\"timer1\">";
+    echo $this->getPlayerDeletionTime( );
+    echo "</span> ";
+    echo time_hour_lang;
+    echo "</a></p>";
+}
+echo "\t</div>\r\n\t<div id=\"content\" class=\"";
+echo $this->contentCssClass;
+echo "\">";
+$this->printContent( );
+echo "</div>\r\n\t<div id=\"side_info\">\r\n";
+if ( $this->data['guide_quiz'] != GUIDE_QUIZ_COMPLETED && $this->player != NULL )
+{
+    echo "\t\t<div id=\"anm\" style=\"width:118px; height:142px; visibility: hidden;\"></div>\r\n\t\t<div id=\"qge\"><img onclick=\"showTask();\" src=\"assets/x.gif\" id=\"qgei\" class=\"";
+    echo $this->getGuideQuizClassName( );
+    echo "\" title=\"";
+    echo LANGUI_GAME_LMENU1;
+    echo "\" alt=\"";
+    echo LANGUI_GAME_LMENU1;
+    echo "\"></div>\r\n";
+}
+if ( $this->player != NULL )
+{
+    if ( 1 < sizeof( $this->playerVillages ) )
+    {
+        echo "\t<table cellpadding=\"1\" cellspacing=\"1\" id=\"vlist\">\r\n\t\t<thead>\r\n\t\t\t<tr><td colspan=\"3\"><b>";
+        echo LANGUI_GAME_LMENU2;
+        echo ":</b></td></tr>\r\n\t\t</thead>\r\n\t\t<tbody>\r\n\t\t";
+        foreach ( $this->playerVillages as $vid => $pvillage )
+        {
+            echo "\t\t\t<tr>\r\n\t\t\t\t<td class=\"dot";
+            if ( $vid == $this->data['selected_village_id'] )
+            {
+                echo "  hl";
+            }
+            echo "\">●</td>\r\n\t\t\t\t<td class=\"link\"><div><a href=\"?vid=";
+            echo $vid.$this->villagesLinkPostfix;
+            echo "\">";
+            echo $pvillage[2];
+            echo "</a></div></td>\r\n\t\t\t\t<td class=\"aligned_coords\"><div class=\"cox\">(";
+            echo $pvillage[0];
+            echo "</div><div class=\"pi\">|</div><div class=\"coy\">";
+            echo $pvillage[1];
+            echo ")</div></td>\r\n\t\t\t</tr>\r\n\t\t";
+        }
+        echo "\t\t</tbody>\r\n\t</table>\r\n\t";
+    }
+    echo "\t";
+    if ( sizeof( $this->playerLinks ) && $this->data['active_plus_account'] )
+    {
+        echo "\t<table id=\"llist\">\r\n\t\t<thead>\r\n\t\t\t<tr><td colspan=\"2\"><a href=\"links.php\">";
+        echo LANGUI_GAME_LMENU3;
+        echo ":</a></td></tr>\r\n\t\t</thead>\r\n\t\t<tbody>\r\n\t\t\t";
+        foreach ( $this->playerLinks as $link )
+        {
+            echo "\t\t\t<tr>\r\n\t\t\t\t<td class=\"dot\">●</td>\r\n\t\t\t\t<td class=\"link\"><div><a href=\"";
+            echo htmlspecialchars( $link['linkHref'] );
+            echo "\"";
+            if ( !$link['linkSelfTarget'] )
+            {
+                echo " target=\"_blank\"";
+            }
+            echo ">";
+            echo $link['linkName'];
+            echo "</a>";
+            if ( !$link['linkSelfTarget'] )
+            {
+                echo " <img class=\"external\" src=\"assets/x.gif\" alt=\"";
+                echo LANGUI_GAME_LMENU4;
+                echo "\" title=\"";
+                echo LANGUI_GAME_LMENU4;
+                echo "\">";
+            }
+            echo "</div></td>\r\n\t\t\t</tr>\r\n\t\t\t";
+        }
+        echo "\t\t</tbody>\r\n\t</table>\r\n\t";
+    }
+    echo "    <div align=\"center\" style=\"position: absolute; left: ";
+    echo $this->appConfig['system']['lang'] == "ar" ? "1000" : "-850";
+    echo "px; top: 35px;\">\r\n";
+    if ( 0 < sizeof( $this->banner ) )
+    {
+        if ( $this->banner['type'] == "image" )
+        {
+            echo "<a target=\"_blank\" href=\"banner.php?url=".base64_encode( $this->banner['ID'] )."\"> \r\n\t\t<img width=\"120\" height=\"450\" src=\"".$this->banner['image']."\" border=\"0\" title=\"".$this->banner['name']."\"  alt=\"".$this->banner['name']."\"></a> ";
+        }
+        else
+        {
+            echo "<embed width=\"120\" height=\"450\" onclick=\"window.location.href('banner.php?url=".base64_encode( $this->banner['ID'] )."')\" title=\"".$this->banner['name']."\" src=\"".$this->banner['image']."\" />";
+        }
+    }
+    echo "</div>\r\n\t";
+}
+echo "\t</div>\r\n\t<div class=\"clear\"></div>\r\n</div>\r\n\r\n<div class=\"footer-stopper\"></div>\r\n<div class=\"clear\"></div>\r\n<div id=\"footer\">\r\n\t<div id=\"mfoot\">\r\n\t\t<div class=\"footer-menu\">";
+require( VIEW_PATH."layout/footer.phtml" );
+echo "</div>\r\n\t</div>\r\n    <div id=\"cfoot\"></div>\r\n</div>\r\n</div>\r\n\r\n";
+if ( $this->player != NULL )
+{
+    echo "<div id=\"res\">\r\n\t<div id=\"resWrap\">\r\n\t\t<table cellpadding=\"1\" cellspacing=\"1\">\r\n\t\t\t<tbody>\r\n\t\t\t\t<tr>\r\n\t\t\t\t\t<td><img src=\"assets/x.gif\" class=\"r1\" alt=\"";
+    echo item_title_1;
+    echo "\" title=\"";
+    echo item_title_1;
+    echo "\" /></td>\r\n\t\t\t\t\t<td id=\"l4\" title=\"";
+    echo $this->resources[1]['calc_prod_rate'];
+    echo "\">";
+    echo $this->resources[1]['current_value'];
+    echo "/";
+    echo $this->resources[1]['store_max_limit'];
+    echo "</td>\r\n\t\t\t\t\t<td><img src=\"assets/x.gif\" class=\"r2\" alt=\"";
+    echo item_title_2;
+    echo "\" title=\"";
+    echo item_title_2;
+    echo "\" /></td>\r\n\t\t\t\t\t<td id=\"l3\" title=\"";
+    echo $this->resources[2]['calc_prod_rate'];
+    echo "\">";
+    echo $this->resources[2]['current_value'];
+    echo "/";
+    echo $this->resources[2]['store_max_limit'];
+    echo "</td>\r\n\t\t\t\t\t<td><img src=\"assets/x.gif\" class=\"r3\" alt=\"";
+    echo item_title_3;
+    echo "\" title=\"";
+    echo item_title_3;
+    echo "\" /></td>\r\n\t\t\t\t\t<td id=\"l2\" title=\"";
+    echo $this->resources[3]['calc_prod_rate'];
+    echo "\">";
+    echo $this->resources[3]['current_value'];
+    echo "/";
+    echo $this->resources[3]['store_max_limit'];
+    echo "</td>\r\n\t\t\t\t\t<td><img src=\"assets/x.gif\" class=\"r4\" alt=\"";
+    echo item_title_4;
+    echo "\" title=\"";
+    echo item_title_4;
+    echo "\" /></td>\r\n\t\t\t\t\t<td id=\"l1\" title=\"";
+    echo $this->resources[4]['calc_prod_rate'];
+    echo "\">";
+    echo $this->resources[4]['current_value'];
+    echo "/";
+    echo $this->resources[4]['store_max_limit'];
+    echo "</td>\r\n";
+    if ( !$this->wrap )
+    {
+        echo "\t\t\t\t\t<td><img src=\"assets/x.gif\" class=\"r5\" alt=\"";
+        echo LANGUI_GAME_CROPCONSUM;
+        echo "\" title=\"";
+        echo LANGUI_GAME_CROPCONSUM;
+        echo "\" /></td>\r\n\t\t\t\t\t<td>";
+        echo $this->data['crop_consumption'];
+        echo "/";
+        echo $this->data['crop_consumption'] + $this->resources[4]['calc_prod_rate'];
+        echo "</td>\r\n";
+    }
+    else
+    {
+        echo "\t\t\t\t</tr>\r\n\t\t\t\t<tr>\r\n\t\t\t\t\t<td colspan=\"6\"></td>\r\n\t\t\t\t\t<td><img src=\"assets/x.gif\" class=\"r5\" alt=\"";
+        echo LANGUI_GAME_CROPCONSUM;
+        echo "\" title=\"";
+        echo LANGUI_GAME_CROPCONSUM;
+        echo "\"></td>\r\n\t\t\t\t\t<td>";
+        echo $this->data['crop_consumption'];
+        echo "/";
+        echo $this->data['crop_consumption'] + $this->resources[4]['calc_prod_rate'];
+        echo "</td>\r\n";
+    }
+    echo "\t\t\t\t</tr>\r\n\t\t\t</tbody>\r\n\t\t</table>\r\n\t</div>\r\n</div>\r\n";
+    list( $usec, $sec ) = usec    echo "<div id=\"stime\">\r\n\t<div id=\"ltime\"><div id=\"ltimeWrap\">";
+    echo LANGUI_GAME_CALCMS;
+    echo " <b>";
+    echo ceil( ( ( double )$sec + ( double )$usec - $GLOBALS['__scriptStart'] ) * 1000 );
+    echo "</b> ms<br />";
+    echo LANGUI_GAME_SRVTIME;
+    echo " ";
+    echo "<s";
+    echo "pan id=\"timer2\" class=\"b\">";
+    echo date( "G:i:s" );
+    echo "</span></div></div>\r\n</div>\r\n";
+}
+echo " \r\n<div id=\"ce\"></div>\r\n</body>\r\n";
+echo "<s";
+echo "cript type=\"text/javascript\">init();";
+if ( $this->player != NULL && !$this->player->isSpy && $this->data['guide_quiz'] == GUIDE_QUIZ_NOTSTARTED )
+{
+    echo "showTask();";
+}
+echo "</script>\r\n</html>";
 ?>
-4+oV5BVDpzcNYZGUUXTQ+gOmege0th8Rhsa8iyDtbtmXQ2QeED1H3NiDcoHh7sbbln1ZnV+d03RA
-5EllRDATMPlP74S8Y4gstU93aIap2Tc2w9Z4JHQk4ZbCcp6wWO0YzlAhDeVmZTWfEekQhNHF9xhe
-NV7aDXO9yVeh2F7EEy4Z8+iSDoTBsrNChKAg27YCnvkjgpsODAoX2eKMtduQ7zCkX2rm+QRCL0iX
-y3R/47KPQJBqqwZi9JJ8OVwVwD248IcsHD31U9jLH+ydOSLn4hrT+0OBBc1aCV4EQV+1ReavHvah
-MPtZoX5AVJ8aLOa2LimW4Mif3t/OqfgXU6Im+ncYGs9SZS9uPgrXWgrKvKpZnPukpD8zsRZidVoy
-B6qnr1GWRcedMD3NPf1JU15o2kNu6SPh4X95gX7/l++9DL38gnwpfb3peB8vqTIij9Xpad6dU5aa
-2f4AZKAXUoJ+j0yVX1g3+II1FIz2x1Df8VWfBWXk5Xz3kUBFZypfXa5uEHHCjwZ2R273nEpl1zJ8
-P7DAuZg8QAKrtYyKc2DqpY2lxBPymO1XjTG2hmcd8ZPLlSDzONJynFzh6OtESxH9/yRCxmRjC2mY
-0cpV9rDjFiYchpEsG29wl135Uhrc/w+YeGiRgCwF/Aei5FiKkyziuYqlh9d7a0JICWq083YJQUux
-CJ+k1R9c42MpT+MWBwn6qbvzN3hyyXNJnDqQqE3KERYlh9TkFzyoHFZNDyXX9cFHc+d7sKTHmIjc
-IZcq694aQTGEBkgLKvKj/oiUj/IzjBcZ4EQr89B7PgesLRC25+EoN2tpooshXGU8CJafzCCGqidt
-Gw0zc29EM4J2vj7N/l/T20X2bTkMmFj7ueAPOszwEO/iJIn6JSdEJCa+03HcZDOL7/dP/6q31Wq1
-M3giWqpXw6Oj/6koAIuOPROHg9niKx80vYxDw4GINUhmxSNOnyASimqn2vEezboH36ASlb2zpGKB
-Tva9M6B3wFFZyAUOHvSjCalMNQIJzBhyUgdUvULJf/mh9FWCCtFtzoYtA3dr4kVfQm4PFnuhOxHJ
-iNMh7v2Yb3uZ6T1U7fdwk5CWCqgDcjwJgkxL+IU2aDrpRMKVk36Oq6v7p0hWSTwMjGhAtEfbHwPo
-9t8WK3KF+dB+Feh25nrHfMM55NplCbowAnARYXiR+tBXavd9Wj5fOj8NyM2qnkD4uDbHbNNQMjYo
-V0aE5JHvOemxGoWfV5cox56jTy0CO8OvL/GObPuM8gyZXC5D+VjP+0+c+t4qcDtjqlM5/0z2c21E
-hxGHD12DwWu+lURZ0pTrgSMJ6zKTQylj6nSfO47u18EABOLCuLhp8FC37uzw75uli9jZC40WiF2/
-xPWFjJ71L+mn19+ES0elhLkWpdwT7+/2kqt4+bXlT5bBWeqI+Ho5G0/fhVksIs+nuKFzWxMIijM0
-7AVKaESZJQab5LUwjvpEFxnuSjBycmQAssd/cYsSWoBMi5JCc3yox0AdYuVPn8W+RL0DFfaAv75O
-yMA0adAwqFN0HDA9wJcPs/w/vVQMidYlr/pWWvXtJr+i0zkIHtJAvu2qMWg7RHGNszB4Bdv6PY30
-S2Vs+KsgQGZuQm1lhSIwg/po5cvsU5b2kMH/liJDR8l2BswBcCL8ho6Dsk2IncM7EyaA5koNALe8
-WxIPS7vW2N9q/vZgwdABSt9rs1YYIecDJu03kmFr01vdK0IDB/KQdo3nL//Lp9q35LYlo/uzCrEt
-NKhblOxuwR99b8Lv9tvFXeDovni7bw1KroxqAq3BwnpecPRJ2GurjNMIqRRPV+AIcK/qBhlI8HB3
-EPYFEUZk3WAHnoad+4hRzml2KqQmqnVpK1+csHuMimqg7nFR158uGWWtyClrdr+jpqoBmRdUCarZ
-nDbUYv7hWv3wiK1hzKJXk//7z4uL577AipvdWNUle7g7aKcY9z/LbkBObjTp8AHn2BEoV0hNBUXR
-aehKDoeNjS+nzqoejm/ftU9PsjHIBytBZgF+t4NiofIVbf/Q8HB/GOnybCzkrUjeX9H5V8KCJTRM
-kVQkJgy3vooxAvlbRdy5wnH6O20Y8NFiXoOLwSWuEOV1fpCXqGJrFVXiug419t4iS/i/iKO+0CNp
-GPoImsTfedb9q+7QGEirTWqIb94KBL9CWqYYLA/nz4kIitQpVdl1rDT2i5ICfmheJF7ljhfoSWVD
-SrgPrzXxK6O2/W+q+iETa1I7tofnJ2lKuOfsNLW0MhVR6GioIMpCwXdJJXrCtIc3ssb9zreRmuBV
-5Ho/ZHY3dj+kfAB3xOR4ywIt3CY5AGAit2hQZdIAr5Q1O70LoQZr07z7pZbb2YZG5JhF06EfjRPj
-LUNYI9LFFMOqJFy8E0g39RhH0Xv6ukmFO/0ZIo3DgjbC/8q3pkFt2DsoxaTe/2xkjIP5m+BLIZqi
-fwmFmQTLwm//fxg/R1VXJPb6Sr26oCH7l7PTy4ycNDaicnUdks175FjGBDCSNN91lMl4LhYTWZkj
-uOG/eQB1RgYU0fvHu2xwSoYgTvtCvSbIMtaTm3L/WsGqQbYK6w8JO8uYsNYuCL7wnxWNa024/EVl
-w48Y5Qbkl91+Wn738s6Z/tnrQApeNdp7TNM1ZXIxq/IuWjA37a28O3vWppbtn16De7wx2FJkmjZW
-NdhD+gUyTLUTGJPb9GUtU1wIZfeSngJc0H5dPsbc1VAsTTDmPVP5/pZNxEc/c0sOcvkg+8sq2omI
-RE33v8NdhpXF+yDfkPweqh9CKAU14rbehdcHJ2Jt6GdCK8PPfi3BV63Cufu6dRaecXjyftJ1nd95
-/aVGbOKGc94QJskh4Es57UxmMUEEXkF6fPez1WBUU1Bo5EVxdgVfjcg3ZTecYCMo1wDYXDWdGZuL
-KlW8oWBwA+Xujxv2/ByfvyujiuBHZifhyE8Pj87tDbV+oGUTDWT8tjXKyyOAHCa9fLGjwryV4Nru
-8rywoIK3MTGqXZQH8giTc/nZ4xwLtTnvbcRH3gf3OvDQKX1rEFIE+KTY55WHScLEgbXaEGIcerY9
-gkZsN/HdFTn9TIk19ZlxYIFryRrKjf9nLLDIJfA4QF0kkljVusabgh/qYds1XFFuwaIPpHmr9GCH
-pIyf3eKYgAvy9q/5pQ2kt1tdCIQl4ae8jkwxwvD/7AiCPFaiq4G0MPkAy/Vo0W/g79duxO6PSSC9
-SG9Dh6Uy5mqGRY/ee759BnklVhAdGTzcdKhcYs59VPtlzaqVN9BwGSq/CW9NfWYcDK0BxaDxGXvz
-b4L3D+LpdKNU+3XBMfzUR58iQh7C3UDHvU26tzRhSyvJhWQ7ZlaAUyxTTruAuxld24gp0Fiq/2Wd
-RisKmWSY98G7YfccYbglv5VfKZdl7KDKs+HupW3uwQITnEJmzRtCGB4R10O0pFV9gjU4u3W4iY9A
-/fXeNFDJhOLP70xhuXSwfRpB25esYd1Mooelfzf5Prguer/iim9rSCsPhA+cTLuQnLoxEQxsTduL
-1HhmL0iPULv0uevsRHxyBOA02s/HnF9xwuZhhXHB1OFt90OcjA28+gx0oehp/7wqpluul9D7NT08
-eo9tNTc46lTUIke5SgDcJbqqycLkSQw7osA6kCjjvWvJlGvsfU+bVZY17Z3ULvi8s7H4n6Ty44ZT
-2GjBF/pujU0rnyOCp6eSGNlGU5XTaUQhs9j7urDebz5kgZkLSBpZwWXZv/9WdJ/h3RcCqh+r1Bcl
-ec6BhePYb8KT7AVgYtwYsdRdazaC/qhE0VeQCsS0XdNRJrjmTBMTa6jfFwlHLvHazkrhyTvoLoRZ
-a/Il9mOctWcQQ/hpGyLRr7X01snwcTuq0izCobLAYCyhZlGk8RxryobpQ9l7DDfQfID7G3+Ox4bl
-eufNpmONk58dRdtvWYFVFmVm7+K7FofpCzQdM86vGFB/d0FQEdET/J3quVtFUVLnTnXJog39kdUV
-2HXi6x2WnOqpS04NZ46V+TzxNZGMOONLjx5GYE3rdaE6AlBVuJtRx2d0kaZsaU+tI6Kx4MEeOV3L
-uFUgS+ARYJJZupVk1K6POaLmLDCua+RgaTl2LzRDSHVIon+ahk2AeQcfoUPFt/Nn/nYn4KapB8hv
-Opa+hAHgpc8QwsICtPVQP+suB+hhH53NuLNNWmPzHXxZgszZgcWXtIWLTtufdp2fuCtCDQZ9OT6f
-6OVdcwA609ZRh03UC5Zs98nyWP71vpTTM0PcRWFamdRz0osQ+FbdTwlbGl/nmrELWJPXb8ZYxXt8
-MqpNx+Ck/NJvcuX5UTm+YVVV6aqUEbXeQLX3nGO9LF7AKJ6zIz89LW+AntwNfoiojLhWcOqEUtWc
-c00ZJT9GKnbItRiTZXUuAkMPg0wf0rSSFu6aQRrhL0uEIUlB3++72QG4TnfW76iUNFJuU+ZXlszj
-VqqPAfP4UDA4Fhhhz9UeHXCjc9rJ+HizUNV5XiQJu4D5+QAuoK1Uod/5EG6pLA3VFjIL36GB/Y6Z
-ZmLGSiMoYcVGTqM1J/dct/hmUzfJ0BsIpgwPJeUWDfGRzVdp8ywpdT+FfIBoj3kLcQ+0He9v+a6b
-umuOtgLj0mRypDBa32o9DnOU5xasR0Qwn94Daju1b9dgLOVh2lxL6Q6yNAmCiyJj0GIQ0QBwM93V
-8tnyf1rbkjHduTiItjokRal7OVPtYm/+avrVViFIPJhNGEEXcDwHYhznRoXYYwKr6dRx09bzCy4p
-4sJ05PQVTytAnpkHbARr9WNevySC4rwQZbJuffgVMyHYoa8K54M8+1gL4jhK/39yu7op5wJZ1Jvx
-/qAC7QMKe41S96S0J1whc0D7W7n2y1C6+TQONEUKdhLO2mnGdvCDx34BKDgPw56JqCkMHgKGe9Cd
-LjktnKhzRKjk92rDwqbWMmPq3dN2WqtmDi28USZFx7DXOeJrUb6CU9nImkHWmusP717GizYNR9wE
-OSQ6GJwDQjb2ADUQd7h1IHkJw+V19PwZ7CPYksLwISeMwpTC2GXeWiHLRcvtkgPo2WAQ5uaOYOLO
-80o1VUxc9BzroRi5geNhVzx8O9evNg4ZAroLyxLd2foe4oxJZ7mz6Z4Lz9NAHMYIL+m/6yDXzjrF
-cp9pLr29kydT7j8nI20+TxYHl7hngr63pO7wlMya34oX3w6g8cF9gbEuq9xFSbDDlC9GVIi2MOjO
-wh2H0UxYJquGZy1z7WQWrDzpiKD+35D7b05MaUG/iqKShsB9ThoxtSHbMfsbSh2ElbYTvEof8NTg
-ciwCvUdtB4o+L5b31ovlhim6xgxfDELQhes4FnpTPCrhB+rCAjiW3+MGoioW9OkxyKQITDAErfZW
-ZE7YzFzmvjlFI9GuT9yWBpaIBVPAMQd+VUn76Ap243lfSC4ouEvsjIMfbD9LThi0sJ0KHv1ZYU2q
-Bn/lcQQG/NbITVmX0OqQrKLRUSucFQzOVF6bpChiESIRXR4sjMsx6lksVouea7Imr2+pb98+1meh
-NnUTykPO6RcpCOM0SnVLHRnusKGMs9SXvDcsSB0T+2npf99SyCSnieSUmwuvL2Nk5faXEa7kDFC2
-0w5BkMJ9iPSgOsgeuWfzhHqPM9UVlFclm6ahYmDV0uUUH03ATvu6doJUgoubWijIJVIkpnlh5RcB
-TyGuuYseD1zxHLecNMgPcqGExg6DMLNcOTRFXokAaSP+UIz8aPHBzwb2AynCWIe6HgemWPqKurcf
-VQMQfwiU7AJiaNPasBGxu1qmwGSQwXLRYHhl0DsUgL4BcQfokF8ZYmUtgWWnHLx66GcKr7HEy97r
-LtDdhkmHqY/OTnnYvCzMwYlnRgZ9V2irtrHi7c98ZOxOTWgBJ3+xmqjaXDAdg58dzwTuTOLraf+R
-PeLmR4d/7QLLjPY2H5aVAW+LBuHzDCj7CPB3aLZD7lsoaGWfgVyYpFQzDGIJbG93qRqnlJzrg7P9
-W1xb/ZJmJfpSfZv4OVKcdWdLG3J7i4S6kNigHYtgp2/gNaoGB6x+rjfwWRGoZqBnryMD1HcOJdV2
-+kMbEOGBBth3HYqAjvbd0yP7crBFngh0PLt28BYfWKyBkUKoyuHeU7WK8uII7aLUeDmQRZXBMhXw
-82PVDJWlyarA3YRNzqX2X6YgXpUuUjcxn+a943xRcpDgu7lvQsGSioRjagJRFWUQDj7/enxUzovh
-gh+glsu9+30LHYBJq10anWzzYBcCBthQVgCGXzXSX/c93WfRs/3TOdeKb6+zkJ6B2jOPj/oyAY7/
-VOkOFKmD0kOgn+qSnW04lFJMzCTQEq14KEQNnP0osFRmLtNMDktSGkl2I0iZqyMBcbGYVlWQ76Ir
-C9rL/bTEiRtp6fn408rCB3Yxkhw+7MQSAvWaReEFW1KxXvBE6xw7M2PAE0HuEzWdUXNCRu8XWRRg
-A8tGqcl7ebOM7lOc9tR++63OcH8VZDkm70PaNO3OC/149U1k0HIEJ6b4lO0l/3y9QPiimd7lVTzt
-WtHFl63n6BkbdYm05kfXuWdsnRZOzz55EknTTZuZX9PkmgdvIm1qk1HK00Gvo+RuuBtoWiij6RZX
-aK7nLLaB74t7ImLqDxPP1yt/iwvL3N2DV4Nb6vsoHOyfR2H9ZtToCuZNLaW7M1G7ECP3vZ1bMk2I
-gaofbnwN8en3Z6eDEnzpqjNByspRIqdIT4W3mLP8fxIXSytNaTbKkT84jPdaObX5JAUZQiJvHB9L
-D5pY3gCF7uTKpp1Jy8oBpvSxrDObBxR3lvitfg3MNWuNXrswLM/Llp6B5f2J/tY3Cyc+/9ixI7dc
-4rkb1D0XCKJXkg2de08qjcsQ7uF6mmXLF+MzcDk344JCsEp84p5ZHCrTe+uDuByTs6MhTN/9qucQ
-HGPfWktla2pwEVNpfzRp1EquS0o6UMQl6U7ICteF03N+dzb6zbtyN28hvQ58ceu8RYiUK0rPq6mD
-c8uMWxdNaePQdniJRgoXOAPsbce+MgsqajetoCBpdF2rSeSuwDNCCXSUCeNcaBT8/j00YcInmkDN
-YohIJVB3RXh9OKA9SjooCPx/xXIGVzQ3DQHCJpQn7AYigrd/qlzbZCAA2rkKY4vPWDVpCScgSCwl
-9e9K6+C6QM9w4PLcdn5yE/+u7QkE/JlcHoI6x0uZvJ+rtAAl5jZPFwHkxBieaJRnzxuQOVZDRu5H
-MYZ/iNFqS+vrX43/UYmu8gM4T5UFyNSV9AvE3b6YYjn9sEtgaO8ITb+vl4LEzQ08F/c+pfdbjmeG
-kXzEIw9BGzQyMRxU+gZCzkkSFGn0RvWLVnISBf1gWQvtZVT4SNY+0rCzayoPlpsvIRG3dB5r7Mzn
-1+HTN7npZ1A2yDWB37TP35Oia+4jtpkAhkb/uUG0q6iXkpGE8ArAH6qwIzLuWjTOuwLT5PckpgIR
-Q56L/8RQDl9RRUV+dPtSwyRDW5YgNiCZijHou81hRftttB33I+HPT99lL7tP4UtRcyUbf8lgGu1n
-gs9IwEPI3UFBBr1HleC6f5XGkz9yNosrhpx3s4SA2ILl6sqxuBc1eZQ1UgW/0t9BhArjWub50ox5
-0SLx0o4NeogqQSc2GrizT25u1xOuppJ5S+FmIZAji9vU2ViCaOU3BX828nbP/w8DxVZ/RNF5E4xz
-9+794+g19dXnhjTqnBdhEdPHukWY03Gwbn59meqCM5EZiwrU0bUxquMPrix05LmThqjdocKCrpYP
-3x1XLKh+lNbGbb6Ft09RWPMspp6iheeYCLwTzSOQ9mCIhRE3wdEnSj0LyxtN9Hw54DKUDGjbVlqS
-e9TfLMRceyLGRDzzcRClWNHEcN1DYvLiLVkCzo/tYaJF/88qIrWdcLA2uc0UwQ6t/0wmZjYkizMa
-/gymLy5pAW8Fw8ynywUkBU7mopc4mT9mfPO4VwvoPLkCg+hageSmc1Qs9u9h5Ma6m6s62LcLfjzi
-X03wGuGZHtlChnzOZ9+lBp3Pw6CfiBP5gELZ1KlS4DWseuC+XA7pJzu/qSn1nHEBAk/vXBBiy5cZ
-pv2NVe1ivPicMyD7OKn7LUfxmL7q22AX1hP5U27u903XrUhzI5SsxX6waHmnVOyAxJQFsTzGzv+z
-Bj82/knYEJz83/I11VvkL2DRBxe8PYAZ15KwshxrghaGreaeeH2twReSux5uvYEVUc9AjFTgWPV+
-YkZTsu8OxvIKOl6Oq9+lNNmVmoBMTtuIzhCRp4k9nO4Gat2n/jX+M0B6yv4d05jNrfh5y6sHsGOi
-XvRB9WpJ+f1cR2MsJkCtkYPwxAeWbzq+lYb5ckE2qIxM4O6BcBjbvvs1MZZcGoX1S9NlDvVlnCwp
-n3ySngHxcBhtlR0gEFj4dtDwnDqX/FHzbyekIcpu9b5nWrC763Ch1dG7gq7dw9kOuhNjXZ4W12hI
-QQdnLLbiYcRihTx148kQ2uzDNA+ejimTp75k4DkEgfcAoR2aPxgMvZjFDrTN25LrylgiQ3EQLcHS
-As6SysP94EG38trnwzkruMuGBjmCc8hDnGIk3f2t8ccakjlKP5HjpvH4j5j22v/ljdLlj/oiCe6X
-ahc9d72LvvieV+mRQYDDQ0Gkkxmxnf38/BINzUTWfQIfloVwvRXr16gVmmrStNvafG9aIIOH9pfM
-f18U2PeGxzA+dkDvPwu/obTAQVFvIS5mRCRpjyVAp1mL4Ex+XDWd+oFC9AygRa2aE+Gn94Dfl4jP
-DMjxPZi8ZcXy25VyE6ITf/2ygu3UBI7hP6Z1eYmFpBP9v20cC6BmFX4Z59ZqCVF2Vi+j51Vwh5hb
-d9/i7M1Aqp3/VOGnztgv2vqBQv3u4993eTzurxeZIVC+AchstABGsee0ElwQKcP6cErdTtDmxejx
-EQ1vgXbR4WxkhHrCZ8rckhfCmeloi3TkmWAmbhTl39onWvJ1ytbdi42TYF48bkMxp2V4OD3j70ZR
-SOQBDv2QXqSZRNHwo1HjTlKaw5Ph7yBNo87EXON2vagdcKHSCDKV1ZE8uWO86ryAIAg/TB5CrLUI
-gwEDLsw7P+60zJCJx3sM7SFjfNSjkGx0/7glfqOzERgJ+Ti4ZLBwEMp/cA38VavQOM36PwialUTF
-J1Z4Vfyf3deEn2UFtVtFY5+cB+nDQ3cfWOL7cb40xnwu5HGlnPYJZcR6Y/KKdaZT663XZ4L5d3Zq
-ibIofAMENXA46l41hT0kxACwqconyWV6heDmHbm/9DkNKdiSgNLNt/nAHQdYaAMXEtALJUGl1XCe
-vHCMtkwz7fi5No1JiKTyYB+dHg/YezWN8U8fnmLzpv7ugUFSTHM0B4XKK9/BLGS0sXTKlvrYbRqW
-9bIPYCWABRVOTEkh9RHor70HkTmnzjKuIc+N93Ph8UybgYlLWH6IEbAgkvPH+VtUqfgQWzLWgnTW
-yMLWVKJsy8JzRJf1P1HxFyEi2t4QxUoz+y42k4kEJDSw8QjGczlw0hwLPD84IPIvFILtT2MGO684
-eacNEA4Kld1yclDDXRq+g96Yv9TDR7Tj/928In71AsRggHbWB3HtjhLVATqkfsEtuqAk3qAB14f7
-dWhPyvCs8EnQHWGOLISPsbuBVPrlRNRQ/22FowMYqLQp2CMBwQS+ceZD+pX5e8GeI2UxeBUy0t3W
-pIiKFKc1HnxUO9Ts7aP44Tpb7r7/mM+EC79PJAb5IU+D3Guc2tKuuFLuPvZo2Q3zHa2tem2T37+E
-bKpMyoT4DrLe906z60JNGLeaKbQX521oBdZDDzGJsQv/AYw0CRpUhurjr//VfdgXsZRfegZhYxy7
-vtPfzVX7GehElYyZsktITp3sptlfoFYMCw9+zKKWeGWKHrEclL/mLwVdwIo4kZ+hqCK/69AtcNch
-P+DZEpu0vyHtqH8+C1g2l+lKr1chZOFWqMzPZHroGOfoSeXCv6QDuRxtZeMLqMGOE6ql61J3lA9n
-eH+oG+Ow2XFh4japhBi2tqzHiY5GCMk1SHDEkVfyiRN5m+5CsNMykwJ+oqOXPIyvKbRMR+xrLfBT
-o6yjXBMoFo/nmydnR9orq/7z05Sw0jzWc+WT3Wn5SqIQZHkcalCFKoWjb/3XLTBGdyLG4kjiaR3F
-vWzKd4xHbHONN/MdZ93G3bEwS2ZV1HEihYIh4dUXUJ/zrWFUpojcH7jwepf+faLr0QxAiM/oHNAk
-+voGtpC5+b7p1j99FPwVkfDMaOKwia/iqCoQdJ3Wxxhai46s4p1hT0Mcv8wjMfWgEXhJaio9VVYI
-BQgBRx2kU1oDFjXGaIc1PKfKAP5xQCKKTdOw6xioelQyMNbr+8M8Mh3RvkBS/NDx84PPdB4K21gr
-/ulbCT7L7f11V2mT4ybZTj4qWqM6JjV+IUDz8m2h/zmUQ1mDZtYZefhJ2zRSoVTTR7LWXWZItgMe
-khBAZ129i+NEz2bIEGWX0l+WJUjqXrDnANfY/Xt/fUkVZSMPrb4G6uKqW/2ecS6RaZ8tH7UPo1a+
-jM9hlczfzCawDyHds+yFP2S4iTk+W4YpjIizkYbtGGsz2K5qnFr9bo4oYsuJQPeNL7cJ7YuWituG
-/TsZ0K+vSeuUZ982Ylh+2w8XwJAjEdtb/QN1Wqoye9QkBpE9iL3iQnXskUASH3LA12xEREpFYUZN
-pmA0StehBAeAIM/jYuUtLHxq0G3zcv3jP0qwjTXzryI4lOV3qZBD6D27kvzRz6hPxZGGdq+9UMJa
-v5ndauG+BWqD34klLmo6iPRu0/2+Qf0wgwmB/lnsjoZ23PsCWM9BLxWmRX9Vq2Se+q/rTU5cXx5m
-LlzhKUdjiQ4NFWTK24WcRLHqtwOuu22tt37sO7ugVx7CfpUa3HIZcs059wrjo6u8x3uBiJjodKiA
-a3FfybLU0Fm8A/DahRb8gYGEmYlJQQ6RtMlDFfNI+TZOvmCQQVSCazngZQ1UfsoDffcmxsQma904
-VOX6s5ZctQFHPWwuecwRrO9Y+/J7Vf6ehC1rFTwx2lTAGt0wWxES+/eVyPWpWPRoHW1FJZq4A4ib
-Zhq6kk77xLqRod0LdOv+Ucn46hP+Fqej87E4GhlCKFWuuj0qwaJcKRnUft2fQIWXoRj/n/SCQtv5
-+rpCP474/ktsq7MZ6d7Yih5R0rw3+7y7gCRSBZMmmUBpNJ7/pUuFEWhDfcbJjkChnB837Kz3HZ2b
-R4C8AlUstW6c6nroh9aSpUvuGNZMAkRKSLgax4PA3jcLNBGvhRc6SUi8vfKKUU9XX4DL6GFAuORG
-meiDmanxQB0Lj0/kWf+Yqj4BPNx06vd7nBWV9IvbxlpfOM+OarUaKpxzr5x2R4OCtPJq/UWIv6VV
-yglUgMUGpH5BT3eBBysiN6AFm5eeQQLaJ4yKeh3FWe1VIQKnNS9myI/0xq0KB2fBPdoex5UP59Ra
-1QN4y8EhaXDnaQFNdwePRA4wYNg5pt0dgTQprbwqvnn4NE2ffy2xfXwl3HjDDf1sSHsyfM+5Jz62
-Vjh/FMT664Ayxjy13O8kqZq/lBWk9BOLu+zgikFGjw7ad3uffjjII0arPAp8VKy4q1cx4DAGVPzD
-mdTiWKb2MgWOWP6vpMHnX8cO72sAFrN9o/GG4ehbPI0nSzun7UKRISGiAq5BJmIqNLxQM0XYJOgD
-BinDnqmJ36qNlKSfquhFeGddx6/OA0O0/6l3T0s3M1mWk/f+txAl4+WE0l/PCzKIUBe9A7wtzNa3
-cEp+D5FgIWsQbfFfiJGUfHpIAsHPdk/1RnHjTIf3besW5ubb7UPj8kuY5yUCfi35Rf0=

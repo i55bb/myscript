@@ -1,54 +1,82 @@
-<?php //003ab
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');@dl($__ln);if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}@dl($__ln);}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the site administrator.');exit(199);
+<?php
+/*********************/
+/*                   */
+/*  Version : 5.1.0  */
+/*  Author  : RM     */
+/*  Comment : 071223 */
+/*                   */
+/*********************/
+
+define( "LANGUI_PROFILE_T1", "عضوية اللاعب" );
+define( "LANGUI_PROFILE_T2", "نظرة عامة" );
+define( "LANGUI_PROFILE_T3", "من نحن" );
+define( "LANGUI_PROFILE_T4", "العضوية" );
+define( "LANGUI_PROFILE_T5", "التوكيلات" );
+define( "LANGUI_PROFILE_T6", "حذف العضوية" );
+define( "LANGUI_PROFILE_T7", "اللاعب" );
+define( "LANGUI_PROFILE_T8", "التفاصيل" );
+define( "LANGUI_PROFILE_T9", "الوصف" );
+define( "LANGUI_PROFILE_T10", "الرتبه" );
+define( "LANGUI_PROFILE_T11", "القبيلة" );
+define( "LANGUI_PROFILE_T12", "التحالف" );
+define( "LANGUI_PROFILE_T13", "القرى" );
+define( "LANGUI_PROFILE_T14", "السكان" );
+define( "LANGUI_PROFILE_T15", "العمر" );
+define( "LANGUI_PROFILE_T16", "الجنس" );
+define( "LANGUI_PROFILE_T17", "ملك" );
+define( "LANGUI_PROFILE_T18", "ملكة" );
+define( "LANGUI_PROFILE_T19", "السكن" );
+define( "LANGUI_PROFILE_T20", "» تعديل معلوماتك الشخصية" );
+define( "LANGUI_PROFILE_T21", "» اكتب رسالة" );
+define( "LANGUI_PROFILE_T22", "» الدخول بحساب اللاعب" );
+define( "LANGUI_PROFILE_T23", "الاسم" );
+define( "LANGUI_PROFILE_T24", "إحداثيات" );
+define( "LANGUI_PROFILE_T25", "عاصمة" );
+define( "LANGUI_PROFILE_T26", "تاريخ الميلاد" );
+define( "LANGUI_PROFILE_T27", "يناير" );
+define( "LANGUI_PROFILE_T28", "فبراير" );
+define( "LANGUI_PROFILE_T29", "مارس" );
+define( "LANGUI_PROFILE_T30", "ابريل" );
+define( "LANGUI_PROFILE_T31", "مايو" );
+define( "LANGUI_PROFILE_T32", "يونيو" );
+define( "LANGUI_PROFILE_T33", "يوليو" );
+define( "LANGUI_PROFILE_T34", "أغسطس" );
+define( "LANGUI_PROFILE_T35", "سبتمبر" );
+define( "LANGUI_PROFILE_T36", "اكتوبر" );
+define( "LANGUI_PROFILE_T37", "نوفمبر" );
+define( "LANGUI_PROFILE_T38", "ديسمبر" );
+define( "LANGUI_PROFILE_T39", "لا توجد بيانات" );
+define( "LANGUI_PROFILE_T40", "ذ" );
+define( "LANGUI_PROFILE_T41", "أ" );
+define( "LANGUI_PROFILE_T42", "إسم القرية" );
+define( "LANGUI_PROFILE_T43", "الميداليات" );
+define( "LANGUI_PROFILE_T44", "الفئة" );
+define( "LANGUI_PROFILE_T45", "الرتبة" );
+define( "LANGUI_PROFILE_T46", "أسبوع" );
+define( "LANGUI_PROFILE_T47", "BB-كود" );
+define( "LANGUI_PROFILE_T48", "تغيير كلمة السر" );
+define( "LANGUI_PROFILE_T49", "فضلاً قم بإدخال كلمة السر القديمة والجديدة." );
+define( "LANGUI_PROFILE_T50", "كلمة السر القديمة" );
+define( "LANGUI_PROFILE_T51", "كلمة السر الجديدة" );
+define( "LANGUI_PROFILE_T52", "تغيير البريد الإلكتروني" );
+define( "LANGUI_PROFILE_T53", "فضلاً قم بإدخال بريدك الإلكتروني القديم والجديد." );
+define( "LANGUI_PROFILE_T54", "البريد الإلكتروني القديم" );
+define( "LANGUI_PROFILE_T55", "البريد الإلكتروني الجديد" );
+define( "LANGUI_PROFILE_T56", "تقرير وكالة العضوية" );
+define( "LANGUI_PROFILE_T57", "وكيلكم يمكنه الدخول إلى حسابك بإسمك و كلمة السر الخاصة به. يمكنك تعيين وكيلين كحد أقصى." );
+define( "LANGUI_PROFILE_T58", "اسم الوكيل" );
+define( "LANGUI_PROFILE_T59", "ليس لديك وكيل" );
+define( "LANGUI_PROFILE_T60", "احذف الوكالة" );
+define( "LANGUI_PROFILE_T61", "انت وكيل على الحسابات التالية. يمكنك ان تزيل نفسك كوكيل بالنقر على X الأحمر." );
+define( "LANGUI_PROFILE_T62", "انت لست مسجل كوكيل عند أحد اللاعبين" );
+define( "LANGUI_PROFILE_T63", "احذف التوكيل" );
+define( "LANGUI_PROFILE_T64", "يمكنك ان تحذف حسابك هنا. فمتى تبدأ حذف الحساب يبقى حسابك نشطا لمدة ثلاثة أيام.<br> لديك الفرصة لإلغاء الحذف في غضون ال 24 ساعة الاولى." );
+define( "LANGUI_PROFILE_T65", "إلغاء العملية" );
+define( "LANGUI_PROFILE_T66", "حذف العضوية سيتم في" );
+define( "LANGUI_PROFILE_T67", "نعم" );
+define( "LANGUI_PROFILE_T68", "لا" );
+define( "LANGUI_PROFILE_T69", "التأكيد كلمة السر" );
+define( "LANGUI_PROFILE_T70", "موقوف" );
+define( "LANGUI_PROFILE_T71", "الصورة" );
+define( "LANGUI_PROFILE_T72", "ملف اللاعب في الشبكة الاجتماعية" );
 ?>
-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

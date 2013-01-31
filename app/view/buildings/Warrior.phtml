@@ -1,47 +1,88 @@
-<?php //003ab
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');@dl($__ln);if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}@dl($__ln);}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the site administrator.');exit(199);
+<?php
+/*********************/
+/*                   */
+/*  Version : 5.1.0  */
+/*  Author  : RM     */
+/*  Comment : 071223 */
+/*                   */
+/*********************/
+
+require_once( LANG_UI_PATH."custbuilds.php" );
+echo "<p></p>\r\n<form method=\"post\" name=\"snd\" action=\"build.php?id=";
+echo $this->buildingIndex;
+echo "\">\r\n<table cellpadding=\"1\" cellspacing=\"1\" class=\"build_details\">\r\n\t<thead>\r\n\t\t<tr>\r\n\t\t\t<td>";
+echo LANGUI_CUSTBU_TRP_t4;
+echo "</td>\r\n\t\t\t<td>";
+echo LANGUI_CUSTBU_TRP_t17;
+echo "</td>\r\n\t\t\t<td>";
+echo LANGUI_CUSTBU_TRP_t5;
+echo "</td>\r\n\t\t\t<td>";
+echo LANGUI_CUSTBU_TRP_t6;
+echo "</td>\r\n\t\t</tr>\r\n\t</thead>\r\n\t<tbody>\r\n\t\t";
+$_ac = 0;
+foreach ( $this->troopsUpgrade as $tid )
+{
+    ++$_ac;
+    $buildingMetadata = $this->gameMetadata['troops'][$tid];
+    $maxNumber = floor( $this->data['gold_num'] / $buildingMetadata['gold_needed'] );
+    $manual = $tid == 99 ? "4,36" : "3,".$tid;
+    echo "\t\t<tr>\r\n\t\t\t<td class=\"desc\">\r\n\t\t\t\t<div class=\"tit\"><img class=\"unit u";
+    echo $tid;
+    echo "\" src=\"assets/x.gif\" alt=\"";
+    echo constant( "troop_".$tid );
+    echo "\" title=\"";
+    echo constant( "troop_".$tid );
+    echo "\"><a href=\"#\" onclick=\"return showManual(";
+    echo $manual;
+    echo ");\">";
+    echo constant( "troop_".$tid );
+    echo "</a> ";
+    echo "<s";
+    echo "pan class=\"info\">(";
+    echo LANGUI_CUSTBU_TRP_t7;
+    echo ": ";
+    echo $this->troops[$tid];
+    echo ")</span></div>\r\n\t\t\t</td>\r\n\t\t\t<td class=\"max\"><img src=\"assets/x.gif\" class=\"gold\" alt=\"";
+    echo LANGUI_CUSTBU_TRP_t18;
+    echo "\" title=\"";
+    echo LANGUI_CUSTBU_TRP_t18;
+    echo "\"> ";
+    echo $buildingMetadata['gold_needed'];
+    echo "</td>\r\n\t\t\t<td class=\"val\"><input type=\"text\" class=\"text\" id=\"_tf";
+    echo $tid;
+    echo "\" name=\"tf[";
+    echo $tid;
+    echo "]\" value=\"0\" maxlength=\"6\"></td>\r\n\t\t\t<td class=\"max\"><a href=\"#\" onclick=\"_('_tf";
+    echo $tid;
+    echo "').value=";
+    echo $maxNumber;
+    echo "; return false;\">(";
+    echo $maxNumber;
+    echo ")</a></td>\r\n\t\t</tr>\r\n\t\t";
+}
+echo "\t\t";
+if ( $_ac == 0 )
+{
+    echo "\t\t<tr><td colspan=\"4\">";
+    echo "<s";
+    echo "pan class=\"none\">";
+    echo LANGUI_CUSTBU_TRP_t8;
+    echo "</span></td></tr>\r\n\t\t";
+}
+echo "\t</tbody>\r\n</table>\r\n";
+if ( $this->warriorMessage != "" )
+{
+    echo "<p";
+    echo $this->warriorMessage == 1 ? "" : " class=\"error\"";
+    echo "><b>";
+    echo $this->warriorMessage == 1 ? LANGUI_CUSTBU_TRP_t19 : LANGUI_CUSTBU_TRP_t20;
+    echo "</b></p>";
+}
+if ( 0 < $_ac )
+{
+    echo "<p><input type=\"image\" id=\"btn_train\" class=\"dynamic_img\" value=\"ok\" name=\"s1\" src=\"assets/x.gif\" alt=\"";
+    echo LANGUI_CUSTBU_TRP_t9;
+    echo "\"></p>";
+}
+echo "</form>";
 ?>
-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

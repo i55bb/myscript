@@ -1,149 +1,247 @@
-<?php //003ab
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');@dl($__ln);if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}@dl($__ln);}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the site administrator.');exit(199);
+﻿<?php
+#################################################################################
+##                                                                             ##
+##                                                                             ##
+## --------------------------------------------------------------------------- ##
+##                                                                             ##
+##  Project:       TATAR WARS                                                  ##
+##  Version:       2012.3.15                                                   ##
+##  License:       Creative Commons BY-NC-SA 3.0                               ##
+##  Copyright:     Bazaid (c) 2012 - All rights reserved                       ##
+##  Source code:   https://github.com/Bazaid/tatar-wars                        ##
+##                 http://sourceforge.net/projects/tatarwars/                  ##
+#################################################################################
+
+require_once( LANG_UI_PATH."snprofile.php" );
+echo "<h1>";
+echo $this->myData['name'];
+echo "</h1>\r\n<link type=\"text/css\" rel=\"stylesheet\" media=\"all\" href=\"assets/chat.css";
+echo $this->getAssetVersion( );
+echo "\" />\r\n<link rel=\"stylesheet\" type=\"text/css\" href=\"assets/css/wowwindow.css";
+echo $this->getAssetVersion( );
+echo "\">\r\n";
+echo "<s";
+echo "cript type=\"text/javascript\" src=\"assets/jquery.min.js";
+echo $this->getAssetVersion( );
+echo "\"></script>\r\n";
+echo "<s";
+echo "cript type=\"text/javascript\" src=\"assets/jquery.timeago.js";
+echo $this->getAssetVersion( );
+echo "\"></script>\r\n";
+echo "<s";
+echo "cript type=\"text/javascript\" src=\"assets/chat.js";
+echo $this->getAssetVersion( );
+echo "\"></script>\r\n";
+echo "<s";
+echo "cript type=\"text/javascript\" src=\"assets/widget.js";
+echo $this->getAssetVersion( );
+echo "\"></script>\r\n";
+echo "<s";
+echo "cript type=\"text/javascript\" src=\"assets/jquery.wowwindow.min.js";
+echo $this->getAssetVersion( );
+echo "\"></script>\r\n";
+echo "<s";
+echo "tyle type=\"text/css\">\r\n<!--\r\n#newsbox {\r\n\ttext-align:left;\r\n\tmargin:0 auto;\r\n\tmargin-bottom:25px;\r\n\tpadding:10px;\r\n\tbackground:#fff;\r\n\theight:30px;\r\n\twidth:230px;\r\n\tborder:1px solid #71D000;\r\n\toverflow:auto;\r\n}\r\n.imgborder {\r\n    border: 1px solid #CCCCCC;\r\n    margin: 2px;\r\n    padding: 2px;\r\n}\r\n.coldiv {\r\n    float: right;\r\n    height: auto !important;\r\n    min-height: 50px;\r\n    padding: 5px;\r\n ";
+echo "   width: 500px;\r\n}\r\n.coldiv table td{\r\n\ttext-align:right !important;\r\n}\r\n.delete_button a{\r\n    font-weight: bold;\r\n    height: 10px;\r\n    margin-left: 10px;\r\n\tcolor:#069;\r\n\tcursor:pointer;\r\n    width: 7px;\r\n\tfont-size:10px;\r\n\tfloat:left;\r\n}\r\nimg {\r\n    border: 0 none;\r\n}\r\nabbr {\r\n    border-bottom: medium none;\r\n\tcolor:#CCC;\r\n\tfont-size:9px;\r\n}\r\n.comment_ui , .comment_u div table, .comment_u div";
+echo " table td, .comment_u div table tr{\r\n    background-color: #EDEFF4 !important;\r\n    border-bottom: 1px solid #E5EAF1 !important;\r\n    margin-bottom: 2px;\r\n    overflow: hidden;\r\n    width: 399px;\r\n}\r\n.com, .com td{\r\n    background-color: #EDEFF4 !important;\r\n    border-bottom: 1px solid #E5EAF1 !important;\r\n    margin-bottom: 2px;\r\n}\r\n.newcomment{\r\n\tborder:#CCC 1px solid;\r\n}\r\n.label{\r\n\ttext-align:";
+echo "right !important;\r\n\tfloat:right;\r\n\tpadding-bottom: 5px;\r\n}\r\ntextarea, .inputtext, .inputpassword {\r\n    font-size: 11px;\r\n    padding: 3px;\r\n}\r\n\r\n-->\r\n</style>\r\n";
+echo "<s";
+echo "cript type=\"text/javascript\">\r\n        \$(document).ready(function() {\r\n            \$('#youtube-auto-thumbnails a').wowwindow({\r\n                draggable: true,\r\n                width: 480,\r\n                height: 390,\r\n                videoIframe: false,\r\n                autoYouTubeThumb: 'default'\r\n            });\r\n        });\r\n    </script>\r\n";
+if ( $this->myData['id'] == $this->uid )
+{
+    echo "<form action=\"snprofile.php?uid=";
+    echo $this->uid;
+    echo "&do=News\" method=\"POST\">\r\n<table cellpadding=\"1\" cellspacing=\"1\" id=\"links\">\r\n\t<tbody>\r\n    \t<tr>\r\n            <td>\r\n                <label class=\"label\" for=\"newsImage\">";
+    echo LANGUI_PROFILE_T1;
+    echo "</label><br />\r\n                <input name=\"image\" id=\"newsImage\" style=\"width:90%\" type=\"text\" class=\"text\" />\r\n            </td>\r\n        </tr>\r\n        <tr>\r\n            <td>\r\n                <label class=\"label\" for=\"newsSite\">";
+    echo LANGUI_PROFILE_T3;
+    echo "</label><br />\r\n                <input name=\"url\" id=\"newsSite\" style=\"width:90%\" type=\"text\" class=\"text\" />\r\n            </td>\r\n        </tr>\r\n        <tr>\r\n            <td>\r\n                <label class=\"label\" for=\"newsyoutube\">";
+    echo LANGUI_PROFILE_T4;
+    echo "</label><br />\r\n                <input name=\"youtube\" id=\"newsyoutube\" style=\"width:90%\" type=\"text\" class=\"text\" />\r\n            </td>\r\n        </tr>\r\n    \t<tr>\r\n            <td>\r\n            \t<label class=\"label\" for=\"newsbox\">";
+    echo LANGUI_PROFILE_T2;
+    echo "</label><br />\r\n            \t<textarea id=\"newsbox\" style=\"width:90%\" name=\"news\" class=\"text\"></textarea>\r\n            </td>\r\n        </tr>\r\n        <tr>\r\n        \t<td class=\"btn\"><input type=\"image\" value=\"\" name=\"s1\" id=\"btn_send\" class=\"dynamic_img\" src=\"assets/x.gif\" alt=\"إرسال\" /></td>\r\n        </tr>\r\n    </tbody>\r\n</table>\r\n</form>\r\n<br />\r\n";
+}
+$i = 0;
+while ( $i < count( $this->topics ) )
+{
+    echo "<div id=\"";
+    echo $this->topics[$i]['news']['ID'];
+    echo "\" class=\"coldiv\">\r\n  <table border=\"0\" cellpadding=\"0\" cellspacing=\"0\" width=\"500\" id=\"post_";
+    echo $this->topics[$i]['news']['ID'];
+    echo "\">\r\n    <tbody>\r\n      <tr>\r\n        <td></td>\r\n        <td>\r\n        ";
+    if ( $this->myData['id'] == $this->uid )
+    {
+        echo "        ";
+        echo "<s";
+        echo "pan class=\"delete_button\"><a href=\"snprofile.php?uid=";
+        echo $this->uid;
+        echo "&DNid=";
+        echo $this->topics[$i]['news']['ID'];
+        echo "\">X</a></span>\r\n        ";
+    }
+    echo "        </td>\r\n      </tr>\r\n      <tr>\r\n        <td width=\"54\" valign=\"top\" rowspan=\"2\"><a href=\"snprofile.php?uid=";
+    echo $this->userData['id'];
+    echo "\"><img width=\"50\" height=\"50\" src=\"";
+    echo $this->userData['avatar'];
+    echo "\" /></a></td>\r\n        <td width=\"436\"><font size=\"2\" style=\"font-weight:bold;\"> <a href=\"snprofile.php?uid=";
+    echo $this->userData['id'];
+    echo "\">";
+    echo $this->userData['name'];
+    echo "</a> </font></td>\r\n      </tr>\r\n      <!--start news -->\r\n      <tr>\r\n        <td>\r\n        <table cellpadding=\"0\" cellspacing=\"0\" border=\"0\">\r\n        \t<tr>\r\n        ";
+    if ( !empty( $this->topics[$i]['news']['image'] ) )
+    {
+        echo "        \t<td valign=\"middle\" width=\"90\" height=\"90\"><img align=\"absmiddle\" width=\"90\" height=\"90\" class=\"imgborder\" src=\"";
+        echo $this->topics[$i]['news']['image'];
+        echo "\" /></td>\r\n        ";
+    }
+    echo "         ";
+    if ( !empty( $this->topics[$i]['news']['youtube'] ) )
+    {
+        echo "        \t<td valign=\"middle\">\r\n                <div id=\"youtube-auto-thumbnails\">\r\n                \t<a title=\"";
+        echo $this->topics[$i]['news']['youtube'];
+        echo "\" href=\"";
+        echo $this->topics[$i]['news']['youtube'];
+        echo "\"><img border=\"0\" align=\"absmiddle\" width=\"90\" height=\"90\" class=\"imgborder\" src=\"images/play.gif\" alt=\"\"></a>\r\n                </div>\r\n            </td>\r\n        ";
+    }
+    echo "        ";
+    if ( !empty( $this->topics[$i]['news']['url'] ) )
+    {
+        $info = array( );
+        $tags = get_meta_tags( $this->topics[$i]['news']['url'] );
+        $info['title'] = isset( $tags['title'] ) ? $tags['title'] : $this->topics[$i]['news']['url'];
+        $info['description'] = isset( $tags['description'] ) ? $tags['description'] : $this->topics[$i]['news']['url'];
+        echo "        \t<td valign=\"middle\" width=\"90\" height=\"90\">\r\n            <h3>";
+        echo $info['title'];
+        echo "</h3>\r\n            ";
+        echo $info['description'];
+        echo "<br />\r\n            <a href=\"";
+        echo $this->topics[$i]['news']['url'];
+        echo "\">";
+        echo $this->topics[$i]['news']['url'];
+        echo "</a>\r\n            </td>\r\n        ";
+    }
+    echo "            <td>\r\n            \t";
+    echo $this->topics[$i]['news']['message'];
+    echo "            </td>\r\n        \t</tr>\r\n        </table><br />\r\n        <font color=\"#CCCCCC\"><abbr class=\"timeago\" title=\"";
+    echo date( "c", $this->topics[$i]['news']['date'] );
+    echo "\">";
+    echo date( "F j, Y", $this->topics[$i]['news']['date'] );
+    echo "</abbr></font>\r\n        </td>\r\n      </tr>\r\n      <!--end news -->\r\n      ";
+    if ( isset( $this->topics[$i]['news']['comment'] ) )
+    {
+        $t = 0;
+        while ( $t < count( $this->topics[$i]['news']['comment'] ) )
+        {
+            echo "      <tr>\r\n      \t<td>&nbsp;</td>\r\n        <td>\r\n        <div id=\"comment_";
+            echo $this->topics[$i]['news']['comment'][$t]['ID'];
+            echo "\">\r\n    <div class=\"comment_ui\">\r\n    <div class=\"comment_text\">\r\n\r\n\t";
+            if ( $this->myData['id'] == $this->uid || $this->myData['id'] == $this->topics[$i]['news']['comment'][$t]['userid'] )
+            {
+                echo "        ";
+                echo "<s";
+                echo "pan class=\"delete_button\"><a href=\"snprofile.php?uid=";
+                echo $this->uid;
+                echo "&DCid=";
+                echo $this->topics[$i]['news']['comment'][$t]['ID'];
+                echo "\">X</a></span>\r\n    ";
+            }
+            echo "\r\n<table border=\"0\" cellpadding=\"0\" cellspacing=\"0\" class=\"com\" id=\"";
+            echo $this->topics[$i]['news']['comment'][$t]['ID'];
+            echo "\">\r\n  <tr>\r\n   <td rowspan=\"2\" valign=\"top\" width=\"30\" height=\"30\"><a href=\"snprofile.php?uid=";
+            echo $this->topics[$i]['news']['comment'][$t]['userid'];
+            echo "\"><img src=\"";
+            echo $this->topics[$i]['news']['comment'][$t]['avatar'];
+            echo "\" width=\"30\" height=\"30\" /></a></td>\r\n   <td>\r\n    <a href=\"snprofile.php?uid=";
+            echo $this->topics[$i]['news']['comment'][$t]['userid'];
+            echo "\" style=\"font-weight:bold\">\r\n    <div>";
+            echo $this->topics[$i]['news']['comment'][$t]['username'];
+            echo "</div></a>\r\n\t<font size=\"2\">";
+            echo $this->topics[$i]['news']['comment'][$t]['comment'];
+            echo "</font></td>\r\n</tr>\r\n<tr>\r\n  <td><abbr class=\"timeago\" title=\"";
+            echo date( "c", $this->topics[$i]['news']['comment'][$t]['date'] );
+            echo "\">";
+            echo date( "F j, Y", $this->topics[$i]['news']['comment'][$t]['date'] );
+            echo "</abbr></td>\r\n</tr>\r\n</table>\r\n\r\n</div>\r\n</div>\r\n</div>\r\n        </td>\r\n      </tr>\r\n      ";
+            ++$t;
+        }
+    }
+    echo "      ";
+    if ( $this->isFriend )
+    {
+        echo "      <tr>\r\n        <td>&nbsp;</td>\r\n        <td>\r\n          <div class=\"newcomment\">\r\n            <form name=\"comment\" id=\"comment";
+        echo $this->topics[$i]['news']['ID'];
+        echo "\" class=\"comment\" method=\"post\" action=\"?uid=";
+        echo $this->uid;
+        echo "&do=comment\">\r\n              <table border=\"0\" cellpadding=\"0\" cellspacing=\"0\">\r\n                <input type=\"hidden\" value=\"";
+        echo $this->topics[$i]['news']['ID'];
+        echo "\" name=\"topicid\">\r\n                <input type=\"hidden\" value=\"";
+        echo $this->uid;
+        echo "\" name=\"to\">\r\n                <tbody>\r\n                  <tr>\r\n                    <td valign=\"top\" rowspan=\"2\"><img width=\"30\" height=\"30\" src=\"";
+        echo $this->myData['avatar'];
+        echo "\" /></td>\r\n                  </tr>\r\n                  <tr>\r\n                    <td valign=\"top\" colspan=\"2\"><textarea cols=\"65\" class=\"text\" name=\"comment\" style=\"overflow: hidden;\"></textarea>\r\n                      <br>\r\n                      \t<p class=\"btn\">\r\n\t\t\t\t\t\t\t<input type=\"image\" value=\"\" name=\"s1\" id=\"btn_send\" class=\"dynamic_img\" src=\"assets/x.gif\" alt=\"إرسال\" tabindex=\"4;\">\t\t\t\r\n\t\t\t\t\t\t</p>\r";
+        echo "\n                      </td>\r\n                  </tr>\r\n                </tbody>\r\n              </table>\r\n            </form>\r\n          </div></td>\r\n      </tr>\r\n      ";
+    }
+    echo "      <tr>\r\n        <td colspan=\"2\"><hr /></td>\r\n      </tr>\r\n    </tbody>\r\n  </table>\r\n</div>\r\n";
+    ++$i;
+}
+echo "<table>\r\n\t<tr>\r\n        <td class=\"table_body\"><div align=\"center\">";
+echo $this->getPreviousLink( );
+echo " &nbsp; | &nbsp; ";
+echo $this->getNextLink( );
+echo "</div></td>\r\n        <td class=\"table_body\"><div align=\"center\">\r\n        ";
+echo "<s";
+echo "elect name=\"p\" onchange=\"window.location.href=('snprofile.php?uid=";
+echo $this->uid;
+echo "&p='+this.value)\">\r\n        ";
+$i = 1;
+$c = 0;
+while ( $i <= $this->pageCount )
+{
+    echo "            <option value=\"";
+    echo $c;
+    echo "\"";
+    if ( isset( $_GET['p'] ) && $_GET['p'] == $c )
+    {
+        echo " selected=\"selected\"";
+    }
+    echo ">";
+    echo $i;
+    echo "</option>\r\n        ";
+    ++$i;
+    ++$c;
+}
+echo "        </select>\r\n        </div></td>\r\n\t</tr>\r\n</table>\r\n<div id=\"footpanel\">\r\n    <div class=\"onlineWidget\">\r\n        <div class=\"panel\">\r\n        ";
+$online = 0;
+foreach ( $this->friendList as $friendLists )
+{
+    if ( 1000 <= $friendLists[3] )
+    {
+        $img = "bullet_black.png";
+    }
+    else
+    {
+        $img = "bullet_green.png";
+        ++$online;
+    }
+    echo "            <a href=\"javascript:void(0)\" onClick=\"javascript:chatWith('";
+    echo $friendLists[1];
+    echo "_-_";
+    echo $friendLists[0];
+    echo "')\">\r\n            <img src=\"";
+    echo $friendLists[2];
+    echo "\" align=\"absmiddle\" border=\"0\" alt=\"";
+    echo $friendLists[1];
+    echo "\" title=\"";
+    echo $friendLists[1];
+    echo "\" width=\"33\" height=\"30\" />&nbsp;\r\n            ";
+    echo $friendLists[1];
+    echo "</a>\r\n            &nbsp;<img align=\"absmiddle\" src=\"assets/default/img/";
+    echo $img;
+    echo "\" /> \r\n        ";
+}
+echo "        </div>\r\n        <div class=\"count\">";
+echo $online;
+echo "</div>\r\n        <div class=\"label\">online</div>\r\n        \r\n        <div class=\"arrow\"></div>\r\n    </div>\r\n</div>\r\n";
+echo "<s";
+echo "cript type=\"text/javascript\">\r\njQuery(document).ready(function() {\r\n  jQuery(\"abbr.timeago\").timeago();\r\n});\r\n</script>";
 ?>
-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

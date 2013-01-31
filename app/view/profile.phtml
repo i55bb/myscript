@@ -1,191 +1,569 @@
-<?php //003ab
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');@dl($__ln);if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}@dl($__ln);}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the site administrator.');exit(199);
+<?php
+#################################################################################
+##                                                                             ##
+##                                                                             ##
+## --------------------------------------------------------------------------- ##
+##                                                                             ##
+##  Project:       TATAR WARS                                                  ##
+##  Version:       2012.3.15                                                   ##
+##  License:       Creative Commons BY-NC-SA 3.0                               ##
+##  Copyright:     Bazaid (c) 2012 - All rights reserved                       ##
+##  Source code:   https://github.com/Bazaid/tatar-wars                        ##
+##                 http://sourceforge.net/projects/tatarwars/                  ##
+#################################################################################
+
+require_once( LANG_UI_PATH."profile.php" );
+echo "<h1>";
+echo LANGUI_PROFILE_T1;
+echo "</h1>\r\n";
+if ( $this->fullView )
+{
+    echo "<div id=\"textmenu\">\r\n   <a href=\"profile.php\"";
+    if ( $this->selectedTabIndex == 0 )
+    {
+        echo " class=\"selected\"";
+    }
+    echo ">";
+    echo LANGUI_PROFILE_T2;
+    echo "</a>\r\n | <a href=\"profile.php?t=1\"";
+    if ( $this->selectedTabIndex == 1 )
+    {
+        echo " class=\"selected\"";
+    }
+    echo ">";
+    echo LANGUI_PROFILE_T3;
+    echo "</a>\r\n | <a href=\"profile.php?t=2\"";
+    if ( $this->selectedTabIndex == 2 )
+    {
+        echo " class=\"selected\"";
+    }
+    echo ">";
+    echo LANGUI_PROFILE_T4;
+    echo "</a>\r\n | <a href=\"profile.php?t=3\"";
+    if ( $this->selectedTabIndex == 3 )
+    {
+        echo " class=\"selected\"";
+    }
+    echo ">";
+    echo LANGUI_PROFILE_T5;
+    echo "</a>\r\n";
+    if ( $this->data['player_type'] != PLAYERTYPE_TATAR )
+    {
+        echo " | <a href=\"profile.php?t=4\"";
+        if ( $this->selectedTabIndex == 4 )
+        {
+            echo " class=\"selected\"";
+        }
+        echo ">";
+        echo LANGUI_PROFILE_T6;
+        echo "</a>";
+    }
+    echo "</div>\r\n";
+}
+echo "\r\n";
+if ( $this->selectedTabIndex == 0 )
+{
+    echo "<s";
+    echo "cript type=\"text/javascript\">\r\nfunction getMouseCoords(e) {\r\n\tvar coords = {};\r\n\tif (!e) var e = window.event;\r\n\tif (e.pageX || e.pageY) {\r\n\t\tcoords.x = e.pageX;\r\n\t\tcoords.y = e.pageY;\r\n\t} else if (e.clientX || e.clientY) {\r\n\t\tcoords.x = e.clientX + document.body.scrollLeft + document.documentElement.scrollLeft;\r\n\t\tcoords.y = e.clientY + document.body.scrollTop + document.documentElement.scrollTop";
+    echo ";\r\n\t}\r\n\r\n\treturn coords;\r\n}\r\nfunction med_mouseMoveHandler(e, desc_string) {\r\n\tvar coords = getMouseCoords(e);\r\n\tvar layer = _(\"medal_mouseover\");\r\n\tlayer.style.top = (coords.y + 25) + \"px\";\r\n\tlayer.style.left = (coords.x - 20) + \"px\";\r\n\tlayer.className = \"\";\r\n\tlayer.innerHTML  = desc_string;\r\n}\r\nfunction med_closeDescription(){\r\n\tvar layer = _(\"medal_mouseover\");\r\n\tlayer.className = \"hide\";\r\n}\r\n\r";
+    echo "\nlayer = document.createElement(\"div\");\r\nlayer.id = \"medal_mouseover\";\r\nlayer.className = \"hide\";\r\ndocument.body.appendChild(layer);\r\n</script>\r\n\r\n<table id=\"profile\" cellpadding=\"1\" cellspacing=\"1\">\r\n\t<thead>\r\n\t\t<tr><th colspan=\"2\">";
+    echo LANGUI_PROFILE_T7;
+    echo " ";
+    echo $this->profileData['name'];
+    echo " ";
+    if ( isset( $this->profileData['is_blocked'] ) && $this->profileData['is_blocked'] == 1 )
+    {
+        "<font color=\"#990000\">".LANGUI_PROFILE_T70."</font>";
+    }
+    echo "</th></tr>\r\n\t\t<tr>\r\n\t\t\t<td>";
+    echo LANGUI_PROFILE_T8;
+    echo ":</td>\r\n\t\t\t<td>";
+    echo LANGUI_PROFILE_T9;
+    echo ":</td>\r\n\t\t</tr>\r\n\t</thead>\r\n\t<tbody>\r\n\t\t<tr>\r\n\t\t\t<td class=\"empty\"></td><td class=\"empty\"></td>\r\n\t\t</tr>\r\n\t\t<tr>\r\n\t\t\t<td class=\"details\">\r\n\t\t\t\t<table cellpadding=\"0\" cellspacing=\"0\">\r\n\t\t\t\t<tbody>\r\n\t\t\t\t\t<tr>\r\n\t\t\t\t\t\t<th>";
+    echo LANGUI_PROFILE_T10;
+    echo ":</th>\r\n\t\t\t\t\t\t<td>";
+    echo $this->profileData['rank'];
+    echo "</td>\r\n\t\t\t\t\t</tr>\r\n\t\t\t\t\t<tr>\r\n\t\t\t\t\t\t<th>";
+    echo LANGUI_PROFILE_T11;
+    echo ":</th>\r\n\t\t\t\t\t\t<td>";
+    echo constant( "tribe_".$this->profileData['tribe_id'] );
+    echo "</td>\r\n\t\t\t\t\t</tr>\r\n\t\t\t\t\t<tr>\r\n\t\t\t\t\t\t<th>";
+    echo LANGUI_PROFILE_T12;
+    echo ":</th>\r\n\t\t\t\t\t\t<td>";
+    if ( 0 < intval( $this->profileData['alliance_id'] ) )
+    {
+        echo "<a href=\"alliance.php?id=";
+        echo $this->profileData['alliance_id'];
+        echo "\">";
+        echo $this->profileData['alliance_name'];
+        echo "</a>";
+    }
+    else
+    {
+        echo "-";
+    }
+    echo "</td>\r\n\t\t\t\t\t</tr>\r\n\t\t\t\t\t<tr>\r\n\t\t\t\t\t\t<th>";
+    echo LANGUI_PROFILE_T13;
+    echo "</th>\r\n\t\t\t\t\t\t<td>";
+    echo $this->villagesCount;
+    echo "</td>\r\n\t\t\t\t\t</tr>\r\n\t\t\t\t\t<tr>\r\n\t\t\t\t\t\t<th>";
+    echo LANGUI_PROFILE_T14;
+    echo ":</th>\r\n\t\t\t\t\t\t<td>";
+    echo $this->profileData['total_people_count'];
+    echo "</td>\r\n\t\t\t\t\t</tr>\r\n\t\t\t\t\t";
+    if ( 0 < $this->profileData['age'] )
+    {
+        echo "\t\t\t\t\t<tr>\r\n\t\t\t\t\t\t<th>";
+        echo LANGUI_PROFILE_T15;
+        echo ":</th>\r\n\t\t\t\t\t\t<td>";
+        echo $this->profileData['age'];
+        echo "</td>\r\n\t\t\t\t\t</tr>\r\n\t\t\t\t\t";
+    }
+    echo "\t\t\t\t\t";
+    if ( 0 < $this->profileData['gender'] )
+    {
+        echo "\t\t\t\t\t<tr>\r\n\t\t\t\t\t\t<th>";
+        echo LANGUI_PROFILE_T16;
+        echo ":</th>\r\n\t\t\t\t\t\t<td>";
+        if ( $this->profileData['gender'] == 1 )
+        {
+        }
+        echo LANGUI_PROFILE_T18;
+        echo "</td>\r\n\t\t\t\t\t</tr>\r\n\t\t\t\t\t";
+    }
+    echo "\t\t\t\t\t";
+    if ( $this->profileData['house_name'] != "" )
+    {
+        echo "\t\t\t\t\t<tr>\r\n\t\t\t\t\t\t<th>";
+        echo LANGUI_PROFILE_T19;
+        echo ":</th>\r\n\t\t\t\t\t\t<td>";
+        echo $this->profileData['house_name'];
+        echo "</td>\r\n\t\t\t\t\t</tr>\r\n\t\t\t\t\t";
+    }
+    echo "\t\t\t\t\t";
+    if ( $this->profileData['tribe_id'] != 5 )
+    {
+        echo "\t\t\t\t\t<tr><td colspan=\"2\" class=\"empty\"></td></tr>\r\n\t\t\t\t\t<tr>\r\n\t\t\t\t\t\t<td colspan=\"2\"> ";
+        if ( !$this->player->isAgent )
+        {
+            if ( $this->fullView )
+            {
+                echo "<a href=\"profile.php?t=1\">";
+                echo LANGUI_PROFILE_T20;
+                echo "</a>";
+            }
+            else
+            {
+                echo "<a href=\"msg.php?uid=";
+                echo $this->profileData['id'];
+                echo "\">";
+                echo LANGUI_PROFILE_T21;
+                echo "</a>";
+            }
+        }
+        echo "</td>\r\n\t\t\t\t\t</tr>\r\n\t\t\t\t\t";
+    }
+    echo "\t\t\t\t\t";
+    if ( $this->isAdmin && $this->player->playerId != $this->profileData['id'] )
+    {
+        echo "\t\t\t\t\t<tr>\r\n\t\t\t\t\t\t<td colspan=\"2\"><a href=\"profile.php?spy&uid=";
+        echo $this->profileData['id'];
+        echo "\">";
+        echo LANGUI_PROFILE_T22;
+        echo "</a></td>\r\n\t\t\t\t\t</tr>\r\n\t\t\t\t\t";
+    }
+    echo "\t\t\t\t\t";
+    if ( $this->profileData['tribe_id'] != 5 )
+    {
+        echo "                    <tr>\r\n\t\t\t\t\t\t<td colspan=\"2\"><a href=\"snprofile.php?uid=";
+        echo $this->profileData['id'];
+        echo "\">";
+        echo LANGUI_PROFILE_T72;
+        echo "</a></td>\r\n\t\t\t\t\t</tr>\r\n\t\t\t\t\t";
+    }
+    echo "\t\t\t\t\t<tr><td colspan=\"2\" class=\"empty\"></td></tr>\r\n\t\t\t\t\t<tr>\r\n\t\t\t\t\t\t<td colspan=\"2\" class=\"desc2\"><div class=\"desc2div\">";
+    echo $this->getProfileDescription( $this->profileData['description2'] );
+    echo "</div></td>\r\n\t\t\t\t\t</tr>\r\n\t\t\t\t</tbody>\r\n\t\t\t\t</table>\r\n\t\t\t</td>\r\n\t\t\t<td class=\"desc1\"><div>";
+    echo $this->getProfileDescription( $this->profileData['description1'] );
+    echo "</div></td>\r\n\t\t</tr>\r\n\t</tbody>\r\n</table>\r\n\r\n<table cellpadding=\"1\" cellspacing=\"1\" id=\"villages\">\r\n\t<thead>\r\n\t<tr><th colspan=\"3\">";
+    echo LANGUI_PROFILE_T13;
+    echo "</th></tr>\r\n\t<tr>\r\n\t\t<td>";
+    echo LANGUI_PROFILE_T23;
+    echo "</td>\r\n\t\t<td>";
+    echo LANGUI_PROFILE_T14;
+    echo "</td>\r\n\t\t<td>";
+    echo LANGUI_PROFILE_T24;
+    echo "</td>\r\n\t</tr>\r\n\t</thead>\r\n\t<tbody>\r\n\t\t";
+    while ( $this->villages->next( ) )
+    {
+        echo "\t\t<tr>\r\n\t\t\t<td class=\"nam\"><a href=\"village3.php?id=";
+        echo $this->villages->row['id'];
+        echo "\">";
+        echo $this->villages->row['village_name'];
+        echo "</a>";
+        if ( $this->villages->row['is_capital'] )
+        {
+            echo " ";
+            echo "<s";
+            echo "pan class=\"none3\">(";
+            echo LANGUI_PROFILE_T25;
+            echo ")</span>";
+        }
+        echo "</td>\r\n\t\t\t<td class=\"hab\">";
+        echo $this->villages->row['people_count'];
+        echo "</td>\r\n\t\t\t<td class=\"aligned_coords\"><div class=\"cox\">(";
+        echo $this->villages->row['rel_x'];
+        echo "</div><div class=\"pi\">|</div><div class=\"coy\">";
+        echo $this->villages->row['rel_y'];
+        echo ")</div></td>\r\n\t\t</tr>\r\n\t\t";
+    }
+    echo "\t</tbody>\r\n</table>\r\n\r\n";
+}
+else if ( $this->selectedTabIndex == 1 )
+{
+    echo "<form action=\"profile.php\" enctype=\"multipart/form-data\" method=\"POST\">\r\n\t<input type=\"hidden\" name=\"e\" value=\"1\" />\r\n\t<input type=\"hidden\" name=\"oldavatar\" value=\"";
+    echo htmlspecialchars( $this->profileData['avatar'] );
+    echo "\" />\r\n\t<table cellpadding=\"1\" cellspacing=\"1\" id=\"edit\" class=\"vip\">\r\n\t\t<thead>\r\n\t\t\t<tr>\r\n\t\t\t\t<th colspan=\"3\">";
+    echo LANGUI_PROFILE_T7;
+    echo " ";
+    echo $this->profileData['name'];
+    echo "</th>\r\n\t\t\t</tr>\r\n\t\t\t<tr>\r\n\t\t\t\t<td colspan=\"2\">";
+    echo LANGUI_PROFILE_T8;
+    echo ":</td>\r\n\t\t\t\t<td>";
+    echo LANGUI_PROFILE_T9;
+    echo ":</td>\r\n\t\t\t</tr>\r\n\t\t</thead>\r\n\t\t<tbody>\r\n\t\t\t<tr>\r\n\t\t\t\t<td colspan=\"2\" class=\"empty\"></td><td class=\"empty\"></td>\r\n\t\t\t</tr>\r\n\t\t\t<tr>\r\n\t\t\t\t<th>";
+    echo LANGUI_PROFILE_T26;
+    echo ":</th>\r\n\t\t\t\t<td class=\"birth\">\r\n\t\t\t\t\t<input tabindex=\"3\" type=\"text\" name=\"jahr\" value=\"";
+    if ( 0 < $this->birthDate['year'] )
+    {
+        echo $this->birthDate['year'];
+    }
+    echo "\" maxlength=\"4\" class=\"text year\">\r\n\t\t\t\t\t";
+    echo "<s";
+    echo "elect tabindex=\"2\" name=\"monat\" size=\"0\" class=\"dropdown\">\r\n\t\t\t\t\t\t<option value=\"0\"></option>\r\n\t\t\t\t\t\t<option value=\"1\"";
+    if ( $this->birthDate['month'] == 1 )
+    {
+        echo " selected=\"selected\"";
+    }
+    echo ">";
+    echo LANGUI_PROFILE_T27;
+    echo "</option>\r\n\t\t\t\t\t\t<option value=\"2\"";
+    if ( $this->birthDate['month'] == 2 )
+    {
+        echo " selected=\"selected\"";
+    }
+    echo ">";
+    echo LANGUI_PROFILE_T28;
+    echo "</option>\r\n\t\t\t\t\t\t<option value=\"3\"";
+    if ( $this->birthDate['month'] == 3 )
+    {
+        echo " selected=\"selected\"";
+    }
+    echo ">";
+    echo LANGUI_PROFILE_T29;
+    echo "</option>\r\n\t\t\t\t\t\t<option value=\"4\"";
+    if ( $this->birthDate['month'] == 4 )
+    {
+        echo " selected=\"selected\"";
+    }
+    echo ">";
+    echo LANGUI_PROFILE_T30;
+    echo "</option>\r\n\t\t\t\t\t\t<option value=\"5\"";
+    if ( $this->birthDate['month'] == 5 )
+    {
+        echo " selected=\"selected\"";
+    }
+    echo ">";
+    echo LANGUI_PROFILE_T31;
+    echo "</option>\r\n\t\t\t\t\t\t<option value=\"6\"";
+    if ( $this->birthDate['month'] == 6 )
+    {
+        echo " selected=\"selected\"";
+    }
+    echo ">";
+    echo LANGUI_PROFILE_T32;
+    echo "</option>\r\n\t\t\t\t\t\t<option value=\"7\"";
+    if ( $this->birthDate['month'] == 7 )
+    {
+        echo " selected=\"selected\"";
+    }
+    echo ">";
+    echo LANGUI_PROFILE_T33;
+    echo "</option>\r\n\t\t\t\t\t\t<option value=\"8\"";
+    if ( $this->birthDate['month'] == 8 )
+    {
+        echo " selected=\"selected\"";
+    }
+    echo ">";
+    echo LANGUI_PROFILE_T34;
+    echo "</option>\r\n\t\t\t\t\t\t<option value=\"9\"";
+    if ( $this->birthDate['month'] == 9 )
+    {
+        echo " selected=\"selected\"";
+    }
+    echo ">";
+    echo LANGUI_PROFILE_T35;
+    echo "</option>\r\n\t\t\t\t\t\t<option value=\"10\"";
+    if ( $this->birthDate['month'] == 10 )
+    {
+        echo " selected=\"selected\"";
+    }
+    echo ">";
+    echo LANGUI_PROFILE_T36;
+    echo "</option>\r\n\t\t\t\t\t\t<option value=\"11\"";
+    if ( $this->birthDate['month'] == 11 )
+    {
+        echo " selected=\"selected\"";
+    }
+    echo ">";
+    echo LANGUI_PROFILE_T37;
+    echo "</option>\r\n\t\t\t\t\t\t<option value=\"12\"";
+    if ( $this->birthDate['month'] == 12 )
+    {
+        echo " selected=\"selected\"";
+    }
+    echo ">";
+    echo LANGUI_PROFILE_T38;
+    echo "</option>\r\n\t\t\t\t\t</select>\r\n\t\t\t\t\t<input tabindex=\"1\" class=\"text day\" type=\"text\" name=\"tag\" value=\"";
+    if ( 0 < $this->birthDate['day'] )
+    {
+        echo $this->birthDate['day'];
+    }
+    echo "\" maxlength=\"2\">\r\n\t\t\t\t</td>\r\n\t\t\t\t<td rowspan=\"8\" class=\"desc1\"><textarea tabindex=\"7\" name=\"be1\">";
+    echo $this->profileData['description1'];
+    echo "</textarea></td>\r\n\t\t\t</tr>\r\n\t\t\t<tr>\r\n\t\t\t\t<th>";
+    echo LANGUI_PROFILE_T16;
+    echo ":</th>\r\n\t\t\t\t<td class=\"gend\">\r\n\t\t\t\t\t<label><input class=\"radio\" type=\"radio\" name=\"mw\" value=\"0\"";
+    if ( $this->profileData['gender'] == 0 )
+    {
+        echo "  checked=\"\" tabindex=\"4\"";
+    }
+    echo ">";
+    echo LANGUI_PROFILE_T39;
+    echo "</label>\r\n\t\t\t\t\t<label><input class=\"radio\" type=\"radio\" name=\"mw\" value=\"1\"";
+    if ( $this->profileData['gender'] == 1 )
+    {
+        echo "  checked=\"\" tabindex=\"4\"";
+    }
+    echo ">";
+    echo LANGUI_PROFILE_T40;
+    echo "</label>\r\n\t\t\t\t\t<label><input class=\"radio\" type=\"radio\" name=\"mw\" value=\"2\"";
+    if ( $this->profileData['gender'] == 2 )
+    {
+        echo "  checked=\"\" tabindex=\"4\"";
+    }
+    echo ">";
+    echo LANGUI_PROFILE_T41;
+    echo "</label>\r\n\t\t\t\t</td>\r\n\t\t\t</tr>\r\n\t\t\t<tr>\r\n\t\t\t\t<th>";
+    echo LANGUI_PROFILE_T19;
+    echo ":</th>\r\n\t\t\t\t<td><input tabindex=\"5\" type=\"text\" name=\"ort\" value=\"";
+    echo htmlspecialchars( $this->profileData['house_name'] );
+    echo "\" maxlength=\"30\" class=\"text\" /></td>\r\n\t\t\t</tr>\r\n\t\t\t<tr><td colspan=\"2\" class=\"empty\"></td></tr>\r\n\t\t\t<tr>\r\n\t\t\t\t<th>";
+    echo LANGUI_PROFILE_T42;
+    echo ":</th>\r\n\t\t\t\t<td><input tabindex=\"6\" type=\"text\" name=\"dname\" value=\"";
+    echo htmlspecialchars( $this->profileData['village_name'] );
+    echo "\" maxlength=\"20\" class=\"text\" /></td>\r\n\t\t\t</tr>\r\n            <tr>\r\n\t\t\t  <th>";
+    echo LANGUI_PROFILE_T71;
+    echo ":</th>\r\n\t\t\t  <td><input tabindex=\"10\" type=\"file\" name=\"avatar\" class=\"text\" /></td>\r\n\t      </tr>\r\n\t\t\t<tr><td colspan=\"2\" class=\"empty\"></td></tr>\r\n\t\t\t<tr><td colspan=\"2\" class=\"desc2\"><textarea tabindex=\"8\" name=\"be2\">";
+    echo $this->profileData['description2'];
+    echo "</textarea></td></tr>\r\n\t\t</tbody>\r\n\t</table>\r\n\r\n\t<table cellpadding=\"1\" cellspacing=\"1\" id=\"medals\">\r\n\t\t<thead>\r\n\t\t\t<tr><th colspan=\"4\">";
+    echo LANGUI_PROFILE_T43;
+    echo "</th></tr>\r\n\t\t\t<tr>\r\n\t\t\t\t<td>";
+    echo LANGUI_PROFILE_T44;
+    echo "</td>\r\n\t\t\t\t<td>";
+    echo LANGUI_PROFILE_T45;
+    echo "</td>\r\n\t\t\t\t<td>";
+    echo LANGUI_PROFILE_T46;
+    echo "</td>\r\n\t\t\t\t<td>";
+    echo LANGUI_PROFILE_T47;
+    echo "</td>\r\n\t\t\t</tr>\r\n\t\t</thead>\r\n\t\t<tbody>\r\n\t\t\t";
+    $medals = explode( ",", $this->profileData['medals'] );
+    foreach ( $medals as $medal )
+    {
+        list( $index, $rank, $week ) = index        if ( !isset( $this->gameMetadata['medals'][$index] ) )
+        {
+            continue;
+        }
+        $medalData = $this->gameMetadata['medals'][$index];
+        if ( $index == 0 )
+        {
+            $rank = 1;
+        }
+        echo "\t\t\t<tr>\r\n\t\t\t   <td class=\"typ\">";
+        echo constant( "medal_row_".$medalData['textIndex'] );
+        echo "</td>\r\n\t\t\t   <td class=\"ra\">";
+        echo $rank;
+        echo "</td>\r\n\t\t\t   <td class=\"we\">";
+        echo $week;
+        echo "</td>\r\n\t\t\t   <td class=\"bb\">[#";
+        echo intval( $medalData['BBCode'] ) + intval( $week ) * 10 + ( intval( $rank ) - 1 );
+        echo "]</td>\r\n\t\t\t</tr>\r\n\t\t\t";
+    }
+    echo "\t\t</tbody>\r\n\t</table>\r\n\t<p class=\"btn\"><input type=\"image\" value=\"\" tabindex=\"9\" name=\"s1\" id=\"btn_ok\" class=\"dynamic_img\" src=\"assets/x.gif\" alt=\"";
+    echo text_okdone_lang;
+    echo "\"></p>\r\n</form>\r\n";
+}
+else if ( $this->selectedTabIndex == 2 )
+{
+    echo "<form action=\"profile.php?t=2\" method=\"POST\">\r\n<input type=\"hidden\" name=\"e\" value=\"2\">\r\n\r\n<table cellpadding=\"1\" cellspacing=\"1\" id=\"change_mail\" class=\"account\">\r\n\t<thead>\r\n\t\t<tr><th colspan=\"2\">";
+    echo LANGUI_PROFILE_T48;
+    echo "</th></tr>\r\n\t</thead>\r\n\t<tbody>\r\n\t\t<tr><td class=\"note\" colspan=\"2\">";
+    echo LANGUI_PROFILE_T49;
+    echo "</td></tr>\r\n\t\t<tr>\r\n\t\t\t<th>";
+    echo LANGUI_PROFILE_T50;
+    echo ":</th>\r\n\t\t\t<td><input class=\"text\" type=\"password\" name=\"pw1\" maxlength=\"20\"></td>\r\n\t\t</tr>\r\n\t\t<tr>\r\n\t\t\t<th>";
+    echo LANGUI_PROFILE_T51;
+    echo ":</th>\r\n\t\t\t<td><input class=\"text\" type=\"password\" name=\"pw2\" maxlength=\"20\"></td>\r\n\t\t</tr>\r\n\t\t<tr>\r\n\t\t\t<th>";
+    echo LANGUI_PROFILE_T51;
+    echo ":</th>\r\n\t\t\t<td><input class=\"text\" type=\"password\" name=\"pw3\" maxlength=\"20\"></td>\r\n\t\t</tr>\r\n\t</tbody>\r\n</table>\r\n\r\n<table cellpadding=\"1\" cellspacing=\"1\" id=\"change_mail\" class=\"account\">\r\n\t<thead>\r\n\t\t<tr><th colspan=\"2\">";
+    echo LANGUI_PROFILE_T52;
+    echo "</th></tr>\r\n\t</thead>\r\n\t<tbody>\r\n\t\t<tr><td class=\"note\" colspan=\"2\">";
+    echo LANGUI_PROFILE_T53;
+    echo "</td></tr>\r\n\t\t<tr>\r\n\t\t\t<th>";
+    echo LANGUI_PROFILE_T54;
+    echo ":</th>\r\n\t\t\t<td><input class=\"text\" type=\"text\" name=\"email_alt\" maxlength=\"50\"></td>\r\n\t\t</tr>\r\n\t\t<tr>\r\n\t\t\t<th>";
+    echo LANGUI_PROFILE_T55;
+    echo ":</th>\r\n\t\t\t<td><input class=\"text\" type=\"text\" name=\"email_neu\" maxlength=\"50\"></td>\r\n\t\t</tr>\r\n\t</tbody>\r\n</table>\r\n<p class=\"btn\"><input type=\"image\" value=\"\" name=\"s1\" id=\"btn_save\" class=\"dynamic_img\" src=\"assets/x.gif\" alt=\"";
+    echo text_save_lang;
+    echo "\"></p>\r\n</form>\r\n";
+}
+else if ( $this->selectedTabIndex == 3 )
+{
+    if ( $this->errorText != "" )
+    {
+        echo "<p class=\"f10 e\">";
+        echo $this->errorText;
+        echo "</p>";
+    }
+    echo "<form action=\"profile.php?t=3\" method=\"POST\">\r\n<input type=\"hidden\" name=\"e\" value=\"3\">\r\n\r\n<table cellpadding=\"1\" cellspacing=\"1\" id=\"sitter\" class=\"account\">\r\n\t<thead>\r\n\t\t<tr><th colspan=\"2\">";
+    echo LANGUI_PROFILE_T56;
+    echo "</th></tr>\r\n\t</thead>\r\n\t<tbody>\r\n\t\t<tr><td class=\"note\" colspan=\"2\">";
+    echo LANGUI_PROFILE_T57;
+    echo "</td></tr>\r\n\t\t<tr>\r\n\t\t\t<th>";
+    echo LANGUI_PROFILE_T58;
+    echo ":</th>\r\n\t\t\t<td><input class=\"text\" type=\"text\" name=\"v1\" maxlength=\"15\"";
+    if ( 2 <= sizeof( $this->myAgentPlayers ) )
+    {
+        echo " disabled=\"\"";
+    }
+    echo ">";
+    echo "<s";
+    echo "pan class=\"";
+    echo 2 <= sizeof( $this->myAgentPlayers ) ? "max" : "count";
+    echo "\">(";
+    echo sizeof( $this->myAgentPlayers );
+    echo "/2)</span></td>\r\n\t\t</tr>\r\n\t\t<tr><td colspan=\"2\" class=\"sitter\">\r\n\t\t";
+    if ( sizeof( $this->myAgentPlayers ) == 0 )
+    {
+        echo "\t\t\t";
+        echo "<s";
+        echo "pan class=\"none\">";
+        echo LANGUI_PROFILE_T59;
+        echo "</span>\r\n\t\t";
+    }
+    else
+    {
+        foreach ( $this->myAgentPlayers as $aid => $aname )
+        {
+            echo "\t\t<div><a href=\"profile.php?t=3&aid=";
+            echo $aid;
+            echo "\"><img class=\"del\" src=\"assets/x.gif\" title=\"";
+            echo LANGUI_PROFILE_T60;
+            echo "\" alt=\"";
+            echo LANGUI_PROFILE_T60;
+            echo "\"></a> <a href=\"profile.php?uid=";
+            echo $aid;
+            echo "\">";
+            echo $aname;
+            echo "</a></div>\r\n\t\t";
+        }
+    }
+    echo "\t\t</td></tr>\r\n\t\t\r\n\t\t<tr><td class=\"note\" colspan=\"2\">";
+    echo LANGUI_PROFILE_T61;
+    echo "</td></tr>\r\n\t\t<tr><td colspan=\"2\" class=\"sitter\">\r\n\t\t";
+    if ( sizeof( $this->agentForPlayers ) == 0 )
+    {
+        echo "\t\t\t";
+        echo "<s";
+        echo "pan class=\"none\">";
+        echo LANGUI_PROFILE_T62;
+        echo "</span>\r\n\t\t";
+    }
+    else
+    {
+        foreach ( $this->agentForPlayers as $aid => $aname )
+        {
+            echo "\t\t<div><a href=\"profile.php?t=3&afid=";
+            echo $aid;
+            echo "\"><img class=\"del\" src=\"assets/x.gif\" title=\"";
+            echo LANGUI_PROFILE_T63;
+            echo "\" alt=\"";
+            echo LANGUI_PROFILE_T63;
+            echo "\"></a> <a href=\"profile.php?uid=";
+            echo $aid;
+            echo "\">";
+            echo $aname;
+            echo "</a></div>\r\n\t\t";
+        }
+    }
+    echo "\t\t</td></tr>\r\n\t</tbody>\r\n</table>\r\n";
+    if ( sizeof( $this->myAgentPlayers ) < 2 )
+    {
+        echo "<p class=\"btn\"><input type=\"image\" value=\"\" name=\"s1\" id=\"btn_save\" class=\"dynamic_img\" src=\"assets/x.gif\" alt=\"";
+        echo text_save_lang;
+        echo "\"></p>";
+    }
+    echo "</form>\r\n";
+}
+else if ( $this->selectedTabIndex == 4 )
+{
+    echo "<form action=\"profile.php?t=4\" method=\"POST\">\r\n<input type=\"hidden\" name=\"e\" value=\"4\">\r\n\r\n<table cellpadding=\"1\" cellspacing=\"1\" id=\"del_acc\" class=\"account\">\r\n\t<thead>\r\n\t\t<tr><th colspan=\"2\">";
+    echo LANGUI_PROFILE_T6;
+    echo "</th></tr>\r\n\t</thead>\r\n\t<tbody>\r\n\t\t<tr><td class=\"note\" colspan=\"2\">";
+    echo LANGUI_PROFILE_T64;
+    echo "</td></tr>\r\n\t\t";
+    if ( $this->isPlayerInDeletionProgress( ) )
+    {
+        echo "\t\t<tr>\r\n\t\t\t<td colspan=\"2\" class=\"count\">\r\n\t\t\t\t";
+        if ( $this->canCancelPlayerDeletionProcess( ) )
+        {
+            echo "<a href=\"profile.php?t=4&qid=";
+            echo $this->getPlayerDeletionId( );
+            echo "\"><img class=\"del\" src=\"assets/x.gif\" alt=\"";
+            echo LANGUI_PROFILE_T65;
+            echo "\" title=\"";
+            echo LANGUI_PROFILE_T65;
+            echo "\"> ";
+        }
+        echo "</a>";
+        echo LANGUI_PROFILE_T66;
+        echo " ";
+        echo "<s";
+        echo "pan id=\"timer1\">";
+        echo $this->getPlayerDeletionTime( );
+        echo "</span> ";
+        echo time_hour_lang;
+        echo "\t\t\t</td>\r\n\t\t</tr>\r\n\t\t";
+    }
+    else
+    {
+        echo "\t\t<tr>\r\n\t\t\t<th>";
+        echo LANGUI_PROFILE_T6;
+        echo "</th>\r\n\t\t\t<td class=\"del_selection\">\r\n\t\t\t\t<label><input class=\"radio\" type=\"radio\" name=\"del\" value=\"1\"> ";
+        echo LANGUI_PROFILE_T67;
+        echo "</label>\r\n\t\t\t\t<label><input class=\"radio\" type=\"radio\" name=\"del\" value=\"0\" checked=\"\"> ";
+        echo LANGUI_PROFILE_T68;
+        echo "</label>\r\n\t\t\t</td>\r\n\t\t</tr>\r\n\t\t<tr>\r\n\t\t\t<th>";
+        echo LANGUI_PROFILE_T69;
+        echo ":</th>\r\n\t\t\t<td><input class=\"text\" type=\"password\" name=\"del_pw\" maxlength=\"20\"></td>\r\n\t\t</tr>\r\n\t\t";
+    }
+    echo "\t</tbody>\r\n</table>\r\n";
+    if ( !$this->isPlayerInDeletionProgress( ) )
+    {
+        echo "<p class=\"btn\"><input type=\"image\" value=\"\" name=\"s1\" id=\"btn_save\" class=\"dynamic_img\" src=\"assets/x.gif\" alt=\"";
+        echo text_save_lang;
+        echo "\"></p>";
+    }
+    echo "</form>\r\n";
+}
 ?>
-4+oV5FnpKg6h/AQMfgB7WXzxDf6uxVNagJXcQkTp+LT871UXCHoMQVi9EBFeCS6WpaaozMgBTP94
-DX8F5VdT5hVhJb92R6TzBz0NcGoo4S2OULckzXsGJAtrgymY1oV4v2ZAHabf79yWA2AzeXDMetCt
-eQYsatP/mUoYb+gaBUsi0HPqcQHrLFlL3OFy0dMKqPmu7clOgU8nfuk3mCNkvU0U72OiCMpi/3Bg
-gch9aLrPbiMBizJK3j9elet03ODVZVojuV3+jABNiU4MQL6SrMH+Rwp5NQq/zg2qRqd/9jGJoftj
-qxSH7GsrxduG/ngVGd15NkzcnW+93WN3pyhdV67sgNg7q674dVASPldxOmX3Xy3W0IrbPONG5qm7
-J0LV/nqScc8DZsqhjUNczKXvyZxWik8rBgtt7PAZF+CuiXzBGzrSEoBL4oAybAVcYgia+YeZoMLx
-zE8TQpYJwIPnx3EQFPmrz0Izge1W5iVuK2+k52PAXLeKxaUkWp59Taad+TzpCKTLmWN/6l34MvM4
-xn6Xt74uYoB/ce8YdOgsZ3x6K7z4VPFe4aYyVV9pLhLVnPsWKqwARMB+QzlaJtxLN6BWvc7JjDuk
-iv7Jv8QX+2RFmCX54qCfCuPAcgFAauqE/qnYGbdxkKemZkOTEnch1ZlpWb1ADLOJhbe7bBvjeSlY
-D0IPcEuli1olH7Zcd0To8/g2S5JTUG9EK2C4C9p+vqfmD5yCDFIpksUgXvt1r7i+G4d+BqRO1Dbw
-GLmTniLam+lbU9it8Hox7/W/R9atGfZH+JxkUP2MNJEvkul+6YFLJQw88Bh4Hnjb5Q0d21o3wdXK
-1scSkSL4xSNucrsYZ4k/RvmrZuYShnIDjISsQLu93LybcMnJ/NhFVKCUYsdIswsJ2V5sLG7g4hZf
-7IvWRR5BN0NrZFWnXjpBsRY1P3KgD6LW8HVA46ah6z+jeVqOMhavFGi9Tn20xFirwftikI4aSKbQ
-lAYAeSIlf+Gf5I9F8Q3Da8GI+t4I81L5NPsXxEjMywsXWSTAPu0ijMYtbtUuzkXLpkb23XCGnFPa
-KNVLT8GhWMwhEvffo9ZYyCENdXqZ+/yLNUpTgEIighY1n8pbJT36X+aCA8hCYwBk93Ra+eLOiAzO
-X/6TJw5GZlLLk/DNx8zAjufJGqswnQC4ma+A66Polzwv0NzoXW8gz3cv3FdgKZYhDpJQ5BRauqrv
-7pPncWFETVj0YD5bFWkJti818xcMqw8TQC2mx5qHDDZwD/1JZQR9VC9EGxgPpcJU2qkRfxXhiCZt
-9jQFajzaLY1+myMP/DZvtxOljqp4BGqA8HWE7J3DG/+n8m3Rv9jJjy6hlFm/Ddce9C8lJN6y4TJM
-VkpCy3j3bBusdMEvRjoMcKcF7zy/zMrNVZv8TN11k/MRSTaNKjI8V8K7TREkjSvJ8ARlGokh8OUC
-T4CWkL6KUeUcRzFSLIOu/CT8ltDIOdr+gyGvY2+28ifpiP44E0WuEdm65rgN4CQkKISn7fP/SqWn
-wpMrcqhmivqS7kERE2hMHYuT3xEn+4BJeaZT+NOpeXbl1VWvtkY6tlFnJ7I1Um58xhXeM/Smgxv/
-1nWvwg8aAn4f+fzgJAzc45tuHqSvGICZiUi1R9+vchYvDGt5z9jA/Us8ZNrZvEWa30A8vhssgQsG
-q8n+P3CCTEzj1zGxj8t7j4sBKTNtHCy7xDUCYjzdUrY2lPRlJY9jYM4VB0G6TNMTD6Qm+DmZKBKQ
-ogNhUno5oIX1iX3B6kqWpcW8RVyh6NFLhRODiQ4P9k4FTJOs2hJdp3GmDtTyBRcU4m+Dn40LMAmd
-UGfn2GAlqAfMcaWjXTMtpsx6+CaYRuvt+8NpHW3S6L0c6M+wpW65N2yDdxQSdvQ5GtCm7asKftlm
-W26zJ5UddOKablkdxMDovx7+2cQn+0PqUt1soUEaUfnr1Oifu49iUmsKPlW8+EDOk5LyOD2JvfYp
-tumeee81obQWBbrAJ+ujPlTSLQJVZqLx3AINkQ5zkgE0LwBFhr4zyw5nL7uhreMpWn4+o6aM3fh6
-+RvQrVkbxmU+99xnq256eM5RI+bSas2KWhAertRDaDpMDJ4p0k6LMco10v7JPprwizUr88JcITKp
-50zHNhXnthDO2HFvYWmU1/NlIGRRYMD/xvRHg8brLkjcO3lMaaCv2kMFGuN8EN8sPymNXvCL8q9I
-by++ETB6qh+wydeGaCGDOgwUnkFrTfZG3IfAO8u04IRWbRyAN+02S/hKJLMbQTmeaCFvRSTj5XaA
-6l7D54GUtdJddvo3Asduo+FxNHZPhniDnEpCmFv18MarPAObc6LpRXsdjK+CORvPqb5imCIxbyHS
-MzbcEV21H5hc7PNt3uQpCyKo1U11HnUmo5mJsEbs5UciCiDPdCp5+u/35i1R5bJXLmPlyKiZcXq0
-h+UXmJkfhb1vHquaumyiQVhs2KEMJmImsMcSVg8N3e4aWGKwJt/TmafimKm8moVVUhFr7wuoasMM
-g9gvyQSvhQQzMHHxajjDN8VglqNoYcteYY5ZBy4iW0dR9G13XNrzLuWbl7BIsJMYPTTeseEaGqZf
-8/Fa+8vd5jc1UCODgXkhc36SXzFbKwMyoI2iBDw3pmCirdEe5oXcPslXHlMAMMqVg0XcrLTrG/fr
-nTLf0eg28EMkQxPQJD2ZEuKl61v1sFAVAm7AH9ul3JwDX12Dnd6wbuogX1mZ7EBH7SfW/raz38sf
-p/9zqRoa9vLHxBJX90blGm8GamaAIzn8vJ+ZktKkX+jTcNxDjQ61q5XCqU/rgKGv/FAbxcANlKlI
-ToVVyjc9ZoauPcPTSNoO8dodRxe2jXeJqKBhXpG66zkTKvcgKEDhe8Hk3Alt6EIyLD4IARt4ixHR
-nZbQvgtOkK8GaPF4jHV3KHm9mNsBda8oZgyJJCOc1sfai8sJBJ2ufTn4cyiC0QAg1CYn72rd8IN8
-1X+7elhpMyhxwbHJdLnLC7yiZXkGcfdrvC4QoblDPM8binNpUv/AKP/KCthrR/ekauTSYtmCC256
-cXRa8MFBENw7JEs3oU/5DjksAY4xeGA5i82IDN+urNPrRphyQDtsuFopxwlUXerUlgZBcyVjP2Iz
-WY80FxYT/tJEMu5fa6oPm4w0eDe27YqRNdglh0fq9rCzUnhOMJQN2ulMm2cZESNLurG1fqAOq5gd
-JusJ+MasA7BOX1CKZ1HV4QQ6EmieW/bynsewhM3GquJ06P7rbt151+nXD8AOSM++kwcnvM2oRGMB
-RFNUFdB4EcrFyH+DLLubVQtETgejZfi/XJNW9hHElTXXUvzewQKMzZh98iCcOmh8+T7hPHm4JtHw
-mYJ77Xa53BWHjVxSTTf2KIxgjzwyx/+ZRlwYnqjlERuIb+1QrQ0GSO0aPT2H0rK9nz/uWjcAUWna
-9ODnls2IXP9hjuyzLfDJWhQj0dgk5Tau1+LPdXOjntsRwgoQNjbMPafPQKZbSX4ryJM8dmvmNFU/
-2oMC/Z+1Y83N7G/HmZOMzP8+XXiq98k2xM0aUKn8LyxH7GAl0ZdnKe489dBdgaugdl8d1nxS3z+f
-Ifc3AHPR8g/yog9NND/ILsN9huNxV7iKQCqY8eCnjFtijOhRYzRNWE0hAn+AUGzEyyXWmjk3b6Ah
-B4t4j0X0w5r9VzGoE2oLceMvoip7VaB0IjHB6KwkmAr6fdLddchYA1cHpYOZYSBIZt+7b5YbBhMx
-GNm7oj9teJjuFVdxA6o21DIi9Mu3tkzFfC4diKzaQuPimicCo0DQzGtTCNVgjR1zdFbCixJYr+gY
-NLAqpOP0r1yOFQxZQZg7oBpk8oHNpfP9LjhIetNvkRfoCs91/DZS7cJhSeTpLP2Yinc8Y/7MNVbY
-1fMOvldvribdRJKufaLK1P1kIxp06IxjMN5+oWXPVwX8Prkt72qx6AOrKkLkFTFVnS7gmKKttesj
-QKUGBNfxDZ8uKllDihTvE64wwAciQfxMvbeGvB1DHiZ0xjuZZ4ifjb1nDpu/BuLVo/TkvYGG2Dtp
-Z7ijEsvAYcTm+0oRfsecGPAuvDfySS2kKEyBh3M5NKt82By0OWTFGNtdzarDeMaQQ1+DsQqeAR5Z
-lHG1aWCUJW4H7e9rtktmMTKALPcRbOYFGDUeA05e9904RdDSDM9cahBsxOiWPHU7+4vCXs5f3PE3
-LWntqEMvkpK7sB030LUbXqaK30KWbpy5+rAsOg5JLfApHBbMXstYJu8qNXM6BhqkQOPFOSX5Xw+6
-53foU1/auyeXJnhTxm9qswCxtumFh9r1kUZCdg97794tnows9rAhuS7/+wgAhs6vst+B2CZH6I2Q
-0Vo78afVPHSE8fhlirfGGph26ILm/N9qXP7gIX8r2uHYe0SqFNLuS8yStFvu8jqRFQ1acMRqDdQF
-avXyw5lF6vo354e6vVDgcNJ+zaP0b1+HH0ZFM4wcU+k7P18NrORU0FwmWoG9lmlszYpbh4DKTzHh
-kc/QV5BjCTrz19/BQZA40HBbhP81WnWMZRAF98AdXi4xCMAT8LByjcTzhlQKSx//hzf8ieuMYL5e
-P/tDr0sxmAUEIvdt6KccebCb94wsy/nLUY4osiYz/ytlISOkfph5vrIG6dEdl41HsZPMECtgxWby
-dRdof4Brl8SL2jFSA6sIG4sVss+shb5oXhbGxzk0KS6L9mX1DYq4pILa8Pxdg3ghIkAEAMTi3JVZ
-wSg4mLdmxVlxYR8FFrfnOq/J8ug1PqzWbCYxZsms3fu5iBCVAuh7Y1ZHmt/I0O39Ry/XOVu71Bow
-nr71XFo5v26DuaD2Z3ChliOM11vW1BdGn44zvsYLK/5MM7nSliA67jGrBue9vCCaHwPHZUX+gKgR
-xGXCAQTzmJfZcAj4qc0Wuv6TmVvjRaHX4wyVAuUFRAdektErx2ni2+8X5o7mOLLsc4WV5n0Mp2ek
-DuT5dlrFZybcIZCk2XvEq0U6Q7BkHb7+x2IaZgFtHgbFEAg+mE1JsCoXeIKno6THVzF8OdmF1s2S
-u3/6NSRLSaIq+ruoVYR6rZiLlZM+/Z5AYlLj71hoJ0rRT9D2q4nAbUkic7vn0QKEpTgSPWVEy5sT
-yi/fvLixldztjTxTWvoORxPfDyaH+o557JILAYy8wAO9QvZmZsuP3bwxlkDHzp8qGBtiuZxXJeqe
-YWRI9PKKxIDFK0U1SzR7G5hL3X96oDmpmiG/FKGZ5o3l9ZzEbp41Kt9EgzghQT2zuc2idvsjgZ2T
-jZ7jrPvbwLeqjO5S/eqAd9/mJaiHm8k+PPSfGbs56jf5YIsU/3BXOH+NmXNVVuFVexCl8dmcto4B
-EqO5krC+8WgM88ZL9h6AmZWLIpxZA/rUNgYEm3jnonobawX0zb20aDnSZgK7djJDCiQw9G6BalXE
-33A0umZsqSBKqZiz1JQH1AiOj2zQdr+VTW+2mnqqg4zcxi8fpjwa3ZUQaP8xExfQl+gYH/KwgXUb
-SibCuTzwo7168IidP+HOpkST9cgP5aoIoQr8Ke4eWc8/nTH/fPZMCkf1Z9CqPpgwuZ3+n45xEaA7
-1taNaI7cPH6G33x8QI60r/VXRfXLEk28wj6hqHI6RKsDP8DmXUjRmjpWmCU6VPqFDDunPYk7j9tQ
-qrEYDw15prWm1o2sGMODLXO3kACKM42nem0xSsnRg5NNBjYyA+DI0ebf2HFvfkE8yHaQ9ui8agkv
-eOkGauTjmPVp0kpsZo2/w6R5k6sPsobX0zvJ3CyekK931oGjNbguyZ5Hq4ygy/Sgb1+LefRYct79
-1GnppDVlLZvVmf3iccplgbF9TbGQ56smQ3T6UXmbZmDi3/0eRQx1EhbNSjcbc+ALPhaJD5lVRHDM
-npRQ9cw1J6GlA9pUhEjtDtcMENIJt94Zt4TFng58nXcVcVy2384Hs6PpTtj8wskzUEWMy4AqAWA4
-K7OpshntLPT50GIxrh+6flD6+uE8KXyGApP+UYLdOruwJoE/nY3W3ZcFlv++byJiSi25ab3zblqm
-3PqHdGTXtFs7kZU/NtoGs4oDG697wKO8yDD7exMNqsCXS7cy/OrzDxd1SnO0KN3Yo+GjRQWbkU2/
-EhKS+gZdbOMVb+m7p3T8sDD/nxgJXCe20tnmZwl0ZUfTprgvCbnC3RCNOWM8L5mrH/xJwjA9R//M
-Kh1xP9t0T50iSzH8dWOnUlR5O7twYBhXCkL/EalsN7nztWCPcs6XIYB64jBY7F/J3LUrLZ0rZist
-vMMMUD3h+zb9gks+A9KEvDVGKf0W6Ek4xDwWJMc9Nd/ZH7Ggs0acK5YssP91AIuRReA3h+VJx8jO
-mHkJk6zK5EZyJOpO4eUoulMSqOa1pLwpZKuAQIlKgliDUYUA7vOLl4hYL/dJeSgfCXUHkAnDq8V/
-Dv3lktxm8EKVSwWb6Gt/IemofXM9KAgGtL0r1JyPxxVECbunsblhnuy+jjQhMIIQaLBExM6zJ5sD
-/NtVB2JlDCmlXzyt8etzwsNiWzLn3LALHiMZcwhJcYpyz4IIHW4Bma4tilTajxn9BxikQhXYcHIU
-whThl94NQPKnQ/k6zgHAEWGjP0c/3tQa6iMFMee4jfC5kmcax8t7q7ZyJOQs6ruc6SBzO5ME+VmH
-T1KbDn8FGzk+TT9NTgnhNm2VB/gA/U/tfqZoXjwu7lbIS0FOhJTPOvI9ryEEHORllLLzZJzX727M
-gW+3LtYDt06QPx2uiEZZHofQLuClbc9HMjXZ+NkIBib2egABcwP2jozXY8h8S+584UHNaqIz1dJk
-ReA7cFTM7u3w0nQz9SSW+UON9bZwyzwoUvO/8gEbJfooRopTgLi3DHdNah7jkjJhySNakqSKPgep
-lHlXHJIyGccY5gUM2ulq1O+h4xi8Kmd2MsJhpLf/U22KoZaSg9umVTmsid9m/nDvR3/3Uvr/UCiS
-FjuFzJUjfT4qhRrqC9aRLwz8q4VxNmKkZJfhRf1lJvGhoiDrHeH/FHUo+2Laji7ChLh6QeSgmlda
-5lovPnxUhA1WV9LhqG4Ksg40gBeK6Tmo7wrhEZ59wh58JatU0sO2EkNgUArukSx9FoF7GG0U0G0x
-JNK+zLP1sWKQkAYOW6wFGPdcBhNh2ilVRSIsk/YAZ+AHQaVI23zoB0IVZpXaqPzkehh5+DXFh1vh
-mxSBlIW1ulTbSovxJllvacYVdv1vEoVf8J9ZvhsZZMipS1TMmQkcffcJ1+XH/DZ5AWlNYCNcaWVI
-o0TQAEdOZK4drrVpODbSztIvWRz1pCG06MXp55BD19lbbLlPbfFS/jxY7Iga3zKiLZIw2SsI7LuX
-WCGswIu+7BTItPWbaDGZqLq3IfLhlXvXN44BNRAtHNGRPLBl2eTK2MgMI3XYRdgNYZ2ICnDIKQ8l
-x3dOE8nxFrTusIPqzlZ5N9b6JKCa67r2DQ8xaV17CDJZ4BTiMREFfB9Yf8or5AHXMSX2KSn3vqgq
-V13/1isX6dIjddHTYExjeM0Dp7buJ8/F4/qEE2brZTWI8QS8AnaOnNd0OvzPmNplopPqRjMpCBGA
-epLdAwJ45lDiqP821J1LO6tSQUrpAxCiPc6+WpSE+vXCM0ioGpttlYtMHV6uQOvgxL10pdHtAOSB
-tEDNRWrFTNbaFgLZRuyd5ajt/W8cnorXnEPyd3DPoP2KmqeFJCmU4jjNH9RXYQHmgbix+6XjklRR
-MUroYzC3i8n0dkxgeQ7dn9VBSziIWNYcOpYA9OU0s0UmMhxdTO/U1LPdgAhGVmbJ+gbOqnh+eq+R
-6N/blPxA2KNdXOzf2ecQEUMcHTcnbOmscC+LRA2Wo797Qy3qfMVTYc98cN7AgWb0kJiRjf/NYrFJ
-JHvasr+4uFuXHUp00HbeHkp20rYG1kcJ9//MoIqxuzkI52fWqEJ6Uw6W0C2FFUbQB3ai+CVfn8Td
-wOs5ByNtTptqKW2114s9MBzazoPqy1jjXnXyqeIPeez/ZX7t8qj8Lvv2ydH4tv82EVWObqJNlb1H
-0/kQzGMqldfXhhdd8FmCCjxSN+CvzC19KpdZfME9kVa93Qh/Q00iGervEPL4eCOUXKOKhCaWYs5/
-jhgEcMyc7oP+lEie2WdDXSnPS1UA+o5bOqV5oo0z+0B/AzpVp6eXVINS3JaayywO5kYB8GqfifhF
-QtVzy08YMGrQABHKIeelZVhnY6LqMoZhus9zPCY+BPv0JT5wxeVClrWP0DRP+ZM5bmN+DBXDKD/J
-a+nClt1lnPQyxLPz90rVGuBsp7CwVCPYziW8OrMtOu4wg+79trLRc9PHdUcGdLQGftxXTpSEC0CY
-KakU266dMU7UmePOVlyewlF9jt8X2hkS6LyTZ/LGE5SlQnTU5/P8uDsvnSVGymOkwRDsHfARK282
-HIoSI5DZemgCyWDE6sFPGx921cegP6ztXIhgnwCuHNd23xdoNAa1gvnsDHKu4IeAC2qCYCEafoiA
-DQYppyVn2Z2Pocd+GumzDf/j0+TubhE0dAHRiqdNLrr17Umgucz0/Fku7xy4VWvHMB2wGUEz+Siu
-B3Jzp1enOjkPxsTLvA+7eFEog0UcuzG1bLq6E/ss2c82bb+C0c7Loc8ZR6boOsfZx62gRUQGt1XC
-EXKO3BOCOiYniCqURy8VGEUiieUJtxCUqlAAaz73oF5v7/VjulNSJ95mxeSPnRR9xwex2di8Cw8p
-EqtMj+g4sSrTL+eLFffbSw+g3ZXAfa8OoPxc1M8qvMqxvbSKQni6Y+GRbSxKYNle9WHeO/zzJfLS
-CWfs10o4CtiiD+H9etIp0wZDoz4ayJhWxCCRc8Q6an6zQ2lpANJw+UpW/qI6YZwbDpKERr0KM5Aw
-cEsQeyMLxYGfnp3tRJIFmNA9RFR71S56zV7UjqATbfwyluSEfyBL2AhU6YhsSv1XgzwzWZy3MLif
-Q4gbDH3lrt3Qz1ShyhuuvH2w60XhMParmd98SoFY46/cuBrAn1XDdOl8VTPOqwhKV4Cp4bMG4IuG
-a/vgSLTk059AqfitcH7TerKtRCLYbKgRhNCOfrgCh3GAplo1fJLg267m84OSZJ0muzNumxisj/e+
-pUOZWdzUORkgdAwa3qyP6fNL1L0c6hvABY57vgfUiGO5uHzLB9aKwgDjM6s8i1zBQ+ckwF73YIg4
-x6Yskpir4VajT/Z9D6ijTDLUfwTQdyIj2VVVbUea1im9cigFT9C5sZ8ZROKSLqOdNEvRgMys3zRP
-FcKxyDQakIIZmgMelkLg3deP2BU0Eolnh3DQZePmM4FbY705sDoW6hx/QV8c7ixLoKUZqnf1dWjq
-qo6qbsr9Br65B+c/1vgJd4y2Yl1OybZCvZlLRNKAX7OYnN6k1G3Xl2/snAKrXQD9UWZoHGItFOFS
-Lxn64Nzv7HVpFMqGidA1xhB1Rke4fQAipC/oKyRx2D8SoHR9MzsUWKjqD/kE3B8SRFxY7pMQLi9f
-t0+PwH6pNfDT9h20Y2LyMU7GCcFosZjDi6Di3s+skRquJchyifdyPGh39CjkC53AIziNokR43pa5
-inPQVpMF0fhfkQnWWWUdV9sa5Jlaj3TYWolKV+K6sYTGGhRlz2IqICDYHvycNQWcxTiCpH0Y49jh
-wpaEWjP51zrAT19W2dzz6kbZagyjIrm1q9oK60ZmnH63uFvkV9WT8ZKASNWh+G1wjOy3CljexCsG
-mXa1q3rQgYVU1BkQ6DnvThU5juZHxlc6Om7BrkQqo4KffowM9cTmVa5Yc1kgpE51CEwllOhHk0/B
-REI00RNKzzDpPxbtXQeohY065dmx0qdS1S9mia3TEoSnUidfKB8BCbwduJPV8i+mLto4rtrPoRk5
-H1QLKlvy5NovnVDK6Qx+4SthXaFu9L41+a+kyxp1YqjXWSPuY8Te7spzXWbHOFbNtZQb+Z8+dFmF
-ZtOHfLJC34lzsoUQ5HNP+O6WClQeo1Ii0+VInfpIYBOmf455jwbLUybeagrIyYh1thqEA1WrhV97
-XVhTUfmpSIz8/nMBLQ4GMPtc1YeWmcBjbqvby4Qx/T7TEdAV/J8XVSxIGdSeUXnwxtHi3QZUJ9q4
-TKPBdWgLhNmoZxvupqhuMFy0lMI2LeLPsayIJBFnHxfasv8FPjOP35+dCzs55qGdczlmzBQewRpC
-C00BI3Md1LxWLIsIlHClm9w9hLUttvzkxDmnYqIvCka/+qvk4Q2LbizNRFOsLO8icpj8hN3A/tWa
-bAkSA7+7mcx30x0J/yu9rCZy/15AX6kE1wKEOzmSiGLHenMue5l/5S3cvHmScH69sdoNre8tUpYy
-sXd2ApDqzhUkbPTt+i9xl1JeqBKzUn6rHWdpJAEol5kktpkFtUEacMS+E/4uRKK4+diQa7pbbkGn
-PgUL2ntU5rYDkxKdFPKu20zbMuqKZEefjOPyzMEhT+iliA8VHS8qe8wbNcC88tCiN4effG37zHg0
-Siwp3eXs1PHfgeuwHua2OaTVbikD80x9Y6nAspER0GiqJnU+JMg8WXin7LTiEz0XYr4kojT2MYqi
-F/HFhczhlDxwU9iOnLC0DYB8g81ZjOB8RE/p8QHKnidgWzmGTFXs/3UI33c0PKQx2mEFcXTD41PO
-aq9lpTaSio8PYEcgdF4VwXHDw3XGuYh4FzDl2El3dYjGyJffn04q0VhhTBzMEsMx9Ma8NpsF/hRL
-OjouPnqSiKEBzCz8UkUINuWEyk2wHmGhESESxlOifID+auWOrzqFck63a3CDVv5UMbzGBb5KhP5S
-jKb8aAL9aY/vBYCTzhL7q/8L11GQzeGc5XourTpdiuuE+geFkx/VJ6lE9R6CDhwK9LxaVvsrV9fC
-UohMXHRa654/yHnL+zdhkUJADIJlGLjXcQkyaVD6dlU8t31f5KSr7PC99oZCIjnbT/TJNancpEKs
-QcFKhn3F2ugL389AQ0f2XWG7VF4+LsBGUoROxERGJ4R0JJUPq6xzyQNgPizW7sQcJS4QoyZttKX8
-qsX4J+RAggff3vdKDzNcQhVIxLo+KQToqhUPT8S0LNmRwbkIkC793+MnOGOmbh7eG+Jy919oW6GR
-QhRnrs+9SiES3zEAeNPokTyQDhACuOlQ8aDhdzOp+dPsT8WJ6MDv3nTbQnXcVf7uqMQD0ZZtl6gv
-PY33SU0Q/czA6YSr/4AXomEtke7iBI9pzhDEcf9fIPs1pywLJp9mHPdvySyIWn6bTzPRFeA6fFYz
-rZ4KCoAdmEdhUDCpqYjgGQMjnjMBB06/2mT8RNSnZn1s6T2s/ZvLKtQkztBpK493EhRBj07Ij9Gp
-77csYVDSbNmUx19LtemwPrb+WY9y07OYpnm2rfkVsNIsnvYuMCu9HvXC4NX92Q5p/jukCHo1S9tB
-2i9K2VI/uJ321H4/y1xOHykgJn6GerWxCgn4bD3Dw5dJ447vJ6C1Loc6IvoEPYFBEY2XGeJfcG7X
-WhfyXgjgxkIqd8H26DO3HJrg6Ig4YRv8uSZurEpjVWcy/JlYFnL1EXk/Vf/KwbhlN1a0bGXyAQLy
-HL2YV0KnXNzTvF+N2v8M6UPHgRfKbDp3wHEJq7thqwUwFI4ZZj9B3hC9vqo5Gv+LE0vQ5h9gG68o
-f06lw4bAiFIHFhYreLogEkEAEEPZVqCdu4lt/iEHXgEOeI64T7bTqp3qMd7XyqGnUfhydr9Pthh3
-DbNNMMvmkDHZhBb5gi7FyGInQpSgK4Yvu3aEZkGIOcw77PWu7tHtetg1+F/Ns7gQia7P2WjLmooA
-nLD48i68bE6nfJEiL+ehD0K7p8eA54d+jO0cC2fysjwAfIJ0tTrvfPAhAFtVbUfQxLmwO8YUoeRF
-f/VKcxeZS5NooB7KU2IsC55lcKT9hUlsPTXWeYKAZl0nR6fOPAOLICv+2Yu52oah1+rKPxq3e9Xf
-IqPl98MEFN1uG3LX+Jwds2sGz7pJkT8Ky6LhiV/a4DFOPGRotJdLZNoGZbzJrCNzu76/GmTo+NF+
-qMoO5GvgR9knrZrjkgwaXhlnveOX1/adS0HA9tkU2hgVInCZevsomJBREvRROoXr2ctXo8mPx1SO
-mdaJsi0e4hqLVFpccHIVo1LPuNMGC/pOPywMiZkI3Up2W33RoROptdFl8h6eiFgD8tWdrGTZCBww
-TJOcDSxDw61NdLVG/bGt2NhtyEz1Caz3Yqd1ncNXb5kGKYq6g/x3wpTJT25k6NNsB3ruk7ch79LC
-C2v8waGPTI6Us2APmjX9yYzZpFLUvane8ru+UYgy1YkR6dkz1i3zpDgzzNdXTSZwxRtwvZL/nKIl
-ynG4oX6BOkMBGHyvvDdmacXgHIz0myBUaK5vIwNMdMdW3GLwRK2X8YgBrGtvar19qYyvQJeJlX9P
-g17coewZMo6QQo9PUZhtH5CnXoll4XbjolCJa+YQallHZXwgNgocTe5vPSOEHJvbNkjyr9DPkSN2
-a1Hlf0LFHkMOJqX6j/A4VSid+xYZEF6WhP1642z5Qti9sP0+gxBGUviBmQ2/LX+I9jQwP70kWnqk
-aQihhfieVmxhO3xre8HdNaG8q/Lejh1PG5V/5jlZx2YL4QGB7lu3cg+wv14xm2FScxA6Mh/PN3PF
-+Yt9Fi1wlxJUt8VQiTu5XG2rxNCsD4usV1nSuWnTCf+kcXvUTu9DfROwloB6UEPxe+PYLjWRkLa0
-faTYiMYSs5A085zzL6yvw7VbIOozgn8Q7gFFyn+YoDB7repaXJutVjHMxPU899oGdB0XRdKm//ta
-RehlpMeqokglEsZtGFq5qkmLrORv105cI/YEx29gTWqKUh/P4KOvYsFuA/9c9fQ8uqffFkD+uLnE
-90bL2QaNY0WT+4RmTRU61Fe5yxxmSfVOeptwoLy6k8yBJNrPrtoQGHDTCFfcBA/WFWABuyvzSoYZ
-ohjLLT4dRqwpzXRauPel2/2jkMD4k7PsDa+bmhRi/kdHmzftUJl5arT5rjTDcGtCPFH8+9715Swf
-55vr4+9/DSG04sI1/gA0pZV8gXRn+BOrPmLcdIYuhlnc4W1Od2tIoMmM0OJjy9CTTfXuLIKCRGzP
-cWJUYXlMyoBL8tINnh8+GfP5H8euLHOrqp1qtQwEmLifrOkAqVb4WUejkPmU4sANVdKTK3ilt+Q0
-L7bmfOdcx6kBhSaBzdtyuRa7A5ZP8NwlgKUUs4AJbrt6PwPIEjuVZ5iJluy+tEoo0xumkalvFKlw
-CpY6hxAkcEMf82vqJxUapNocXIlsJi33N4Fz7Xfg8OAU+I/me6RyUlA2IFAk6zQjMeQKwDCC0+xC
-dD1QTfstwehlPDrS40PDmQuzznoUCLdrwHbx2xno4KOwwipjUSNXnV0BtUfEhn0H9ua9DsRhtiJm
-Sprhx/4kZ7Bd1ffnYI93jrZFWvJRJSP3YWUAplUJNtKUPPgKJ02cBIaDE8tRjm3kgSs4RyKiINZs
-3xmKLEjjZHGcdW8JXGu4B/Xd04UWBXJRXte0z37WsHRABLT/Cz00h+BqFHtqzaDimY7ymwV9MyPk
-xQ0wpfJIibV/O+hiDLWAjhjrQTUvzX0hvtTK4Oys3lT/Wbq5zx+EQAysOjOVci+MP/Q5dYhEkIQm
-w8KZmonBIG6SjL8kpzT0t78z8en3Cpd0UwrkSRHaftE+07Nbu3XCRE7FLg68IBlekSGNjAVwQRhY
-w105ykrWjs3wzKQqlasRWLrXlqB99/BJZ08dGsLoiNEqdHj5Z6K2kFmevg2d2PqwvCndhA63A4Up
-c8Husmhp4SFcEdE32UmjYpyF74QTm9GPgTTE/4LUQUSGzHr+gnE7CNjlk2XxFl+CRP4n/bx2NkBd
-f4jVQrb8xCdvNor7GR6BIJ9i5QlVvQ3FihqmxCikoYl6P41WWTSQSNcBAI9AcqBKgfPO61IFI9FD
-w8uZ89r4+3jcawlCd4tHi+xtzjtuBWtxNbHnOfXREp+37MCtS761J2t4mkINIWDko8EtQ7DRae3c
-HpdmqPlR2G/CVwbNhI9rDTiw8twLOQXdnzfEaswCgn5IQQDzKxu3XZ5DoUfpcXCe+pI8oUY3WAD4
-MUzNhVRNJKTX6y81YrUMaHOCXfFvmwwektKC/czwCmfWdC1qrOi5KluJ782nSnWtwDIBgJbiv9rM
-5v62GNdCCIAtomLhZVoN9x0CzIGqrokqxWLsLSUKLTbCL1MVOOcYUAju4ZK1Pc8xAdhOmMyzbFwn
-rF3wJ1q7H1U8wYVwhnVE9U6Kle/1N0nyyFKn7wCABOk3g5q+UFFcS2UOxHnFPIDbYgifEWXvl5ke
-RrEb1QEbOC4sSnUslZSsWRm=

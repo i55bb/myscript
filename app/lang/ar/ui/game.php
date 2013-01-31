@@ -1,32 +1,46 @@
-<?php //003ab
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');@dl($__ln);if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}@dl($__ln);}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the site administrator.');exit(199);
+<?php
+/*********************/
+/*                   */
+/*  Version : 5.1.0  */
+/*  Author  : RM     */
+/*  Comment : 071223 */
+/*                   */
+/*********************/
+
+echo "﻿";
+define( "LANGUI_GAME_ICO1", "خريطة القرية" );
+define( "LANGUI_GAME_ICO2", "مركز القرية" );
+define( "LANGUI_GAME_ICO3", "خريطة" );
+define( "LANGUI_GAME_ICO4", "إحصائيات" );
+define( "LANGUI_GAME_ICO5", "تقارير" );
+define( "LANGUI_GAME_ICO6", "رسائل" );
+define( "LANGUI_GAME_ICO7", "شراء الذهب" );
+define( "LANGUI_GAME_GOLD", "الذهب" );
+define( "LANGUI_GAME_GNAME", "حرب التتار" );
+define( "LANGUI_GAME_MORNING", "نهاراً" );
+define( "LANGUI_GAME_AFTERNOON", "مساء" );
+define( "LANGUI_GAME_MENU1", "الصفحة الرئيسية" );
+define( "LANGUI_GAME_MENU2", "الدليل السريع" );
+define( "LANGUI_GAME_MENU3", "بطاقة العضوية" );
+define( "LANGUI_GAME_MENU4", "تسجيل الخروج" );
+define( "LANGUI_GAME_MENU5", "دفتر الملاحظات" );
+define( "LANGUI_GAME_MENU6", "روابط مباشرة" );
+define( "LANGUI_GAME_MENU7", "اخبار الموقع" );
+define( "LANGUI_GAME_MENU8", "خبر للأعضاء" );
+define( "LANGUI_GAME_MENU9", "شراء الذهب" );
+define( "LANGUI_GAME_MENU10", "فلتر الكلمات" );
+define( "LANGUI_GAME_MENU11", "الاعلانات" );
+define( "LANGUI_GAME_MENU12", "الشات" );
+define( "LANGUI_GAME_PLAYERDEL", "حذف العضوية سيتم في" );
+define( "LANGUI_GAME_LMENU1", "إلى مدير المهمات" );
+define( "LANGUI_GAME_LMENU2", "القرى" );
+define( "LANGUI_GAME_LMENU3", "الروابط" );
+define( "LANGUI_GAME_LMENU4", "نافذة جديدة" );
+define( "LANGUI_GAME_CROPCONSUM", "إستهلاك القمح" );
+define( "LANGUI_GAME_CALCMS", "الحساب  يتم في" );
+define( "LANGUI_GAME_SRVTIME", "وقت الخادم" );
+define( "LANGUI_GAME_T1", "المنتدي" );
+define( "LANGUI_GAME_T2", "الموقع" );
+define( "LANGUI_GAME_T3", "شبكة التواصل" );
+define( "LANGUI_GAME_T4", "الاصدقاء" );
 ?>
-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
-jCSNfWFMsgF6jojP

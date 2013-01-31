@@ -1,30 +1,44 @@
-<?php //003ab
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');@dl($__ln);if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}@dl($__ln);}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the site administrator.');exit(199);
+<?php
+/*********************/
+/*                   */
+/*  Version : 5.1.0  */
+/*  Author  : RM     */
+/*  Comment : 071223 */
+/*                   */
+/*********************/
+
+define( "LANGUI_VIL3_T1", "وادي مهجور" );
+define( "LANGUI_VIL3_T2", "توزيع الأراضي" );
+define( "LANGUI_VIL3_T3", "حطابون" );
+define( "LANGUI_VIL3_T4", "حفر الطين" );
+define( "LANGUI_VIL3_T5", "مناجم الحديد" );
+define( "LANGUI_VIL3_T6", "حقول القمح" );
+define( "LANGUI_VIL3_T7", "خيارات" );
+define( "LANGUI_VIL3_T8", "» مركز الخريطه" );
+define( "LANGUI_VIL3_T9", "» بناء قرية جديدة" );
+define( "LANGUI_VIL3_T10", "/3 مستوطنون متوفرون" );
+define( "LANGUI_VIL3_T11", "عاصمة" );
+define( "LANGUI_VIL3_T12", "القبيلة" );
+define( "LANGUI_VIL3_T13", "التحالف" );
+define( "LANGUI_VIL3_T14", "المالك" );
+define( "LANGUI_VIL3_T15", "السكان" );
+define( "LANGUI_VIL3_T16", "تقارير" );
+define( "LANGUI_VIL3_T17", "لا يوجد معلومات" );
+define( "LANGUI_VIL3_T18", "» إرسال قوات (محظور)" );
+define( "LANGUI_VIL3_T19", "» إرسال قوات" );
+define( "LANGUI_VIL3_T20", "» إرسال قوات (قم ببناء نقطة التجمع)" );
+define( "LANGUI_VIL3_T21", "» إرسال تجار (محظور)" );
+define( "LANGUI_VIL3_T22", "» إرسال تجار" );
+define( "LANGUI_VIL3_T23", "» إرسال تجار (قم ببناء السوق)" );
+define( "LANGUI_VIL3_T24", "واحة مملوكة" );
+define( "LANGUI_VIL3_T25", "الولاء" );
+define( "LANGUI_VIL3_T26", "زيادة" );
+define( "LANGUI_VIL3_T27", "في الساعة" );
+define( "LANGUI_VIL3_T28", "القرية" );
+define( "LANGUI_VIL3_T29", "واحة غير محتلّة" );
+define( "LANGUI_VIL3_T30", "الوحدات" );
+define( "LANGUI_VIL3_T31", "لا شيء" );
+define( "LANGUI_VIL3_T32", "الزيادة" );
+define( "LANGUI_VIL3_T33", "» نهب واحة مهجورة" );
+define( "LANGUI_VIL3_T34", "» نهب واحة مهجورة (قم ببناء نقطة التجمع)" );
 ?>
-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

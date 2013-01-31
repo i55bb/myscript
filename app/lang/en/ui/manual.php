@@ -1,133 +1,120 @@
-<?php //003ab
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');@dl($__ln);if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}@dl($__ln);}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the site administrator.');exit(199);
+﻿<?php
+#################################################################################
+##                                                                             ##
+##                                                                             ##
+## --------------------------------------------------------------------------- ##
+##                                                                             ##
+##  Project:       TATAR WARS                                                  ##
+##  Version:       2012.3.15                                                   ##
+##  License:       Creative Commons BY-NC-SA 3.0                               ##
+##  Copyright:     Bazaid (c) 2012 - All rights reserved                       ##
+##  Source code:   https://github.com/Bazaid/tatar-wars                        ##
+##                 http://sourceforge.net/projects/tatarwars/                  ##
+#################################################################################
+
+define( "LANGUI_MANUAL_T1", "tribes" );
+define( "LANGUI_MANUAL_T2", "buildings" );
+define( "LANGUI_MANUAL_T3", "FAQ" );
+define( "LANGUI_MANUAL_T4", "There are several people: the tribe wasp, Arabs, Romans, Gauls and Teutons. every people has its merits and disadvantages of. and even types of units differ from each other clearly. It is therefore important that you choose at the beginning of the game the people that works for you" );
+define( "LANGUI_MANUAL_T5", "wasp tribe is the most offensive of all. fighters feared for their brutality in the attack. They are reneging on countries without fear of death." );
+define( "LANGUI_MANUAL_T6", "forces wasp" );
+define( "LANGUI_MANUAL_T7", "Offensive" );
+define( "LANGUI_MANUAL_T8", "defense capability against infantry" );
+define( "LANGUI_MANUAL_T9", "Defense against cavalry" );
+define( "LANGUI_MANUAL_T10", "speed" );
+define( "LANGUI_MANUAL_T11", "field / h" );
+define( "LANGUI_MANUAL_T12", "special cases" );
+define( "LANGUI_MANUAL_T13", "looting bonus: the cranny of competitors modifies only" );
+define( "LANGUI_MANUAL_T14", "Simultaneous construction of resource fields and buildings" );
+define( "LANGUI_MANUAL_T15", "rise through the defense wall of the city" );
+define( "LANGUI_MANUAL_T16", "Merchants can carry" );
+define( "LANGUI_MANUAL_T17", "very strong infantry and cavalry are strong" );
+define( "LANGUI_MANUAL_T18", "Development is expensive and long" );
+define( "LANGUI_MANUAL_T19", "raw materials" );
+define( "LANGUI_MANUAL_T20", "fields / hour" );
+define( "LANGUI_MANUAL_T21", "the Arab Empire is the Arab people from more nations that have contributed to the prosperity and development of human Baalovernma and civilizations. and the advantage of Arab fighters with tremendous force, endurance and patience in the worst of circumstances, it is one of the oldest fighters in history. have emerged and flourished the Arabic language in the country Persian Gulf, the form of tribes living in the desert, making the Arabs of the fiercest fighters, the familiarity and ability to fight wars in the harsh climatic conditions. contributed to the Islamic religion spread of the Arabic language, and has had a major role in the spread of the Arabic language with the boundaries of the Islamic empire " );
+define( "LANGUI_MANUAL_T22", "the Arab forces" );
+define( "LANGUI_MANUAL_T23", "Empire is the Romanian for beginners in the Tatar war. because of the high social and technological development the Romans are masters of coordination in the architecture, and soldiers belonging to the elite in the Tatar war. <br>\r\nThey are useful and relatively balanced in attack and defense. In order to ensure this diversity, they go through a lengthy and costly training. Their infantry is a living legend, but the strength of defense against enemy cavalry is clearly compared to other tribes. <br>\r\nFor beginners and those who do not know exactly what they want, the Romans are ideal for them " );
+define( "LANGUI_MANUAL_T24", "Roman troops" );
+define( "LANGUI_MANUAL_T25", "Very powerful infantry, average cavalry" );
+define( "LANGUI_MANUAL_T27", "people of the Greek is the peaceful people of all nations. units are trained for the defense, but lower than other peoples in the attack. Greek is the knight who was born, horses legendary because of its speed, which surprise the enemy quickly third parties who are willing. <br> <br>\r\nThis tribe is relatively easy to defend, Kmaan play an aggressive investigation. It provides the possibility to develop into any strategic direction (defensive or aggressive, help in emergencies, dealers or beggars, infantry or cavalry, settler or conqueror), but some technical Aazemk. However, you can also play a tribe for beginners! " );
+define( "LANGUI_MANUAL_T28", "forces the Greeks" );
+define( "LANGUI_MANUAL_T29", "Speed ​​bonus: Fastest units in the game" );
+define( "LANGUI_MANUAL_T30", "medium defense bonus fence" );
+define( "LANGUI_MANUAL_T31", "cache two sizes larger than the rest" );
+define( "LANGUI_MANUAL_T32", "cost of the war machine" );
+define( "LANGUI_MANUAL_T33", "Cheap settlers" );
+define( "LANGUI_MANUAL_T34", "Germanic people is the most offensive of all. fighters are notorious and feared because of the barbarity of the attack. They are reneging on countries without fear of death. <br> <br>\r\nHowever, they lack the military discipline of the Romans and Greeks, and so is their weaknesses in speed and defense. The attacker, the Teutons Professional is well suited! " );
+define( "LANGUI_MANUAL_T35", "The Teutonic Troops" );
+define( "LANGUI_MANUAL_T37", "The earth wall is almost indestructible, but the protection is weak" );
+define( "LANGUI_MANUAL_T38", "Very cheap, and can be produced quickly and valid for looting" );
+define( "LANGUI_MANUAL_T39", "weakness in the defense" );
+define( "LANGUI_MANUAL_T40", "<p> at the beginning of the game you have to adopt economic fundamentals are strong. In order to achieve this must be the 18 field with respect to raw resources of the village. There are four types of resources: loggers and the drilling mud and iron mines and wheat fields. If you want to know more about them and how to develop what you need to click on the field. </ p>\r\n<p> and after some time become important for some of the buildings within the village. In order to construct Click on the link below to explain the type of green building. <br> <br> </ P>\r\n<p> should be noted that some buildings do not appear only in the advanced stage of development and construction until the completion of the conditions that might be in the development of a building or other buildings to a certain level </ p> " );
+define( "LANGUI_MANUAL_T41", "Main Building" );
+define( "LANGUI_MANUAL_T42", "construction workers live in the main building. the higher the level of the main building, the greater the speed of construction of buildings or development" );
+define( "LANGUI_MANUAL_T43", "benefits of tribal" );
+define( "LANGUI_MANUAL_T44", "the Romans: you can build or develop a building at the same time, which is developing a building or resource field" );
+define( "LANGUI_MANUAL_T45", "<b> costs </ b> and <b> construction time </ b> at level 1" );
+define( "LANGUI_MANUAL_T46", "conditions" );
+define( "LANGUI_MANUAL_T47", "Nothing" );
+define( "LANGUI_MANUAL_T48", "store" );
+define( "LANGUI_MANUAL_T49", "is stored in wood, clay and iron, which is produced in the store. the higher the level of the store increased storage capacity" );
+define( "LANGUI_MANUAL_T50", "Granary" );
+define( "LANGUI_MANUAL_T51", "are stored wheat that is produced in a ranch in the granary. The higher the level of stored grain have increased the amount of grain that is stored" );
+define( "LANGUI_MANUAL_T52", "cache" );
+define( "LANGUI_MANUAL_T53", "in case of attack on the village, residents are concealing part of the raw materials automatically in hiding so as not to be stolen. At level 1 you can protect 100 of each type of raw materials from the pillaging" );
+define( "LANGUI_MANUAL_T54", "Greeks: the cache can accommodate twice the amount" );
+define( "LANGUI_MANUAL_T55", "Teutons: Enemy crannies only 66% of his strength in front of them" );
+define( "LANGUI_MANUAL_T56", "Embassy" );
+define( "LANGUI_MANUAL_T57", "in order to be able to join an alliance you need an embassy. starting from level 3 you can also create your own alliance. At each stage increases the maximum size of three members of the Alliance" );
+define( "LANGUI_MANUAL_T58", "assembly point" );
+define( "LANGUI_MANUAL_T59", "At the rally point you can give instructions to your troops and see the movements of troops coming to you and the sender. The rally point can only be built on one site which is in the middle of the village to the right a bit. The higher the level the more targets are available catapults" );
+define( "LANGUI_MANUAL_T60", "market" );
+define( "LANGUI_MANUAL_T61", "by Bmoardek market you can trade with others. The higher the level the market has increased the amount of resources that can be traded" );
+define( "LANGUI_MANUAL_T64", "barracks" );
+define( "LANGUI_MANUAL_T65", "in the barracks infantry can be trained. The higher the level of the barracks, the faster the training of forces" );
+define( "LANGUI_MANUAL_T66", "stable" );
+define( "LANGUI_MANUAL_T67", "In the Stable cavalry is trained. The higher the level the more stable speed train" );
+define( "LANGUI_MANUAL_T68", "POF" );
+define( "LANGUI_MANUAL_T69", "war in the factories can be built catapults and catapults. the higher the level of factories increased production speed" );
+define( "LANGUI_MANUAL_T70", "academic" );
+define( "LANGUI_MANUAL_T71", "In the Academy you can train new types of troops. the higher the level of increased academy types of forces that can be trained" );
+define( "LANGUI_MANUAL_T72", "mourning" );
+define( "LANGUI_MANUAL_T73", "Blacksmith you can develop weapons of combatants and strengthened. and when you increase the level of mourning you can request the development of better weapons" );
+define( "LANGUI_MANUAL_T74", "armory" );
+define( "LANGUI_MANUAL_T75", "in the armory you can improve the armor forces. the higher the level of the armory has increased the potential to improve the armor better" );
+define( "LANGUI_MANUAL_T76", "Palace" );
+define( "LANGUI_MANUAL_T77", "Long Live the King or Queen in the palace, the palace can be built in the village and only one becomes the capital. can never occupy the capital. <br> <br>\r\nAt level 10, 15 and 20 of the palace you can train three settlers or leader or one president. <br> <br>\r\nThe capital is the only village that can be built where Hajjar. In addition, in the capital you can raise the levels of resource fields over level 10. " );
+define( "LANGUI_MANUAL_T78", "housing" );
+define( "LANGUI_MANUAL_T79", "housing is a small palace of the king or queen lives when during their visit to the village, housing protects the village from attacks by enemies aspiring to occupy the village as long as it was being destroyed. <br> <br>\r\nAt level 10 and 20 of the housing you can train three settlers or leader or the head of one " );
+define( "LANGUI_MANUAL_T80", "Commercial Office" );
+define( "LANGUI_MANUAL_T81", "in the office is to improve commercial vehicle dealers horses strong. the higher the level of commercial office building has increased the ability of traders to take up more resources. <br> <br>\r\nAt each level of the Trade Office is raising the capacity of traders to carry the resources by 10%. At level 20 your merchants can carry 3 times the amount of resources" );
+define( "LANGUI_MANUAL_T82", "Tournament Square" );
+define( "LANGUI_MANUAL_T83", "in the yard championship speed train your troops making the distances far closer. <br> <br>\r\nAt each stage up speed by 10% " );
+define( "LANGUI_MANUAL_T84", "How can I build a rally point?" );
+define( "LANGUI_MANUAL_T85", "the meeting point and the wall can be built only to find a specific location on the meadow to the right of the village center." );
+define( "LANGUI_MANUAL_T86", "How can I build an alliance?" );
+define( "LANGUI_MANUAL_T87", "To be able to forge an alliance you need an embassy level 3. In order to be able to join the alliance you need an embassy level 1 and also to invite" );
+define( "LANGUI_MANUAL_T88", "How can I rename my village?" );
+define( "LANGUI_MANUAL_T89", "click <i> statistics </ i> (blue area), there <i> your name </ i> and then <i>\r\nCorrect information </ i>. <i> In the name of the village </ i> enter the new name. " );
+define( "LANGUI_MANUAL_T90", "How do I train troops?" );
+define( "LANGUI_MANUAL_T91", "you need to point at level 1 and the main building at level 3. then you can\r\nBuild barracks and your troops. " );
+define( "LANGUI_MANUAL_T92", "How can I defend my village?" );
+define( "LANGUI_MANUAL_T93", "as long as you have troops stationed (private or friend) in your village, they automatically defend\r\nVillage " );
+define( "LANGUI_MANUAL_T94", "Why do soldiers lose when the attack on the village empty?" );
+define( "LANGUI_MANUAL_T95", "every village has a basic defense. so they will always lose if Ahjomka unit\r\nOnly one. Or using a purely defensive units are not appropriate\r\nThe launch of the attack " );
+define( "LANGUI_MANUAL_T96", "How do I get more population?" );
+define( "LANGUI_MANUAL_T97", "every building brings you a certain number of the population. and how much residents get through the demolition or construction\r\nBuilding, you can identify it after the symbol " );
+define( "LANGUI_MANUAL_T98", "Help, my crop production becomes less and less .!" );
+define( "LANGUI_MANUAL_T99", "with <i> production </ i> (eg 10) through the production of grain cereal consumption divided by the <i>\r\nPopulation </ i> <i> and (eg 5) forces </ i> You can read the total cereal production\r\nAbove. For example " );
+define( "LANGUI_MANUAL_T100", "Why do my troops plunder so few resources?" );
+define( "LANGUI_MANUAL_T101", "can have several reasons. the one hand, each unit can only carry a certain\r\nOf raw materials, on the other hand protects <i> cache </ i> automatically a number of articles\r\nCrude antibody to an enemy " );
+define( "LANGUI_MANUAL_T102", "How do I create or conquer new villages?" );
+define( "LANGUI_MANUAL_T103", "in order to create new villages you need three settlers to seize\r\nVillage as you are in need of City Manager (depending on the people of al-Hakim, or leader or President)\r\nWhich you can build in the Palace / stay can be at level 10. In addition,\r\nYou also collect a certain amount of culture points" );
+define( "LANGUI_MANUAL_T104", "Can I lose my village?" );
+define( "LANGUI_MANUAL_T105", "If you have only one village, there can be loss of the village. If\r\nYou have less than four villages, Andermatt Home (where there are minors) protected from players\r\nOthers, but not the rest of the villages" );
+define( "LANGUI_MANUAL_T106", "consumption of grains" );
+define( "LANGUI_MANUAL_T107", "consumption of wheat" );
+define( "LANGUI_MANUAL_T108", "benefits of the tribes" );
+define( "LANGUI_MANUAL_T109", "rules of the game" );
 ?>
-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
-En6sG2iwQN95KDHTfLIsYN8=

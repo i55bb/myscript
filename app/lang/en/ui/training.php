@@ -1,37 +1,42 @@
-<?php //003ab
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');@dl($__ln);if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}@dl($__ln);}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the site administrator.');exit(199);
+<?php
+#################################################################################
+##                                                                             ##
+##                                                                             ##
+## --------------------------------------------------------------------------- ##
+##                                                                             ##
+##  Project:       TATAR WARS                                                  ##
+##  Version:       2012.3.15                                                   ##
+##  License:       Creative Commons BY-NC-SA 3.0                               ##
+##  Copyright:     Bazaid (c) 2012 - All rights reserved                       ##
+##  Source code:   https://github.com/Bazaid/tatar-wars                        ##
+##                 http://sourceforge.net/projects/tatarwars/                  ##
+#################################################################################
+define( "LANGUI_TRAINING_T1", "is how you start ..." );
+define( "LANGUI_TRAINING_T2", "... and so can be a village later." );
+define( "LANGUI_TRAINING_T3", "At first you only build one building in the small village. <br> <br> and you will find how you can upgrade your village to become strong and prosperous in the next page." );
+define( "LANGUI_TRAINING_T4", "back" );
+define( "LANGUI_TRAINING_T5", "forward" );
+define( "LANGUI_TRAINING_T6", "1 - choose the field of raw resources. " );
+define( "LANGUI_TRAINING_T7", "2 - and then develop the field of raw resources. " );
+define( "LANGUI_TRAINING_T8", "in the Tatar war, there are four types of resources: wood, clay, iron and wheat. <br> <br> before work to take care of buildings Baqratk you upgrade some of the raw resource fields." );
+define( "LANGUI_TRAINING_T9", "1. chose a building site. " );
+define( "LANGUI_TRAINING_T10", "2. then the construction of buildings. " );
+define( "LANGUI_TRAINING_T11", "care after the production of raw resources, you can start in the development of your village. <br> <br> in the warehouse and store grain, you can store a larger amount of raw resources. bunker protects your resources from looting the enemies." );
+define( "LANGUI_TRAINING_T12", "your village and your neighbors" );
+define( "LANGUI_TRAINING_T13", "Tatar War is a game on the Internet. You play in the network with thousands of players in the world of war Tatar. <br><br> Players of the neighborhood have particular importance. You can get a glimpse of them by a good map." );
+define( "LANGUI_TRAINING_T14", "Navigation bar" );
+define( "LANGUI_TRAINING_T15", "<b>Ocean:</b>Here you will find the map of the village and fields of your resources of raw" );
+define( "LANGUI_TRAINING_T16", "<b>Center:</b>In the center of the village you can create buildings." );
+define( "LANGUI_TRAINING_T17", "<b>Map:</b>Your country and your neighbors here." );
+define( "LANGUI_TRAINING_T18", "<b>Statistics:</b>Your position and arrangement of all the players." );
+define( "LANGUI_TRAINING_T19", "<b>Reports:</b>Information on events in your village." );
+define( "LANGUI_TRAINING_T20", "<b>Messages:</b>Send and receive messages." );
+define( "LANGUI_TRAINING_T21", "You know now the most important things about the war Tatars. you can start playing after registration." );
+define( "LANGUI_TRAINING_T22", "Register" );
+define( "LANGUI_TRAINING_T23", "training" );
+define( "LANGUI_TRAINING_T24", "village" );
+define( "LANGUI_TRAINING_T25", "sources" );
+define( "LANGUI_TRAINING_T26", "buildings" );
+define( "LANGUI_TRAINING_T27", "neighbors" );
+define( "LANGUI_TRAINING_T28", "navigation" );
 ?>
-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
-3POftkPjDDeljBadCcu=

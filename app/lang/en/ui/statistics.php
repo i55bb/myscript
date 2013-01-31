@@ -1,38 +1,67 @@
-<?php //003ab
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');@dl($__ln);if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}@dl($__ln);}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the site administrator.');exit(199);
+<?php
+ #################################################################################
+##                                                                             ##
+##                                                                             ##
+## --------------------------------------------------------------------------- ##
+##                                                                             ##
+##  Project:       TATAR WARS                                                  ##
+##  Version:       2012.3.15                                                   ##
+##  License:       Creative Commons BY-NC-SA 3.0                               ##
+##  Copyright:     Bazaid (c) 2012 - All rights reserved                       ##
+##  Source code:   https://github.com/Bazaid/tatar-wars                        ##
+##                 http://sourceforge.net/projects/tatarwars/                  ##
+#################################################################################
+
+define( "LANGUI_STAT_T1", "Statistics" );
+define( "LANGUI_STAT_T2", "Players" );
+define( "LANGUI_STAT_T3", "Alliances" );
+define( "LANGUI_STAT_T4", "Villages" );
+define( "LANGUI_STAT_T5", "Heroes" );
+define( "LANGUI_STAT_T6", "Tatar" );
+define( "LANGUI_STAT_T7", "General" );
+define( "LANGUI_STAT_T8", "Are you sure to delete the membership of the player?" );
+define( "LANGUI_STAT_T9", "The Largest Players" );
+define( "LANGUI_STAT_T10", "Top 10" );
+define( "LANGUI_STAT_T11", "Defender" );
+define( "LANGUI_STAT_T12", "Attacker" );
+define( "LANGUI_STAT_T13", "Alliance" );
+define( "LANGUI_STAT_T14", "Population" );
+define( "LANGUI_STAT_T15", "gold" );
+define( "LANGUI_STAT_T16", "gold" );
+define( "LANGUI_STAT_T17", "Director of the Tatars in the war" );
+define( "LANGUI_STAT_T18", "adjusting the amount of gold" );
+define( "LANGUI_STAT_T19", "Delete the membership of the player" );
+define( "LANGUI_STAT_T20", "No." );
+define( "LANGUI_STAT_T21", "Name" );
+define( "LANGUI_STAT_T22", "The Largest Alliances" );
+define( "LANGUI_STAT_T23", "Points" );
+define( "LANGUI_STAT_T24", "The Largest Villages" );
+define( "LANGUI_STAT_T25", "Village" );
+define( "LANGUI_STAT_T26", "Coordinates" );
+define( "LANGUI_STAT_T27", "modify the resources" );
+define( "LANGUI_STAT_T28", "The Most Experienced Heros" );
+define( "LANGUI_STAT_T29", "hero" );
+define( "LANGUI_STAT_T30", "experience" );
+define( "LANGUI_STAT_T31", "Registered players" );
+define( "LANGUI_STAT_T32", "Active ingredients" );
+define( "LANGUI_STAT_T33", "Online gamers" );
+define( "LANGUI_STAT_T34", "Tribes" );
+define( "LANGUI_STAT_T35", "Registered" );
+define( "LANGUI_STAT_T36", "Percent" );
+define( "LANGUI_STAT_T37", "The Most Successful Defenders" );
+define( "LANGUI_STAT_T38", "The Most Successful Attackers" );
+define( "LANGUI_STAT_T39", "the best alliance in defense" );
+define( "LANGUI_STAT_T40", "the best alliance in the attack" );
+define( "LANGUI_STAT_T41", "top 10 players" );
+define( "LANGUI_STAT_T42", "top 10 alliance" );
+define( "LANGUI_STAT_T43", "Quick Guide" );
+define( "LANGUI_STAT_T44", "Attackers" );
+define( "LANGUI_STAT_T45", "Defenders" );
+define( "LANGUI_STAT_T46", "Climbers" );
+define( "LANGUI_STAT_T47", "Robbers" );
+define( "LANGUI_STAT_T48", "Resources" );
+define( "LANGUI_STAT_T49", "Tribe" );
+define( "LANGUI_STAT_T50", "Ranks" );
+define( "LANGUI_STAT_T51", "cancel the suspension of the player" );
+define( "LANGUI_STAT_T52", "Stop the player" );
 ?>
-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

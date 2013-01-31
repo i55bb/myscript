@@ -1,83 +1,145 @@
-<?php //003ab
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');@dl($__ln);if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}@dl($__ln);}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the site administrator.');exit(199);
+﻿<?php
+#################################################################################
+##                                                                             ##
+##                                                                             ##
+## --------------------------------------------------------------------------- ##
+##                                                                             ##
+##  Project:       TATAR WARS                                                  ##
+##  Version:       2012.3.15                                                   ##
+##  License:       Creative Commons BY-NC-SA 3.0                               ##
+##  Copyright:     Bazaid (c) 2012 - All rights reserved                       ##
+##  Source code:   https://github.com/Bazaid/tatar-wars                        ##
+##                 http://sourceforge.net/projects/tatarwars/                  ##
+#################################################################################
+echo "﻿";
+require_once( LANG_UI_PATH."index.php" );
+echo "<!DOCTYPE html PUBLIC \"-//W3C//DTD XHTML 1.0 Strict//EN\" \"http://www.w3c.org/TR/xhtml1/DTD/xhtml1-strict.dtd\">\r\n<html xmlns=\"http://www.w3.org/1999/xhtml\" xml:lang=\"eg\" lang=\"eg\">\r\n\t<head>\r\n\t\t<title>";
+echo $this->appConfig['page'][$this->appConfig['system']['lang']."_title"];
+echo "</title>\r\n\t\t<meta http-equiv=\"Content-Type\" content=\"text/html; charset=utf-8\" />\r\n\t\t<meta http-equiv=\"content-script-type\" content=\"text/javascript\" />\r\n\t\t<meta http-equiv=\"content-style-type\" content=\"text/css\" />\r\n\t\t<meta content=\"";
+echo $this->appConfig['page']['meta-tag'];
+echo "\" name=\"description\"> \r\n\t\t<meta content=\"";
+echo $this->appConfig['page']['meta-tag'];
+echo "\" name=\"keywords\">\r\n        <link rel=\"stylesheet\" type=\"text/css\" href=\"assets/indx/css/style_";
+echo $this->appConfig['system']['lang'];
+echo ".css";
+echo $this->getAssetVersion( );
+echo "\"/>\r\n\t\t<meta name=\"google-site-verification\" content=\"vTjsRxnpRzHRJvw5E3uOiAA-jcGayHNOw_SEAD93-fc\" />\r\n\t\t<link rel=\"shortcut icon\" href=\"assets/favicon.ico\" type=\"image/x-icon\" />\r\n\t\t";
+echo "<s";
+echo "cript type=\"text/javascript\">var d3l=";
+echo $this->appConfig['system']['lang'] == "ar" ? "180" : "-600";
+echo ";</script>\r\n\t\t";
+echo "<s";
+echo "cript src=\"assets/core.js";
+echo $this->getAssetVersion( );
+echo "\" type=\"text/javascript\"></script>\r\n\t</head>\r\n<body>\r\n<div style=\"position:absolute; top:5px; left:20px;\">\r\n<a href=\"\" onclick=\"setLang('en')\"><img src=\"assets/indx/img/en.jpg\" border=\"0\" title=\"";
+echo LANGUI_INDX_T12;
+echo "\" alt=\"";
+echo LANGUI_INDX_T12;
+echo "\" /></a>\r\n<a href=\"\" onclick=\"setLang('ar')\"><img src=\"assets/indx/img/ar.jpg\" border=\"0\" title=\"";
+echo LANGUI_INDX_T11;
+echo "\" alt=\"";
+echo LANGUI_INDX_T11;
+echo "\"/></a>\r\n</div>\r\n<div id=\"allcontentts\">\r\n<div id=\"mokatel\"></div>\r\n\t<div id=\"header\">\t\t\r\n\t\t<div class=\"logo\"></div>\r\n\t\t<div class=\"formlogin\">\r\n\t\t<form action=\"index.php\" method=\"post\" name=\"login\">\r\n\t\t<input class=\"text";
+if ( $this->errorState == 1 )
+{
+    echo " iError";
+}
+echo "\" name=\"name\" type=\"text\" title=\"";
+echo LANGUI_INDX_T1;
+echo "\" value=\"";
+echo $this->name;
+echo "\" />\r\n\t\t<input class=\"text";
+if ( $this->errorState == 2 )
+{
+    echo " iError";
+}
+echo "\" name=\"password\" type=\"password\" title=\"";
+echo LANGUI_INDX_T2;
+echo "\" value=\"";
+echo $this->password;
+echo "\" />\r\n\t\t<input name=\"submit\" type=\"submit\" value=\"";
+echo LANGUI_INDX_T3;
+echo "\" id=\"sub\" />\r\n\t\t</form>\r\n\t\t";
+if ( $this->error != "" )
+{
+    echo "<div style=\"background-color:#FF0000;color:#FFFFFF;padding:2px;width:300px;\">".$this->error."</div>";
+}
+echo "\t\t</div>\r\n<!-- END [header] Class / ID -->\r\n\t</div>\r\n\r\n\t<div id=\"contentxx\">\r\n    \t<div class=\"writeherethecont\">\r\n    \t\t<div class=\"rightside\">\r\n    \t\t<div class=\"rightstat\"><table class=\"stats\" cellpadding=\"2\" cellspacing=\"2\">\r\n\t\t\t<tr><td>";
+echo "<s";
+echo "trong>";
+echo LANGUI_INDX_T4;
+echo ":</strong></td><td>";
+echo $this->data['players_count'];
+echo "</td></tr> \r\n\t\t\t<tr><td>";
+echo "<s";
+echo "trong>";
+echo LANGUI_INDX_T5;
+echo ":</strong></td><td>";
+echo $this->data['active_players_count'];
+echo "</td></tr> \r\n\t\t\t<tr><td>";
+echo "<s";
+echo "trong>";
+echo LANGUI_INDX_T6;
+echo ":</strong></td><td>";
+echo $this->data['online_players_count'];
+echo "</td></tr> \r\n\t\t</table></div>\r\n    \t\t<div class=\"rightnews\">\r\n    \t\t\t<div class=\"rightnehed\"></div>\r\n    \t\t\t<h5 style=\"padding: 0px 10px 0px 10px\">";
+echo nl2br( $this->data['news_text'] );
+echo "</h5>\r\n    \t\t</div>\r\n    \t\t</div>\r\n    \t\t<div class=\"leftside\">\r\n    \t\t\t<!-- Content Site -->\r\n<div class=\"intro\">";
+echo LANGUI_INDX_T7;
+echo "</div>\r\n<div class=\"buttonplay\"><a href=\"manual.php\">";
+echo "<s";
+echo "pan>";
+echo LANGUI_INDX_T8;
+echo "</span></a></div>\r\n<div class=\"sliddxx\">\r\n  <ul id=\"slideshow\">";
+echo LANGUI_INDX_T10;
+echo "</ul>\r\n  <div id=\"wrapper\">\r\n    <div id=\"fullsize\">\r\n      <div id=\"imgprev\" class=\"imgnav\" title=\"Previous Image\"></div>\r\n      <div id=\"imglink\"></div>\r\n      <div id=\"imgnext\" class=\"imgnav\" title=\"Next Image\"></div>\r\n      <div id=\"image\"></div>\r\n      <div id=\"information\">\r\n        <h3></h3>\r\n        <p></p>\r\n      </div>\r\n    </div>\r\n    <div id=\"thumbnails\">\r\n      <div id=\"slideleft\" title=\"Slide Left\"></div";
+echo ">\r\n      <div id=\"slidearea\">\r\n        <div id=\"slider\"></div>\r\n      </div>\r\n      <div id=\"slideright\" title=\"Slide Right\"></div>\r\n    </div>\r\n  </div>\r\n  ";
+echo "<s";
+echo "cript type=\"text/javascript\" src=\"assets/indx/js/compressed.js";
+echo $this->getAssetVersion( );
+echo "\"></script> \r\n  ";
+echo "<s";
+echo "cript type=\"text/javascript\">\r\n\t\$('slideshow').style.display='none';\r\n\t\$('wrapper').style.display='block';\r\n\tvar slideshow=new TINY.slideshow(\"slideshow\");\r\n\twindow.onload=function(){\r\n\t\tslideshow.auto=true;\r\n\t\tslideshow.speed=5;\r\n\t\tslideshow.link=\"linkhover\";\r\n\t\tslideshow.info=\"information\";\r\n\t\tslideshow.thumbs=\"slider\";\r\n\t\tslideshow.left=\"slideleft\";\r\n\t\tslideshow.right=\"slideright\";\r\n\t\tslideshow";
+echo ".scrollSpeed=4;\r\n\t\tslideshow.spacing=5;\r\n\t\tslideshow.active=\"#fff\";\r\n\t\tslideshow.init(\"slideshow\",\"image\",\"imgprev\",\"imgnext\",\"imglink\");\r\n\t}\r\n</script> \r\n</div>\r\n<div class=\"register\"><a href=\"register.php\">";
+echo "<s";
+echo "pan>";
+echo LANGUI_INDX_T9;
+echo "</span></a></div>\r\n<div class=\"bannerads\" align=\"center\">\r\n";
+if ( 0 < sizeof( $this->banner ) )
+{
+    if ( $this->banner['type'] == "image" )
+    {
+        echo "<a target=\"_blank\" href=\"banner.php?url=".base64_encode( $this->banner['ID'] )."\"> \r\n\t\t<img height=\"60\" width=\"550\" src=\"".$this->banner['image']."\" border=\"0\" title=\"".$this->banner['name']."\"  alt=\"".$this->banner['name']."\"></a> ";
+    }
+    else
+    {
+        echo "<embed height=\"60\" width=\"550\" onclick=\"window.location.href('banner.php?url=".base64_encode( $this->banner['ID'] )."')\" title=\"".$this->banner['name']."\" src=\"".$this->banner['image']."\" />";
+    }
+}
+echo "</div>\r\n<div class=\"copyr\">\r\n";
+require_once( LANG_UI_PATH."footer.php" );
+echo "<s";
+echo "pan><a href=\"manual.php\">";
+echo LANGUI_FOOTER_MANUAL;
+echo "</a></span> |\r\n";
+echo "<s";
+echo "pan><a href=\"training.php\">";
+echo LANGUI_FOOTER_TRAINING;
+echo "</a></span> |\r\n";
+echo "<s";
+echo "pan><a href=\"";
+echo $this->appConfig['system']['forum_url'];
+echo "\" target=\"_blank\">";
+echo LANGUI_INDX_T13;
+echo "</a></span> |\r\n";
+echo "<s";
+echo "pan><a href=\"";
+echo $this->appConfig['system']['social_url'];
+echo "\" target=\"_blank\">";
+echo LANGUI_INDX_T14;
+echo "</a></span> |\r\n";
+echo "<s";
+echo "pan><a href=\"http://www.dboor.com\" target=\"_blank\">Copyright &copy; To dboor.com</a></span>\r\n</div>\r\n    \t\t</div>\r\n<!-- END [writeherethecont] Class / ID -->\r\n    \t</div>\r\n<!-- END [content] Class / ID -->\r\n\t</div>\r\n\r\n\t<div id=\"footer\">\r\n<!-- END [footer] Class / ID -->\r\n\r\n\t</div>\r\n<!-- END [allcontentts] Class / ID -->\r\n</div>\r\n</body>\r\n";
+echo "<s";
+echo "cript type=\"text/javascript\">init();</script>\r\n</html>";
 ?>
-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

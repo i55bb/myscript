@@ -1,38 +1,38 @@
-<?php //003ab
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');@dl($__ln);if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}@dl($__ln);}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the site administrator.');exit(199);
+<?php
+/*********************/
+/*                   */
+/*  Version : 5.1.0  */
+/*  Author  : RM     */
+/*  Comment : 071223 */
+/*                   */
+/*********************/
+
+define( "LANGUI_TRAINING_T1", "هكذا تكون البداية..." );
+define( "LANGUI_TRAINING_T2", "... وهكذا يمكن أن تكون قريتك فيما بعد." );
+define( "LANGUI_TRAINING_T3", "في البداية ما عليك سوى بناء مبنى واحد في قريتك الصغيرة. <br><br>وستجد كيف بامكانك ترقية قريتك لكي تصبح قوية ومزدهره في الصفحه التالية." );
+define( "LANGUI_TRAINING_T4", "إلى الخلف" );
+define( "LANGUI_TRAINING_T5", "إلى الامام" );
+define( "LANGUI_TRAINING_T6", "1- إختار حقل الموارد الخام." );
+define( "LANGUI_TRAINING_T7", "2- ثم قم بتطوير حقل الموارد الخام." );
+define( "LANGUI_TRAINING_T8", "في حرب التتار هناك أربعة أنواع من الموارد: الخشب والطين والحديد والقمح. <br><br> قبل أن تهتم بعمل المباني بقريتك عليك ترقية بعض حقول الموارد الخام." );
+define( "LANGUI_TRAINING_T9", "1. إختار موقع بناء." );
+define( "LANGUI_TRAINING_T10", "2. قم بتشييد المباني." );
+define( "LANGUI_TRAINING_T11", "بعد العنايه بإنتاج الموارد الخام، يمكنك البدء في تطوير قريتك.  <br><br> في المخزن و مخزن الحبوب، يمكنك تخزين كمية أكبر من الموارد الخام. المخبأ يحمي مواردكم من نهب الاعداء." );
+define( "LANGUI_TRAINING_T12", "قريتك وجيرانك" );
+define( "LANGUI_TRAINING_T13", "حرب التتار هي لعبة على الإنترنت. أنت تلعب في الشبكة مع الآلاف من اللاعبين في عالم حرب التتار. <br><br>  اللاعبون بالجوار لهم أهمية خاصة. يمكنك الحصول على لمحة جيدة عنهم بواسطة الخريطه." );
+define( "LANGUI_TRAINING_T14", "شريط التصفح" );
+define( "LANGUI_TRAINING_T15", "<b>المحيط:</b> هنا تجد خريطة القرية وحقول مواردك الخام" );
+define( "LANGUI_TRAINING_T16", "<b>المركز:</b> في مركز القرية يمكنك إنشاء المباني." );
+define( "LANGUI_TRAINING_T17", "<b>الخريطه:</b> بلدك وجيرانك هنا." );
+define( "LANGUI_TRAINING_T18", "<b>الإحصائيات:</b> ترتيبك وترتيب جميع اللاعبين." );
+define( "LANGUI_TRAINING_T19", "<b>التقارير:</b> معلومات عن الأحداث في قريتك." );
+define( "LANGUI_TRAINING_T20", "<b>الرسائل:</b>إرسال وإستقبال الرسائل." );
+define( "LANGUI_TRAINING_T21", "أنت تعرف الان أهم الاشياء عن حرب التتار. يمكنك أن تبدأ اللعب بعد التسجيل." );
+define( "LANGUI_TRAINING_T22", "التسجيل" );
+define( "LANGUI_TRAINING_T23", "دورة تدريبية" );
+define( "LANGUI_TRAINING_T24", "قريتك" );
+define( "LANGUI_TRAINING_T25", "المصادر" );
+define( "LANGUI_TRAINING_T26", "المباني" );
+define( "LANGUI_TRAINING_T27", "الجيران" );
+define( "LANGUI_TRAINING_T28", "الملاحه" );
 ?>
-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
-Rc4fbmVZJW2XyLhiuG==

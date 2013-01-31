@@ -1,30 +1,76 @@
-<?php //003ab
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');@dl($__ln);if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}@dl($__ln);}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the site administrator.');exit(199);
+<?php
+#################################################################################
+##                                                                             ##
+##                                                                             ##
+## --------------------------------------------------------------------------- ##
+##                                                                             ##
+##  Project:       TATAR WARS                                                  ##
+##  Version:       2012.3.15                                                   ##
+##  License:       Creative Commons BY-NC-SA 3.0                               ##
+##  Copyright:     Bazaid (c) 2012 - All rights reserved                       ##
+##  Source code:   https://github.com/Bazaid/tatar-wars                        ##
+##                 http://sourceforge.net/projects/tatarwars/                  ##
+#################################################################################
+
+require_once( LANG_UI_PATH."activate.php" );
+if ( $this->playerStatus == 0 - 1 )
+{
+    echo "<h6>";
+    echo LANGUI_ACTIVATE_T1;
+    echo "</h6>\r\n<p><b>";
+    echo LANGUI_ACTIVATE_T2;
+    echo "</b></p>\r\n<p class=\"f10 e b\">";
+    echo LANGUI_ACTIVATE_T3;
+    echo ":</p>\r\n<div class=\"f10\">\r\n\t<li><p>";
+    echo LANGUI_ACTIVATE_T4;
+    echo "</p></li>\r\n\t<li><p>";
+    echo LANGUI_ACTIVATE_T5;
+    echo "</p></li>\r\n\t<li><p>";
+    echo LANGUI_ACTIVATE_T6;
+    echo "</p></li>\r\n\t<li><p>";
+    echo LANGUI_ACTIVATE_T7;
+    echo "</p></li>\r\n</div>\r\n";
+    if ( 0 < $this->uid )
+    {
+        echo "<p><b><br><br>";
+        echo LANGUI_ACTIVATE_T8;
+        echo ".</b></p>\r\n<form action=\"activate.php?uid=";
+        echo $this->uid;
+        echo "\" method=\"post\">\r\n<table cellpadding=\"1\" cellspacing=\"1\">\r\n\t<tbody>\r\n\t\t<tr class=\"top\">\r\n\t\t\t<th>";
+        echo LANGUI_ACTIVATE_T9;
+        echo ":</th>\r\n\t\t\t<td class=\"name\">";
+        echo $this->uname;
+        echo "</td>\r\n\t\t</tr>\r\n\t\t<tr class=\"btm\">\r\n\t\t\t<th>";
+        echo LANGUI_ACTIVATE_T10;
+        echo "</th>\r\n\t\t\t<td><input class=\"text\" type=\"password\" name=\"pw\" maxlength=\"20\"></td>\r\n\t\t</tr>\r\n\t</tbody>\r\n</table>\r\n<p class=\"btn\"><input type=\"image\" src=\"assets/x.gif\" class=\"dynamic_img \" id=\"btn_delete\" alt=\"";
+        echo LANGUI_ACTIVATE_T11;
+        echo "\" value=\"";
+        echo LANGUI_ACTIVATE_T11;
+        echo "\" name=\"delreports\"></p>\r\n</form>\r\n";
+    }
+}
+else if ( $this->playerStatus == 3 )
+{
+    echo "<p class=\"info2\">";
+    echo LANGUI_ACTIVATE_T12;
+    echo "</p>\r\n<p><a href=\"register.php\">";
+    echo LANGUI_ACTIVATE_T13;
+    echo "</a></p>\r\n";
+}
+else if ( $this->playerStatus == 1 )
+{
+    echo "<p class=\"f9\">";
+    echo LANGUI_ACTIVATE_T14;
+    echo ".</p>\r\n<p class=\"f9\">";
+    echo LANGUI_ACTIVATE_T15;
+    echo " <a href=\"index.php\">";
+    echo LANGUI_ACTIVATE_T16;
+    echo "</a></p>\r\n";
+}
+else if ( $this->playerStatus == 2 )
+{
+    echo "<p class=\"f9\">";
+    echo LANGUI_ACTIVATE_T17;
+    echo ".</p>\r\n";
+}
 ?>
-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

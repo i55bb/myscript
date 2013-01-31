@@ -1,64 +1,92 @@
-<?php //003ab
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');@dl($__ln);if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}@dl($__ln);}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the site administrator.');exit(199);
+<?php
+#################################################################################
+##                                                                             ##
+##                                                                             ##
+## --------------------------------------------------------------------------- ##
+##                                                                             ##
+##  Project:       TATAR WARS                                                  ##
+##  Version:       2012.3.15                                                   ##
+##  License:       Creative Commons BY-NC-SA 3.0                               ##
+##  Copyright:     Bazaid (c) 2012 - All rights reserved                       ##
+##  Source code:   https://github.com/Bazaid/tatar-wars                        ##
+##                 http://sourceforge.net/projects/tatarwars/                  ##
+#################################################################################
+
+
+require( ".".DIRECTORY_SEPARATOR."app".DIRECTORY_SEPARATOR."boot.php" );
+require_once( MODEL_PATH."payment.php" );
+class GPage extends WebService
+{
+
+    public function load( )
+    {
+        $AppConfig = $GLOBALS['AppConfig'];
+        if ( $this->isPost( ) )
+        {
+            $usedPackage = NULL;
+            foreach ( $AppConfig['plus']['packages'] as $package )
+            {
+                if ( $package['cost'] == $_POST['amount'] )
+                {
+                    $usedPackage = $package;
+                }
+            }
+            if ( isset( $_POST['merchant_id'] ) )
+            {
+                $merchant_id = $AppConfig['plus']['payments']['cashu']['merchant_id'];
+            }
+            else
+            {
+                $merchant_id = $AppConfig['plus']['payments']['onecard']['merchant_id'];
+                $key = $merchant_id.$_POST['OneCard_TransID'].$_POST['OneCard_Amount'].$_POST['OneCard_Currency'].$_POST['OneCard_RTime'].$payment['plus']['payments']['cashu']['testKey'].$_POST['OneCard_Code'];
+                $token = md5( $key );
+                if ( $usedPackage != NULL && $_POST['OneCard_Code'] == "00" && $_POST['OneCard_RHashKey'] == $token )
+                {
+                    $playerId = base64_decode( $_POST['OneCard_Field1'] );
+                    $goldNumber = $usedPackage['gold'];
+                    $m = new PaymentModel( );
+                    $m->incrementPlayerGold( $playerId, $goldNumber );
+                    $m->dispose( );
+                    echo "<h2 style=\"color:#00ff00;\">success</h2>";
+                }
+                else
+                {
+                    echo "<h2 style=\"color:#ff0000;\">failed</h2>";
+                }
+                $p = new GPage( );
+                $p->run( );
+                return;
+            }
+            $usedPayment = NULL;
+            foreach ( $AppConfig['plus']['payments'] as $payment )
+            {
+                if ( $payment['merchant_id'] == $merchant_id )
+                {
+                    $usedPayment = $payment;
+                }
+            }
+            if ( !isset( $_GET[$usedPayment['returnKey']] ) )
+            {
+                return;
+            }
+            if ( $usedPackage != NULL && $usedPayment != NULL && $_POST['token'] == md5( sprintf( "%s:%s:%s:%s", $merchant_id, $_POST['amount'], strtolower( $_POST['currency'] ), $_POST['test_mode'] ? $usedPayment['testKey'] : $usedPayment['key'] ) ) )
+            {
+                $playerId = base64_decode( $_POST['session_id'] );
+                $goldNumber = $usedPackage['gold'];
+                $m = new PaymentModel( );
+                $m->incrementPlayerGold( $playerId, $goldNumber );
+                $m->dispose( );
+                echo "<h2 style=\"color:#00ff00;\">success</h2>";
+            }
+            else
+            {
+                echo "<h2 style=\"color:#ff0000;\">failed</h2>";
+            }
+        }
+    }
+
+}
+
+$p = new GPage( );
+$p->run( );
 ?>
-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
-aa2Tlk0ko34=

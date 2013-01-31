@@ -1,141 +1,115 @@
-<?php //003ab
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');@dl($__ln);if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}@dl($__ln);}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the site administrator.');exit(199);
+<?php
+/*********************/
+/*                   */
+/*  Version : 5.1.0  */
+/*  Author  : RM     */
+/*  Comment : 071223 */
+/*                   */
+/*********************/
+
+define( "LANGUI_MANUAL_T1", "القبائل" );
+define( "LANGUI_MANUAL_T2", "المباني" );
+define( "LANGUI_MANUAL_T3", "الأسئلة الشائعة" );
+define( "LANGUI_MANUAL_T4", "هناك عدة شعوب : قبيلة دبور , العرب , الرومان ، الاغريق و الجرمان.  كل شعب له محاسنه ومساوئه الخاصة . وحتى انواع الوحدات تختلف عن بعضها البعض بوضوح. لذا فمن المهم ان تختار في بداية اللعبة الشعب الذي يناسبك" );
+define( "LANGUI_MANUAL_T5", "قبيلة دبور هي الاكثر هجوم من الجميع.المقاتلين يخشاهم الجميع بسبب وحشيتهم في الهجوم. إنهم ينقضون على البلدان من دون خوف من الموت." );
+define( "LANGUI_MANUAL_T6", "قوات دبور" );
+define( "LANGUI_MANUAL_T7", "القدرة الهجومية" );
+define( "LANGUI_MANUAL_T8", "القدرة الدفاعية ضد المشاة" );
+define( "LANGUI_MANUAL_T9", "القدرة الدفاعية ضد الفرسان" );
+define( "LANGUI_MANUAL_T10", "السرعه" );
+define( "LANGUI_MANUAL_T11", "ميدان / ساعة" );
+define( "LANGUI_MANUAL_T12", "حالات خاصة" );
+define( "LANGUI_MANUAL_T13", "مكافاة النهب : مخبأ المنافسين يعدل فقط" );
+define( "LANGUI_MANUAL_T14", "تزامن انشاء المواد الخام ومباني المدينة" );
+define( "LANGUI_MANUAL_T15", "ارتفاع الدفاع عبر سور المدينة" );
+define( "LANGUI_MANUAL_T16", "يستطيع التجار حمل" );
+define( "LANGUI_MANUAL_T17", "المشاة أقوياء جدا والفرسان أقوياء" );
+define( "LANGUI_MANUAL_T18", "التنمية مكلفه وطويلة" );
+define( "LANGUI_MANUAL_T19", "من المواد الخام" );
+define( "LANGUI_MANUAL_T20", "الحقول / ساعة" );
+define( "LANGUI_MANUAL_T21", "الامبراطورية  العربية يعتبر الشعب العربي من أكثر الشعوب التي ساهمت في ازدهار وتطور البشرية بعلومها وحضاراتها. ويمتاز المقاتلين العرب بقوة هائله وقدرة على التحمل والصبر في اعتى الظروف، فهو من أقدم المقاتلين في التاريخ. ظهرت وازدهرت اللغة العربية في بلاد الخليج العربي، على شكل قبائل تعيش في الصحراء مما جعل العرب من أشرس المقاتلين ،لتعودهم وقدرتهم على خوض الحروب في الظروف المناخية القاسية. ساهم الدين الإسلامي بانتشار اللغة العربية، وكان له الدور الأكبر في انتشار اللغة العربية مع حدود الامبراطورية الإسلامية" );
+define( "LANGUI_MANUAL_T22", "القوات العربية" );
+define( "LANGUI_MANUAL_T23", "الامبراطورية الرومانية هي للمبتدئين في حرب التتار . بسبب ارتفاع التطور الاجتماعي والتقني للرومان فهم سادة التنسيق في الهندسه المعماريه ، وجنودها ينتمون الى النخبه في حرب التتار .<br> \r\nوهي مفيدة ومتوازنه نسبيا في الهجوم وفي الدفاع. ومن اجل ضمان هذا التنوع ، فهي تمر عبر تدريب مطول ومكلف . على المشاة هم اسطوريون ، غير ان قوة الدفاع للمشاة ضد الفرسان هي اقل بوضوح بالمقارنة بالشعبين الاخرين .<br> \r\nللمبتدئين واولئك الذين لا يعرفون بالضبط ماذا يريدون فان الرومان تكون مثالية لهم" );
+define( "LANGUI_MANUAL_T24", "القوات الرومانيه" );
+define( "LANGUI_MANUAL_T25", "المشاة أقوياء جدا والفرسان معتدلون" );
+define( "LANGUI_MANUAL_T27", "الشعب الاغريقي هو الشعب المسالم من جميع الشعوب. وحداته تحصل على تدريب قوي في الدفاع ، الا انه أدنى من شعوب أخرى في الهجوم . الاغريقي هو الفارس المولود، خيوله اسطوريه  بسبب سرعتها ، التي تفاجئ الأعداء بسرعة الغير المستعدين.<br><br> \r\nهذا الشعب من السهل نسبيا في الدفاع ، كماان اللعب بطريقة هجوميه قابل للتحقيق. انه يوفر امكانيه التطوير اي اتجاه استراتيجي (الهجوم او الدفاع ، مساعدات فى حالات الطوارئ ،  تجار او المستولين ، المشاة او الفرسان،المستوطنين او الغزاه) ولكن يازمك بعض التقنية. ومع ذلك يمكنك اللعب ايضا كمبتدئ!" );
+define( "LANGUI_MANUAL_T28", "قوات الإغريق" );
+define( "LANGUI_MANUAL_T29", "مكافاة السرعة:أسرع الوحدات في اللعبة" );
+define( "LANGUI_MANUAL_T30", "مكافئة دفاع السور متوسطة" );
+define( "LANGUI_MANUAL_T31", "المخبأ أكبر بمرتين عن البقية" );
+define( "LANGUI_MANUAL_T32", "تكلفة الآلة الحربية" );
+define( "LANGUI_MANUAL_T33", "المستوطنين غير مكلفين" );
+define( "LANGUI_MANUAL_T34", "الشعب الجرماني هو الاكثر هجوم من الجميع.المقاتلين الجرمان يخشاهم الجميع بسبب وحشيتهم في الهجوم. إنهم ينقضون على البلدان من دون خوف من الموت.<br><br> \r\nبيد أنهم يفتقدون الى الانضباط العسكري للرومان و الاغريق وهكذا يكمن ضعفهم في السرعه والدفاع.  للمهاجم المحترف فان الجرمان مناسب تماما!" );
+define( "LANGUI_MANUAL_T35", "قوات الجرمان" );
+define( "LANGUI_MANUAL_T37", "الحاجز الارضي صعب التدمير، لكن حمايته ضعيفة" );
+define( "LANGUI_MANUAL_T38", "وحدات رخيصة جدا ، ويمكن انتاجها بسرعة وصالحة للنهب" );
+define( "LANGUI_MANUAL_T39", "الضعف في الدفاع" );
+define( "LANGUI_MANUAL_T40", "<p>في بداية اللعبة يجب عليك أن تبني أسساً اقتصادية متينة. ومن أجل تحقيق ذلك يجب تحسين 18 حقل فيما يخص الموارد الخام للقرية. هناك أربعة أنواع من حقول الموارد: الحطابين وحفر الطين ومناجم الحديد وحقول القمح. وإذا رغبت في معرفة المزيد عنها وكيفية تطويرها فما عليك إلا النقر على الحقل .</p> \r\n<p>وبعد مرور بعض الوقت ستظهر أهمية خاصة لبعض المباني داخل القرية. للبدء في إنشائها أنقر على الوصلة الخضراء أسفل شرح نوع المبني.<br><br></p> \r\n<p> يجب ملاحظة ان بعض المباني لا تظهر الا في مرحلة متقدمة من التطور وحين إكتمال شروط بنائها التي قد تتمثل في تطور مبنى أو مباني أخرى إلى مستوى معين</p>" );
+define( "LANGUI_MANUAL_T41", "المبنى الرئيسي" );
+define( "LANGUI_MANUAL_T42", "يعيش عمال البناء في المبنى الرئيسي. كلما ارتفع مستوى المبنى الرئيسي، ازدادت سرعة بناء المباني أو تطويرها" );
+define( "LANGUI_MANUAL_T43", "مزايا القبلية" );
+define( "LANGUI_MANUAL_T44", "الرومان: يمكنك بناء أو تطوير مبنى في نفس الوقت الذي تقوم بتطوير أو بناء حقل موارد خام" );
+define( "LANGUI_MANUAL_T45", "<b>التكاليف </b> و <b>وقت التشييد </b> في المستوى 1" );
+define( "LANGUI_MANUAL_T46", "الشروط" );
+define( "LANGUI_MANUAL_T47", "لا شي" );
+define( "LANGUI_MANUAL_T48", "مخزن" );
+define( "LANGUI_MANUAL_T49", "يتم تخزين الخشب والطين والحديد الذي تنتجه في المخزن. كلما ارتفع مستوى المخزن ازدادت  سعته التخزينية" );
+define( "LANGUI_MANUAL_T50", "مخزن الحبوب" );
+define( "LANGUI_MANUAL_T51", "يتم تخزين القمح الذي يتم انتاجه في مزارعك في مخزن الحبوب. كلما ارتفع مستوى مخزن الحبوب ازدادت كمية الحبوب التي يتم تخزينها" );
+define( "LANGUI_MANUAL_T52", "المخبأ" );
+define( "LANGUI_MANUAL_T53", "في حالة الهجوم على قريتك يقوم السكان باخفاء جزء من الخامات تلقائياً في المخبأ حتى لا تتم سرقتها. في المستوى 1 يمكنك حماية 100 من كل نوع من المواد الخام من النهب" );
+define( "LANGUI_MANUAL_T54", "الإغريق: المخبأ يتسع لضعف الكمية" );
+define( "LANGUI_MANUAL_T55", "الجرمان: مخبأ العدو يعادل فقط 66 ٪ من قوته أمامهم" );
+define( "LANGUI_MANUAL_T56", "السفارة" );
+define( "LANGUI_MANUAL_T57", "لكي تكون قادراً على الإنضمام إلى أي تحالف أنت بحاجة إلى السفارة. بدءاً من المرحلة 3 يمكنك أيضاً إنشاء تحالف خاص بك. وفي كل مرحلة يزداد الحجم الأقصى للتحالف بثلاثة أعضاء" );
+define( "LANGUI_MANUAL_T58", "نقطة التجمع" );
+define( "LANGUI_MANUAL_T59", "في نقطة التجمع يمكنك أن تعطي التعليمات لقواتك ورؤية تحركات القوات القادمة إليك ومرسلها. نقطة التجمع لا يمكن أن تبنى إلا على موقع واحد وهو في منتصف القرية إلى اليمين قليلاُ. كلما إرتفع مستوى نقطة التجمع كلما إزداد عدد الاهداف المتوفرة عند الهجوم بالمقلاع" );
+define( "LANGUI_MANUAL_T60", "السوق" );
+define( "LANGUI_MANUAL_T61", "بواسطة السوق يمكنك المتاجرة بمواردك مع الآخرين. كلما ارتفع مستوى السوق ازدادت كمية الموارد التي تستطيع المتاجرة بها" );
+define( "LANGUI_MANUAL_T64", "ثكنة" );
+define( "LANGUI_MANUAL_T65", "في الثكنات يمكن تدريب قوات المشاة. كلما ارتفع مستوى الثكنة ازدادت  سرعة تدريب القوات" );
+define( "LANGUI_MANUAL_T66", "إسطبل" );
+define( "LANGUI_MANUAL_T67", "في الإسطبل يتم تدريب الفرسان.  كلما ارتفع مستوى الإسطبل ازدادت سرعة تدريبهم" );
+define( "LANGUI_MANUAL_T68", "المصانع الحربية" );
+define( "LANGUI_MANUAL_T69", "في المصانع الحربية يمكن بناء محطمة الابواب و المقاليع. كلما ارتفع مستوى المصانع ازدادت سرعة الإنتاج" );
+define( "LANGUI_MANUAL_T70", "الأكاديمية" );
+define( "LANGUI_MANUAL_T71", "في الأكاديميه يمكنك تدريب أنواع جديدة من القوات. كلما ارتفع مستوى الأكاديمة ازدادت أنواع القوات التي يمكن تدريبها" );
+define( "LANGUI_MANUAL_T72", "الحداد" );
+define( "LANGUI_MANUAL_T73", "بواسطة الحداد يمكنك تطوير أسلحة المحاربين وتقويتها. وعند زيادة مستوى الحداد يمكنك طلب تطوير الأسلحة بشكل أفضل" );
+define( "LANGUI_MANUAL_T74", "مستودع الاسلحة" );
+define( "LANGUI_MANUAL_T75", "في مستودع الأسلحة يمكنك تحسين دروع القوات. كلما ارتفع مستوى مستودع الأسلحة ازدادت الإمكانية لتحسين الدروع بشكل أفضل" );
+define( "LANGUI_MANUAL_T76", "قصر" );
+define( "LANGUI_MANUAL_T77", "يعيش الملك أو الملكة في القصر، يمكن بناء القصر   في قرية واحدة فقط تصبح هي العاصمة.لا يمكن احتلال العاصمة  أبداً .<br><br> \r\nفي المستويات 10 و 15 و 20 من القصر يمكنك تدريب 3 مستوطنون أو زعيم أو رئيس واحد.<br><br> \r\nالعاصمة هي القرية الوحيدة التي يمكن بناء الحجار فيها. بالإضافة إلى أنه في العاصمة يمكنك رفع مستويات حقول الموارد لأكثر من المستوى 10." );
+define( "LANGUI_MANUAL_T78", "السكن" );
+define( "LANGUI_MANUAL_T79", "السكن هو قصر صغير للملك أو المكلة يقيمون فيه أثناء زيارتهم للقرية، السكن يحمي القرية من هجمات الأعداء الطامحين لإحتلال القرية طالما أنه لم يتدمر. <br><br> \r\nفي المستويات 10 و 20 من السكن يمكنك تدريب 3 مستوطنون أو زعيم أو رئيس واحد" );
+define( "LANGUI_MANUAL_T80", "المكتب التجاري" );
+define( "LANGUI_MANUAL_T81", "في المكتب التجاري يتم تحسين عربات التجار بخيول قوية. كلما ارتفع مستوى بناء المكتب التجاري  ازدادت قدرة التجار على حمل موارد أكثر. <br><br> \r\nفي كل مستوى للمكتب التجاري يتم رفع قدرة التجار على حمل الموارد بنسبة 10%. في المستوى 20 يستطيع التجار حمل 3 أضعاف الكمية من الموارد" );
+define( "LANGUI_MANUAL_T82", "ساحة البطولة" );
+define( "LANGUI_MANUAL_T83", "في ساحة البطولة تدرب قواتك سرعتها مما يجعل المسافات بعيدة اقرب .<br><br> \r\nوفي كل مرحلة ترتفع السرعة بمقدار 10 ٪ " );
+define( "LANGUI_MANUAL_T84", "كيف يمكنني بناء نقطة الالتقاء؟" );
+define( "LANGUI_MANUAL_T85", "نقطة الالتقاء والجدار لا يمكن ان يبنى الا على موقع محدد تجده على مرج على يمين مركز القرية." );
+define( "LANGUI_MANUAL_T86", "كيف يمكنني اقامة تحالف؟" );
+define( "LANGUI_MANUAL_T87", "لكي تتمكن من اقامة تحالف انك بحاجة الى سفارة مستوى 3. ولكي تكون قادرا على الانضمام الى تحالف انك بحاجة الى سفارة مستوى 1 وكذلك لدعوة" );
+define( "LANGUI_MANUAL_T88", "كيف يمكنني اعادة تسمية قريتي؟" );
+define( "LANGUI_MANUAL_T89", "انقر فوق <i>إحصاءات </i>(المنطقة الزرقاء), هناك على<i> اسمك</i> وبعد ذلك<i> \r\n\tتصحيح المعلومات</i>. في مجال <i>اسم القرية </i>إدخال الاسم الجديد." );
+define( "LANGUI_MANUAL_T90", "كيف يمكنني بناء القوات؟" );
+define( "LANGUI_MANUAL_T91", "انك في حاجة إلى نقطة التقاء مستوى 1 والمبنى الرئيسي مستوى 3. ثم يمكنك ان \r\n\tتبني الثكنة وفيها قواتك." );
+define( "LANGUI_MANUAL_T92", "كيف يمكنني الدفاع عن قريتي؟" );
+define( "LANGUI_MANUAL_T93", "طالما لديك قوات متمركزة (خاصة أو صديقه) في قريتك ، فإنها تدافع تلقائيا عن \r\n\tقريتك" );
+define( "LANGUI_MANUAL_T94", "لماذا تخسر جنودا حين الهجوم على قرية فارغة؟" );
+define( "LANGUI_MANUAL_T95", "كل قرية لها دفاع أساسي.  ولذلك سوف تخسر دائما اذا كان هجومكا بوحدة \r\n\tواحدة فقط. او باستخدام  الوحدات الدفاعية البحتة فهي ليست مناسبة على \r\n\tالاطلاق للهجوم" );
+define( "LANGUI_MANUAL_T96", "كيف احصل على أكثر سكان؟" );
+define( "LANGUI_MANUAL_T97", "كل مبنى يجلب لك عدد معين من السكان. وكم ساكن تحصل عليه عبر هدم آو بناء \r\n\tالمبنى يمكنك التعرف عليه بعد الرمز" );
+define( "LANGUI_MANUAL_T98", "المساعدة:إنتاج الحبوب يصبح اقل واقل.!" );
+define( "LANGUI_MANUAL_T99", "مع <i>الإنتاج </i>(مثلا 10) يصبح إنتاج الحبوب عبر استهلاك الحبوب مقسوم على<i> \r\n\tالسكان</i> <i>و(مثلا 5 )قوات </i>يمكنك أن تقرأ إجمالي إنتاج الحبوب \r\n\tأعلاه.مثلا" );
+define( "LANGUI_MANUAL_T100", "لماذا تقوم قواتي بنهب مواد خام قليلة ؟" );
+define( "LANGUI_MANUAL_T101", "يمكن أن يكون لها عدة أسباب. فمن ناحية يمكن لكل وحدة أن تحمل سوى كمية معينة \r\n\tمن المواد الخام ، ومن جهة أخرى يحمي <i>المخبأ </i>تلقائيا عددا من المواد \r\n\tالخام ضدا لعدو" );
+define( "LANGUI_MANUAL_T102", "كيف يمكنني إنشاء قرى جديدة أو احتلالها؟" );
+define( "LANGUI_MANUAL_T103", "من اجل تهيئة قرى جديدة أنت بحاجة إلى ثلاثة مستوطنين من اجل الاستيلاء على \r\n\tقرية كما انت في حاجة إلى مدير مدينة (تبعا للشعب الحكيم أو الزعيم أو الرئيس) \r\n\tالذي يمكنك أن نبنيه في قصر /إقامة يمكن ابتداء من مستوى 10. بالإضافة إلى ذلك \r\n\tأيضا عليك تجميع كمية معينة من النقاط الحضارية" );
+define( "LANGUI_MANUAL_T104", "هل يمكنني فقدان قريتي؟" );
+define( "LANGUI_MANUAL_T105", "إذا كان لديك قرية واحدة فقط ، فلا يمكن فقدان القرية . أما  إذا كان \r\n\tلديكم اقل من أربع قرى ، فالقرية الرئيسية (حيث يوجد القصر) محمية من اللاعبين \r\n\tالآخرين ، ولكن ليس بقية القرى" );
+define( "LANGUI_MANUAL_T106", "استهلاك الحبوب" );
+define( "LANGUI_MANUAL_T107", "إستهلاك القمح" );
+define( "LANGUI_MANUAL_T108", "مزايا القبائل" );
+define( "LANGUI_MANUAL_T109", "قواعد اللعبه" );
 ?>
-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

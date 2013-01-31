@@ -1,38 +1,62 @@
-<?php //003ab
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');@dl($__ln);if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}@dl($__ln);}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the site administrator.');exit(199);
+<?php
+/*********************/
+/*                   */
+/*  Version : 5.1.0  */
+/*  Author  : RM     */
+/*  Comment : 071223 */
+/*                   */
+/*********************/
+
+define( "LANGUI_STAT_T1", "احصائيات" );
+define( "LANGUI_STAT_T2", "اللاعبون" );
+define( "LANGUI_STAT_T3", "التحالفات" );
+define( "LANGUI_STAT_T4", "القرى" );
+define( "LANGUI_STAT_T5", "أبطال" );
+define( "LANGUI_STAT_T6", "التتار" );
+define( "LANGUI_STAT_T7", "عام" );
+define( "LANGUI_STAT_T8", "هل أنت متأكد من حذف عضوية اللاعب ?" );
+define( "LANGUI_STAT_T9", "اللاعبون الكبار" );
+define( "LANGUI_STAT_T10", "أفضل 10" );
+define( "LANGUI_STAT_T11", "المدافع" );
+define( "LANGUI_STAT_T12", "المهاجم" );
+define( "LANGUI_STAT_T13", "التحالف" );
+define( "LANGUI_STAT_T14", "السكان" );
+define( "LANGUI_STAT_T15", "الذهب" );
+define( "LANGUI_STAT_T16", "ذهب" );
+define( "LANGUI_STAT_T17", "مدير في حرب التتار" );
+define( "LANGUI_STAT_T18", "تعديل كمية الذهب" );
+define( "LANGUI_STAT_T19", "حذف عضوية اللاعب" );
+define( "LANGUI_STAT_T20", "الرتبه" );
+define( "LANGUI_STAT_T21", "الاسم" );
+define( "LANGUI_STAT_T22", "اكبر التحالفات" );
+define( "LANGUI_STAT_T23", "النقاط" );
+define( "LANGUI_STAT_T24", "اكبر القرى" );
+define( "LANGUI_STAT_T25", "قرية" );
+define( "LANGUI_STAT_T26", "إحداثيات" );
+define( "LANGUI_STAT_T27", "تعديل الموارد" );
+define( "LANGUI_STAT_T28", "البطل ذو اكبر خبرة" );
+define( "LANGUI_STAT_T29", "بطل" );
+define( "LANGUI_STAT_T30", "الخبرة" );
+define( "LANGUI_STAT_T31", "اللاعبين المسجلين" );
+define( "LANGUI_STAT_T32", "العناصر النشطه" );
+define( "LANGUI_STAT_T33", "اللاعبون على الانترنت" );
+define( "LANGUI_STAT_T34", "القبائل" );
+define( "LANGUI_STAT_T35", "مسجل" );
+define( "LANGUI_STAT_T36", "بالمائة" );
+define( "LANGUI_STAT_T37", "أنجح المدافعين" );
+define( "LANGUI_STAT_T38", "أنجح المهاجمين" );
+define( "LANGUI_STAT_T39", "أفضل تحالف في الدفاع" );
+define( "LANGUI_STAT_T40", "أفضل تحالف في الهجوم" );
+define( "LANGUI_STAT_T41", "أفضل 10 لاعبين" );
+define( "LANGUI_STAT_T42", "أفضل 10 تحالف" );
+define( "LANGUI_STAT_T43", "الدليل السريع" );
+define( "LANGUI_STAT_T44", "مهاجموا الأسبوع" );
+define( "LANGUI_STAT_T45", "مدافعوا الأسبوع" );
+define( "LANGUI_STAT_T46", "مطوروا الأسبوع" );
+define( "LANGUI_STAT_T47", "سارقوا الأسبوع" );
+define( "LANGUI_STAT_T48", "الموارد" );
+define( "LANGUI_STAT_T49", "القبيلة" );
+define( "LANGUI_STAT_T50", "الرتب" );
+define( "LANGUI_STAT_T51", "إلغاء إيقاف اللاعب" );
+define( "LANGUI_STAT_T52", "إيقاف اللاعب" );
 ?>
-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

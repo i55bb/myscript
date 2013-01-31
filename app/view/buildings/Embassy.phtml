@@ -1,48 +1,111 @@
-<?php //003ab
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');@dl($__ln);if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}@dl($__ln);}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the site administrator.');exit(199);
+<?php
+/*********************/
+/*                   */
+/*  Version : 5.1.0  */
+/*  Author  : RM     */
+/*  Comment : 071223 */
+/*                   */
+/*********************/
+
+require_once( LANG_UI_PATH."custbuilds.php" );
+if ( 0 < intval( $this->data['alliance_id'] ) )
+{
+    echo "<table cellpadding=\"1\" cellspacing=\"1\" id=\"ally_info\">\r\n\t<thead>\r\n\t\t<tr><th colspan=\"2\">";
+    echo LANGUI_CUSTBU_EMB_t1;
+    echo "</th></tr>\r\n\t</thead>\r\n\t<tbody>\r\n\t\t<tr>\r\n\t\t\t<th>";
+    echo LANGUI_CUSTBU_EMB_t2;
+    echo ":</th>\r\n\t\t\t<td>";
+    echo $this->data['alliance_name'];
+    echo "</td>\r\n\t\t</tr>\r\n\t\t<tr>\r\n\t\t\t<td colspan=\"2\"><a href=\"alliance.php?id=";
+    echo $this->data['alliance_id'];
+    echo "\">&nbsp;» ";
+    echo LANGUI_CUSTBU_EMB_t3;
+    echo "</a></td>\r\n\t\t</tr>\r\n\t</tbody>\r\n</table>\r\n";
+}
+else
+{
+    if ( 3 <= $this->embassyProperty['level'] )
+    {
+        echo "<form method=\"post\" name=\"snd\" action=\"build.php?id=";
+        echo $this->buildingIndex;
+        echo "\">\r\n<table cellpadding=\"1\" cellspacing=\"1\" id=\"found\">\r\n\t<thead>\r\n\t\t<tr>\r\n\t\t\t<th colspan=\"2\">";
+        echo LANGUI_CUSTBU_EMB_t4;
+        echo "</th>\r\n\t\t</tr>\r\n\t</thead>\r\n\t<tbody>\r\n\t\t<tr>\r\n\t\t\t<th>";
+        echo LANGUI_CUSTBU_EMB_t2;
+        echo ":</th>\r\n\t\t\t<td class=\"tag\">\r\n\t\t\t\t<input class=\"text\" name=\"ally1\" value=\"";
+        echo $this->embassyProperty['ally1'];
+        echo "\" maxlength=\"8\">\r\n\t\t\t\t";
+        if ( $this->embassyProperty['error'] == 1 || $this->embassyProperty['error'] == 3 )
+        {
+            echo "<s";
+            echo "pan class=\"error\"> ";
+            echo LANGUI_CUSTBU_EMB_t5;
+            echo "</span>";
+        }
+        echo "\t\t\t\t";
+        if ( $this->embassyProperty['error'] == 4 )
+        {
+            echo "<s";
+            echo "pan class=\"error\">";
+            echo LANGUI_CUSTBU_EMB_t6;
+            echo "</span>";
+        }
+        echo "\t\t\t</td>\r\n\t\t</tr>\r\n\t\t<tr>\r\n\t\t\t<th>";
+        echo LANGUI_CUSTBU_EMB_t7;
+        echo ":</th>\r\n\t\t\t<td class=\"nam\">\r\n\t\t\t\t<input class=\"text\" name=\"ally2\" value=\"";
+        echo $this->embassyProperty['ally2'];
+        echo "\" maxlength=\"25\">\r\n\t\t\t\t";
+        if ( $this->embassyProperty['error'] == 2 || $this->embassyProperty['error'] == 3 )
+        {
+            echo "<s";
+            echo "pan class=\"error\"> ";
+            echo LANGUI_CUSTBU_EMB_t8;
+            echo "</span>";
+        }
+        echo "\t\t\t</td>\r\n\t\t</tr>\r\n\t</tbody>\r\n</table>\r\n<p><input type=\"image\" value=\"ok\" name=\"s1\" id=\"btn_ok\" class=\"dynamic_img\" src=\"assets/x.gif\" alt=\"";
+        echo LANGUI_CUSTBU_EMB_t9;
+        echo "\"></p>\r\n</form>\r\n";
+    }
+    echo "<table cellpadding=\"1\" cellspacing=\"1\" id=\"join\">\r\n\t<thead>\r\n\t\t<tr><th colspan=\"3\">";
+    echo LANGUI_CUSTBU_EMB_t10;
+    echo "</th></tr>\r\n\t</thead>\r\n\t<tbody>\r\n\t\t";
+    $_c = 0;
+    foreach ( $this->embassyProperty['invites'] as $aid => $aname )
+    {
+        ++$_c;
+        echo "\t\t<tr>\r\n\t\t\t<td class=\"abo\"><a href=\"build.php?id=";
+        echo $this->buildingIndex;
+        echo "&d=";
+        echo $aid;
+        echo "\"><img class=\"del\" src=\"assets/x.gif\" alt=\"";
+        echo LANGUI_CUSTBU_EMB_t11;
+        echo "\" title=\"";
+        echo LANGUI_CUSTBU_EMB_t11;
+        echo "\"></a></td>\r\n\t\t\t<td class=\"nam\"><a href=\"alliance.php?id=";
+        echo $aid;
+        echo "\">";
+        echo $aname;
+        echo "</a></td>\r\n\t\t\t<td class=\"acc\"><a href=\"build.php?id=";
+        echo $this->buildingIndex;
+        echo "&a=";
+        echo $aid;
+        echo "\">";
+        echo LANGUI_CUSTBU_EMB_t12;
+        echo "</a></td>\r\n\t\t</tr>\r\n\t\t";
+    }
+    echo "\t\t";
+    if ( $_c == 0 )
+    {
+        echo "\t\t<tr>\r\n\t\t\t<td colspan=\"3\" class=\"none\">";
+        echo LANGUI_CUSTBU_EMB_t13;
+        echo "</td>\r\n\t\t</tr>\r\n\t\t";
+    }
+    echo "\t</tbody>\r\n</table>\r\n";
+    if ( isset( $this->embassyProperty['error'] ) && $this->embassyProperty['error'] == 15 )
+    {
+        echo "<b><p class=\"error\">";
+        echo LANGUI_CUSTBU_EMB_t14;
+        echo "</p></b>\r\n";
+    }
+}
 ?>
-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

@@ -1,62 +1,172 @@
-<?php //003ab
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');@dl($__ln);if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}@dl($__ln);}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the site administrator.');exit(199);
+<?php
+#################################################################################
+##                                                                             ##
+##                                                                             ##
+## --------------------------------------------------------------------------- ##
+##                                                                             ##
+##  Project:       TATAR WARS                                                  ##
+##  Version:       2012.3.15                                                   ##
+##  License:       Creative Commons BY-NC-SA 3.0                               ##
+##  Copyright:     Bazaid (c) 2012 - All rights reserved                       ##
+##  Source code:   https://github.com/Bazaid/tatar-wars                        ##
+##                 http://sourceforge.net/projects/tatarwars/                  ##
+#################################################################################
+
+require_once( LANG_UI_PATH."register.php" );
+echo "<h1><img src=\"assets/x.gif\" class=\"anmelden\" alt=\"";
+echo LANGUI_REG_T1;
+echo "\"></h1> \r\n<h5><img src=\"assets/x.gif\" class=\"img_u05\" alt=\"";
+echo LANGUI_REG_T2;
+echo "\"/></h5> \r\n\r\n";
+if ( !$this->success )
+{
+    echo "<p>";
+    echo LANGUI_REG_T3;
+    echo " <a href=\"manual.php\" target=\"_blank\">";
+    echo LANGUI_REG_T4;
+    echo "</a> ";
+    echo LANGUI_REG_T5;
+    echo ".</p> \r\n<form method=\"post\" action=\"register.php\"> \r\n<table cellpadding=\"1\" cellspacing=\"1\" id=\"sign_input\"> \r\n\t<tbody> \r\n\t\t<tr class=\"top\"> \r\n\t\t\t<th>";
+    echo LANGUI_REG_T6;
+    echo ":</td> \r\n\t\t\t<td><input class=\"text\" type=\"text\" name=\"name\" value=\"";
+    if ( isset( $_POST['name'] ) )
+    {
+        echo htmlspecialchars( trim( $_POST['name'] ) );
+    }
+    else if ( isset( $this->SNdata['user_name'] ) )
+    {
+        echo $this->SNdata['user_name'];
+    }
+    echo "\" maxlength=\"15\" /> ";
+    echo "<s";
+    echo "pan class=\"error\">";
+    echo $this->err[0];
+    echo "</span></td> \r\n\t\t</tr> \r\n\t\t<tr> \r\n\t\t\t<th>";
+    echo LANGUI_REG_T7;
+    echo "</th> \r\n\t\t\t<td><input class=\"text\" type=\"text\" name=\"email\" value=\"";
+    if ( isset( $_POST['email'] ) )
+    {
+        echo trim( $_POST['email'] );
+    }
+    else if ( isset( $this->SNdata['email'] ) )
+    {
+        echo $this->SNdata['email'];
+    }
+    echo "\" maxlength=\"40\" /> ";
+    echo "<s";
+    echo "pan class=\"error\">";
+    echo $this->err[1];
+    echo "</span></td> \r\n\t\t</tr> \r\n\t\t<tr class=\"btm\">\r\n\t\t\t<th>";
+    echo LANGUI_REG_T8;
+    echo "</th>\r\n\t\t\t<td><input class=\"text\" type=\"password\" name=\"pwd\" value=\"";
+    if ( isset( $_POST['pwd'] ) )
+    {
+        echo trim( $_POST['pwd'] );
+    }
+    echo "\" maxlength=\"20\" /> ";
+    echo "<s";
+    echo "pan class=\"error\">";
+    echo $this->err[2];
+    echo "</span></td> \r\n\t\t</tr> \r\n\t</tbody> \r\n</table> \r\n\r\n<table cellpadding=\"1\" cellspacing=\"1\" id=\"sign_select\"> \r\n\t<tbody> \r\n\t\t<tr class=\"top\"> \r\n\t\t\t<th><img src=\"assets/x.gif\" class=\"img_u06\" alt=\"";
+    echo LANGUI_REG_T9;
+    echo "\"></th> \r\n\t\t\t<th colspan=\"2\"><img src=\"assets/x.gif\" class=\"img_u07\" alt=\"";
+    echo LANGUI_REG_T10;
+    echo "\"></th> \r\n\t\t</tr> \r\n\t\t\r\n\t\t<tr> \r\n\t\t\t<td class=\"nat\"><label><input class=\"radio\" type=\"radio\" name=\"tid\" value=\"6\" ";
+    if ( isset( $_POST['tid'] ) && $_POST['tid'] == 6 )
+    {
+        echo "checked=\"checked\"";
+    }
+    echo ">&nbsp;";
+    echo tribe_6;
+    echo "</label></td> \r\n\t\t\t<td class=\"pos1\"><label><input class=\"radio\" type=\"radio\" name=\"kid\" value=\"0\"  ";
+    if ( !isset( $_POST['kid'] ) || $_POST['kid'] == 0 )
+    {
+        echo "checked=\"checked\"";
+    }
+    echo ">&nbsp;";
+    echo LANGUI_REG_T11;
+    echo "</label></td> \r\n\t\t\t<td class=\"pos2\">&nbsp;</td> \r\n\t\t</tr> \r\n\r\n\t\t\r\n\t\t<tr> \r\n\t\t\t<td class=\"nat\"><label><input class=\"radio\" type=\"radio\" name=\"tid\" value=\"7\" ";
+    if ( isset( $_POST['tid'] ) && $_POST['tid'] == 7 )
+    {
+        echo "checked=\"checked\"";
+    }
+    echo ">&nbsp;";
+    echo tribe_7;
+    echo "</label></td> \r\n\t\t\t<td><label><input class=\"radio\" type=\"radio\" name=\"kid\" value=\"1\" ";
+    if ( isset( $_POST['kid'] ) && $_POST['kid'] == 1 )
+    {
+        echo "checked=\"checked\"";
+    }
+    echo ">&nbsp;";
+    echo LANGUI_REG_T12;
+    echo "</label></td> \r\n\t\t\t<td><label><input class=\"radio\" type=\"radio\" name=\"kid\" value=\"2\" ";
+    if ( isset( $_POST['kid'] ) && $_POST['kid'] == 2 )
+    {
+        echo "checked=\"checked\"";
+    }
+    echo ">&nbsp;";
+    echo LANGUI_REG_T13;
+    echo "</label></td> \r\n\t\t</tr> \r\n\t\t<tr> \r\n\t\t\t<td><label><input class=\"radio\" type=\"radio\" name=\"tid\" value=\"2\" ";
+    if ( isset( $_POST['tid'] ) && $_POST['tid'] == 2 )
+    {
+        echo "checked=\"checked\"";
+    }
+    echo ">&nbsp;";
+    echo tribe_2;
+    echo "</label></td> \r\n\t\t\t<td><label><input class=\"radio\" type=\"radio\" name=\"kid\" value=\"3\" ";
+    if ( isset( $_POST['kid'] ) && $_POST['kid'] == 3 )
+    {
+        echo "checked=\"checked\"";
+    }
+    echo ">&nbsp;";
+    echo LANGUI_REG_T14;
+    echo "</label></td> \r\n\t\t\t<td><label><input class=\"radio\" type=\"radio\" name=\"kid\" value=\"4\" ";
+    if ( isset( $_POST['kid'] ) && $_POST['kid'] == 4 )
+    {
+        echo "checked=\"checked\"";
+    }
+    echo ">&nbsp;";
+    echo LANGUI_REG_T15;
+    echo "</label></td> \r\n\t\t</tr> \r\n\t\t<tr>\r\n\t\t\t<td><label><input class=\"radio\" type=\"radio\" name=\"tid\" value=\"3\" ";
+    if ( $_POST['tid'] == 3 )
+    {
+        echo "checked=\"checked\"";
+    }
+    echo ">&nbsp;";
+    echo tribe_3;
+    echo "</label></td> \r\n\t\t\t<td rowspan=\"2\"></td> \r\n\t\t</tr>\r\n\t\t<tr class=\"btm\"> \r\n\t\t\t<td><label><input class=\"radio\" type=\"radio\" name=\"tid\" value=\"1\" ";
+    if ( isset( $_POST['tid'] ) && $_POST['tid'] == 1 )
+    {
+        echo "checked=\"checked\"";
+    }
+    echo ">&nbsp;";
+    echo tribe_1;
+    echo "</label></td> \r\n\t\t\t<td rowspan=\"2\"></td> \r\n\t\t</tr>\t\t\r\n\t</tbody> \r\n</table> \r\n\r\n<ul class=\"important\">";
+    echo $this->err[3];
+    echo "</ul> \r\n<p class=\"btn\"><input type=\"image\" value=\"anmelden\" name=\"s1\" id=\"btn_signup\" class=\"dynamic_img\" src=\"assets/x.gif\" alt=\"";
+    echo LANGUI_REG_T16;
+    echo "\"/></p>\r\n</form> \r\n\r\n<p class=\"info\">";
+    echo LANGUI_REG_T17;
+    echo "</p>\r\n";
+}
+else
+{
+    echo "<p>\r\n";
+    echo LANGUI_REG_T18;
+    echo " <b>";
+    if ( isset( $_POST['name'] ) )
+    {
+        echo trim( $_POST['name'] );
+    }
+    echo "</b> <br><br>\r\n";
+    echo LANGUI_REG_T19;
+    echo ": ";
+    echo "<s";
+    echo "pan class=\"important\">";
+    if ( isset( $_POST['email'] ) )
+    {
+        echo trim( $_POST['email'] );
+    }
+    echo "</span>\r\n</p>\r\n";
+}
 ?>
-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

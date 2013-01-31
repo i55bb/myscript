@@ -1,117 +1,257 @@
-<?php //003ab
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');@dl($__ln);if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}@dl($__ln);}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the site administrator.');exit(199);
+<?php
+#################################################################################
+##                                                                             ##
+##                                                                             ##
+## --------------------------------------------------------------------------- ##
+##                                                                             ##
+##  Project:       TATAR WARS                                                  ##
+##  Version:       2012.3.15                                                   ##
+##  License:       Creative Commons BY-NC-SA 3.0                               ##
+##  Copyright:     Bazaid (c) 2012 - All rights reserved                       ##
+##  Source code:   https://github.com/Bazaid/tatar-wars                        ##
+##                 http://sourceforge.net/projects/tatarwars/                  ##
+#################################################################################
+
+require_once( LANG_UI_PATH."village2.php" );
+echo "<h1>";
+echo $this->data['village_name'];
+echo "</h1>\r\r<map name=\"map1\" id=\"map1\">\r\t<area href=\"build.php?id=40\" ";
+echo $this->getBuildingTitle( 40 );
+echo " coords=\"325,225,180\" shape=\"circle\">\r\t<area href=\"build.php?id=40\" ";
+echo $this->getBuildingTitle( 40 );
+echo " coords=\"220,230,185\" shape=\"circle\">\r</map>\r<map name=\"map2\" id=\"map2\">\r\t";
+if ( $this->data['is_special_village'] )
+{
+    echo "<area href=\"build.php?id=25\" ";
+    echo $this->getBuildingTitle( 25 );
+    echo " coords=\"180,160,80\" shape=\"circle\">";
+}
+echo "\t\r\t<area href=\"build.php?id=19\" ";
+echo $this->getBuildingTitle( 19 );
+echo " coords=\"53,91,53,37,128,37,128,91,91,112\" shape=\"poly\">\r\t<area href=\"build.php?id=20\" ";
+echo $this->getBuildingTitle( 20 );
+echo " coords=\"136,66,136,12,211,12,211,66,174,87\" shape=\"poly\">\r\t<area href=\"build.php?id=21\" ";
+echo $this->getBuildingTitle( 21 );
+echo " coords=\"196,56,196,2,271,2,271,56,234,77\" shape=\"poly\">\r\t<area href=\"build.php?id=22\" ";
+echo $this->getBuildingTitle( 22 );
+echo " coords=\"270,69,270,15,345,15,345,69,308,90\" shape=\"poly\">\r\t<area href=\"build.php?id=23\" ";
+echo $this->getBuildingTitle( 23 );
+echo " coords=\"327,117,327,63,402,63,402,117,365,138\" shape=\"poly\">\r\t<area href=\"build.php?id=24\" ";
+echo $this->getBuildingTitle( 24 );
+echo " coords=\"14,129,14,75,89,75,89,129,52,150\" shape=\"poly\">\r\t";
+if ( !$this->data['is_special_village'] )
+{
+    echo "<area href=\"build.php?id=25\" ";
+    echo $this->getBuildingTitle( 25 );
+    echo " coords=\"97,137,97,83,172,83,172,137,135,158\" shape=\"poly\">";
+}
+echo "\t";
+if ( !$this->data['is_special_village'] )
+{
+    echo "<area href=\"build.php?id=26\" ";
+    echo $this->getBuildingTitle( 26 );
+    echo " coords=\"182,119,182,65,257,65,257,119,220,140\" shape=\"poly\">";
+}
+echo "\t<area href=\"build.php?id=27\" ";
+echo $this->getBuildingTitle( 27 );
+echo " coords=\"337,156,375,136,411,156,375,177\" shape=\"poly\">\r\t<area href=\"build.php?id=28\" ";
+echo $this->getBuildingTitle( 28 );
+echo " coords=\"2,199,2,145,77,145,77,199,40,220\" shape=\"poly\">\r\t";
+if ( !$this->data['is_special_village'] )
+{
+    echo "<area href=\"build.php?id=29\" ";
+    echo $this->getBuildingTitle( 29 );
+    echo " coords=\"129,164,129,110,204,110,204,164,167,185\" shape=\"poly\">";
+}
+echo "\t";
+if ( !$this->data['is_special_village'] )
+{
+    echo "<area href=\"build.php?id=30\" ";
+    echo $this->getBuildingTitle( 30 );
+    echo " coords=\"92,189,92,135,167,135,167,189,130,210\" shape=\"poly\">";
+}
+echo "\t<area href=\"build.php?id=31\" ";
+echo $this->getBuildingTitle( 31 );
+echo " coords=\"342,216,380,196,416,216,380,237\" shape=\"poly\">\r\t<area href=\"build.php?id=32\" ";
+echo $this->getBuildingTitle( 32 );
+echo " coords=\"22,238,60,218,96,238,60,259\" shape=\"poly\">\r\t";
+if ( !$this->data['is_special_village'] )
+{
+    echo "<area href=\"build.php?id=33\" ";
+    echo $this->getBuildingTitle( 33 );
+    echo " coords=\"167,232,205,212,241,232,205,253\" shape=\"poly\">";
+}
+echo "\t<area href=\"build.php?id=34\" ";
+echo $this->getBuildingTitle( 34 );
+echo " coords=\"290,251,328,231,364,251,328,272\" shape=\"poly\">\r\t<area href=\"build.php?id=35\" ";
+echo $this->getBuildingTitle( 35 );
+echo " coords=\"95,273,133,253,169,273,133,294\" shape=\"poly\">\r\t<area href=\"build.php?id=36\" ";
+echo $this->getBuildingTitle( 36 );
+echo " coords=\"222,284,260,264,296,284,260,305\" shape=\"poly\">\r\t<area href=\"build.php?id=37\" ";
+echo $this->getBuildingTitle( 37 );
+echo " coords=\"80,306,118,286,154,306,118,327\" shape=\"poly\">\r\t<area href=\"build.php?id=38\" ";
+echo $this->getBuildingTitle( 38 );
+echo " coords=\"199,316,237,296,273,316,237,337\" shape=\"poly\">\r\t<area href=\"build.php?id=39\" ";
+echo $this->getBuildingTitle( 39 );
+echo " coords=\"270,158,303,135,316,155,318,178,304,211,288,227,263,238,250,215\" shape=\"poly\">\r\t<area href=\"build.php?id=40\" ";
+echo $this->getBuildingTitle( 40 );
+echo " coords=\"312,338,347,338,377,320,406,288,421,262,421,222,396,275,360,311\" shape=\"poly\">\r\t<area href=\"build.php?id=40\" ";
+echo $this->getBuildingTitle( 40 );
+echo " coords=\"49,338,0,274,0,240,33,286,88,338\" shape=\"poly\">\r\t<area href=\"build.php?id=40\" ";
+echo $this->getBuildingTitle( 40 );
+echo " coords=\"0,144,34,88,93,39,181,15,252,15,305,31,358,63,402,106,421,151,421,93,378,47,280,0,175,0,78,28,0,92\" shape=\"poly\">\r</map>\r\r<div id=\"village_map\" class=\"";
+echo $this->getWallCssName( );
+echo "\">\r\t";
+if ( $this->data['is_special_village'] && $this->buildings[25]['item_id'] == 40 )
+{
+    echo "<img src=\"assets/x.gif\" class=\"";
+    echo $this->getBuildingTitleClass( 25 );
+    echo "\" style=\"position:absolute; z-index:20; left:161px;\" width=\"214\">";
+}
+echo "\t\r\t<img src=\"assets/x.gif\" class=\"building d1 ";
+echo $this->getBuildingTitleClass( 19 );
+echo "\">\r\t<img src=\"assets/x.gif\" class=\"building d2 ";
+echo $this->getBuildingTitleClass( 20 );
+echo "\">\r\t<img src=\"assets/x.gif\" class=\"building d3 ";
+echo $this->getBuildingTitleClass( 21 );
+echo "\">\r\t<img src=\"assets/x.gif\" class=\"building d4 ";
+echo $this->getBuildingTitleClass( 22 );
+echo "\">\r\t<img src=\"assets/x.gif\" class=\"building d5 ";
+echo $this->getBuildingTitleClass( 23 );
+echo "\">\r\t<img src=\"assets/x.gif\" class=\"building d6 ";
+echo $this->getBuildingTitleClass( 24 );
+echo "\">\r\t";
+if ( !$this->data['is_special_village'] )
+{
+    echo "<img src=\"assets/x.gif\" class=\"building d7 ";
+    echo $this->getBuildingTitleClass( 25 );
+    echo "\">";
+}
+echo "\t";
+if ( !$this->data['is_special_village'] )
+{
+    echo "<img src=\"assets/x.gif\" class=\"building d8 ";
+    echo $this->getBuildingTitleClass( 26 );
+    echo "\">";
+}
+echo "\t<img src=\"assets/x.gif\" class=\"building d9 ";
+echo $this->getBuildingTitleClass( 27 );
+echo "\">\r\t<img src=\"assets/x.gif\" class=\"building d10 ";
+echo $this->getBuildingTitleClass( 28 );
+echo "\">\r\t";
+if ( !$this->data['is_special_village'] )
+{
+    echo "<img src=\"assets/x.gif\" class=\"building d11 ";
+    echo $this->getBuildingTitleClass( 29 );
+    echo "\">";
+}
+echo "\t";
+if ( !$this->data['is_special_village'] )
+{
+    echo "<img src=\"assets/x.gif\" class=\"building d12 ";
+    echo $this->getBuildingTitleClass( 30 );
+    echo "\">";
+}
+echo "\t<img src=\"assets/x.gif\" class=\"building d13 ";
+echo $this->getBuildingTitleClass( 31 );
+echo "\">\r\t<img src=\"assets/x.gif\" class=\"building d14 ";
+echo $this->getBuildingTitleClass( 32 );
+echo "\">\r\t";
+if ( !$this->data['is_special_village'] )
+{
+    echo "<img src=\"assets/x.gif\" class=\"building d15 ";
+    echo $this->getBuildingTitleClass( 33 );
+    echo "\">";
+}
+echo "\t<img src=\"assets/x.gif\" class=\"building d16 ";
+echo $this->getBuildingTitleClass( 34 );
+echo "\">\r\t<img src=\"assets/x.gif\" class=\"building d17 ";
+echo $this->getBuildingTitleClass( 35 );
+echo "\">\r\t<img src=\"assets/x.gif\" class=\"building d18 ";
+echo $this->getBuildingTitleClass( 36 );
+echo "\">\r\t<img src=\"assets/x.gif\" class=\"building d19 ";
+echo $this->getBuildingTitleClass( 37 );
+echo "\">\r\t<img src=\"assets/x.gif\" class=\"building d20 ";
+echo $this->getBuildingTitleClass( 38 );
+echo "\">\r\t<img src=\"assets/x.gif\" class=\"dx1 ";
+echo $this->getBuildingTitleClass( 39 );
+echo "\">\r\t<div id=\"levels\" class=\"";
+echo $this->showLevelsStr;
+echo "\">\r\t";
+$i = 0;
+foreach ( $this->buildings as $id => $build )
+{
+    if ( $id < 19 )
+    {
+        continue;
+    }
+    ++$i;
+    if ( $this->data['is_special_village'] && ( $id == 25 || $id == 26 || $id == 29 || $id == 30 || $id == 33 ) )
+    {
+        continue;
+    }
+    if ( 0 < $build['level'] || 0 < $build['update_state'] )
+    {
+        $cssClass = $id == 39 || $id == 40 ? "l".$id : "d".$i;
+        echo "<div class=\"".$cssClass."\">".$build['level']."</div>";
+    }
+}
+echo "\t</div>\r\t<img class=\"map1\" usemap=\"#map1\" src=\"assets/x.gif\" alt=\"\">\r\t<img class=\"map2\" usemap=\"#map2\" src=\"assets/x.gif\" alt=\"\">\r</div>\r<img src=\"assets/x.gif\" id=\"lswitch\" class=\"";
+echo $this->showLevelsStr;
+echo "\" onclick=\"toggleLevels()\" alt=\"\">\r";
+if ( isset( $this->queueModel->tasksInQueue[QS_BUILD_CREATEUPGRADE] ) )
+{
+    echo "<table cellpadding=\"1\" cellspacing=\"1\" id=\"building_contract\">\r\t<thead>\r\t\t<tr><th colspan=\"3\">\r\t\t\t";
+    echo LANGUI_VIL2_T3;
+    echo ":\r\t\t\t";
+    if ( !$this->data['is_special_village'] && $this->gameMetadata['plusTable'][5]['cost'] <= $this->data['gold_num'] )
+    {
+        echo "\t\t\t<a href=\"village2.php?bfs&k=";
+        echo $this->data['update_key'];
+        echo "\" title=\"";
+        echo LANGUI_VIL2_T1;
+        echo "\">\r\t\t\t<img class=\"clock\" alt=\"";
+        echo LANGUI_VIL2_T1;
+        echo "\" src=\"assets/x.gif\"></a>\r\t\t\t";
+    }
+    echo "\t\t</th></tr>\r\t</thead>\r\t<tbody>\r\t\t";
+    $tmpBuilding = array( );
+    foreach ( $this->queueModel->tasksInQueue[QS_BUILD_CREATEUPGRADE] as $qtask )
+    {
+        $index = $qtask['proc_params'];
+        $itemId = $qtask['building_id'];
+        if ( !isset( $tmpBuilding[$index] ) )
+        {
+            $tmpBuilding[$index] = 0;
+        }
+        ++$tmpBuilding[$index];
+        $level = $this->buildings[$index]['level'] + $tmpBuilding[$index];
+        echo "\t\t<tr>\r\t\t\t<td class=\"ico\"><a href=\"?id=";
+        echo $qtask['id'];
+        echo "&d&k=";
+        echo $this->data['update_key'];
+        echo "\"><img src=\"assets/x.gif\" class=\"del\" title=\"";
+        echo LANGUI_VIL2_T2;
+        echo "\" alt=\"";
+        echo LANGUI_VIL2_T2;
+        echo "\"></a></td>\r\t\t\t<td>";
+        echo constant( "item_".$itemId );
+        echo " (";
+        echo level_lang;
+        echo " ";
+        echo $level;
+        echo ")</td>\r\t\t\t<td>";
+        echo time_remain_lang;
+        echo " ";
+        echo "<s";
+        echo "pan id=\"timer1\">";
+        echo WebHelper::secondstostring( $qtask['remainingSeconds'] );
+        echo "</span> ";
+        echo time_hour_lang;
+        echo "</td>\r\t\t</tr>\r\t\t";
+    }
+    unset( $tmpBuilding );
+    echo "\t</tbody>\r</table>\r";
+}
+echo "<p></p><p></p>";
 ?>
-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
-+sgPqFEu1myoN0==

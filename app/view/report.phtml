@@ -1,335 +1,982 @@
-<?php //003ab
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');@dl($__ln);if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}@dl($__ln);}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the site administrator.');exit(199);
+<?php
+#################################################################################
+##                                                                             ##
+##                                                                             ##
+## --------------------------------------------------------------------------- ##
+##                                                                             ##
+##  Project:       TATAR WARS                                                  ##
+##  Version:       2012.3.15                                                   ##
+##  License:       Creative Commons BY-NC-SA 3.0                               ##
+##  Copyright:     Bazaid (c) 2012 - All rights reserved                       ##
+##  Source code:   https://github.com/Bazaid/tatar-wars                        ##
+##                 http://sourceforge.net/projects/tatarwars/                  ##
+#################################################################################
+
+require_once( LANG_UI_PATH."report.php" );
+echo "<h1>";
+echo LANGUI_RPT_T1;
+echo "</h1>\r<div id=\"textmenu\">\r   <a href=\"report.php\"";
+if ( $this->selectedTabIndex == 0 )
+{
+    echo " class=\"selected\"";
+}
+echo ">";
+echo LANGUI_RPT_T2;
+echo "</a>\r | <a href=\"report.php?t=1\"";
+if ( $this->selectedTabIndex == 1 )
+{
+    echo " class=\"selected\"";
+}
+echo ">";
+echo LANGUI_RPT_T3;
+echo "</a>\r | <a href=\"report.php?t=2\"";
+if ( $this->selectedTabIndex == 2 )
+{
+    echo " class=\"selected\"";
+}
+echo ">";
+echo LANGUI_RPT_T4;
+echo "</a>\r | <a href=\"report.php?t=3\"";
+if ( $this->selectedTabIndex == 3 )
+{
+    echo " class=\"selected\"";
+}
+echo ">";
+echo LANGUI_RPT_T5;
+echo "</a>\r | <a href=\"report.php?t=4\"";
+if ( $this->selectedTabIndex == 4 )
+{
+    echo " class=\"selected\"";
+}
+echo ">";
+echo LANGUI_RPT_T6;
+echo "</a>\r</div>\r";
+if ( $this->showList )
+{
+    echo "<form method=\"post\" action=\"report.php?p=";
+    echo $this->pageIndex;
+    if ( 0 < $this->selectedTabIndex )
+    {
+        echo "&t=".$this->selectedTabIndex;
+    }
+    echo "\" name=\"msg\">\r<table cellpadding=\"1\" cellspacing=\"1\" id=\"overview\" class=\"row_table_data\">\r\t<thead>\r\t\t<tr>\r\t\t\t<th colspan=\"2\">";
+    echo LANGUI_RPT_T7;
+    echo "</th>\r\t\t\t<th class=\"sent\">";
+    echo LANGUI_RPT_T8;
+    echo "</th>\r\t\t</tr>\r\t</thead>\r\t<tbody>\r\t";
+    $_c = 0;
+    while ( $this->dataList->next( ) )
+    {
+        ++$_c;
+        $isAttack = $this->dataList->row['from_player_id'] == $this->player->playerId;
+        $rptRelativeResult = ReportHelper::getreportresultrelative( $this->dataList->row['rpt_result'], $isAttack );
+        $btext = ReportHelper::getreportresulttext( $rptRelativeResult );
+        $_rptResultCss = $rptRelativeResult == 100 ? 10 : $rptRelativeResult;
+        echo "\t\t<tr>\r\t\t\t<td class=\"sel\"><input class=\"check\" type=\"checkbox\" name=\"dr[]\" value=\"";
+        echo $this->dataList->row['id'];
+        echo "\"></td>\r\t\t\t<td class=\"sub\"><img src=\"assets/x.gif\" class=\"iReport iReport";
+        echo $_rptResultCss;
+        echo "\" alt=\"";
+        echo $btext;
+        echo "\" title=\"";
+        echo $btext;
+        echo "\"><div><a href=\"report.php?id=";
+        echo $this->dataList->row['id'];
+        echo "\">";
+        echo $this->getVillageName( $this->dataList->row['from_player_id'], $this->dataList->row['from_village_name'] );
+        echo ReportHelper::getreportactiontext( $this->dataList->row['rpt_cat'] );
+        echo $this->getVillageName( $this->dataList->row['to_player_id'], $this->dataList->row['to_village_name'] );
+        echo "</a>";
+        if ( !$this->dataList->row['is_readed'] )
+        {
+            echo " ".LANGUI_RPT_T9;
+        }
+        echo "</div></td>\r\t\t\t<td class=\"dat\">";
+        echo $this->dataList->row['mdate'];
+        echo "</td>\r\t\t</tr>\r\t";
+    }
+    if ( $_c == 0 )
+    {
+        echo "\t\t<tr><td colspan=\"3\" class=\"none\">";
+        echo LANGUI_RPT_T10;
+        echo "</td></tr>\r\t";
+    }
+    echo "\t</tbody>\r\t<tfoot>\r\t\t<tr>\r\t\t\t<th>&nbsp;</th>\r\t\t\t<th class=\"buttons\">";
+    if ( 0 < $_c )
+    {
+        echo "<input name=\"delmsg\" value=\"";
+        echo LANGUI_RPT_T11;
+        echo "\" type=\"image\" id=\"btn_delete\" class=\"dynamic_img\" src=\"assets/x.gif\" alt=\"";
+        echo LANGUI_RPT_T11;
+        echo "\">";
+    }
+    echo "</th>\r\t\t\t<th class=\"navi\">";
+    echo $this->getPreviousLink( );
+    echo " ";
+    echo $this->getNextLink( );
+    echo "</th>\r\t\t</tr>\r\t</tfoot>\r</table>\r</form>\r";
+}
+else if ( $this->reportData['rpt_cat'] == 1 )
+{
+    echo "<table cellpadding=\"1\" cellspacing=\"1\" id=\"report_surround\">\r\t<thead>\r\t\t<tr>\r\t\t\t<th>";
+    echo LANGUI_RPT_T7;
+    echo ":</th>\r\t\t\t<th>";
+    echo $this->getVillageName( $this->reportData['from_player_id'], $this->reportData['from_village_name'] );
+    echo ReportHelper::getreportactiontext( $this->reportData['rpt_cat'] );
+    echo $this->getVillageName( $this->reportData['to_player_id'], $this->reportData['to_village_name'] );
+    echo "</th>\r\t\t</tr>\r\t\t<tr>\r\t\t\t<td class=\"sent\">";
+    echo LANGUI_RPT_T8;
+    echo ":</td>\r\t\t\t<td>";
+    echo text_in_lang;
+    echo " ";
+    echo $this->reportData['mdate'];
+    echo " ";
+    echo "<s";
+    echo "pan>";
+    echo time_hour_lang2;
+    echo " ";
+    echo $this->reportData['mtime'];
+    echo "</span></td>\r\t\t</tr>\r\t</thead>\r\t<tbody>\r\t\t<tr><td colspan=\"2\" class=\"empty\"></td></tr>\r\t\t<tr><td colspan=\"2\" class=\"report_content\">\r\t\t\t<table cellpadding=\"1\" cellspacing=\"1\" id=\"trade\">\r\t\t\t\t<thead>\r\t\t\t\t\t<tr>\r\t\t\t\t\t\t<td>&nbsp;</td>\r\t\t\t\t\t\t<td>";
+    if ( 0 < intval( $this->reportData['from_player_id'] ) )
+    {
+        echo "<a href=\"profile.php?uid=";
+        echo $this->reportData['from_player_id'];
+        echo "\">";
+        echo $this->reportData['from_player_name'];
+        echo "</a> ";
+        echo LANGUI_RPT_T12;
+        echo " <a href=\"village3.php?id=";
+        echo $this->reportData['from_village_id'];
+        echo "\">";
+        echo $this->getVillageName( $this->reportData['from_player_id'], $this->reportData['from_village_name'] );
+        echo "</a>";
+    }
+    else
+    {
+        echo "<s";
+        echo "pan class=\"none\">";
+        echo $this->reportData['from_player_name'];
+        echo "</span> ";
+        echo LANGUI_RPT_T12;
+        echo " ";
+        echo "<s";
+        echo "pan class=\"none\">[?]</span>";
+    }
+    echo "</td>\r\t\t\t\t\t</tr>\r\t\t\t\t</thead>\r\t\t\t\t<tbody>\r\t\t\t\t\t<tr>\r\t\t\t\t\t\t<th>";
+    echo LANGUI_RPT_T13;
+    echo "</th>\r\t\t\t\t\t\t<td><img class=\"r1\" src=\"assets/x.gif\" alt=\"";
+    echo item_title_1;
+    echo "\" title=\"";
+    echo item_title_1;
+    echo "\">";
+    echo $this->reportData['resources'][0];
+    echo " | <img class=\"r2\" src=\"assets/x.gif\" alt=\"";
+    echo item_title_2;
+    echo "\" title=\"";
+    echo item_title_2;
+    echo "\">";
+    echo $this->reportData['resources'][1];
+    echo " | <img class=\"r3\" src=\"assets/x.gif\" alt=\"";
+    echo item_title_3;
+    echo "\" title=\"";
+    echo item_title_3;
+    echo "\">";
+    echo $this->reportData['resources'][2];
+    echo " | <img class=\"r4\" src=\"assets/x.gif\" alt=\"";
+    echo item_title_4;
+    echo "\" title=\"";
+    echo item_title_4;
+    echo "\">";
+    echo $this->reportData['resources'][3];
+    echo "</td>\r\t\t\t\t\t</tr>\r\t\t\t\t</tbody>\r\t\t\t</table>\r\t\t</td></tr>\r\t</tbody>\r</table>\r";
+}
+else if ( $this->reportData['rpt_cat'] == 2 )
+{
+    echo "<table cellpadding=\"1\" cellspacing=\"1\" id=\"report_surround\">\r\t<thead>\r\t\t<tr>\r\t\t\t<th>";
+    echo LANGUI_RPT_T7;
+    echo ":</th>\r\t\t\t<th>";
+    echo $this->getVillageName( $this->reportData['from_player_id'], $this->reportData['from_village_name'] );
+    echo ReportHelper::getreportactiontext( $this->reportData['rpt_cat'] );
+    echo $this->getVillageName( $this->reportData['to_player_id'], $this->reportData['to_village_name'] );
+    echo "</th>\r\t\t</tr>\r\t\t<tr>\r\t\t\t<td class=\"sent\">";
+    echo LANGUI_RPT_T8;
+    echo ":</td>\r\t\t\t<td>";
+    echo text_in_lang;
+    echo " ";
+    echo $this->reportData['mdate'];
+    echo " ";
+    echo "<s";
+    echo "pan>";
+    echo time_hour_lang2;
+    echo " ";
+    echo $this->reportData['mtime'];
+    echo "</span></td>\r\t\t</tr>\r\t</thead>\r\t<tbody>\r\t\t<tr><td colspan=\"2\" class=\"empty\"></td></tr>\r\t\t<tr><td colspan=\"2\" class=\"report_content\">\r\t\t\t<table cellpadding=\"1\" cellspacing=\"1\" id=\"reinforcement\">\r\t\t\t\t<thead>\r\t\t\t\t\t<tr>\r\t\t\t\t\t\t<td class=\"role\">";
+    echo LANGUI_RPT_T23;
+    echo "</td>\r\t\t\t\t\t\t<td colspan=\"";
+    echo $this->reportData['troopsTable']['hasHero'] ? 11 : 10;
+    echo "\">";
+    if ( 0 < intval( $this->reportData['from_player_id'] ) )
+    {
+        echo "<a href=\"profile.php?uid=";
+        echo $this->reportData['from_player_id'];
+        echo "\">";
+        echo $this->reportData['from_player_name'];
+        echo "</a> ";
+        echo LANGUI_RPT_T12;
+        echo " <a href=\"village3.php?id=";
+        echo $this->reportData['from_village_id'];
+        echo "\">";
+        echo $this->getVillageName( $this->reportData['from_player_id'], $this->reportData['from_village_name'] );
+        echo "</a>";
+    }
+    else
+    {
+        echo "<s";
+        echo "pan class=\"none\">";
+        echo $this->reportData['from_player_name'];
+        echo "</span> ";
+        echo LANGUI_RPT_T12;
+        echo " ";
+        echo "<s";
+        echo "pan class=\"none\">[?]</span>";
+    }
+    echo "</td>\r\t\t\t\t\t</tr>\r\t\t\t\t</thead>\r\t\t\t\t<tbody class=\"units\">\r\t\t\t\t\t<tr>\r\t\t\t\t\t\t<td>&nbsp;</td>\r\t\t\t\t\t\t";
+    foreach ( $this->reportData['troopsTable']['troops'] as $tid => $tnum )
+    {
+        echo "\t\t\t\t\t\t<td><img src=\"assets/x.gif\" class=\"unit u";
+        echo $tid;
+        echo "\" title=\"";
+        echo constant( "troop_".$tid );
+        echo "\" alt=\"";
+        echo constant( "troop_".$tid );
+        echo "\"></td>\r\t\t\t\t\t\t";
+    }
+    echo "\t\t\t\t\t\t";
+    if ( $this->reportData['troopsTable']['hasHero'] )
+    {
+        echo "\t\t\t\t\t\t<td><img src=\"assets/x.gif\" class=\"unit uhero\" title=\"";
+        echo troop_hero;
+        echo "\" alt=\"";
+        echo troop_hero;
+        echo "\"></td>\r\t\t\t\t\t\t";
+    }
+    echo "\t\t\t\t\t</tr>\r\t\t\t\t\t<tr>\r\t\t\t\t\t\t<th>";
+    echo LANGUI_RPT_T14;
+    echo "</th>\r\t\t\t\t\t\t";
+    foreach ( $this->reportData['troopsTable']['troops'] as $tid => $tnum )
+    {
+        echo "\t\t\t\t\t\t";
+        if ( $tnum <= 0 )
+        {
+            echo "<td class=\"none\">0</td>";
+        }
+        else
+        {
+            echo "<td>";
+            echo $tnum;
+            echo "</td>";
+        }
+        echo "\t\t\t\t\t\t";
+    }
+    echo "\t\t\t\t\t\t";
+    if ( $this->reportData['troopsTable']['hasHero'] )
+    {
+        echo "\t\t\t\t\t\t<td>1</td>\r\t\t\t\t\t\t";
+    }
+    echo "\t\t\t\t\t</tr>\r\t\t\t\t</tbody>\r\t\t\t\t<tbody class=\"infos\">\r\t\t\t\t\t<tr>\r\t\t\t\t\t\t<th>";
+    echo LANGUI_RPT_T15;
+    echo "</th>\r\t\t\t\t\t\t<td colspan=\"";
+    echo $this->reportData['troopsTable']['hasHero'] ? 11 : 10;
+    echo "\">";
+    echo $this->reportData['cropConsume'];
+    echo "<img src=\"assets/x.gif\" class=\"r4\" title=\"";
+    echo item_title_4;
+    echo "\" alt=\"";
+    echo item_title_4;
+    echo "\">";
+    echo LANGUI_RPT_T16;
+    echo "</td>\r\t\t\t\t\t</tr>\r\t\t\t\t</tbody>\r\t\t\t</table>\r\t\t</td></tr>\r\t</tbody>\r</table>\r";
+}
+else if ( $this->reportData['rpt_cat'] == 3 )
+{
+    echo "<table cellpadding=\"1\" cellspacing=\"1\" id=\"report_surround\">\r\t<thead>\r\t\t<tr>\r\t\t\t<th>";
+    echo LANGUI_RPT_T7;
+    echo ":</th>\r\t\t\t<th>";
+    echo $this->getVillageName( $this->reportData['from_player_id'], $this->reportData['from_village_name'] );
+    echo ReportHelper::getreportactiontext( $this->reportData['rpt_cat'] );
+    echo $this->getVillageName( $this->reportData['to_player_id'], $this->reportData['to_village_name'] );
+    echo "</th>\r\t\t</tr>\r\t\t<tr>\r\t\t\t<td class=\"sent\">";
+    echo LANGUI_RPT_T8;
+    echo ":</td>\r\t\t\t<td>";
+    echo text_in_lang;
+    echo " ";
+    echo $this->reportData['mdate'];
+    echo " ";
+    echo "<s";
+    echo "pan>";
+    echo time_hour_lang2;
+    echo " ";
+    echo $this->reportData['mtime'];
+    echo "</span></td>\r\t\t</tr>\r\t</thead>\r\t<tbody>\r\t\t<tr><td colspan=\"2\" class=\"empty\"></td></tr>\r\t\t<tr><td colspan=\"2\" class=\"report_content\">\r\t\t<table cellpadding=\"1\" cellspacing=\"1\" id=\"attacker\">\r\t\t\t<thead>\r\t\t\t\t<tr>\r\t\t\t\t\t<td class=\"role\">";
+    echo LANGUI_RPT_T17;
+    echo "</td>\r\t\t\t\t\t<td colspan=\"";
+    echo 0 < $this->reportData['attackTroopsTable']['heros']['number'] ? 11 : 10;
+    echo "\">";
+    if ( 0 < intval( $this->reportData['from_player_id'] ) )
+    {
+        echo "<a href=\"profile.php?uid=";
+        echo $this->reportData['from_player_id'];
+        echo "\">";
+        echo $this->reportData['from_player_name'];
+        echo "</a> ";
+        echo LANGUI_RPT_T12;
+        echo " <a href=\"village3.php?id=";
+        echo $this->reportData['from_village_id'];
+        echo "\">";
+        echo $this->getVillageName( $this->reportData['from_player_id'], $this->reportData['from_village_name'] );
+        echo "</a>";
+    }
+    else
+    {
+        echo "<s";
+        echo "pan class=\"none\">";
+        echo $this->reportData['from_player_name'];
+        echo "</span> ";
+        echo LANGUI_RPT_T12;
+        echo " ";
+        echo "<s";
+        echo "pan class=\"none\">[?]</span>";
+    }
+    echo "</td>\r\t\t\t\t</tr>\r\t\t\t</thead>\r\t\t\t<tbody class=\"units\">\r\t\t\t\t<tr>\r\t\t\t\t<td>&nbsp;</td>\r\t\t\t\t";
+    foreach ( $this->reportData['attackTroopsTable']['troops'] as $tid => $tprop )
+    {
+        echo "\t\t\t\t<td><img src=\"assets/x.gif\" class=\"unit u";
+        echo $tid;
+        echo "\" title=\"";
+        echo constant( "troop_".$tid );
+        echo "\" alt=\"";
+        echo constant( "troop_".$tid );
+        echo "\"></td>\r\t\t\t\t";
+    }
+    echo "\t\t\t\t";
+    if ( 0 < $this->reportData['attackTroopsTable']['heros']['number'] )
+    {
+        echo "<td><img src=\"assets/x.gif\" class=\"unit uhero\" title=\"";
+        echo troop_hero;
+        echo "\" alt=\"";
+        echo troop_hero;
+        echo "\"></td>";
+    }
+    echo "\t\t\t\t</tr>\r\t\t\t\t\r\t\t\t\t<tr><th>";
+    echo LANGUI_RPT_T14;
+    echo "</th>\r\t\t\t\t";
+    foreach ( $this->reportData['attackTroopsTable']['troops'] as $tid => $tprop )
+    {
+        $tnum = $tprop['number'];
+        echo "\t\t\t\t";
+        if ( $tnum <= 0 )
+        {
+            echo "<td class=\"none\">0</td>";
+        }
+        else
+        {
+            echo "<td>";
+            echo $tnum;
+            echo "</td>";
+        }
+        echo "\t\t\t\t";
+    }
+    echo "\t\t\t\t";
+    if ( 0 < $this->reportData['attackTroopsTable']['heros']['number'] )
+    {
+        echo "<td";
+        if ( $this->reportData['attackTroopsTable']['heros']['number'] == 0 )
+        {
+            echo " class=\"none\"";
+        }
+        echo ">";
+        echo $this->reportData['attackTroopsTable']['heros']['number'];
+        echo "</td>";
+    }
+    echo "\t\t\t\t</tr>\r\t\t\t\t\r\t\t\t\t<tr><th>";
+    echo LANGUI_RPT_T18;
+    echo "</th>\r\t\t\t\t";
+    foreach ( $this->reportData['attackTroopsTable']['troops'] as $tid => $tprop )
+    {
+        $tnum = $tprop['dead_number'];
+        echo "\t\t\t\t";
+        if ( $tnum <= 0 )
+        {
+            echo "<td class=\"none\">0</td>";
+        }
+        else
+        {
+            echo "<td>";
+            echo $tnum;
+            echo "</td>";
+        }
+        echo "\t\t\t\t";
+    }
+    echo "\t\t\t\t";
+    if ( 0 < $this->reportData['attackTroopsTable']['heros']['number'] )
+    {
+        echo "<td";
+        if ( $this->reportData['attackTroopsTable']['heros']['dead_number'] == 0 )
+        {
+            echo " class=\"none\"";
+        }
+        echo ">";
+        echo $this->reportData['attackTroopsTable']['heros']['dead_number'];
+        echo "</td>";
+    }
+    echo "\t\t\t\t</tr>\r\t\t\t</tbody>\r\t\t\t";
+    if ( !$this->reportData['all_attackTroops_dead'] )
+    {
+        echo "\t\t\t<tbody class=\"goods\">\r\t\t\t\t<tr>\r\t\t\t\t\t<th>";
+        echo LANGUI_RPT_T24;
+        echo "</th>\r\t\t\t\t\t<td colspan=\"";
+        echo 0 < $this->reportData['attackTroopsTable']['heros']['number'] ? 11 : 10;
+        echo "\">\r\t\t\t\t\t\t<div class=\"res\">\r\t\t\t\t\t\t\t<img class=\"r1\" src=\"assets/x.gif\" alt=\"";
+        echo item_title_1;
+        echo "\" title=\"";
+        echo item_title_1;
+        echo "\">";
+        echo $this->reportData['harvest_resources'][0];
+        echo " | \r\t\t\t\t\t\t\t<img class=\"r2\" src=\"assets/x.gif\" alt=\"";
+        echo item_title_2;
+        echo "\" title=\"";
+        echo item_title_2;
+        echo "\">";
+        echo $this->reportData['harvest_resources'][1];
+        echo " |\r\t\t\t\t\t\t\t<img class=\"r3\" src=\"assets/x.gif\" alt=\"";
+        echo item_title_3;
+        echo "\" title=\"";
+        echo item_title_3;
+        echo "\">";
+        echo $this->reportData['harvest_resources'][2];
+        echo " |\r\t\t\t\t\t\t\t<img class=\"r4\" src=\"assets/x.gif\" alt=\"";
+        echo item_title_4;
+        echo "\" title=\"";
+        echo item_title_4;
+        echo "\">";
+        echo $this->reportData['harvest_resources'][3];
+        echo "</div>\r\t\t\t\t\t\t<div class=\"carry\"><img class=\"car\" src=\"assets/x.gif\" alt=\"";
+        echo LANGUI_RPT_T19;
+        echo "\" title=\"";
+        echo LANGUI_RPT_T19;
+        echo "\">";
+        echo $this->reportData['total_harvest_carry_load'];
+        echo "/";
+        echo $this->reportData['total_carry_load'];
+        echo "</div>\r\t\t\t\t\t</td>\r\t\t\t\t</tr>\r\t\t\t</tbody>\r\t\t\t";
+    }
+    echo "\t\t\t";
+    if ( $this->reportData['all_attackTroops_dead'] )
+    {
+        echo "\t\t\t<tbody class=\"infos\">\r\t\t\t\t<tr><th>";
+        echo LANGUI_RPT_T20;
+        echo "</th><td colspan=\"";
+        echo 0 < $this->reportData['attackTroopsTable']['heros']['number'] ? 11 : 10;
+        echo "\">";
+        echo LANGUI_RPT_T21;
+        echo "</td></tr>\r\t\t\t</tbody>\r\t\t\t";
+    }
+    else
+    {
+        echo "\t\t\t\r\t\t\t";
+        if ( isset( $this->reportData['captureResult'] ) )
+        {
+            echo "\t\t\t<tbody class=\"infos\">\r\t\t\t\t<tr><th>";
+            echo LANGUI_RPT_T20;
+            echo "</th><td colspan=\"";
+            echo 0 < $this->reportData['attackTroopsTable']['heros']['number'] ? 11 : 10;
+            echo "\">";
+            echo $this->reportData['captureResult'];
+            echo "</td></tr>\r\t\t\t</tbody>\r\t\t\t";
+        }
+        echo "\t\t\t";
+        if ( isset( $this->reportData['oasisResult'] ) )
+        {
+            echo "\t\t\t<tbody class=\"infos\">\r\t\t\t\t<tr><th>";
+            echo LANGUI_RPT_T20;
+            echo "</th><td colspan=\"";
+            echo 0 < $this->reportData['attackTroopsTable']['heros']['number'] ? 11 : 10;
+            echo "\">";
+            echo $this->reportData['oasisResult'];
+            echo "</td></tr>\r\t\t\t</tbody>\r\t\t\t";
+        }
+        echo "\t\t\t\r\t\t\t";
+        if ( isset( $this->reportData['wallDestructionResult'] ) )
+        {
+            echo "\t\t\t<tbody class=\"infos\">\r\t\t\t\t<tr><th>";
+            echo LANGUI_RPT_T20;
+            echo "</th><td colspan=\"";
+            echo 0 < $this->reportData['attackTroopsTable']['heros']['number'] ? 11 : 10;
+            echo "\">";
+            echo $this->reportData['wallDestructionResult'];
+            echo "</td></tr>\r\t\t\t</tbody>\r\t\t\t";
+        }
+        echo "\t\t\t";
+        if ( isset( $this->reportData['buildingDestructionResult'] ) )
+        {
+            echo "\t\t\t";
+            foreach ( $this->reportData['buildingDestructionResult'] as $bResult )
+            {
+                echo "\t\t\t<tbody class=\"infos\">\r\t\t\t\t<tr><th>";
+                echo LANGUI_RPT_T20;
+                echo "</th><td colspan=\"";
+                echo 0 < $this->reportData['attackTroopsTable']['heros']['number'] ? 11 : 10;
+                echo "\">";
+                echo $bResult;
+                echo "</td></tr>\r\t\t\t</tbody>\r\t\t\t";
+            }
+            echo "\t\t\t";
+        }
+        echo "\t\t\t";
+    }
+    echo "\t\t</table>\r\t\t";
+    if ( !$this->reportData['all_attackTroops_dead'] || intval( $this->reportData['to_player_id'] ) == $this->player->playerId || $this->reportData['to_player_alliance_id'] == $this->data['alliance_id'] && 0 < intval( $this->data['alliance_id'] ) )
+    {
+        echo "\t\t";
+        $t = 0;
+        foreach ( $this->reportData['defenseTroopsTable'] as $defTable )
+        {
+            ++$t;
+            echo "\t\t<table cellpadding=\"1\" cellspacing=\"1\" class=\"defender\">\r\t\t\t<thead>\r\t\t\t\t<tr>\r\t\t\t\t<td class=\"role\">";
+            echo LANGUI_RPT_T22;
+            echo "\t\t\t\t</td><td colspan=\"";
+            echo 0 < $defTable['heros']['number'] ? 11 : 10;
+            echo "\">";
+            if ( $t == 1 )
+            {
+                echo "\t\t\t\t";
+                if ( 0 < intval( $this->reportData['to_player_id'] ) )
+                {
+                    echo "<a href=\"profile.php?uid=";
+                    echo $this->reportData['to_player_id'];
+                    echo "\">";
+                    echo $this->reportData['to_player_name'];
+                    echo "</a> ";
+                    echo LANGUI_RPT_T12;
+                    echo " <a href=\"village3.php?id=";
+                    echo $this->reportData['to_village_id'];
+                    echo "\">";
+                    echo $this->getVillageName( $this->reportData['to_player_id'], $this->reportData['to_village_name'] );
+                    echo "</a>";
+                }
+                else
+                {
+                    echo "<s";
+                    echo "pan class=\"none\">";
+                    echo $this->reportData['to_player_name'];
+                    echo "</span> ";
+                    echo LANGUI_RPT_T12;
+                    echo " ";
+                    echo "<s";
+                    echo "pan class=\"none\">[?]</span>";
+                }
+                echo "\t\t\t\t";
+            }
+            else
+            {
+                echo LANGUI_RPT_T4;
+            }
+            echo "</td>\r\t\t\t\t</tr>\r\t\t\t</thead>\r\t\t\t<tbody class=\"units\">\r\t\t\t\t<tr>\r\t\t\t\t<td>&nbsp;</td>\r\t\t\t\t";
+            foreach ( $defTable['troops'] as $tid => $tprop )
+            {
+                echo "\t\t\t\t<td><img src=\"assets/x.gif\" class=\"unit u";
+                echo $tid;
+                echo "\" title=\"";
+                echo constant( "troop_".$tid );
+                echo "\" alt=\"";
+                echo constant( "troop_".$tid );
+                echo "\"></td>\r\t\t\t\t";
+            }
+            echo "\t\t\t\t";
+            if ( 0 < $defTable['heros']['number'] )
+            {
+                echo "<td><img src=\"assets/x.gif\" class=\"unit uhero\" title=\"";
+                echo troop_hero;
+                echo "\" alt=\"";
+                echo troop_hero;
+                echo "\"></td>";
+            }
+            echo "\t\t\t\t</tr>\r\t\t\t\t\r\t\t\t\t<tr><th>";
+            echo LANGUI_RPT_T14;
+            echo "</th>\r\t\t\t\t";
+            foreach ( $defTable['troops'] as $tid => $tprop )
+            {
+                $tnum = $tprop['number'];
+                echo "\t\t\t\t";
+                if ( $tnum <= 0 )
+                {
+                    echo "<td class=\"none\">0</td>";
+                }
+                else
+                {
+                    echo "<td>";
+                    echo $tnum;
+                    echo "</td>";
+                }
+                echo "\t\t\t\t";
+            }
+            echo "\t\t\t\t";
+            if ( 0 < $defTable['heros']['number'] )
+            {
+                echo "<td";
+                if ( $defTable['heros']['number'] == 0 )
+                {
+                    echo " class=\"none\"";
+                }
+                echo ">";
+                echo $defTable['heros']['number'];
+                echo "</td>";
+            }
+            echo "\t\t\t\t</tr>\r\t\t\t\t\r\t\t\t\t<tr><th>";
+            echo LANGUI_RPT_T18;
+            echo "</th>\r\t\t\t\t";
+            foreach ( $defTable['troops'] as $tid => $tprop )
+            {
+                $tnum = $tprop['dead_number'];
+                echo "\t\t\t\t";
+                if ( $tnum <= 0 )
+                {
+                    echo "<td class=\"none\">0</td>";
+                }
+                else
+                {
+                    echo "<td>";
+                    echo $tnum;
+                    echo "</td>";
+                }
+                echo "\t\t\t\t";
+            }
+            echo "\t\t\t\t";
+            if ( 0 < $defTable['heros']['number'] )
+            {
+                echo "<td";
+                if ( $defTable['heros']['dead_number'] == 0 )
+                {
+                    echo " class=\"none\"";
+                }
+                echo ">";
+                echo $defTable['heros']['dead_number'];
+                echo "</td>";
+            }
+            echo "\t\t\t\t</tr>\r\t\t\t</tbody>\r\t\t</table>\r\t\t";
+        }
+        echo "\t\t";
+    }
+    echo "\t\t</td></tr>\r\t</tbody>\r</table>\r<p></p>";
+    echo $this->getFlashContent( "assets/anm/war/attack.swf", 500, 200 );
+}
+else if ( $this->reportData['rpt_cat'] == 4 )
+{
+    echo "<table cellpadding=\"1\" cellspacing=\"1\" id=\"report_surround\">\r\t<thead>\r\t\t<tr>\r\t\t\t<th>";
+    echo LANGUI_RPT_T7;
+    echo ":</th>\r\t\t\t<th>";
+    echo $this->getVillageName( $this->reportData['from_player_id'], $this->reportData['from_village_name'] );
+    echo ReportHelper::getreportactiontext( $this->reportData['rpt_cat'] );
+    echo $this->getVillageName( $this->reportData['to_player_id'], $this->reportData['to_village_name'] );
+    echo "</th>\r\t\t</tr>\r\t\t<tr>\r\t\t\t<td class=\"sent\">";
+    echo LANGUI_RPT_T8;
+    echo ":</td>\r\t\t\t<td>";
+    echo text_in_lang;
+    echo " ";
+    echo $this->reportData['mdate'];
+    echo " ";
+    echo "<s";
+    echo "pan>";
+    echo time_hour_lang2;
+    echo " ";
+    echo $this->reportData['mtime'];
+    echo "</span></td>\r\t\t</tr>\r\t</thead>\r\t<tbody>\r\t\t<tr><td colspan=\"2\" class=\"empty\"></td></tr>\r\t\t<tr><td colspan=\"2\" class=\"report_content\">\r\t\t<table cellpadding=\"1\" cellspacing=\"1\" id=\"attacker\">\r\t\t\t<thead>\r\t\t\t\t<tr>\r\t\t\t\t\t<td class=\"role\">";
+    echo LANGUI_RPT_T17;
+    echo "</td>\r\t\t\t\t\t<td colspan=\"";
+    echo 0 < $this->reportData['attackTroopsTable']['heros']['number'] ? 11 : 10;
+    echo "\">";
+    if ( 0 < intval( $this->reportData['from_player_id'] ) )
+    {
+        echo "<a href=\"profile.php?uid=";
+        echo $this->reportData['from_player_id'];
+        echo "\">";
+        echo $this->reportData['from_player_name'];
+        echo "</a> ";
+        echo LANGUI_RPT_T12;
+        echo " <a href=\"village3.php?id=";
+        echo $this->reportData['from_village_id'];
+        echo "\">";
+        echo $this->getVillageName( $this->reportData['from_player_id'], $this->reportData['from_village_name'] );
+        echo "</a>";
+    }
+    else
+    {
+        echo "<s";
+        echo "pan class=\"none\">";
+        echo $this->reportData['from_player_name'];
+        echo "</span> ";
+        echo LANGUI_RPT_T12;
+        echo " ";
+        echo "<s";
+        echo "pan class=\"none\">[?]</span>";
+    }
+    echo "</td>\r\t\t\t\t</tr>\r\t\t\t</thead>\r\t\t\t<tbody class=\"units\">\r\t\t\t\t<tr>\r\t\t\t\t<td>&nbsp;</td>\r\t\t\t\t";
+    foreach ( $this->reportData['attackTroopsTable']['troops'] as $tid => $tprop )
+    {
+        echo "\t\t\t\t<td><img src=\"assets/x.gif\" class=\"unit u";
+        echo $tid;
+        echo "\" title=\"";
+        echo constant( "troop_".$tid );
+        echo "\" alt=\"";
+        echo constant( "troop_".$tid );
+        echo "\"></td>\r\t\t\t\t";
+    }
+    echo "\t\t\t\t";
+    if ( 0 < $this->reportData['attackTroopsTable']['heros']['number'] )
+    {
+        echo "<td><img src=\"assets/x.gif\" class=\"unit uhero\" title=\"";
+        echo troop_hero;
+        echo "\" alt=\"";
+        echo troop_hero;
+        echo "\"></td>";
+    }
+    echo "\t\t\t\t</tr>\r\t\t\t\t\r\t\t\t\t<tr><th>";
+    echo LANGUI_RPT_T14;
+    echo "</th>\r\t\t\t\t";
+    foreach ( $this->reportData['attackTroopsTable']['troops'] as $tid => $tprop )
+    {
+        $tnum = $tprop['number'];
+        echo "\t\t\t\t";
+        if ( $tnum <= 0 )
+        {
+            echo "<td class=\"none\">0</td>";
+        }
+        else
+        {
+            echo "<td>";
+            echo $tnum;
+            echo "</td>";
+        }
+        echo "\t\t\t\t";
+    }
+    echo "\t\t\t\t";
+    if ( 0 < $this->reportData['attackTroopsTable']['heros']['number'] )
+    {
+        echo "<td";
+        if ( $this->reportData['attackTroopsTable']['heros']['number'] == 0 )
+        {
+            echo " class=\"none\"";
+        }
+        echo ">";
+        echo $this->reportData['attackTroopsTable']['heros']['number'];
+        echo "</td>";
+    }
+    echo "\t\t\t\t</tr>\r\t\t\t\t\r\t\t\t\t<tr><th>";
+    echo LANGUI_RPT_T18;
+    echo "</th>\r\t\t\t\t";
+    foreach ( $this->reportData['attackTroopsTable']['troops'] as $tid => $tprop )
+    {
+        $tnum = $tprop['dead_number'];
+        echo "\t\t\t\t";
+        if ( $tnum <= 0 )
+        {
+            echo "<td class=\"none\">0</td>";
+        }
+        else
+        {
+            echo "<td>";
+            echo $tnum;
+            echo "</td>";
+        }
+        echo "\t\t\t\t";
+    }
+    echo "\t\t\t\t";
+    if ( 0 < $this->reportData['attackTroopsTable']['heros']['number'] )
+    {
+        echo "<td";
+        if ( $this->reportData['attackTroopsTable']['heros']['dead_number'] == 0 )
+        {
+            echo " class=\"none\"";
+        }
+        echo ">";
+        echo $this->reportData['attackTroopsTable']['heros']['dead_number'];
+        echo "</td>";
+    }
+    echo "\t\t\t\t</tr>\r\t\t\t</tbody>\r\t\t\t";
+    if ( isset( $this->reportData['harvest_resources'] ) )
+    {
+        echo "\t\t\t<tbody class=\"goods\">\r\t\t\t\t<tr>\r\t\t\t\t\t<th>";
+        echo LANGUI_RPT_T13;
+        echo "</th>\r\t\t\t\t\t<td colspan=\"";
+        echo 0 < $this->reportData['attackTroopsTable']['heros']['number'] ? 11 : 10;
+        echo "\">\r\t\t\t\t\t\t<div class=\"res\">\r\t\t\t\t\t\t\t<img class=\"r1\" src=\"assets/x.gif\" alt=\"";
+        echo item_title_1;
+        echo "\" title=\"";
+        echo item_title_1;
+        echo "\">";
+        echo $this->reportData['harvest_resources'][0];
+        echo " | \r\t\t\t\t\t\t\t<img class=\"r2\" src=\"assets/x.gif\" alt=\"";
+        echo item_title_2;
+        echo "\" title=\"";
+        echo item_title_2;
+        echo "\">";
+        echo $this->reportData['harvest_resources'][1];
+        echo " |\r\t\t\t\t\t\t\t<img class=\"r3\" src=\"assets/x.gif\" alt=\"";
+        echo item_title_3;
+        echo "\" title=\"";
+        echo item_title_3;
+        echo "\">";
+        echo $this->reportData['harvest_resources'][2];
+        echo " |\r\t\t\t\t\t\t\t<img class=\"r4\" src=\"assets/x.gif\" alt=\"";
+        echo item_title_4;
+        echo "\" title=\"";
+        echo item_title_4;
+        echo "\">";
+        echo $this->reportData['harvest_resources'][3];
+        echo "\t\t\t\t\t\t</div>\r\t\t\t\t\t</td>\r\t\t\t\t</tr>\r\t\t\t</tbody>\r\t\t\t";
+    }
+    echo "\t\t\t";
+    if ( isset( $this->reportData['harvest_info'] ) )
+    {
+        echo "\t\t\t<tbody class=\"infos\">\r\t\t\t\t<tr><th>";
+        echo LANGUI_RPT_T20;
+        echo "</th><td colspan=\"10\">";
+        echo $this->reportData['harvest_info'];
+        echo "</td></tr>\r\t\t\t</tbody>\r\t\t\t";
+    }
+    echo "\t\t</table>\r\t\t";
+    if ( !$this->reportData['all_spy_dead'] || intval( $this->reportData['to_player_id'] ) == $this->player->playerId || $this->reportData['to_player_alliance_id'] == $this->data['alliance_id'] && 0 < intval( $this->data['alliance_id'] ) )
+    {
+        echo "\t\t";
+        $t = 0;
+        foreach ( $this->reportData['defenseTroopsTable'] as $defTable )
+        {
+            ++$t;
+            echo "\t\t<table cellpadding=\"1\" cellspacing=\"1\" class=\"defender\">\r\t\t\t<thead>\r\t\t\t\t<tr>\r\t\t\t\t<td class=\"role\">";
+            echo LANGUI_RPT_T22;
+            echo "\t\t\t\t</td><td colspan=\"";
+            echo 0 < $defTable['heros']['number'] ? 11 : 10;
+            echo "\">";
+            if ( $t == 1 )
+            {
+                echo "\t\t\t\t";
+                if ( 0 < intval( $this->reportData['to_player_id'] ) )
+                {
+                    echo "<a href=\"profile.php?uid=";
+                    echo $this->reportData['to_player_id'];
+                    echo "\">";
+                    echo $this->reportData['to_player_name'];
+                    echo "</a> ";
+                    echo LANGUI_RPT_T12;
+                    echo " <a href=\"village3.php?id=";
+                    echo $this->reportData['to_village_id'];
+                    echo "\">";
+                    echo $this->getVillageName( $this->reportData['to_player_id'], $this->reportData['to_village_name'] );
+                    echo "</a>";
+                }
+                else
+                {
+                    echo "<s";
+                    echo "pan class=\"none\">";
+                    echo $this->reportData['to_player_name'];
+                    echo "</span> ";
+                    echo LANGUI_RPT_T12;
+                    echo " ";
+                    echo "<s";
+                    echo "pan class=\"none\">[?]</span>";
+                }
+                echo "\t\t\t\t";
+            }
+            else
+            {
+                echo LANGUI_RPT_T4;
+            }
+            echo "</td>\r\t\t\t\t</tr>\r\t\t\t</thead>\r\t\t\t<tbody class=\"units\">\r\t\t\t\t<tr>\r\t\t\t\t<td>&nbsp;</td>\r\t\t\t\t";
+            foreach ( $defTable['troops'] as $tid => $tprop )
+            {
+                echo "\t\t\t\t<td><img src=\"assets/x.gif\" class=\"unit u";
+                echo $tid;
+                echo "\" title=\"";
+                echo constant( "troop_".$tid );
+                echo "\" alt=\"";
+                echo constant( "troop_".$tid );
+                echo "\"></td>\r\t\t\t\t";
+            }
+            echo "\t\t\t\t";
+            if ( 0 < $defTable['heros']['number'] )
+            {
+                echo "<td><img src=\"assets/x.gif\" class=\"unit uhero\" title=\"";
+                echo troop_hero;
+                echo "\" alt=\"";
+                echo troop_hero;
+                echo "\"></td>";
+            }
+            echo "\t\t\t\t</tr>\r\t\t\t\t\r\t\t\t\t<tr><th>";
+            echo LANGUI_RPT_T14;
+            echo "</th>\r\t\t\t\t";
+            foreach ( $defTable['troops'] as $tid => $tprop )
+            {
+                $tnum = $tprop['number'];
+                echo "\t\t\t\t";
+                if ( $tnum <= 0 )
+                {
+                    echo "<td class=\"none\">0</td>";
+                }
+                else
+                {
+                    echo "<td>";
+                    echo $tnum;
+                    echo "</td>";
+                }
+                echo "\t\t\t\t";
+            }
+            echo "\t\t\t\t";
+            if ( 0 < $defTable['heros']['number'] )
+            {
+                echo "<td";
+                if ( $defTable['heros']['number'] == 0 )
+                {
+                    echo " class=\"none\"";
+                }
+                echo ">";
+                echo $defTable['heros']['number'];
+                echo "</td>";
+            }
+            echo "\t\t\t\t</tr>\r\t\t\t\t\r\t\t\t\t<tr><th>";
+            echo LANGUI_RPT_T18;
+            echo "</th>\r\t\t\t\t";
+            foreach ( $defTable['troops'] as $tid => $tprop )
+            {
+                $tnum = $tprop['dead_number'];
+                echo "\t\t\t\t";
+                if ( $tnum <= 0 )
+                {
+                    echo "<td class=\"none\">0</td>";
+                }
+                else
+                {
+                    echo "<td>";
+                    echo $tnum;
+                    echo "</td>";
+                }
+                echo "\t\t\t\t";
+            }
+            echo "\t\t\t\t";
+            if ( 0 < $defTable['heros']['number'] )
+            {
+                echo "<td";
+                if ( $defTable['heros']['dead_number'] == 0 )
+                {
+                    echo " class=\"none\"";
+                }
+                echo ">";
+                echo $defTable['heros']['dead_number'];
+                echo "</td>";
+            }
+            echo "\t\t\t\t</tr>\r\t\t\t</tbody>\r\t\t</table>\r\t\t";
+        }
+        echo "\t\t";
+    }
+    echo "\t\t</td></tr>\r\t</tbody>\r</table>\t\r";
+}
 ?>
-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
