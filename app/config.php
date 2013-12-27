@@ -4,7 +4,7 @@ $AppConfig = array (
 		'host'				=> 'localhost',
 		'user'				=> 'root',
 		'password'			=> '',
-		'database'			=> 'dboor'
+		'database'			=> 'tatar-wars'
 	),
 	'page' 		=> array (
 		'en_title'			=> 'Tatar war',

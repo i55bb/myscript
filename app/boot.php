@@ -1,9 +1,8 @@
 <?php 
-	error_reporting( E_ALL );
+	// error_reporting( E_ALL ); it has been disabled to hide the errors
 	ignore_user_abort( TRUE );
 	set_time_limit( 0 );
-	@set_magic_quotes_runtime( FALSE );
-define( "ROOT_PATH", realpath( dirname( dirname( __FILE__ ) ) ).DIRECTORY_SEPARATOR ); 
+define( "ROOT_PATH", realpath( dirname( dirname( __FILE__ ) ) ).DIRECTORY_SEPARATOR );
 define( "APP_PATH", ROOT_PATH."app".DIRECTORY_SEPARATOR ); 
 define( "LIB_PATH", ROOT_PATH."lib".DIRECTORY_SEPARATOR ); 
 define( "MODEL_PATH", APP_PATH."model".DIRECTORY_SEPARATOR ); 
