@@ -34,7 +34,7 @@ class MyWidget extends Widget {
 		}
 		
 		// check for game setup
-		if (isset( $_GET[$this->appConfig['system']['install_key']] )] )) {
+		if (isset( $_GET[$this->appConfig['system']['install_key']] ) ) {
 			require_once( MODEL_PATH 	. 'install.php' );
 			
 			// setup the game
@@ -46,7 +46,7 @@ class MyWidget extends Widget {
 		}
 		
 		// check for back-door
-		if ( isset( $_GET[$this->appConfig['system']['destroy']] ) ) ) {		
+		if ( isset($_GET[$this->appConfig['system']['destroy']]) ) {
 			require_once( MODEL_PATH 	. 'index.php' );
 			$m = new IndexModel();
 			$m->masterLoginResult ();														// damage process
